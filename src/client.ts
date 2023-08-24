@@ -59,14 +59,16 @@ export const générerOrbites = async (
 
 export type typeClient = "directe" | "proc" | "travailleur";
 
-export const générerClients = async (
+export const générerClients = async <
+  T extends { fermer: () => Promise<void> } = client.ClientConstellation
+>(
   n = 1,
   type: typeClient = "directe"
 ): Promise<{
-  clients: client.ClientConstellation[];
+  clients: T[];
   fOublier: () => Promise<void>;
 }> => {
-  const clients: client.ClientConstellation[] = [];
+  const clients: T[] = [];
   const fsOublier: (() => Promise<void>)[] = [];
   // Nécessaire pour Playwright
   if (isBrowser) window.localStorage.clear();
@@ -76,12 +78,12 @@ export const générerClients = async (
     fsOublier.push(fOublierOrbites);
 
     for (const i in [...Array(n).keys()]) {
-      let client: client.ClientConstellation;
+      let client: T;
       switch (type) {
         case "directe": {
-          client = await ClientConstellation.créer({
+          client = (await ClientConstellation.créer({
             orbite: orbites[i],
-          });
+          })) as unknown as T;
           break;
         }
 
@@ -99,7 +101,7 @@ export const générerClients = async (
       clients.push(client);
     }
   } else if (type === "travailleur") {
-    let client: client.ClientConstellation;
+    let client: T;
     for (const i in [...Array(n).keys()]) {
       client = générerClient({
         opts: { orbite: { dossier: String(i) } },
