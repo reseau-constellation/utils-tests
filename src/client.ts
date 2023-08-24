@@ -1,7 +1,8 @@
 import OrbitDB from "orbit-db";
 import { initierSFIP, arrêterSFIP } from "@/sfip.js";
-import type { IPFS } from "ipfs-core";
 import { isBrowser } from "wherearewe";
+import type { IPFS } from "ipfs-core";
+import type { client } from "@constl/ipa";
 
 import { connectPeers } from "@/orbitDbTestUtils.js";
 import { dossierTempoTests } from "@/dossiers.js";
@@ -63,7 +64,7 @@ export const générerClients = async<T> ({
 }: {
   n: number,
   type?: "proc" | "travailleur",
-  générerClient: (args: unknown) => T,
+  générerClient: (args: { opts: client.optsConstellation; mandataire: "proc" | "travailleur"; }) => T,
 }): Promise<{
   clients: T[];
   fOublier: () => Promise<void>;
