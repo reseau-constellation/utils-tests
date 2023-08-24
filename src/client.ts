@@ -1,13 +1,12 @@
 import OrbitDB from "orbit-db";
 import { initierSFIP, arrêterSFIP } from "@/sfip.js";
 import type { IPFS } from "ipfs-core";
-import { client, générerClient } from "@constl/ipa";
 import { isBrowser } from "wherearewe";
+import type {générerClient as générerClient_} from "@constl/ipa";
 
 import { connectPeers } from "@/orbitDbTestUtils.js";
 import { dossierTempoTests } from "@/dossiers.js";
 
-const { ClientConstellation } = client;
 
 export const générerOrbites = async (
   n = 1
@@ -57,56 +56,41 @@ export const générerOrbites = async (
   return { orbites, fOublier };
 };
 
-export type typeClient = "directe" | "proc" | "travailleur";
 
-export const générerClients = async <
-  T extends { fermer: () => Promise<void> } = client.ClientConstellation
->(
+export const générerClients = async<T extends typeof générerClient_ = typeof générerClient_> ({
   n = 1,
-  type: typeClient = "directe"
-): Promise<{
-  clients: T[];
+  type = "proc",
+  générerClient
+}: {
+  n: number,
+  type?: "proc" | "travailleur",
+  générerClient: T,
+}): Promise<{
+  clients: ReturnType<T>[];
   fOublier: () => Promise<void>;
 }> => {
-  const clients: T[] = [];
+  const clients: ReturnType<T>[] = [];
   const fsOublier: (() => Promise<void>)[] = [];
   // Nécessaire pour Playwright
   if (isBrowser) window.localStorage.clear();
 
-  if (type === "directe" || type == "proc") {
+  if (type == "proc") {
     const { orbites, fOublier: fOublierOrbites } = await générerOrbites(n);
     fsOublier.push(fOublierOrbites);
 
     for (const i in [...Array(n).keys()]) {
-      let client: T;
-      switch (type) {
-        case "directe": {
-          client = (await ClientConstellation.créer({
-            orbite: orbites[i],
-          })) as unknown as T;
-          break;
-        }
-
-        case "proc": {
-          client = générerClient({
-            opts: { orbite: orbites[i] },
-            mandataire: "proc",
-          });
-          break;
-        }
-
-        default:
-          throw new Error(type);
-      }
+      const client = générerClient({
+        opts: { orbite: orbites[i] },
+        mandataire: type
+      }) as ReturnType<T>;
       clients.push(client);
     }
   } else if (type === "travailleur") {
-    let client: T;
     for (const i in [...Array(n).keys()]) {
-      client = générerClient({
+      const client = générerClient({
         opts: { orbite: { dossier: String(i) } },
         mandataire: "travailleur",
-      });
+      }) as ReturnType<T>;
       clients.push(client);
     }
   } else {
@@ -120,10 +104,3 @@ export const générerClients = async <
   };
   return { fOublier, clients };
 };
-
-export const typesClients: typeClient[] =
-  process.env.MANDATAIRE === "TOUS"
-    ? ["directe", "proc"]
-    : process.env.MANDATAIRE === "PROC"
-    ? ["proc"]
-    : ["directe"];
