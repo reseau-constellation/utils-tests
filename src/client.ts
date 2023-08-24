@@ -2,7 +2,6 @@ import OrbitDB from "orbit-db";
 import { initierSFIP, arrêterSFIP } from "@/sfip.js";
 import type { IPFS } from "ipfs-core";
 import { isBrowser } from "wherearewe";
-import type {générerClient as générerClient_} from "@constl/ipa";
 
 import { connectPeers } from "@/orbitDbTestUtils.js";
 import { dossierTempoTests } from "@/dossiers.js";
@@ -57,19 +56,19 @@ export const générerOrbites = async (
 };
 
 
-export const générerClients = async<T extends typeof générerClient_ = typeof générerClient_> ({
+export const générerClients = async<T> ({
   n = 1,
   type = "proc",
   générerClient
 }: {
   n: number,
   type?: "proc" | "travailleur",
-  générerClient: T,
+  générerClient: (args: unknown) => T,
 }): Promise<{
-  clients: ReturnType<T>[];
+  clients: T[];
   fOublier: () => Promise<void>;
 }> => {
-  const clients: ReturnType<T>[] = [];
+  const clients: T[] = [];
   const fsOublier: (() => Promise<void>)[] = [];
   // Nécessaire pour Playwright
   if (isBrowser) window.localStorage.clear();
@@ -82,7 +81,7 @@ export const générerClients = async<T extends typeof générerClient_ = typeof
       const client = générerClient({
         opts: { orbite: orbites[i] },
         mandataire: type
-      }) as ReturnType<T>;
+      });
       clients.push(client);
     }
   } else if (type === "travailleur") {
@@ -90,7 +89,7 @@ export const générerClients = async<T extends typeof générerClient_ = typeof
       const client = générerClient({
         opts: { orbite: { dossier: String(i) } },
         mandataire: "travailleur",
-      }) as ReturnType<T>;
+      });
       clients.push(client);
     }
   } else {
@@ -99,6 +98,8 @@ export const générerClients = async<T extends typeof générerClient_ = typeof
 
   const fOublier = async () => {
     if (isBrowser) return; // Mystère et boule de gomme !!
+    
+    // @ts-expect-error À régler: type pour `fermer`
     await Promise.all(clients.map((client) => client.fermer()));
     await Promise.all(fsOublier.map((f) => f()));
   };
