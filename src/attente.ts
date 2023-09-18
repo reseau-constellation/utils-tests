@@ -115,7 +115,7 @@ export class AttendreFichierModifié extends EventEmitter {
     this.fsOublier.push(() => this.attendreExiste.annuler());
   }
 
-  async attendre(tempsAvant: number): Promise<void> {
+  async attendre(tempsAvant: number, condition?: () => Promise<boolean>): Promise<void> {
     await this.attendreExiste.attendre();
     const chokidar = await import("chokidar");
     const fs = await import("fs");
@@ -123,21 +123,29 @@ export class AttendreFichierModifié extends EventEmitter {
       const écouteur = chokidar.watch(this.fichier);
       this.fsOublier.push(() => écouteur.close());
 
+      const vérifierModifié = async () => {
+        try {
+            const { mtime } = fs.statSync(this.fichier);
+            const prêt = mtime.getTime() > tempsAvant;
+            console.log({après: mtime.getTime(), avant: tempsAvant})
+            if (prêt && (!condition || await condition())) {
+                await écouteur.close();
+                résoudre();
+            }
+        }
+        catch (e) {
+            // Le fichier a été effacé
+            écouteur.close();
+            rejeter(e);
+        }
+    }
+
       écouteur.on("change", async (adresse) => {
         if (adresse !== this.fichier) return;
-        try {
-          const { mtime } = fs.statSync(this.fichier);
-          const prêt = mtime.getTime() > tempsAvant;
-          if (prêt) {
-            await écouteur.close();
-            résoudre();
-          }
-        } catch (e) {
-          // Le fichier a été effacé
-          écouteur.close();
-          rejeter(e);
-        }
+        await vérifierModifié();
       });
+      
+      vérifierModifié();
     });
   }
 
