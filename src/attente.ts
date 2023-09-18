@@ -127,7 +127,7 @@ export class AttendreFichierModifié extends EventEmitter {
         try {
             const { mtime } = fs.statSync(this.fichier);
             const prêt = mtime.getTime() > tempsAvant;
-            console.log({après: mtime.getTime(), avant: tempsAvant})
+
             if (prêt && (!condition || await condition())) {
                 await écouteur.close();
                 résoudre();
