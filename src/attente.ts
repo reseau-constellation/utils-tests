@@ -130,6 +130,7 @@ export class AttendreFichierModifié extends EventEmitter {
 
             if (prêt && (!condition || await condition())) {
                 await écouteur.close();
+                clearInterval(intervale);
                 résoudre();
             }
         }
@@ -144,8 +145,8 @@ export class AttendreFichierModifié extends EventEmitter {
         if (adresse !== this.fichier) return;
         await vérifierModifié();
       });
-      
-      vérifierModifié();
+      // Parfois, on dirait que chokidar ne détecte pas l'événement...
+      const intervale = setInterval(vérifierModifié, 1000);
     });
   }
 
