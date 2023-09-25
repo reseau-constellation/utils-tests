@@ -1,9 +1,6 @@
 import { once } from "events";
 
-import OrbitDB from "orbit-db";
-import type Store from "orbit-db-store";
-import type KeyValueStore from "orbit-db-kvstore";
-import type FeedStore from "orbit-db-feedstore";
+import { FeedStoreTypé, KeyValueStoreTypé, OrbitDB, type Store } from "@orbitdb/core";
 
 import type { client, réseau } from "@constl/ipa";
 
@@ -16,12 +13,10 @@ export * as client from "@/client.js";
 export * as dossiers from "@/dossiers.js";
 export { version } from "@/version.js";
 
-const attendreInvité = (bd: Store, idInvité: string): Promise<void> =>
+const attendreInvité = (accès: ContrôleurConstellation, idInvité: string): Promise<void> =>
   new Promise<void>((resolve) => {
     const testAutorisé = async () => {
-      const autorisé = await (
-        bd.access as unknown as ContrôleurConstellation
-      ).estAutorisé(idInvité);
+      const autorisé = await accès.estAutorisé(idInvité);
       if (autorisé) {
         clearInterval(interval);
         resolve();
@@ -33,7 +28,7 @@ const attendreInvité = (bd: Store, idInvité: string): Promise<void> =>
 
 export const clientConnectéÀ = async (
   client1: client.ClientConstellation,
-  client2: client.ClientConstellation
+  client2: client.ClientConstellation,
 ): Promise<void> => {
   const dispositifsConnectés = new AttendreRésultat<
     réseau.statutDispositif[]
@@ -71,35 +66,34 @@ export const attendreSync = async (bd: Store): Promise<void> => {
 };
 
 export const peutÉcrire = async (
-  bd: KeyValueStore<{ test: number }> | FeedStore<string>,
-  attendre?: OrbitDB
+  bd: KeyValueStoreTypé<{ test: number }> | FeedStoreTypé<string>,
+  attendre?: OrbitDB,
 ): Promise<boolean> => {
   if (attendre) {
-    await attendreInvité(bd, attendre.identity.id);
+    await attendreInvité(bd.access as unknown as ContrôleurConstellation, attendre.identity.id);
   }
 
   try {
     if (bd.type === "keyvalue") {
+      const bdKV = bd as KeyValueStoreTypé<{ test: number }>
       const CLEF = "test";
       const VAL = 123;
 
-      await (bd as KeyValueStore<{ test: number }>).set(CLEF, VAL);
-      const val = bd.get(CLEF);
+      await bdKV.set(CLEF, VAL);
+      const val = await bdKV.get(CLEF);
 
-      await (bd as KeyValueStore<{ test: number }>).del(CLEF);
+      await (bd as KeyValueStoreTypé<{ test: number }>).del(CLEF);
       return val === VAL;
     } else if (bd.type === "feed") {
       const VAL = "test";
 
-      await (bd as FeedStore<string>).add(VAL);
-      const éléments = (bd as FeedStore<string>)
-        .iterator({ limit: -1 })
-        .collect();
+      await (bd as FeedStoreTypé<string>).add(VAL);
+      const éléments = await (bd as FeedStoreTypé<string>).all();
 
       const autorisé =
-        éléments.length === 1 && éléments[0].payload.value === VAL;
+        éléments.length === 1 && éléments[0].value === VAL;
       if (éléments.length === 1) {
-        await (bd as FeedStore<string>).remove(éléments[0].hash);
+        await (bd as FeedStoreTypé<string>).remove(éléments[0].hash);
       }
       return autorisé;
     } else {

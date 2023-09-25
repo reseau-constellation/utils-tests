@@ -31,7 +31,7 @@ export const connectPeers = async (
   ipfs2: IPFS,
   options = {
     filter: defaultFilter,
-  }
+  },
 ) => {
   const id1 = await ipfs1.id();
   const id2 = await ipfs2.id();

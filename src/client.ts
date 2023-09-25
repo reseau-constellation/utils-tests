@@ -1,4 +1,4 @@
-import OrbitDB from "orbit-db";
+import {createOrbitDB, OrbitDB} from "@orbitdb/core";
 import { initierSFIP, arrêterSFIP } from "@/sfip.js";
 import { isBrowser } from "wherearewe";
 import type { IPFS } from "ipfs-core";
@@ -7,9 +7,8 @@ import type { client } from "@constl/ipa";
 import { connectPeers } from "@/orbitDbTestUtils.js";
 import { dossierTempoTests } from "@/dossiers.js";
 
-
 export const générerOrbites = async (
-  n = 1
+  n = 1,
 ): Promise<{ orbites: OrbitDB[]; fOublier: () => Promise<void> }> => {
   const sfips: IPFS[] = [];
   const orbites: OrbitDB[] = [];
@@ -24,7 +23,8 @@ export const générerOrbites = async (
   const _générer = async (i: number): Promise<void> => {
     const racineDossier = `${racineDossierOrbite}/${i}`;
     const sfip = await initierSFIP(`${racineDossier}/sfip`);
-    const orbite = await OrbitDB.createInstance(sfip, {
+    const orbite = await createOrbitDB({
+      ipfs: sfip,
       directory: `${racineDossier}/orbite`,
     });
 
@@ -42,13 +42,13 @@ export const générerOrbites = async (
     await Promise.all(
       orbites.map(async (orbite) => {
         await orbite.stop();
-      })
+      }),
     );
 
     await Promise.all(
       sfips.map(async (d) => {
         await arrêterSFIP(d);
-      })
+      }),
     );
 
     fEffacerRacineDossierOrbite();
@@ -56,21 +56,24 @@ export const générerOrbites = async (
   return { orbites, fOublier };
 };
 
-
-export const générerClients = async<T> ({
+export const générerClients = async <T>({
   n = 1,
   type = "proc",
-  générerClient
+  générerClient,
 }: {
-  n: number,
-  type?: "proc" | "travailleur",
-  générerClient: (args: { opts: client.optsConstellation; mandataire: "proc" | "travailleur"; }) => T,
+  n: number;
+  type?: "proc" | "travailleur";
+  générerClient: (args: {
+    opts: client.optsConstellation;
+    mandataire: "proc" | "travailleur";
+  }) => T;
 }): Promise<{
   clients: T[];
   fOublier: () => Promise<void>;
 }> => {
   const clients: T[] = [];
   const fsOublier: (() => Promise<void>)[] = [];
+
   // Nécessaire pour Playwright
   if (isBrowser) window.localStorage.clear();
 
@@ -81,7 +84,7 @@ export const générerClients = async<T> ({
     for (const i in [...Array(n).keys()]) {
       const client = générerClient({
         opts: { orbite: orbites[i] },
-        mandataire: type
+        mandataire: type,
       });
       clients.push(client);
     }
@@ -99,7 +102,7 @@ export const générerClients = async<T> ({
 
   const fOublier = async () => {
     if (isBrowser) return; // Mystère et boule de gomme !!
-    
+
     // @ts-expect-error À régler: type pour `fermer`
     await Promise.all(clients.map((client) => client.fermer()));
     await Promise.all(fsOublier.map((f) => f()));

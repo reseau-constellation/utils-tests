@@ -71,7 +71,7 @@ export class AttendreFichierExiste extends EventEmitter {
       if (fichier === this.fichier) return;
       else
         throw new Error(
-          `Fichier téléchargé a le nom ${fichier}, et non pas ${this.fichier}.`
+          `Fichier téléchargé a le nom ${fichier}, et non pas ${this.fichier}.`,
         );
     } else {
       const chokidar = await import("chokidar");
@@ -115,7 +115,10 @@ export class AttendreFichierModifié extends EventEmitter {
     this.fsOublier.push(() => this.attendreExiste.annuler());
   }
 
-  async attendre(tempsAvant: number, condition?: () => Promise<boolean>): Promise<void> {
+  async attendre(
+    tempsAvant: number,
+    condition?: () => Promise<boolean>,
+  ): Promise<void> {
     await this.attendreExiste.attendre();
     const chokidar = await import("chokidar");
     const fs = await import("fs");
@@ -125,21 +128,20 @@ export class AttendreFichierModifié extends EventEmitter {
 
       const vérifierModifié = async () => {
         try {
-            const { mtime } = fs.statSync(this.fichier);
-            const prêt = mtime.getTime() > tempsAvant;
+          const { mtime } = fs.statSync(this.fichier);
+          const prêt = mtime.getTime() > tempsAvant;
 
-            if (prêt && (!condition || await condition())) {
-                await écouteur.close();
-                clearInterval(intervale);
-                résoudre();
-            }
+          if (prêt && (!condition || (await condition()))) {
+            await écouteur.close();
+            clearInterval(intervale);
+            résoudre();
+          }
+        } catch (e) {
+          // Le fichier a été effacé
+          écouteur.close();
+          rejeter(e);
         }
-        catch (e) {
-            // Le fichier a été effacé
-            écouteur.close();
-            rejeter(e);
-        }
-    }
+      };
 
       écouteur.on("change", async (adresse) => {
         if (adresse !== this.fichier) return;

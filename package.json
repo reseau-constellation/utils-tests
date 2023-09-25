@@ -32,8 +32,7 @@
     "postbuild": "./dist/**/*"
   },
   "devDependencies": {
-    "@constl/ipa": "^0.8.2",
-    "@constl/orbit-db-types": "^1.1.0",
+    "@constl/ipa": "^0.8.3",
     "@types/crypto-js": "^4.1.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.5.4",
@@ -66,10 +65,10 @@
   },
   "dependencies": {
     "@achingbrain/nat-port-mapper": "1.0.8",
+    "@orbitdb/core": "^1.0.0",
     "chokidar": "^3.5.3",
     "genversion": "^3.1.1",
     "ipfs-core": "^0.18.1",
-    "orbit-db": "^0.29.0",
     "rimraf": "^5.0.1",
     "uint8arrays": "^4.0.6",
     "uuid": "^9.0.0",
