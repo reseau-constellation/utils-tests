@@ -66,7 +66,7 @@ export const attendreSync = async (bd: Store): Promise<void> => {
 };
 
 export const peutÉcrire = async (
-  bd: KeyValueStoreTypé<{ test: number }> | FeedStoreTypé<string>,
+  bd: KeyValueStoreTypé<{ [clef: string]: number }> | FeedStoreTypé<string>,
   attendre?: OrbitDB,
 ): Promise<boolean> => {
   if (attendre) {
@@ -75,14 +75,16 @@ export const peutÉcrire = async (
 
   try {
     if (bd.type === "keyvalue") {
-      const bdKV = bd as KeyValueStoreTypé<{ test: number }>
-      const CLEF = "test";
+      const bdKV = bd as KeyValueStoreTypé<{ [clef: string]: number }>
+       
+      // Important d'avoir une clef unique pour éviter l'interférence entre les tests
+      const CLEF = "test" + Math.random().toString();
       const VAL = 123;
 
       await bdKV.set(CLEF, VAL);
       const val = await bdKV.get(CLEF);
 
-      await (bd as KeyValueStoreTypé<{ test: number }>).del(CLEF);
+      await bdKV.del(CLEF);
       return val === VAL;
     } else if (bd.type === "feed") {
       const VAL = "test";
