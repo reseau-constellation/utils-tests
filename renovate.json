@@ -14,7 +14,7 @@
       "automerge": true
     },
     {
-      "matchFileNames": ["examples/**"],
+      "matchFileNames": [".github/**"],
       "automerge": true
     }
   ]
