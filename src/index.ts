@@ -2,16 +2,19 @@ import { once } from "events";
 
 import { FeedStoreTypé, KeyValueStoreTypé, OrbitDB, type Store } from "@orbitdb/core";
 
-import type { client, réseau } from "@constl/ipa";
+import type { client, réseau, accès } from "@constl/ipa";
 
 import { AttendreRésultat } from "@/attente.js";
-import type ContrôleurConstellation from "@constl/ipa/dist/src/accès/cntrlConstellation.js";
 
 export * as sfip from "@/sfip.js";
 export * as attente from "@/attente.js";
 export * as client from "@/client.js";
 export * as dossiers from "@/dossiers.js";
 export { version } from "@/version.js";
+
+type ContrôleurConstellation = Awaited<
+  ReturnType<ReturnType<typeof accès.cntrlConstellation.default>>
+>;
 
 const attendreInvité = (accès: ContrôleurConstellation, idInvité: string): Promise<void> =>
   new Promise<void>((resolve) => {
