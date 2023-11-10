@@ -20,13 +20,13 @@ export class AttendreRésultat<T> {
     this.événements.emit("changé");
   }
 
-  async attendreQue(f: (x: T) => boolean): Promise<T> {
-    if (this.val !== undefined && f(this.val)) return this.val;
+  async attendreQue(f: (x: T) => boolean | Promise<boolean>): Promise<T> {
+    if (this.val !== undefined && await f(this.val)) return this.val;
     const id = uuidv4();
 
     return new Promise((résoudre) => {
-      const fLorsqueChangé = () => {
-        if (this.val !== undefined && f(this.val)) {
+      const fLorsqueChangé = async () => {
+        if (this.val !== undefined && await f(this.val)) {
           this.oublier(id);
           résoudre(this.val);
         }
