@@ -64,7 +64,7 @@
     "typescript-transform-paths": "^3.4.6"
   },
   "dependencies": {
-    "@orbitdb/core": "^1.0.0",
+    "@orbitdb/core": "^2.0.0",
     "chokidar": "^3.5.3",
     "genversion": "^3.1.1",
     "ipfs-core": "^0.18.1",
