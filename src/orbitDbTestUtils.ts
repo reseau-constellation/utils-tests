@@ -22,30 +22,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import type { IPFS } from "ipfs-core";
+import type { Helia } from "helia";
 
 const defaultFilter = () => true;
 
 export const connectPeers = async (
-  ipfs1: IPFS,
-  ipfs2: IPFS,
+  ipfs1: Helia,
+  ipfs2: Helia,
   options = {
     filter: defaultFilter,
   },
 ) => {
-  const id1 = await ipfs1.id();
-  const id2 = await ipfs2.id();
-
-  const addresses1 = id1.addresses.filter(options.filter);
-  const addresses2 = id2.addresses.filter(options.filter);
+  const addresses1 = ipfs1.libp2p.getMultiaddrs().filter(options.filter);
+  const addresses2 = ipfs2.libp2p.getMultiaddrs().filter(options.filter);
   if (addresses1.length && addresses2.length) {
-    await ipfs1.swarm.connect(addresses2[0]);
-    await ipfs2.swarm.connect(addresses1[0]);
+    await ipfs1.libp2p.dial(addresses2[0]);
+    await ipfs2.libp2p.dial(addresses1[0]);
   }
 };
 
-export const tousConnecter = async (sfips: IPFS[]) => {
-  const connectés: IPFS[] = [];
+export const tousConnecter = async (sfips: Helia[]) => {
+  const connectés: Helia[] = [];
   for (const sfip of sfips) {
     for (const autre of connectés) {
       await connectPeers(sfip, autre);

@@ -4,8 +4,8 @@
   "name": "@constl/utils-tests",
   "author": "Julien Jean Malard-Adam",
   "type": "module",
-  "types": "./dist/index.d.ts",
-  "exports": "./dist/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": "./dist/src/index.js",
   "engines": {
     "node": ">=20"
   },
@@ -46,43 +46,33 @@
     "crypto-browserify": "^3.12.0",
     "eslint": "^8.52.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "mocha": "^10.2.0",
-    "os-browserify": "^0.3.0",
-    "playwright": "^1.39.0",
-    "prettier": "^3.0.3",
-    "process": "^0.11.10",
+    "playwright": "^1.41.1",
+    "prettier": "^3.2.4",
     "source-map-support": "^0.5.21",
-    "ts-patch": "^3.0.2",
+    "ts-patch": "^3.1.2",
     "tsconfig-paths": "^4.2.0",
     "tscpaths": "^0.0.9",
     "typescript": "5.3.3",
     "typescript-transform-paths": "^3.4.6"
   },
   "dependencies": {
-    "@orbitdb/core": "^1.0.0",
+    "@helia/block-brokers": "^1.0.0",
+    "@orbitdb/quickstart": "^1.0.0",
+    "blockstore-core": "^4.3.10",
+    "blockstore-level": "^1.1.7",
     "chokidar": "^3.5.3",
-    "genversion": "^3.1.1",
-    "ipfs-core": "^0.18.1",
+    "genversion": "^3.2.0",
+    "helia": "^3.0.1",
+    "libp2p": "^1.2.0",
     "rimraf": "^5.0.5",
     "uint8arrays": "^5.0.0",
     "uuid": "^9.0.1",
     "wherearewe": "^2.0.1"
-  },
-  "resolutions": {
-    "iso-constants": "git+https://github.com/inverted-capital/iso-constants.git#patch-1",
-    "ipfs-pubsub-1on1": "git+https://github.com/ipfs-shipyard/ipfs-pubsub-1on1.git"
-  },
-  "overrides": {
-    "iso-constants": {
-      ".": "git+https://github.com/inverted-capital/iso-constants.git#patch-1"
-    },
-    "ipfs-pubsub-1on1": {
-      ".": "git+https://github.com/ipfs-shipyard/ipfs-pubsub-1on1.git"
-    }
   }
 }

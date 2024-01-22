@@ -1,6 +1,6 @@
 import { once } from "events";
 
-import { FeedStoreTypé, KeyValueStoreTypé, OrbitDB, type Store } from "@orbitdb/core";
+import type { FeedStoreTypé, KeyValueStoreTypé, OrbitDB, Store } from "@orbitdb/core";
 
 import type { client, réseau, accès } from "@constl/ipa";
 

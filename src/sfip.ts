@@ -1,20 +1,30 @@
-import { create } from "ipfs-core";
-import type { IPFS } from "ipfs-core";
+import { createHelia, type Helia } from "helia";
+import { bitswap } from "@helia/block-brokers";
+import { createLibp2p } from "libp2p";
+import { MemoryBlockstore } from "blockstore-core";
+import { LevelBlockstore } from "blockstore-level";
 
-export const config = {
-  patience: 10 * 1000,
-  patienceInit: 60 * 1000,
-};
+import { isBrowser, isElectronRenderer } from "wherearewe";
+import { Libp2pBrowserOptions, Libp2pOptions } from "@orbitdb/quickstart";
 
-export const initierSFIP = async (dossier = ""): Promise<IPFS> => {
-  return create({
-    repo: dossier,
-    init: {
-      profiles: ["test"],
-    },
-  });
-};
+export const créerHéliaTest = async ({
+  directory,
+}: {
+  directory?: string;
+} = {}): Promise<Helia> => {
+  const options = (isBrowser || isElectronRenderer) ? Libp2pBrowserOptions : Libp2pOptions;
 
-export const arrêterSFIP = async (sfip: IPFS) => {
-  await sfip.stop();
+  const libp2p = await createLibp2p({ ...options });
+
+  const blockstore = directory
+    ? new LevelBlockstore(`${directory}/blocks`)
+    : new MemoryBlockstore();
+
+  const heliaOptions = {
+    blockstore,
+    libp2p,
+    blockBrokers: [bitswap()],
+  };
+
+  return createHelia({ ...heliaOptions });
 };

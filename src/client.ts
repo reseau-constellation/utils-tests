@@ -1,16 +1,15 @@
-import {createOrbitDB, OrbitDB} from "@orbitdb/core";
-import { initierSFIP, arrêterSFIP } from "@/sfip.js";
-import { isBrowser } from "wherearewe";
-import type { IPFS } from "ipfs-core";
+import type { OrbitDB } from "@orbitdb/core";
+import type { Helia } from "helia";
 import type { client } from "@constl/ipa";
-
+import { startOrbitDB, stopOrbitDB } from "@orbitdb/quickstart";
 import { connectPeers } from "@/orbitDbTestUtils.js";
 import { dossierTempoTests } from "@/dossiers.js";
+import { isBrowser } from "wherearewe";
 
 export const générerOrbites = async (
   n = 1,
 ): Promise<{ orbites: OrbitDB[]; fOublier: () => Promise<void> }> => {
-  const sfips: IPFS[] = [];
+  const sfips: Helia[] = [];
   const orbites: OrbitDB[] = [];
 
   const {
@@ -22,17 +21,14 @@ export const générerOrbites = async (
 
   const _générer = async (i: number): Promise<void> => {
     const racineDossier = `${racineDossierOrbite}/${i}`;
-    const sfip = await initierSFIP(`${racineDossier}/sfip`);
-    const orbite = await createOrbitDB({
-      ipfs: sfip,
+    const orbite = await startOrbitDB({
       directory: `${racineDossier}/orbite`,
     });
 
     for (const ip of sfips) {
-      await connectPeers(sfip, ip);
+      await connectPeers(orbite.ipfs, ip);
     }
 
-    sfips.push(sfip);
     orbites.push(orbite);
   };
 
@@ -40,15 +36,7 @@ export const générerOrbites = async (
 
   const fOublier = async () => {
     await Promise.all(
-      orbites.map(async (orbite) => {
-        await orbite.stop();
-      }),
-    );
-
-    await Promise.all(
-      sfips.map(async (d) => {
-        await arrêterSFIP(d);
-      }),
+      orbites.map(stopOrbitDB),
     );
 
     fEffacerRacineDossierOrbite();
