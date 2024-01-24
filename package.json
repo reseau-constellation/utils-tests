@@ -62,7 +62,7 @@
     "typescript-transform-paths": "^3.4.6"
   },
   "dependencies": {
-    "@helia/block-brokers": "^1.0.0",
+    "@helia/block-brokers": "^2.0.0",
     "@orbitdb/quickstart": "^1.0.0",
     "blockstore-core": "^4.3.10",
     "blockstore-level": "^1.1.7",
