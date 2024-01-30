@@ -5,7 +5,7 @@ import { isElectronMain, isNode } from "wherearewe";
 import { créerHéliaTest, toutesConnectées } from "@/sfip.js";
 import { dossierTempo } from "@/dossiers.js";
 
-describe("Créer Hélia", function () {
+describe.only("Créer Hélia", function () {
   let dossier: string;
   let fEffacer: () => void;
 

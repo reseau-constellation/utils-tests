@@ -10,6 +10,6 @@ declare module "@orbitdb/quickstart" {
   }): Promise<OrbitDB>;
   export function stopOrbitDB(orbitdb: OrbitDB): Promise<void>;
 
-  export const Libp2pOptions: Libp2pOptionsType;
-  export const Libp2pBrowserOptions: Libp2pOptionsType;
+  export const DefaultLibp2pOptions: Libp2pOptionsType;
+  export const DefaultLibp2pBrowserOptions: Libp2pOptionsType;
 }

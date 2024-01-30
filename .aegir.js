@@ -3,7 +3,17 @@ process.on("beforeExit", (code) => process.exit(code));
 
 // https://github.com/ipfs/aegir/blob/master/md/migration-to-v31.md
 const esbuild = {
-  external: ["fs", "path", "os", "chokidar", "url", "zlib", "rimraf"],
+  external: [
+    "fs",
+    "path",
+    "os",
+    "chokidar",
+    "url",
+    "zlib",
+    "rimraf",
+    "stream",
+    "electron",
+  ],
 };
 
 /** @type {import('aegir').PartialOptions} */

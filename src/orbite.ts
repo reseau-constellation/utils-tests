@@ -62,10 +62,11 @@ export const créerOrbiteTest = async ({
     const orbite = await startOrbitDB({
       directory: `${racineDossier}/orbite`,
     });
-
     for (const ip of sfips) {
+      console.log("on connecte les pairs");
       await connecterPairs(orbite.ipfs, ip);
     }
+    sfips.push(orbite.ipfs);
 
     orbites.push(orbite);
   };

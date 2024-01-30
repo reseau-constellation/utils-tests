@@ -3,11 +3,16 @@ import { bitswap } from "@helia/block-brokers";
 import { createLibp2p } from "libp2p";
 import { MemoryBlockstore } from "blockstore-core";
 import { LevelBlockstore } from "blockstore-level";
+import { multiaddr } from "@multiformats/multiaddr";
+import { WebRTC } from "@multiformats/multiaddr-matcher";
+import type { Multiaddr } from "@multiformats/multiaddr";
 
 import { isBrowser, isElectronRenderer } from "wherearewe";
-const OrbitDBQuickstart = await import("@orbitdb/quickstart");
 
-const { Libp2pBrowserOptions, Libp2pOptions } = OrbitDBQuickstart;
+import {
+  DefaultLibp2pBrowserOptions,
+  DefaultLibp2pOptions,
+} from "@orbitdb/quickstart";
 
 export const créerHéliaTest = async ({
   dossier,
@@ -15,7 +20,9 @@ export const créerHéliaTest = async ({
   dossier?: string;
 } = {}): Promise<Helia> => {
   const options =
-    isBrowser || isElectronRenderer ? Libp2pBrowserOptions : Libp2pOptions;
+    isBrowser || isElectronRenderer
+      ? DefaultLibp2pBrowserOptions
+      : DefaultLibp2pOptions;
 
   const libp2p = await createLibp2p({ ...options });
 
@@ -41,11 +48,38 @@ export const connecterPairs = async (
     filtre: filtreParDéfaut,
   },
 ) => {
-  const addresses1 = sfip1.libp2p.getMultiaddrs().filter(options.filtre);
-  const addresses2 = sfip2.libp2p.getMultiaddrs().filter(options.filtre);
-  if (addresses1.length && addresses2.length) {
-    await sfip1.libp2p.dial(addresses2[0]);
-    await sfip2.libp2p.dial(addresses1[0]);
+  if (isBrowser || isElectronRenderer) {
+    const relayId = "12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";
+
+    await sfip1.libp2p.dial(
+      multiaddr(`/ip4/127.0.0.1/tcp/12345/ws/p2p/${relayId}`),
+    );
+
+    const adresse1 = await new Promise<Multiaddr>((resolve) => {
+      const testConnecté = () => {
+        const adresse = sfip1.libp2p
+          .getMultiaddrs()
+          .filter((ma) => WebRTC.matches(ma))
+          .pop();
+        if (adresse != null) {
+          clearInterval(interval);
+          resolve(adresse1);
+        }
+      };
+      const interval = setInterval(testConnecté, 100);
+      testConnecté();
+    });
+    console.log(adresse1);
+    await sfip2.libp2p.dial(adresse1);
+  } else {
+    console.log("bon...");
+    console.log(sfip1.libp2p.getMultiaddrs().filter(options.filtre));
+    await sfip2.libp2p.peerStore.save(sfip1.libp2p.peerId, {
+      multiaddrs: sfip1.libp2p.getMultiaddrs().filter(options.filtre),
+    });
+    console.log("et puis...");
+    await sfip2.libp2p.dial(sfip1.libp2p.peerId);
+    console.log("ahah !");
   }
 };
 

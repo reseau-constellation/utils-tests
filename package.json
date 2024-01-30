@@ -13,13 +13,14 @@
     "nettoyer": "rimraf dist",
     "compiler": "pnpm versioner && pnpm formatter && pnpm nettoyer && pnpm tspc -p tsconfig.build.json",
     "test:node": "pnpm compiler && pnpm aegir test -t node --cov -- --exit",
-    "test:navig": "pnpm compiler && pnpm aegir test -t browser --cov",
+    "test:navig": "pnpm compiler && pnpm webrtc && pnpm aegir test -t browser --cov",
     "test:électron-principal": "pnpm compiler && pnpm aegir test -t electron-main --cov",
-    "test:électron-rendu": "pnpm compiler && pnpm aegir test -t electron-renderer --cov",
+    "test:électron-rendu": "pnpm compiler && pnpm webrtc && pnpm aegir test -t electron-renderer --cov",
     "test": "pnpm test:node && pnpm test:navig",
     "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint --ext .js,.ts src",
     "publier": "pnpm versioner && pnpm compiler && (git commit -a -m 'version' || true) && pnpm publish",
-    "versioner": "pnpm genversion  --es6 --semi src/version.ts"
+    "versioner": "pnpm genversion  --es6 --semi src/version.ts",
+    "webrtc": "node ./dist/test/utils/relai.js &"
   },
   "watch": {
     "build": {
@@ -32,7 +33,16 @@
     "postbuild": "./dist/**/*"
   },
   "devDependencies": {
+    "@chainsafe/libp2p-noise": "^15.0.0",
+    "@chainsafe/libp2p-yamux": "^6.0.1",
     "@constl/ipa": "^0.9.5",
+    "@libp2p/circuit-relay-v2": "^1.0.13",
+    "@libp2p/crypto": "^4.0.1",
+    "@libp2p/identify": "^1.0.12",
+    "@libp2p/peer-id-factory": "^4.0.5",
+    "@libp2p/websockets": "^8.0.13",
+    "@multiformats/multiaddr": "^12.1.14",
+    "@multiformats/multiaddr-matcher": "^1.1.2",
     "@types/crypto-js": "^4.1.3",
     "@types/file-saver": "^2.0.7",
     "@types/mocha": "^10.0.3",
@@ -53,6 +63,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "file-saver": "^2.0.5",
+    "keys": "link:@libp2p/crypto/keys",
     "mocha": "^10.2.0",
     "playwright": "^1.41.1",
     "prettier": "^3.2.4",

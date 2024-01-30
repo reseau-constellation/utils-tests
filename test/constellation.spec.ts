@@ -3,7 +3,7 @@ import { expect } from "aegir/chai";
 import { créerConstellationsTest } from "@/constellation.js";
 import { ClientConstellation } from "@constl/ipa";
 
-describe.skip("Créer Constellations", function () {
+describe("Créer Constellations", function () {
   let clients: ClientConstellation[];
   let fOublier: () => Promise<void>;
 
