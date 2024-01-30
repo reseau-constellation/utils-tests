@@ -151,10 +151,14 @@ declare module "@orbitdb/core" {
   };
 
   // Temporaires
-  export type Store = FeedStore | SetStore | KeyValueStore | OrderedKeyValueStore;
-  
+  export type Store =
+    | FeedStore
+    | SetStore
+    | KeyValueStore
+    | OrderedKeyValueStore;
+
   export type FeedStore = Awaited<ReturnType<typeof Database>> & {
-    remove: (hash: string) => Promise<string>
+    remove: (hash: string) => Promise<string>;
   };
   export type FeedStoreTypé<T extends élémentsBd> = Omit<
     FeedStore,
@@ -189,11 +193,14 @@ declare module "@orbitdb/core" {
   export type OrderedKeyValue = ReturnType<typeof Database>;
   export type OrderedKeyValueStore = Awaited<OrderedKeyValue>;
   export type OrderedKeyValueStoreTypé<T extends { [clef: string]: unknown }> =
-    Omit<OrderedKeyValueStore, "put" | "set" | "del" | "move" | "get" | "all"> & {
+    Omit<
+      OrderedKeyValueStore,
+      "put" | "set" | "del" | "move" | "get" | "all"
+    > & {
       put: <K extends keyof T>(
         key: K,
         value: T[K],
-        position?: number
+        position?: number,
       ) => Promise<string>;
       set: OrderedKeyValueStoreTypé<T>["put"];
       del: <K extends keyof T>(key: K) => Promise<string>;
@@ -232,5 +239,4 @@ declare module "@orbitdb/core" {
     get<K extends keyof T>(key: K): Promise<T[K] | undefined>;
     all(): Promise<T>;
   };
-
 }

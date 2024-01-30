@@ -21,12 +21,12 @@ export class AttendreRésultat<T> {
   }
 
   async attendreQue(f: (x: T) => boolean | Promise<boolean>): Promise<T> {
-    if (this.val !== undefined && await f(this.val)) return this.val;
+    if (this.val !== undefined && (await f(this.val))) return this.val;
     const id = uuidv4();
 
     return new Promise((résoudre) => {
       const fLorsqueChangé = async () => {
-        if (this.val !== undefined && await f(this.val)) {
+        if (this.val !== undefined && (await f(this.val))) {
           this.oublier(id);
           résoudre(this.val);
         }
