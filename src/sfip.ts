@@ -63,23 +63,18 @@ export const connecterPairs = async (
           .pop();
         if (adresse != null) {
           clearInterval(interval);
-          resolve(adresse1);
+          resolve(adresse);
         }
       };
       const interval = setInterval(testConnecté, 100);
       testConnecté();
     });
-    console.log(adresse1);
     await sfip2.libp2p.dial(adresse1);
   } else {
-    console.log("bon...");
-    console.log(sfip1.libp2p.getMultiaddrs().filter(options.filtre));
     await sfip2.libp2p.peerStore.save(sfip1.libp2p.peerId, {
       multiaddrs: sfip1.libp2p.getMultiaddrs().filter(options.filtre),
     });
-    console.log("et puis...");
     await sfip2.libp2p.dial(sfip1.libp2p.peerId);
-    console.log("ahah !");
   }
 };
 

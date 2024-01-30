@@ -32,8 +32,6 @@ import type {
   Store,
 } from "@orbitdb/core";
 
-import { accès } from "@constl/ipa";
-
 import { once } from "events";
 
 import { dossierTempo } from "@/dossiers.js";
@@ -63,7 +61,6 @@ export const créerOrbiteTest = async ({
       directory: `${racineDossier}/orbite`,
     });
     for (const ip of sfips) {
-      console.log("on connecte les pairs");
       await connecterPairs(orbite.ipfs, ip);
     }
     sfips.push(orbite.ipfs);
@@ -82,13 +79,20 @@ export const créerOrbiteTest = async ({
 };
 
 export const attendreSync = async (bd: Store): Promise<void> => {
-  const accès = bd.access as unknown as ContrôleurConstellation;
-  await once(accès.bd.events, "peer.exchanged");
+  const accèsBd = bd.access as unknown as ContrôleurConstellation;
+  await once(accèsBd.bd.events, "peer.exchanged");
 };
 
-type ContrôleurConstellation = Awaited<
-  ReturnType<ReturnType<typeof accès.cntrlConstellation.default>>
->;
+export type ContrôleurConstellation = {
+  type: string;
+  address: string;
+  adresseBdAccès: string;
+  write: string;
+  estAutorisé: (id: string) => Promise<boolean>;
+  grant: (rôle: "MODÉRATEUR" | "MEMBRE", id: string) => Promise<void>;
+  revoke: (_rôle: "MODÉRATEUR" | "MEMBRE", _id: string) => Promise<void>;
+  bd: Store;
+};
 
 const attendreInvité = (
   accès: ContrôleurConstellation,

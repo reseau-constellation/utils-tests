@@ -1,7 +1,6 @@
 import {
   type réseau,
   type client,
-  générerClient,
   type ClientConstellation,
 } from "@constl/ipa";
 import { isBrowser } from "wherearewe";
@@ -11,11 +10,10 @@ import { AttendreRésultat } from "@/attente.js";
 
 export const créerConstellationsTest = async <T = ClientConstellation>({
   n = 1,
-  fGénérerClient = ({ opts }: { opts: client.optsConstellation }) =>
-    générerClient({ opts }) as T,
+  fGénérerClient,
 }: {
   n: number;
-  fGénérerClient?: ({ opts }: { opts: client.optsConstellation }) => T;
+  fGénérerClient: ({ opts }: { opts: client.optsConstellation }) => T;
 }): Promise<{
   clients: ReturnType<typeof fGénérerClient>[];
   fOublier: () => Promise<void>;
