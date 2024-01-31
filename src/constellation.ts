@@ -8,7 +8,10 @@ import { isBrowser } from "wherearewe";
 import { créerOrbiteTest } from "@/orbite.js";
 import { AttendreRésultat } from "@/attente.js";
 
-export const créerConstellationsTest = async <T = ClientConstellation, U = client.optsConstellation>({
+export const créerConstellationsTest = async <
+  T = ClientConstellation,
+  U = client.optsConstellation,
+>({
   n = 1,
   fGénérerClient,
 }: {
