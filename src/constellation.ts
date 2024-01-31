@@ -8,12 +8,12 @@ import { isBrowser } from "wherearewe";
 import { créerOrbiteTest } from "@/orbite.js";
 import { AttendreRésultat } from "@/attente.js";
 
-export const créerConstellationsTest = async <T = ClientConstellation>({
+export const créerConstellationsTest = async <T = ClientConstellation, U = client.optsConstellation>({
   n = 1,
   fGénérerClient,
 }: {
   n: number;
-  fGénérerClient: ({ opts }: { opts: client.optsConstellation }) => T;
+  fGénérerClient: ({ opts }: { opts: U }) => T;
 }): Promise<{
   clients: ReturnType<typeof fGénérerClient>[];
   fOublier: () => Promise<void>;
@@ -29,7 +29,7 @@ export const créerConstellationsTest = async <T = ClientConstellation>({
 
   for (const i in [...Array(n).keys()]) {
     const client = fGénérerClient({
-      opts: { orbite: orbites[i] },
+      opts: { orbite: orbites[i] } as U,
     });
     clients.push(client);
   }
