@@ -13,15 +13,15 @@ export const créerConstellationsTest = async <
   U = client.optsConstellation,
 >({
   n = 1,
-  fGénérerClient,
+  créerConstellation,
 }: {
   n: number;
-  fGénérerClient: ({ opts }: { opts: U }) => T;
+  créerConstellation: (opts: U) => T;
 }): Promise<{
-  clients: ReturnType<typeof fGénérerClient>[];
+  clients: ReturnType<typeof créerConstellation>[];
   fOublier: () => Promise<void>;
 }> => {
-  const clients: ReturnType<typeof fGénérerClient>[] = [];
+  const clients: ReturnType<typeof créerConstellation>[] = [];
   const fsOublier: (() => Promise<void>)[] = [];
 
   // Nécessaire pour Playwright
@@ -31,14 +31,15 @@ export const créerConstellationsTest = async <
   fsOublier.push(fOublierOrbites);
 
   for (const i in [...Array(n).keys()]) {
-    const client = fGénérerClient({
-      opts: { orbite: orbites[i] } as U,
-    });
+    const client = créerConstellation({
+      orbite: orbites[i],
+      dossier: orbites[i].directory.split("/").slice(0, -1).join("/"),
+    } as U);
     clients.push(client);
   }
 
   const fOublier = async () => {
-    if (isBrowser) return; // Mystère et boule de gomme !!
+    // if (isBrowser) return; // Mystère et boule de gomme !!
 
     await Promise.all(
       clients.map((client) => (client as ClientConstellation).fermer()),

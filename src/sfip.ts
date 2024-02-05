@@ -1,6 +1,8 @@
+import type { GossipSub } from "@chainsafe/libp2p-gossipsub";
+
 import { createHelia, type Helia } from "helia";
 import { bitswap } from "@helia/block-brokers";
-import { createLibp2p } from "libp2p";
+import { createLibp2p, Libp2p } from "libp2p";
 import { MemoryBlockstore } from "blockstore-core";
 import { LevelBlockstore } from "blockstore-level";
 import { multiaddr } from "@multiformats/multiaddr";
@@ -18,13 +20,15 @@ export const créerHéliaTest = async ({
   dossier,
 }: {
   dossier?: string;
-} = {}): Promise<Helia> => {
+} = {}): Promise<Helia<Libp2p<{ pubsub: GossipSub }>>> => {
   const options =
     isBrowser || isElectronRenderer
       ? DefaultLibp2pBrowserOptions
       : DefaultLibp2pOptions;
 
-  const libp2p = await createLibp2p({ ...options });
+  const libp2p = (await createLibp2p({ ...options })) as unknown as Libp2p<{
+    pubsub: GossipSub;
+  }>;
 
   const blockstore = dossier
     ? new LevelBlockstore(`${dossier}/blocks`)
@@ -36,7 +40,7 @@ export const créerHéliaTest = async ({
     blockBrokers: [bitswap()],
   };
 
-  return createHelia({ ...heliaOptions });
+  return createHelia<Libp2p<{ pubsub: GossipSub }>>({ ...heliaOptions });
 };
 
 const filtreParDéfaut = () => true;
@@ -49,10 +53,10 @@ export const connecterPairs = async (
   },
 ) => {
   if (isBrowser || isElectronRenderer) {
-    const relayId = "12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";
+    const idRelai = "12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";
 
     await sfip1.libp2p.dial(
-      multiaddr(`/ip4/127.0.0.1/tcp/12345/ws/p2p/${relayId}`),
+      multiaddr(`/ip4/127.0.0.1/tcp/12345/ws/p2p/${idRelai}`),
     );
 
     const adresse1 = await new Promise<Multiaddr>((resolve) => {

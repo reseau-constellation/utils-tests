@@ -34,8 +34,8 @@ describe("Créer Orbites", function () {
 
   it("Orbites effacés", async () => {
     await fOublier();
-    expect(orbites[0].open("adresse test")).to.be.rejected;
-    expect(orbites[1].open("adresse test")).to.be.rejected;
+    expect(orbites[0].open("adresse test")).to.be.rejected();
+    expect(orbites[1].open("adresse test")).to.be.rejected();
   });
 });
 
