@@ -33,9 +33,10 @@
     "postbuild": "./dist/**/*"
   },
   "devDependencies": {
+    "@chainsafe/libp2p-gossipsub": "^11.2.0",
     "@chainsafe/libp2p-noise": "^15.0.0",
     "@chainsafe/libp2p-yamux": "^6.0.1",
-    "@constl/ipa": "^0.9.25",
+    "@constl/ipa": "0.9.26-434f466bd.0",
     "@libp2p/circuit-relay-v2": "^1.0.13",
     "@libp2p/crypto": "^4.0.1",
     "@libp2p/identify": "^1.0.12",
