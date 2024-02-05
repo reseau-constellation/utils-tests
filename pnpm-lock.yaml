@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^6.0.1
     version: 6.0.1
   '@constl/ipa':
-    specifier: 0.9.26-434f466bd.0
-    version: 0.9.26-434f466bd.0(react-native@0.73.3)(wrtc@0.4.7)
+    specifier: 0.9.26-fd39d6da4.0
+    version: 0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7)
   '@libp2p/circuit-relay-v2':
     specifier: ^1.0.13
     version: 1.0.13
@@ -1664,6 +1664,8 @@ packages:
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
       wherearewe: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@chainsafe/libp2p-noise@15.0.0:
     resolution: {integrity: sha512-O8Y/WVU4J/qrnG72jwVhbmdXiBzv1dT9B3PMClCRmZ9z/5vVPEGRVXE/SVYeGF3bNuBTLoh+F+GaKG/9UHlMhg==}
@@ -1744,8 +1746,8 @@ packages:
       - supports-color
     dev: true
 
-  /@constl/ipa@0.9.26-434f466bd.0(react-native@0.73.3)(wrtc@0.4.7):
-    resolution: {integrity: sha512-ffpB2zYaFd2xB6uy2SAEpjcbuTWDR1erenUGlky6ZY3RHzrcx4DZQorqYYVj36tjAoBv87IjqjMv4glY5gPVjA==}
+  /@constl/ipa@0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7):
+    resolution: {integrity: sha512-fnQAg69aClXVc0ARbsG5dte7STRuzonh8LUZ426pRMBVh5ZueNMaj4rTbAYFQJDIjloA0A6xOmIKgOXwx9Loig==}
     engines: {node: '>=20'}
     peerDependencies:
       wrtc: ^0.4.7
@@ -1759,10 +1761,10 @@ packages:
       '@constl/electron-webrtc-relay': 0.2.3
       '@constl/mandataire': 0.1.15
       '@constl/utils-ipa': 1.0.0
-      '@helia/block-brokers': 2.0.0
+      '@helia/block-brokers': 2.0.1
       '@helia/unixfs': 3.0.0
       '@ipld/dag-cbor': 9.1.0
-      '@lassi-js/kili': 0.3.6(@constl/ipa@0.9.26-434f466bd.0)
+      '@lassi-js/kili': 0.3.6(@constl/ipa@0.9.26-fd39d6da4.0)
       '@libp2p/bootstrap': 10.0.13
       '@libp2p/circuit-relay-v2': 1.0.13
       '@libp2p/identify': 1.0.12
@@ -1787,7 +1789,7 @@ packages:
       crypto-js: 4.2.0
       deep-equal: 2.2.3
       deepcopy: 2.1.0
-      ennikkai: 2.2.5(@constl/ipa@0.9.26-434f466bd.0)
+      ennikkai: 2.2.5(@constl/ipa@0.9.26-fd39d6da4.0)
       env-paths: 3.0.0
       events: 3.3.0
       genversion: 3.2.0
@@ -2379,6 +2381,20 @@ packages:
       progress-events: 1.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@helia/block-brokers@2.0.1:
+    resolution: {integrity: sha512-KHqL4pcA2dHvRdVuqHKMA5K1ky/VPSzL8/s4NrId5Sxi+Qx7yPYMrDuexau+OZ+wrEnHaKtoEGAydL0imqbvcA==}
+    dependencies:
+      '@helia/interface': 4.0.0
+      '@libp2p/interface': 1.1.2
+      interface-blockstore: 5.2.9
+      ipfs-bitswap: 20.0.2
+      multiformats: 13.0.1
+      progress-events: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@helia/delegated-routing-v1-http-api-client@1.1.2:
     resolution: {integrity: sha512-u+sVdOxFieusZh/AxC8c0lU1micWfAosju7A80n62rdJ1fr1lclkhhrlfaKWIgVOq+pwonEzoOE7QgnTL22tYw==}
@@ -2422,6 +2438,8 @@ packages:
       interface-store: 5.1.7
       multiformats: 13.0.1
       progress-events: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   /@helia/unixfs@3.0.0:
     resolution: {integrity: sha512-jguVr8823VHqpADroEilHOqS/GsZBlQcMsxnN4P4bqKw+DIPAqsCt56qdSXZgHEwyMB5UpYsPoX5pzaZ7NpB7A==}
@@ -2610,13 +2628,13 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@lassi-js/kili@0.3.6(@constl/ipa@0.9.26-434f466bd.0):
+  /@lassi-js/kili@0.3.6(@constl/ipa@0.9.26-fd39d6da4.0):
     resolution: {integrity: sha512-tahzK8iaCfg/sNAqbZKnow5W1PoQDXiTBXvFkTUqwn6zPbbvY/a8L6kDWm6ZwWqWQ4VupqC59kMSslLgGuNOAA==}
     peerDependencies:
       '@constl/ipa': ^0.9.15
     dependencies:
       '@achingbrain/nat-port-mapper': 1.0.8
-      '@constl/ipa': 0.9.26-434f466bd.0(react-native@0.73.3)(wrtc@0.4.7)
+      '@constl/ipa': 0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7)
       '@constl/utils-ipa': 0.2.4
       '@orbitdb/core': 1.0.2
       deepcopy: 2.1.0
@@ -2704,6 +2722,8 @@ packages:
       protons-runtime: 5.2.2
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/crypto@4.0.1:
     resolution: {integrity: sha512-lKGbX8TvQt4JbqlttdexEz2VtYJnTwY31kVBDQviwt0pMF+6Uy2hzNnEQ1FHZBwnow8BIlyb6UevHfgyOFlnkw==}
@@ -2977,12 +2997,16 @@ packages:
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/peer-collections@5.1.5:
     resolution: {integrity: sha512-/9VisdPC7+15n/0XntjGCzJ2Ky/zZnqdnuLNEwdu2LuTCbWTaqItG36ecgcVdO9L/V4mELwgY5XCjZKBDrYgjA==}
     dependencies:
       '@libp2p/interface': 1.1.2
       '@libp2p/peer-id': 4.0.5
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/peer-id-factory@4.0.5:
     resolution: {integrity: sha512-9fy1TCiBViqIFuoFzW/o9fVh3j600IYDHaXUqvx6HQFeB/dEM8utRU4FxVZVv/MMcKfUf7mydHXVHRyp28uG8w==}
@@ -3011,6 +3035,8 @@ packages:
       '@libp2p/interface': 1.1.2
       multiformats: 13.0.1
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/peer-record@7.0.7:
     resolution: {integrity: sha512-RsggFJVAWQBA2z+ZJsK5nKHDKLmSd89IhFiE5GyImedQFiMkJz/gDFROzfNF2NdOyEBNdRy5SmC9scNFRQQD9A==}
@@ -3579,6 +3605,8 @@ packages:
       p-queue: 8.0.1
       timeout-abort-controller: 3.0.0
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@orbitdb/feed-db@1.0.0(react-native@0.73.3):
     resolution: {integrity: sha512-5wD8fNCwJcsQ+YSbG8J3b0WUSGU1oKkaI8r1nUwflXm9oHOtFoexY+Bq5DCgDvcbB7YBpvQpAX4KejlEu52ZwQ==}
@@ -7169,13 +7197,13 @@ packages:
     dependencies:
       once: 1.4.0
 
-  /ennikkai@2.2.5(@constl/ipa@0.9.26-434f466bd.0):
+  /ennikkai@2.2.5(@constl/ipa@0.9.26-fd39d6da4.0):
     resolution: {integrity: sha512-zzyBrfQlzTJKv9OhzdC4+QbqIaqOsmjsJf4lxqGF6PSuDaPDJewKSUOEcE90sOU3rcMWE9IFtxwgCq+Jw4t7lA==}
     peerDependencies:
       '@constl/ipa': ^0.9.6
     dependencies:
-      '@constl/ipa': 0.9.26-434f466bd.0(react-native@0.73.3)(wrtc@0.4.7)
-      '@lassi-js/kili': 0.3.6(@constl/ipa@0.9.26-434f466bd.0)
+      '@constl/ipa': 0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7)
+      '@lassi-js/kili': 0.3.6(@constl/ipa@0.9.26-fd39d6da4.0)
       deepmerge: 4.3.1
       events: 3.3.0
     transitivePeerDependencies:
@@ -15724,7 +15752,7 @@ packages:
   /wide-align@1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 4.2.3
+      string-width: 1.0.2
     dev: true
 
   /winston@2.4.7:

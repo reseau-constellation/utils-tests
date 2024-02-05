@@ -1,18 +1,24 @@
+import type { ClientConstellation } from "@constl/ipa";
 import { expect } from "aegir/chai";
 
-import { créerConstellationsTest } from "@/constellation.js";
-import type { ClientConstellation } from "@constl/ipa";
+import { créerConstellation } from "@constl/ipa";
 
-describe("Créer Constellations", function () {
+import { créerConstellationsTest } from "@/constellation.js";
+
+describe.only("Créer Constellations", function () {
   let clients: ClientConstellation[];
-  let fOublier: () => Promise<void>;
+  let fOublier: (() => Promise<void>) | undefined;
 
   after(async () => {
     await fOublier?.();
   });
 
   it("Constellations créées", async () => {
-    ({ clients, fOublier } = await créerConstellationsTest({ n: 2 }));
+    ({ clients, fOublier } = await créerConstellationsTest({
+      n: 2,
+      créerConstellation,
+    }));
+
     const idsCompte = await Promise.all(clients.map((c) => c.obtIdCompte()));
     expect(idsCompte[0]).to.be.a("string");
     expect(idsCompte[1]).to.be.a("string");
@@ -20,9 +26,10 @@ describe("Créer Constellations", function () {
   });
 
   it("Constellations effacées", async () => {
-    await fOublier();
-    await clients[0].obtIdCompte();
-    expect(clients[0].obtIdCompte).to.be.rejected;
-    expect(clients[1].obtIdCompte).to.be.rejected;
+    await fOublier?.();
+    fOublier = undefined;
+
+    expect(clients[0].obtIdCompte()).to.be.rejected();
+    expect(clients[1].obtIdCompte()).to.be.rejected();
   });
 });

@@ -39,6 +39,8 @@ const esbuild = {
     "rimraf",
     "stream",
     "electron",
+    "net",
+    "env-paths",
   ],
 };
 
