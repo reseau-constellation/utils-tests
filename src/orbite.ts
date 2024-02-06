@@ -36,6 +36,8 @@ import { once } from "events";
 
 import { dossierTempo } from "@/dossiers.js";
 import { connecterPairs } from "@/sfip.js";
+import { isNode } from "wherearewe/dist/src";
+import { isElectronMain } from "wherearewe/dist/src";
 
 const OrbitDBQuickstart = await import("@orbitdb/quickstart");
 const { startOrbitDB, stopOrbitDB } = OrbitDBQuickstart;
@@ -73,7 +75,14 @@ export const créerOrbiteTest = async ({
   const fOublier = async () => {
     await Promise.all(orbites.map(stopOrbitDB));
 
-    fEffacerRacineDossierOrbite();
+    try {
+      fEffacerRacineDossierOrbite();
+    } catch (e) {
+      // Sur Windows, parfois les fichiers de Hélia sont encore en utilisation
+      if (!(isNode || isElectronMain && process.platform === "win32")) {
+        throw e
+      }
+    }
   };
   return { orbites, fOublier };
 };
