@@ -10,7 +10,10 @@ on:
 jobs:
   test-ipa-nodejs:
     name: IPA sur Node.js
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       
       - name: Ouvrir la branche
@@ -41,7 +44,10 @@ jobs:
   
   test-ipa-navig:
     name: IPA sur le navigateur
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       
       - name: Ouvrir la branche
@@ -72,7 +78,10 @@ jobs:
 
   test-ipa-electron-principal:
     name: IPA sur Électron principal
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     needs: test-ipa-nodejs
     steps:
       
@@ -98,7 +107,13 @@ jobs:
 
       - name: Vérifier les tests
         # De cawa-93/vite-electron-builder
+        if: matrix.os == 'ubuntu-latest'
         run: xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- pnpm run test:électron-principal
+
+      - name: Vérifier les tests
+        # De cawa-93/vite-electron-builder
+        if: matrix.os != 'ubuntu-latest'
+        run: pnpm run test:électron-principal
 
       - name: Envoyer couverure à Codecov
         uses: codecov/codecov-action@v3
