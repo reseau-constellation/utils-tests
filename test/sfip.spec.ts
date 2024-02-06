@@ -16,7 +16,11 @@ describe("Créer Hélia", function () {
   });
   after(async () => {
     await Promise.all(fsOublier.map((f) => f()));
-    fEffacer?.();
+    try {
+      fEffacer?.();
+    } catch (e) {
+      console.error(e)
+    }
   });
   it("Hélia créée", async () => {
     const sfip = await créerHéliaTest();
