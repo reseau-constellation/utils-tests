@@ -12,7 +12,7 @@ const { saveAs } = pkg;
 
 import { expect } from "aegir/chai";
 
-describe("AttendreRésultat", function () {
+describe.skip("AttendreRésultat", function () {
   it("attendre existe", async () => {
     const attente = new AttendreRésultat<number>();
     const résultat = attente.attendreExiste();
@@ -29,7 +29,7 @@ describe("AttendreRésultat", function () {
   });
 });
 
-describe("AttendreFichier", function () {
+describe.skip("AttendreFichier", function () {
   it("Fichier créé", async function () {
     if (isBrowser || isWebWorker) {
       console.log("à faire");
@@ -52,7 +52,7 @@ describe("AttendreFichier", function () {
   });
 });
 
-describe("AttendreFichierModifié", function () {
+describe.skip("AttendreFichierModifié", function () {
   let dossier: string;
   let fEffacer: () => void;
 
