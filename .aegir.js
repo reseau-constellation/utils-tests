@@ -1,5 +1,10 @@
 import { createRequire } from "module";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
+import { $ } from "execa";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 
 // https://github.com/node-webrtc/node-webrtc/issues/636#issuecomment-774171409
@@ -7,6 +12,8 @@ process.on("beforeExit", (code) => process.exit(code));
 
 // https://github.com/ipfs/aegir/blob/master/md/migration-to-v31.md
 const esbuild = {
+  // this will inject all the named exports from 'node-globals.js' as globals
+  inject: [path.join(__dirname, "./scripts/node-globals.js")],
   plugins: [
     {
       name: "node built ins",
@@ -39,14 +46,17 @@ const esbuild = {
     "rimraf",
     "stream",
     "electron",
-    "net",
     "env-paths",
+    "@libp2p/tcp",
   ],
 };
 
 /** @type {import('aegir').PartialOptions} */
 const options = {
   test: {
+    before: async (opts) => {
+      $`node test/utils/relai.js &`;
+    },
     browser: {
       config: {
         buildConfig: esbuild,
