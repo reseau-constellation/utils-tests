@@ -39,8 +39,6 @@ export const créerConstellationsTest = async <
   }
 
   const fOublier = async () => {
-    // if (isBrowser) return; // Mystère et boule de gomme !!
-
     await Promise.all(
       clients.map((client) => (client as ClientConstellation).fermer()),
     );
