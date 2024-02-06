@@ -12,7 +12,7 @@ const { saveAs } = pkg;
 
 import { expect } from "aegir/chai";
 
-describe.skip("AttendreRésultat", function () {
+describe("AttendreRésultat", function () {
   it("attendre existe", async () => {
     const attente = new AttendreRésultat<number>();
     const résultat = attente.attendreExiste();
@@ -29,7 +29,7 @@ describe.skip("AttendreRésultat", function () {
   });
 });
 
-describe.skip("AttendreFichier", function () {
+describe("AttendreFichier", function () {
   it("Fichier créé", async function () {
     if (isBrowser || isWebWorker) {
       console.log("à faire");

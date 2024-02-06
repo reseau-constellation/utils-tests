@@ -2,7 +2,7 @@ import { expect } from "aegir/chai";
 import { isNode, isElectronMain } from "wherearewe";
 import { dossierTempo } from "@/dossiers.js";
 
-describe.skip("Dossier temporaire", function () {
+describe("Dossier temporaire", function () {
   let dossier: string;
   let fEffacer: () => void;
 

@@ -5,7 +5,7 @@ import { créerConstellation } from "@constl/ipa";
 
 import { créerConstellationsTest } from "@/constellation.js";
 
-describe.skip("Créer Constellations", function () {
+describe("Créer Constellations", function () {
   let clients: ClientConstellation[];
   let fOublier: (() => Promise<void>) | undefined;
 

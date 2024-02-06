@@ -60,7 +60,6 @@ const options = {
     },
     after: async (_, avant) => {
       avant.relai.kill();
-      console.log(avant.relai)
     },
     browser: {
       config: {
