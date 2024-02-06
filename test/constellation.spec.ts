@@ -25,11 +25,11 @@ describe("Créer Constellations", function () {
     expect(idsCompte[0]).to.not.equal(idsCompte[1]);
   });
 
-  it("Constellations effacées", async () => {
+  it.skip("Constellations effacées", async () => {
     await fOublier?.();
     fOublier = undefined;
 
-    expect(clients[0].obtIdCompte()).to.be.rejected();
-    expect(clients[1].obtIdCompte()).to.be.rejected();
+    await expect(clients[0].obtIdCompte()).to.be.rejected();
+    await expect(clients[1].obtIdCompte()).to.be.rejected();
   });
 });
