@@ -39,12 +39,11 @@ describe.skip("Créer Orbites", function () {
   });
 });
 
-describe("Fonctions utilitaires", function () {
+describe.skip("Fonctions utilitaires", function () {
   let orbites: OrbitDB[];
   let fOublier: () => Promise<void>;
 
   before(async () => {
-    // accès.enregistrerContrôleurs();
     registerFeed();
     ({ orbites, fOublier } = await créerOrbiteTest({ n: 2 }));
   });

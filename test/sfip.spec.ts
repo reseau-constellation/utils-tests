@@ -19,7 +19,7 @@ describe.skip("Créer Hélia", function () {
     try {
       fEffacer?.();
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
   });
   it("Hélia créée", async () => {
