@@ -14,7 +14,7 @@ import {
   peutÉcrire,
 } from "@/orbite.js";
 
-describe.skip("Créer Orbites", function () {
+describe("Créer Orbites", function () {
   let orbites: OrbitDB[];
   let fOublier: () => Promise<void>;
 
