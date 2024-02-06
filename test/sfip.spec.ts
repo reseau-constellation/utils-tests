@@ -8,7 +8,8 @@ import { dossierTempo } from "@/dossiers.js";
 describe("Créer Hélia", function () {
   let dossier: string;
   let fEffacer: () => void;
-  let fsOublier: (() => Promise<void>)[];
+
+  const fsOublier: (() => Promise<void>)[] = [];
 
   before(async () => {
     ({ dossier, fEffacer } = await dossierTempo());
