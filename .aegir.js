@@ -55,7 +55,12 @@ const esbuild = {
 const options = {
   test: {
     before: async (opts) => {
-      $`node test/utils/relai.js &`;
+      const relai = $`node test/utils/relai.js &`;
+      return { relai };
+    },
+    after: async (_, avant) => {
+      avant.relai.kill();
+      console.log(avant.relai)
     },
     browser: {
       config: {
