@@ -37,7 +37,7 @@ jobs:
         run: pnpm test:node
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
   
   test-ipa-navig:
     name: IPA sur le navigateur
@@ -68,7 +68,7 @@ jobs:
         run: pnpm test:navig
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
 
   test-ipa-electron-principal:
     name: IPA sur Électron principal
@@ -107,4 +107,4 @@ jobs:
         run: pnpm run test:électron-principal
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
