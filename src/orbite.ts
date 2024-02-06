@@ -55,8 +55,6 @@ export const créerOrbiteTest = async ({
     fEffacer: fEffacerRacineDossierOrbite,
   } = await dossierTempo();
 
-  fEffacerRacineDossierOrbite();
-
   const _générer = async (i: number): Promise<void> => {
     const racineDossier = `${racineDossierOrbite}/${i}`;
     const orbite = await startOrbitDB({
