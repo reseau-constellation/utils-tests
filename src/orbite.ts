@@ -77,7 +77,10 @@ export const créerOrbiteTest = async ({
       fEffacerRacineDossierOrbite();
     } catch (e) {
       // Sur Windows, parfois les fichiers de Hélia sont encore en utilisation
-      if (!(isNode || isElectronMain && process.platform === "win32")) {
+      if ((isNode || isElectronMain) && process.platform === "win32") {
+        console.log("On ignore ça sur Windows\n", e)
+        return
+      } else {
         throw e
       }
     }
