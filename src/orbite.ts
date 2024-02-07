@@ -36,8 +36,7 @@ import { once } from "events";
 
 import { dossierTempo } from "@/dossiers.js";
 import { connecterPairs } from "@/sfip.js";
-import { isNode } from "wherearewe/dist/src";
-import { isElectronMain } from "wherearewe/dist/src";
+import { isNode, isElectronMain } from "wherearewe";
 
 const OrbitDBQuickstart = await import("@orbitdb/quickstart");
 const { startOrbitDB, stopOrbitDB } = OrbitDBQuickstart;
