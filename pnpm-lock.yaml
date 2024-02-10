@@ -47,8 +47,8 @@ dependencies:
 
 devDependencies:
   '@chainsafe/libp2p-gossipsub':
-    specifier: ^11.2.0
-    version: 11.2.0
+    specifier: ^12.0.0
+    version: 12.0.0
   '@chainsafe/libp2p-noise':
     specifier: ^15.0.0
     version: 15.0.0
@@ -1627,6 +1627,28 @@ packages:
       uint8arrays: 5.0.1
     transitivePeerDependencies:
       - supports-color
+
+  /@chainsafe/libp2p-gossipsub@12.0.0:
+    resolution: {integrity: sha512-ZuVIvzZjUaZXSPG6Ni9veVBLkZ4OkVp3zc3E8Y5EG/iIUSNVbHLFxweb3HuA12e3lIXLLurvy4vDyGWp4FpKow==}
+    engines: {npm: '>=8.7.0'}
+    dependencies:
+      '@libp2p/crypto': 4.0.1
+      '@libp2p/interface': 1.1.2
+      '@libp2p/interface-internal': 1.0.7
+      '@libp2p/peer-id': 4.0.5
+      '@libp2p/pubsub': 9.0.8
+      '@multiformats/multiaddr': 12.1.14
+      denque: 2.1.0
+      it-length-prefixed: 9.0.4
+      it-pipe: 3.0.1
+      it-pushable: 3.2.3
+      multiformats: 13.0.1
+      protons-runtime: 5.4.0
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@chainsafe/libp2p-noise@14.1.0:
     resolution: {integrity: sha512-uHmptoxgMsfDIP7cQMQ4Zp9+y27oON5+gloBLXi+7EJpMhyvo7tjafUxRILwLofzeAtfaF3ZHraoXRFUSbhK2Q==}
