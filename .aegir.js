@@ -48,6 +48,7 @@ const esbuild = {
     "electron",
     "env-paths",
     "@libp2p/tcp",
+    "@libp2p/mdns",
   ],
 };
 
