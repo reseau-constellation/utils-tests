@@ -65,7 +65,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "execa": "^8.0.1",
-    "file-saver": "^2.0.5",
     "keys": "link:@libp2p/crypto/keys",
     "mocha": "^10.3.0",
     "os-browserify": "^0.3.0",

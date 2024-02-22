@@ -6,9 +6,7 @@ import {
 import { dossierTempo } from "@/dossiers.js";
 
 import { isBrowser, isWebWorker } from "wherearewe";
-import pkg from "file-saver";
 import { join } from "path";
-const { saveAs } = pkg;
 
 import { expect } from "aegir/chai";
 
@@ -32,13 +30,7 @@ describe("AttendreRésultat", function () {
 describe("AttendreFichier", function () {
   it("Fichier créé", async function () {
     if (isBrowser || isWebWorker) {
-      console.log("à faire");
       this.skip();
-      const attente = new AttendreFichierExiste("téléchargement.txt");
-      const résultat = attente.attendre();
-      const blob = new Blob(["Salut !"], { type: "text/plain;charset=utf-8" });
-      saveAs(blob, "téléchargement.txt");
-      await résultat;
     } else {
       const { dossier, fEffacer } = await dossierTempo();
       const fichier = join(dossier, "téléchargement.txt");
@@ -52,7 +44,7 @@ describe("AttendreFichier", function () {
   });
 });
 
-describe.skip("AttendreFichierModifié", function () {
+describe("AttendreFichierModifié", function () {
   let dossier: string;
   let fEffacer: () => void;
 
@@ -63,28 +55,27 @@ describe.skip("AttendreFichierModifié", function () {
     fEffacer?.();
   });
 
-  it("Fichier créé", async () => {
-    if (!(isBrowser || isWebWorker)) {
-      const fichier = join(dossier, "création.txt");
-      const { writeFileSync } = await import("fs");
-      const attente = new AttendreFichierModifié(fichier);
-      const résultat = attente.attendre(Date.now());
-      await new Promise<void>((résoudre) => setTimeout(résoudre, 100)); // Parfois nécessaire
-      writeFileSync(fichier, "Salut !");
-      await résultat;
-    }
+  it("Fichier créé", async function () {
+    if (isBrowser || isWebWorker) this.skip();
+
+    const fichier = join(dossier, "création.txt");
+    const { writeFileSync } = await import("fs");
+    const attente = new AttendreFichierModifié(fichier);
+    const résultat = attente.attendre(Date.now());
+    await new Promise<void>((résoudre) => setTimeout(résoudre, 100)); // Parfois nécessaire
+    writeFileSync(fichier, "Salut !");
+    await résultat;
   });
 
-  it("Fichier modifié après création", async () => {
-    if (!(isBrowser || isWebWorker)) {
-      const fichier = join(dossier, "modification.txt");
-      const { writeFileSync } = await import("fs");
-      writeFileSync(fichier, "Salut !");
-      const attente = new AttendreFichierModifié(fichier);
-      const résultat = attente.attendre(Date.now());
-      await new Promise<void>((résoudre) => setTimeout(résoudre, 100)); // Parfois nécessaire
-      writeFileSync(fichier, "Rebonjour !");
-      await résultat;
-    }
+  it("Fichier modifié après création", async function () {
+    if (isBrowser || isWebWorker) this.skip();
+    const fichier = join(dossier, "modification.txt");
+    const { writeFileSync } = await import("fs");
+    writeFileSync(fichier, "Salut !");
+    const attente = new AttendreFichierModifié(fichier);
+    const résultat = attente.attendre(Date.now());
+    await new Promise<void>((résoudre) => setTimeout(résoudre, 100)); // Parfois nécessaire
+    writeFileSync(fichier, "Rebonjour !");
+    await résultat;
   });
 });
