@@ -1,4 +1,5 @@
 import type { GossipSub } from "@chainsafe/libp2p-gossipsub";
+import type { Multiaddr } from "@multiformats/multiaddr";
 
 import { createHelia, type Helia } from "helia";
 import { bitswap } from "@helia/block-brokers";
@@ -7,7 +8,6 @@ import { MemoryBlockstore } from "blockstore-core";
 import { LevelBlockstore } from "blockstore-level";
 import { multiaddr } from "@multiformats/multiaddr";
 import { WebRTC } from "@multiformats/multiaddr-matcher";
-import type { Multiaddr } from "@multiformats/multiaddr";
 
 import { isBrowser, isElectronRenderer } from "wherearewe";
 
@@ -90,4 +90,10 @@ export const toutesConnectées = async (sfips: Helia[]) => {
     }
     connectés.push(sfip);
   }
+};
+
+export const lancerRelai = async () => {
+  const { $ } = await import("execa");
+  const relai = $`node test/utils/relai.js &`;
+  return () => relai.kill();
 };
