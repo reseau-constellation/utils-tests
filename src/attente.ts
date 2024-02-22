@@ -1,7 +1,6 @@
 import { EventEmitter } from "events";
 import { v4 as uuidv4 } from "uuid";
-import { isWebWorker } from "wherearewe";
-import { isBrowser } from "wherearewe";
+import { isBrowser, isWebWorker } from "wherearewe";
 import type { Download } from "playwright";
 
 export class AttendreRésultat<T> {
@@ -59,20 +58,11 @@ export class AttendreFichierExiste extends EventEmitter {
   constructor(fichier: string) {
     super();
     this.fichier = fichier;
-    if (isBrowser || isWebWorker)
-      this.attenteTéléchargement = page.waitForEvent("download");
   }
 
   async attendre(): Promise<void> {
     if (isBrowser || isWebWorker) {
-      const téléchargement = await this.attenteTéléchargement;
-      if (!téléchargement) throw new Error("Erreur d'initialisation.");
-      const fichier = await téléchargement.path();
-      if (fichier === this.fichier) return;
-      else
-        throw new Error(
-          `Fichier téléchargé a le nom ${fichier}, et non pas ${this.fichier}.`,
-        );
+      throw new Error("Test non disponible dans le navigateur.");
     } else {
       const chokidar = await import("chokidar");
       const fs = await import("fs");
