@@ -13,14 +13,13 @@
     "nettoyer": "rimraf dist",
     "compiler": "pnpm versioner && pnpm formatter && pnpm nettoyer && pnpm tspc -p tsconfig.build.json",
     "test:node": "pnpm compiler && pnpm aegir test -t node --cov -- --exit",
-    "test:navig": "pnpm compiler && pnpm webrtc && pnpm aegir test -t browser --cov",
+    "test:navig": "pnpm compiler && pnpm aegir test -t browser --cov",
     "test:électron-principal": "pnpm compiler && pnpm aegir test -t electron-main --cov",
-    "test:électron-rendu": "pnpm compiler && pnpm webrtc && pnpm aegir test -t electron-renderer --cov",
+    "test:électron-rendu": "pnpm compiler && pnpm aegir test -t electron-renderer --cov",
     "test": "pnpm test:node && pnpm test:navig",
     "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint --ext .js,.ts src",
     "publier": "pnpm versioner && pnpm compiler && (git commit -a -m 'version' || true) && pnpm publish",
-    "versioner": "pnpm genversion  --es6 --semi src/version.ts",
-    "webrtc": "node ./test/utils/relai.js &"
+    "versioner": "pnpm genversion  --es6 --semi src/version.ts"
   },
   "watch": {
     "build": {
@@ -91,6 +90,7 @@
     "genversion": "^3.2.0",
     "helia": "^3.0.1",
     "libp2p": "^1.2.3",
+    "read-package-up": "^11.0.0",
     "rimraf": "^5.0.5",
     "uint8arrays": "^5.0.2",
     "uuid": "^9.0.1",

@@ -92,8 +92,22 @@ export const toutesConnectées = async (sfips: Helia[]) => {
   }
 };
 
+export const constObtFichierRelai = async (): Promise<string> => {
+  const path = await import("path");
+  const url = await import("url");
+  const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+  const fichierRelai = path.join(__dirname, "./scripts/relai.js");
+  return fichierRelai;
+};
+
 export const lancerRelai = async () => {
   const { $ } = await import("execa");
-  const relai = $`node test/utils/relai.js &`;
+  const fichierRelai = await constObtFichierRelai();
+
+  const relai = $`node ${fichierRelai} &`;
   return () => relai.kill();
 };
+
+export const adresseRelai =
+  "/ip4/127.0.0.1/tcp/12345/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";

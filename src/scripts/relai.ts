@@ -45,7 +45,7 @@ const encoded = uint8ArrayFromString(relayPrivKey, "hex");
 const privateKey = await unmarshalPrivateKey(encoded);
 const peerId = await createFromPrivKey(privateKey);
 
-const server = await createLibp2p({
+const relai = await createLibp2p({
   peerId,
   addresses: {
     listen: ["/ip4/0.0.0.0/tcp/12345/ws"],
@@ -69,18 +69,18 @@ const server = await createLibp2p({
   },
 });
 
-server.addEventListener("peer:connect", async (event) => {
+relai.addEventListener("peer:connect", async (event) => {
   console.log("peer:connect", event.detail);
 });
 
-server.addEventListener("peer:disconnect", async (event) => {
+relai.addEventListener("peer:disconnect", async (event) => {
   console.log("peer:disconnect", event.detail);
-  server.peerStore.delete(event.detail);
+  relai.peerStore.delete(event.detail);
 });
 
-console.log(server.peerId.toString());
+console.log(relai.peerId.toString());
 console.log(
   "p2p addr: ",
-  server.getMultiaddrs().map((ma) => ma.toString()),
+  relai.getMultiaddrs().map((ma) => ma.toString()),
 );
-// generates a deterministic address: /ip4/127.0.0.1/tcp/33519/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE
+// generates a deterministic address: /ip4/127.0.0.1/tcp/12345/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE

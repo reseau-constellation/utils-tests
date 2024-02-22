@@ -1,4 +1,3 @@
-import type { ExecaChildProcess } from "execa";
 import type { PartialOptions } from "aegir";
 import type { BuildOptions } from "esbuild";
 
@@ -6,11 +5,10 @@ import { createRequire } from "module";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 
+import { lancerRelai } from "./sfip.js";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
-
-// https://github.com/node-webrtc/node-webrtc/issues/636#issuecomment-774171409
-process.on("beforeExit", (code) => process.exit(code));
 
 const esbuild: BuildOptions = {
   // this will inject all the named exports from 'node-globals.js' as globals
@@ -54,7 +52,7 @@ const esbuild: BuildOptions = {
   ],
 };
 type RetourAvant = {
-  relai?: ExecaChildProcess<string>;
+  relai?: () => void;
 };
 export const configÆgir: PartialOptions = {
   test: {
@@ -62,15 +60,14 @@ export const configÆgir: PartialOptions = {
     before: async (opts): Promise<RetourAvant> => {
       let relai = undefined;
       if (opts.target.includes("browser")) {
-        const { $ } = await import("execa");
-        relai = $`node test/utils/relai.js &`;
+        relai = await lancerRelai();
       }
 
       return { relai };
     },
     // @ts-expect-error Erreur types Ægir
     after: async (_opts, avant: RetourAvant) => {
-      avant.relai?.kill();
+      avant.relai?.();
     },
     browser: {
       config: {
