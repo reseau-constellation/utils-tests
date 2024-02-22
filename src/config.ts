@@ -45,6 +45,7 @@ export const obtConfigEsbuild = async (): Promise<BuildOptions> => {
       "zlib",
       "rimraf",
       "stream",
+      "module",
       "electron",
       "env-paths",
       "@libp2p/tcp",
