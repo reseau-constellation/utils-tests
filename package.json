@@ -1,5 +1,5 @@
 {
-  "version": "1.2.3",
+  "version": "1.2.4",
   "license": "AGPL-3.0-or-later",
   "name": "@constl/utils-tests",
   "author": "Julien Jean Malard-Adam",
@@ -32,10 +32,10 @@
     "postbuild": "./dist/**/*"
   },
   "devDependencies": {
-    "@chainsafe/libp2p-gossipsub": "^13.0.0",
+    "@chainsafe/libp2p-gossipsub": "^11.2.1",
     "@chainsafe/libp2p-noise": "^15.0.0",
     "@chainsafe/libp2p-yamux": "^6.0.2",
-    "@constl/ipa": "1.0.1",
+    "@constl/ipa": "1.0.2",
     "@libp2p/circuit-relay-v2": "^1.0.16",
     "@libp2p/crypto": "^4.0.3",
     "@libp2p/identify": "^1.0.15",
