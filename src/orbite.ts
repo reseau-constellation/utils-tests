@@ -168,7 +168,10 @@ export const peutÉcrire = async (
     } else {
       throw new Error(`Type de BD ${bd.type} non supporté par ce test.`);
     }
-  } catch {
-    return false;
+  } catch (e) {
+    if (e.toString().includes("is not allowed to write to the log")) {
+      return false;
+    }
+    throw e;
   }
 };
