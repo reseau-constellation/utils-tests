@@ -33,8 +33,8 @@ dependencies:
     specifier: ^3.2.0
     version: 3.2.0
   helia:
-    specifier: ^3.0.1
-    version: 3.0.1(react-native@0.73.5)
+    specifier: ^4.0.0
+    version: 4.0.2(react-native@0.73.5)
   libp2p:
     specifier: ^1.2.4
     version: 1.2.4
@@ -2380,6 +2380,27 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@helia/delegated-routing-v1-http-api-client@3.0.0:
+    resolution: {integrity: sha512-NQRG5djXKI0GcFx35JMKSQ92RscGOhER6ti66ExjreAffaO2/9vk2ZbAbfCoZnjyTnx66HWAgAyB4GDDTAeFLA==}
+    dependencies:
+      '@libp2p/interface': 1.1.4
+      '@libp2p/logger': 4.0.7
+      '@libp2p/peer-id': 4.0.7
+      '@multiformats/multiaddr': 12.1.14
+      any-signal: 4.1.1
+      browser-readablestream-to-it: 2.0.5
+      ipns: 9.0.0
+      it-first: 3.0.4
+      it-map: 3.0.5
+      it-ndjson: 1.0.5
+      multiformats: 13.1.0
+      p-defer: 4.0.0
+      p-queue: 8.0.1
+      uint8arrays: 5.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@helia/interface@3.0.1:
     resolution: {integrity: sha512-ibaiN0InfFVf8TNOKK+wzoLqlrWx/Crk/yY5o+DNRvgI4fdaJofHEaSyDvFR/amTVhdFHnOK+3Mbh+jGktWapQ==}
     dependencies:
@@ -2402,6 +2423,21 @@ packages:
       interface-store: 5.1.8
       multiformats: 13.1.0
       progress-events: 1.0.0
+
+  /@helia/routers@1.0.1:
+    resolution: {integrity: sha512-FHkliCcj6TfSJdTFNP61OW2Dtqxn8XBsZIsUUPxw1qsZLEFm33CcIXhF5NPalqyVrjC+y0fo/+OuNAwCNhE/sw==}
+    dependencies:
+      '@helia/delegated-routing-v1-http-api-client': 3.0.0
+      '@helia/interface': 4.0.1
+      '@libp2p/interface': 1.1.4
+      ipns: 9.0.0
+      it-first: 3.0.4
+      it-map: 3.0.5
+      multiformats: 13.1.0
+      uint8arrays: 5.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@helia/unixfs@3.0.1:
     resolution: {integrity: sha512-NgT0gk3oswUK+8IEnJDl6IGv5catSQq6IQ1VrO68ZBpJPpo49CyFCqN5CO8IC3QL3wi4JyJ0sTLXemMVkUsTVA==}
@@ -2429,6 +2465,35 @@ packages:
       - encoding
       - supports-color
     dev: true
+
+  /@helia/utils@0.0.2:
+    resolution: {integrity: sha512-910HndS3HM2kv+aD8SfLrQkPAw4ZWhipEkaEq/RSGJ8sIqG291cBhIkVTka8+pIDqwKe7mX1djrHL+kV2kJ6cQ==}
+    dependencies:
+      '@helia/interface': 4.0.1
+      '@ipld/dag-cbor': 9.2.0
+      '@ipld/dag-json': 10.2.0
+      '@ipld/dag-pb': 4.1.0
+      '@libp2p/interface': 1.1.4
+      '@libp2p/logger': 4.0.7
+      '@libp2p/peer-collections': 5.1.7
+      '@libp2p/utils': 5.2.6
+      any-signal: 4.1.1
+      blockstore-core: 4.4.0
+      cborg: 4.0.9
+      interface-blockstore: 5.2.10
+      interface-datastore: 8.2.11
+      interface-store: 5.1.8
+      it-drain: 3.0.5
+      it-filter: 3.0.4
+      it-foreach: 2.0.6
+      it-merge: 3.0.3
+      mortice: 3.0.4
+      multiformats: 13.1.0
+      progress-events: 1.0.0
+      uint8arrays: 5.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -2680,7 +2745,7 @@ packages:
       '@libp2p/interface': 1.1.4
       '@noble/curves': 1.3.0
       '@noble/hashes': 1.3.3
-      multiformats: 13.0.1
+      multiformats: 13.1.0
       node-forge: 1.3.1
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
@@ -9052,6 +9117,47 @@ packages:
       - supports-color
       - utf-8-validate
 
+  /helia@4.0.2(react-native@0.73.5):
+    resolution: {integrity: sha512-+UJYk+R6fsND6U8freK4Mifj5v3h09Lx3931cvf2ZWhSWBPyLAWTlsV7KxQaWktr70fzWBvRazx5pyRXAPYfLg==}
+    dependencies:
+      '@chainsafe/libp2p-noise': 15.0.0
+      '@chainsafe/libp2p-yamux': 6.0.2
+      '@helia/block-brokers': 2.0.2
+      '@helia/delegated-routing-v1-http-api-client': 3.0.0
+      '@helia/interface': 4.0.1
+      '@helia/routers': 1.0.1
+      '@helia/utils': 0.0.2
+      '@libp2p/autonat': 1.0.13
+      '@libp2p/bootstrap': 10.0.16
+      '@libp2p/circuit-relay-v2': 1.0.16
+      '@libp2p/dcutr': 1.0.13
+      '@libp2p/identify': 1.0.15
+      '@libp2p/interface': 1.1.4
+      '@libp2p/kad-dht': 12.0.8
+      '@libp2p/keychain': 4.0.9
+      '@libp2p/logger': 4.0.7
+      '@libp2p/mdns': 10.0.16
+      '@libp2p/mplex': 10.0.16
+      '@libp2p/ping': 1.0.12
+      '@libp2p/tcp': 9.0.16
+      '@libp2p/upnp-nat': 1.0.14
+      '@libp2p/webrtc': 4.0.20(react-native@0.73.5)
+      '@libp2p/websockets': 8.0.16
+      '@libp2p/webtransport': 4.0.20
+      blockstore-core: 4.4.0
+      datastore-core: 9.2.9
+      interface-blockstore: 5.2.10
+      interface-datastore: 8.2.11
+      ipns: 9.0.0
+      libp2p: 1.2.4
+      multiformats: 13.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - react-native
+      - supports-color
+      - utf-8-validate
+    dev: false
+
   /hermes-estree@0.15.0:
     resolution: {integrity: sha512-lLYvAd+6BnOqWdnNbP/Q8xfl8LOGw4wVjfrNd9Gt8eoFzhNBRVD95n4l2ksfMVOoxuVyegs85g83KS9QOsxbVQ==}
 
@@ -9462,6 +9568,25 @@ packages:
       uint8arrays: 5.0.2
     transitivePeerDependencies:
       - supports-color
+
+  /ipns@9.0.0:
+    resolution: {integrity: sha512-z/C/SfikvR23y0rhUOxL+zF5nG8bKv9xcdEcL8iO1IEnSBa0Y2pzke22V9YXw1r4uZ7CWukRQTC68+XHRu8y5Q==}
+    dependencies:
+      '@libp2p/crypto': 4.0.3
+      '@libp2p/interface': 1.1.4
+      '@libp2p/logger': 4.0.7
+      '@libp2p/peer-id': 4.0.7
+      cborg: 4.0.9
+      err-code: 3.0.1
+      interface-datastore: 8.2.11
+      multiformats: 13.1.0
+      protons-runtime: 5.4.0
+      timestamp-nano: 1.0.1
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /irregular-plurals@3.5.0:
     resolution: {integrity: sha512-1ANGLZ+Nkv1ptFb2pa8oG8Lem4krflKuX/gINiHJHjJUKaJHk/SXk5x6K3J+39/p0h1RQ2saROclJJ+QLvETCQ==}
@@ -11941,9 +12066,6 @@ packages:
   /multiformats@12.1.3:
     resolution: {integrity: sha512-eajQ/ZH7qXZQR2AgtfpmSMizQzmyYVmCql7pdhldPuYQi4atACekbJaQplk6dWyIi10jCaFnd6pqvcEFXjbaJw==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
-
-  /multiformats@13.0.1:
-    resolution: {integrity: sha512-bt3R5iXe2O8xpp3wkmQhC73b/lC4S2ihU8Dndwcsysqbydqb8N+bpP116qMcClZ17g58iSIwtXUTcg2zT4sniA==}
 
   /multiformats@13.1.0:
     resolution: {integrity: sha512-HzdtdBwxsIkzpeXzhQ5mAhhuxcHbjEHH+JQoxt7hG/2HGFjjwyolLo7hbaexcnhoEuV4e0TNJ8kkpMjiEYY4VQ==}
