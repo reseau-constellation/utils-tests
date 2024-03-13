@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^6.0.2
     version: 6.0.2
   '@constl/ipa':
-    specifier: 1.0.2
-    version: 1.0.2(react-native@0.73.5)(wrtc@0.4.7)
+    specifier: 1.0.6
+    version: 1.0.6(react-native@0.73.5)(wrtc@0.4.7)
   '@libp2p/circuit-relay-v2':
     specifier: ^1.0.16
     version: 1.0.16
@@ -1722,8 +1722,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@constl/ipa@1.0.2(react-native@0.73.5)(wrtc@0.4.7):
-    resolution: {integrity: sha512-JeNfxMrObsyuCBvIXbP9t7+rvnUxQF0Vylxq7bn5jUZ+uDOkkgr2wu2NvKm9B798Aoo9HdAK6FZBDsGwV04APA==}
+  /@constl/ipa@1.0.6(react-native@0.73.5)(wrtc@0.4.7):
+    resolution: {integrity: sha512-MUeh3GBEzrbf7Z84aFLyMMCKEt9+gJ33/RHiobCJqSk0HvLFsQF6NBUTJOPdpGYTaxZ8fGbZ350OozrqWGjFoQ==}
     engines: {node: '>=20'}
     peerDependencies:
       wrtc: ^0.4.7
@@ -1738,7 +1738,7 @@ packages:
       '@helia/block-brokers': 2.0.2
       '@helia/unixfs': 3.0.1
       '@ipld/dag-cbor': 9.2.0
-      '@lassi-js/kili': 0.3.9(@constl/ipa@1.0.2)
+      '@lassi-js/kili': 0.3.9(@constl/ipa@1.0.6)
       '@libp2p/autonat': 1.0.13
       '@libp2p/bootstrap': 10.0.16
       '@libp2p/circuit-relay-v2': 1.0.16
@@ -1768,7 +1768,7 @@ packages:
       crypto-js: 4.2.0
       deep-equal: 2.2.3
       deepcopy: 2.1.0
-      ennikkai: 2.2.7(@constl/ipa@1.0.2)
+      ennikkai: 2.2.7(@constl/ipa@1.0.6)
       env-paths: 3.0.0
       events: 3.3.0
       genversion: 3.2.0
@@ -1782,6 +1782,7 @@ packages:
       merge-options: 3.0.4
       multiformats: 13.1.0
       node-pre-gyp: 0.17.0
+      platform: 1.3.6
       prom-client: 15.1.0
       ssim: 0.0.0
       tslib: 2.6.2
@@ -2592,12 +2593,12 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@lassi-js/kili@0.3.9(@constl/ipa@1.0.2):
+  /@lassi-js/kili@0.3.9(@constl/ipa@1.0.6):
     resolution: {integrity: sha512-/EnrM0HUOUwt/gMNUa4ExqETD4QhDFPd4tQsMmwxXx2f1tJkulbHuPQk+B5w0CgHf1Qj71bskTgWDY9R70/xJw==}
     peerDependencies:
       '@constl/ipa': 1.0.0
     dependencies:
-      '@constl/ipa': 1.0.2(react-native@0.73.5)(wrtc@0.4.7)
+      '@constl/ipa': 1.0.6(react-native@0.73.5)(wrtc@0.4.7)
       '@constl/utils-ipa': 1.0.0
       '@orbitdb/core': 2.1.0
       deepcopy: 2.1.0
@@ -7165,13 +7166,13 @@ packages:
     dependencies:
       once: 1.4.0
 
-  /ennikkai@2.2.7(@constl/ipa@1.0.2):
+  /ennikkai@2.2.7(@constl/ipa@1.0.6):
     resolution: {integrity: sha512-LfwBjW3IC4aOstvGLoHQ4rWeK9Y5OplHHfjsozbMbaplczn/kKnpXQ2gqZpfkZRYNOL5CSp9nYQb9XW5++nxFQ==}
     peerDependencies:
       '@constl/ipa': ^1.0.0
     dependencies:
-      '@constl/ipa': 1.0.2(react-native@0.73.5)(wrtc@0.4.7)
-      '@lassi-js/kili': 0.3.9(@constl/ipa@1.0.2)
+      '@constl/ipa': 1.0.6(react-native@0.73.5)(wrtc@0.4.7)
+      '@lassi-js/kili': 0.3.9(@constl/ipa@1.0.6)
       deepmerge: 4.3.1
       events: 3.3.0
     transitivePeerDependencies:
@@ -13115,6 +13116,10 @@ packages:
       find-up: 4.1.0
     dev: true
 
+  /platform@1.3.6:
+    resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
+    dev: true
+
   /playwright-core@1.41.1:
     resolution: {integrity: sha512-/KPO5DzXSMlxSX77wy+HihKGOunh3hqndhqeo/nMxfigiKzogn8kfL0ZBDu0L1RKgan5XHCPmn6zXd2NUJgjhg==}
     engines: {node: '>=16'}
@@ -15755,7 +15760,7 @@ packages:
   /wide-align@1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: true
 
   /winston@2.4.7:
