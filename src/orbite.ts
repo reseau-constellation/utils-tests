@@ -107,15 +107,15 @@ const attendreInvité = (
   accès: ContrôleurConstellation,
   idInvité: string,
 ): Promise<void> =>
-  new Promise<void>((resolve) => {
+  new Promise<void>((résoudre) => {
     const testAutorisé = async () => {
       const autorisé = await accès.estAutorisé(idInvité);
       if (autorisé) {
-        clearInterval(interval);
-        resolve();
+        résoudre();
+      } else {
+        setTimeout(testAutorisé, 100);
       }
     };
-    const interval = setInterval(testAutorisé, 100);
     testAutorisé();
   });
 

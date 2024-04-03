@@ -13,6 +13,7 @@ import {
   créerOrbiteTest,
   peutÉcrire,
 } from "@/orbite.js";
+import { accès } from "@constl/ipa";
 
 describe("Créer Orbites", function () {
   let orbites: OrbitDB[];
@@ -45,6 +46,7 @@ describe("Fonctions utilitaires", function () {
 
   before(async () => {
     registerFeed();
+    accès.enregistrerContrôleurs();
     ({ orbites, fOublier } = await créerOrbiteTest({ n: 2 }));
   });
 
@@ -95,23 +97,26 @@ describe("Fonctions utilitaires", function () {
     expect(accèsAvant).to.be.false();
   });
 
-  it.skip("Accès écriture attente invité", async () => {
+  it("Accès écriture attente invité", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
-      // accès: accès.cntrlConstellation.default,
+      AccessController: accès.cntrlConstellation.ContrôleurConstellation({
+        write: orbites[0].identity.id,
+      }),
     })) as unknown as KeyValueStoreTypé<{ [clef: string]: number }>;
+
     const bdSurOrbite2 = (await orbites[1].open(
       bd.address,
     )) as unknown as KeyValueStoreTypé<{ [clef: string]: number }>;
 
     const accèsCréateur = await peutÉcrire(bd, orbites[0]);
-    expect(accèsCréateur).to.be.false();
+    expect(accèsCréateur).to.be.true();
 
     const accèsAutreOrbite = peutÉcrire(bdSurOrbite2, orbites[1]);
     await (bd.access as unknown as ContrôleurConstellation).grant(
       "MEMBRE",
-      orbites[1].id,
+      orbites[1].identity.id,
     );
-    expect(accèsAutreOrbite).to.be.true();
+    expect(await accèsAutreOrbite).to.be.true();
   });
 });
