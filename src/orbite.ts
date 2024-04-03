@@ -37,6 +37,7 @@ import { once } from "events";
 import { dossierTempo } from "@/dossiers.js";
 import { connecterPairs } from "@/sfip.js";
 import { isNode, isElectronMain } from "wherearewe";
+import { orbite as orbite_ } from "@constl/ipa";
 
 const OrbitDBQuickstart = await import("@orbitdb/quickstart");
 const { startOrbitDB, stopOrbitDB } = OrbitDBQuickstart;
@@ -53,6 +54,8 @@ export const créerOrbiteTest = async ({
     dossier: racineDossierOrbite,
     fEffacer: fEffacerRacineDossierOrbite,
   } = await dossierTempo();
+
+  orbite_.préparerOrbite();
 
   const _générer = async (i: number): Promise<void> => {
     const racineDossier = `${racineDossierOrbite}/${i}`;
