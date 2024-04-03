@@ -52,7 +52,7 @@ describe("Fonctions utilitaires", function () {
     await fOublier?.();
   });
 
-  it.skip("Attendre syncronisation", async () => {
+  it("Attendre syncronisation", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
     })) as unknown as KeyValueStore;
@@ -60,9 +60,9 @@ describe("Fonctions utilitaires", function () {
       bd.address,
     )) as unknown as KeyValueStore;
     const attente = attendreSync(bdSurOrbite2);
-    bd.set("a", 1);
+    await bd.set("a", 1);
     await attente;
-    expect(bdSurOrbite2.get("a")).to.equal(1);
+    expect(await bdSurOrbite2.get("a")).to.equal(1);
   });
 
   it("Accès écriture KeyValue", async () => {

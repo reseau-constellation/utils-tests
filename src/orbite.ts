@@ -55,8 +55,6 @@ export const créerOrbiteTest = async ({
     fEffacer: fEffacerRacineDossierOrbite,
   } = await dossierTempo();
 
-  orbite_.préparerOrbite();
-
   const _générer = async (i: number): Promise<void> => {
     const racineDossier = `${racineDossierOrbite}/${i}`;
     const orbite = await startOrbitDB({
@@ -91,8 +89,7 @@ export const créerOrbiteTest = async ({
 };
 
 export const attendreSync = async (bd: Store): Promise<void> => {
-  const accèsBd = bd.access as unknown as ContrôleurConstellation;
-  await once(accèsBd.bd.events, "peer.exchanged");
+  await once(bd.events, "update");
 };
 
 export type ContrôleurConstellation = {
