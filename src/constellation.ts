@@ -1,8 +1,4 @@
-import {
-  type réseau,
-  type client,
-  type ClientConstellation,
-} from "@constl/ipa";
+import type { réseau, client, ClientConstellation } from "@constl/ipa";
 import { isBrowser } from "wherearewe";
 
 import { créerOrbiteTest } from "@/orbite.js";
