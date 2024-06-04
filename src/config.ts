@@ -32,6 +32,9 @@ export const obtConfigEsbuild = async (): Promise<BuildOptions> => {
           build.onResolve({ filter: /^node:process$/ }, () => {
             return { path: require.resolve("process/browser") };
           });
+          build.onResolve({ filter: /^node:url$/ }, () => {
+            return { path: require.resolve("url-polyfill") };
+          });
         },
       },
     ],
