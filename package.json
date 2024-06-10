@@ -38,7 +38,7 @@
     "@constl/ipa": "1.0.21",
     "@libp2p/circuit-relay-v2": "^1.0.24",
     "@libp2p/crypto": "^4.1.2",
-    "@libp2p/identify": "^1.0.21",
+    "@libp2p/identify": "^2.0.0",
     "@libp2p/peer-id-factory": "^4.1.2",
     "@libp2p/websockets": "^8.0.24",
     "@multiformats/multiaddr": "^12.2.3",
