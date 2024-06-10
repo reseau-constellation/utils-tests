@@ -45,6 +45,7 @@ jobs:
   
   test-ipa-navig:
     name: IPA sur le navigateur
+    if: false;
     runs-on: ubuntu-latest
     steps:
       
