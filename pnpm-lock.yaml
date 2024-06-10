@@ -59,6 +59,9 @@ importers:
       uint8arrays:
         specifier: ^5.1.0
         version: 5.1.0
+      url-polyfill:
+        specifier: ^1.1.12
+        version: 1.1.12
       uuid:
         specifier: ^9.0.1
         version: 9.0.1
@@ -192,9 +195,6 @@ importers:
       typescript-transform-paths:
         specifier: ^3.4.7
         version: 3.4.7(typescript@5.3.3)
-      url-polyfill:
-        specifier: ^1.1.12
-        version: 1.1.12
 
 packages:
 

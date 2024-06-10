@@ -73,8 +73,7 @@
     "tsconfig-paths": "^4.2.0",
     "tscpaths": "^0.0.9",
     "typescript": "5.3.3",
-    "typescript-transform-paths": "^3.4.7",
-    "url-polyfill": "^1.1.12"
+    "typescript-transform-paths": "^3.4.7"
   },
   "dependencies": {
     "@helia/block-brokers": "^1.0.0",
@@ -94,6 +93,7 @@
     "rimraf": "^5.0.7",
     "stream-browserify": "^3.0.0",
     "uint8arrays": "^5.1.0",
+    "url-polyfill": "^1.1.12",
     "uuid": "^9.0.1",
     "wherearewe": "^2.0.1"
   }
