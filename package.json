@@ -17,8 +17,8 @@
     "test:électron-principal": "pnpm compiler && pnpm aegir test -t electron-main --cov",
     "test:électron-rendu": "pnpm compiler && pnpm aegir test -t electron-renderer --cov",
     "test": "pnpm test:node && pnpm test:navig",
-    "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint --ext .js,.ts src",
-    "publier": "pnpm test && (git commit -a -m 'version' || true) && pnpm publish",
+    "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint src",
+    "publier": "pnpm formatter && pnpm test && (git commit -a -m 'version' || true) && pnpm publish",
     "versioner": "pnpm genversion  --es6 --semi src/version.ts"
   },
   "watch": {
@@ -36,6 +36,7 @@
     "@chainsafe/libp2p-noise": "^15.0.0",
     "@chainsafe/libp2p-yamux": "^6.0.2",
     "@constl/ipa": "1.0.21",
+    "@eslint/js": "^9.5.0",
     "@libp2p/circuit-relay-v2": "^1.0.24",
     "@libp2p/crypto": "^4.1.2",
     "@libp2p/identify": "^2.0.0",
@@ -56,7 +57,7 @@
     "core-js": "^3.37.1",
     "electron": "^31.0.0",
     "esbuild": "^0.20.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
@@ -73,6 +74,7 @@
     "tsconfig-paths": "^4.2.0",
     "tscpaths": "^0.0.9",
     "typescript": "5.4.5",
+    "typescript-eslint": "^7.13.1",
     "typescript-transform-paths": "^3.4.7"
   },
   "dependencies": {
