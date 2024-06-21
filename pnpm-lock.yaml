@@ -119,7 +119,7 @@ importers:
         version: 10.0.6
       '@types/node':
         specifier: ^20.14.1
-        version: 20.14.5
+        version: 20.14.7
       '@types/uuid':
         specifier: ^9.0.8
         version: 9.0.8
@@ -2535,9 +2535,6 @@ packages:
 
   '@types/node@18.19.38':
     resolution: {integrity: sha512-SApYXUF7si4JJ+lO2o6X60OPOnA6wPpbiB09GMCkQ+JAwpa9hxUVG8p7GzA08TKQn5OhzK57rj1wFj+185YsGg==}
-
-  '@types/node@20.14.5':
-    resolution: {integrity: sha512-aoRR+fJkZT2l0aGOJhuA8frnCSoNX6W7U2mpNq63+BxBIj5BQFt8rHy627kijCmm63ijdSdwvGgpUsU6MBsZZA==}
 
   '@types/node@20.14.7':
     resolution: {integrity: sha512-uTr2m2IbJJucF3KUxgnGOZvYbN0QgkGyWxG6973HCpMYFy2KfcgYuIwkJQMQkt1VbBMlvWRbpshFTLxnxCZjKQ==}
@@ -12262,7 +12259,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
       '@types/responselike': 1.0.3
 
   '@types/chai-as-promised@7.1.8':
@@ -12287,7 +12284,7 @@ snapshots:
 
   '@types/dns-packet@5.6.5':
     dependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
 
   '@types/eslint@8.56.10':
     dependencies:
@@ -12301,7 +12298,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
 
   '@types/http-cache-semantics@4.0.4': {}
 
@@ -12321,7 +12318,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
 
   '@types/lodash-es@4.17.12':
     dependencies:
@@ -12346,7 +12343,7 @@ snapshots:
   '@types/multicast-dns@7.2.4':
     dependencies:
       '@types/dns-packet': 5.6.5
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
 
   '@types/murmurhash3js-revisited@3.0.3': {}
 
@@ -12355,10 +12352,6 @@ snapshots:
       '@types/node': 20.14.7
 
   '@types/node@18.19.38':
-    dependencies:
-      undici-types: 5.26.5
-
-  '@types/node@20.14.5':
     dependencies:
       undici-types: 5.26.5
 
@@ -12372,7 +12365,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
 
   '@types/retry@0.12.0': {}
 
@@ -12398,7 +12391,7 @@ snapshots:
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -12412,7 +12405,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
     optional: true
 
   '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
@@ -12714,7 +12707,7 @@ snapshots:
       '@types/chai-string': 1.4.5
       '@types/chai-subset': 1.3.5
       '@types/mocha': 10.0.6
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@7.13.1(eslint@9.5.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       buffer: 6.0.3
       bytes: 3.1.2
@@ -12788,7 +12781,7 @@ snapshots:
       typedoc-plugin-mdn-links: 3.1.28(typedoc@0.25.13(typescript@5.4.5))
       typedoc-plugin-missing-exports: 2.2.0(typedoc@0.25.13(typescript@5.4.5))
       typescript: 5.4.5
-      typescript-docs-verifier: 2.5.0(@types/node@20.14.5)(typescript@5.4.5)
+      typescript-docs-verifier: 2.5.0(@types/node@20.14.7)(typescript@5.4.5)
       wherearewe: 2.0.1
       yargs: 17.7.2
       yargs-parser: 21.1.1
@@ -14160,7 +14153,7 @@ snapshots:
   electron@31.0.1:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -18356,7 +18349,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
       long: 5.2.3
 
   protons-runtime@5.4.0:
@@ -19484,14 +19477,14 @@ snapshots:
     dependencies:
       typescript: 5.4.5
 
-  ts-node@10.9.2(@types/node@20.14.5)(typescript@5.4.5):
+  ts-node@10.9.2(@types/node@20.14.7)(typescript@5.4.5):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.14.5
+      '@types/node': 20.14.7
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
@@ -19650,13 +19643,13 @@ snapshots:
       shiki: 0.14.7
       typescript: 5.4.5
 
-  typescript-docs-verifier@2.5.0(@types/node@20.14.5)(typescript@5.4.5):
+  typescript-docs-verifier@2.5.0(@types/node@20.14.7)(typescript@5.4.5):
     dependencies:
       chalk: 4.1.2
       fs-extra: 10.1.0
       ora: 5.4.1
       strip-ansi: 7.1.0
-      ts-node: 10.9.2(@types/node@20.14.5)(typescript@5.4.5)
+      ts-node: 10.9.2(@types/node@20.14.7)(typescript@5.4.5)
       tsconfig: 7.0.0
       typescript: 5.4.5
       yargs: 17.7.2
