@@ -95,7 +95,7 @@ importers:
         version: 2.0.3
       '@libp2p/peer-id-factory':
         specifier: ^4.1.2
-        version: 4.1.3
+        version: 4.1.4
       '@libp2p/websockets':
         specifier: ^8.0.24
         version: 8.0.24
@@ -1875,8 +1875,8 @@ packages:
   '@libp2p/peer-collections@5.2.3':
     resolution: {integrity: sha512-0gwsB+Tmlfv/oDpDRySmWydjTKnfapZFaagP+Gy6Eu/TMDUR/c5hdeYuFyOfFNV2azERyMKvLEhTvnYJ/c3S/g==}
 
-  '@libp2p/peer-id-factory@4.1.3':
-    resolution: {integrity: sha512-lTvVXUMN8gYWdLS2bimaUzzED/y+PyQj1JbdUigBFIvFrFlxM3+jPWdY/552UidjNR6zAApRI5DwmmrNGsyxjA==}
+  '@libp2p/peer-id-factory@4.1.4':
+    resolution: {integrity: sha512-9DibdM1adRyY2GSQmLNTVbJezCCU93tyQWJjHYGVTZp0+gcnDIPh7HQ+OGNHtcaebfeJxw8PrFul/hYKVk+JGQ==}
 
   '@libp2p/peer-id@3.0.6':
     resolution: {integrity: sha512-iN1Ia5gH2U1V/GOVRmLHmVY6fblxzrOPUoZrMYjHl/K4s+AiI7ym/527WDeQvhQpD7j3TfDwcAYforD2dLGpLw==}
@@ -1886,6 +1886,9 @@ packages:
 
   '@libp2p/peer-id@4.1.3':
     resolution: {integrity: sha512-VQxxuisVqd3n+CIohP1elDYb1JeDb+JrYp/fhfMpgWvP9gqrQSBRS4LOHWZhvkyJ79TmyOkjEHjgS0Poc0lduQ==}
+
+  '@libp2p/peer-id@4.1.4':
+    resolution: {integrity: sha512-EZAhYrvE8PNR1ImmuXPzJuTeojDFjDTWsVIgNLyDgnqsT0hZJ0FX0K/NYQoCTg9hynrsiRrm99uhWVA45K42AA==}
 
   '@libp2p/peer-record@7.0.19':
     resolution: {integrity: sha512-F4f6sqg5uaSFIHEoCs8GlfH6/RjBNN4d29TPGueexfK8Sp78v0jmOBCl0JkGsnh3CmLzZG/td9o7nQvmQHusbg==}
@@ -10154,7 +10157,7 @@ snapshots:
       '@chainsafe/as-sha256': 0.4.2
       '@libp2p/crypto': 3.0.4
       '@libp2p/interface': 1.4.0
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@noble/ciphers': 0.4.1
       '@noble/curves': 1.4.0
       '@noble/hashes': 1.4.0
@@ -10778,8 +10781,8 @@ snapshots:
     dependencies:
       '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.3
-      '@libp2p/peer-id': 4.1.3
-      '@libp2p/peer-id-factory': 4.1.3
+      '@libp2p/peer-id': 4.1.4
+      '@libp2p/peer-id-factory': 4.1.4
       '@libp2p/utils': 5.4.3
       '@multiformats/multiaddr': 12.3.0
       it-first: 3.0.6
@@ -10795,7 +10798,7 @@ snapshots:
   '@libp2p/bootstrap@10.0.24':
     dependencies:
       '@libp2p/interface': 1.5.0
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@multiformats/mafmt': 12.1.6
       '@multiformats/multiaddr': 12.3.0
 
@@ -10872,7 +10875,7 @@ snapshots:
     dependencies:
       '@libp2p/interface': 1.4.0
       '@libp2p/interface-internal': 1.2.3
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/peer-record': 7.0.19
       '@multiformats/multiaddr': 12.3.0
       '@multiformats/multiaddr-matcher': 1.2.4
@@ -11001,7 +11004,7 @@ snapshots:
       '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.3
       '@libp2p/peer-collections': 5.2.3
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/record': 4.0.2
       '@libp2p/utils': 5.4.3
       '@multiformats/multiaddr': 12.3.0
@@ -11034,7 +11037,7 @@ snapshots:
     dependencies:
       '@libp2p/crypto': 4.1.4
       '@libp2p/interface': 1.4.0
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       interface-datastore: 8.2.11
       merge-options: 3.0.4
       multiformats: 13.1.1
@@ -11085,7 +11088,7 @@ snapshots:
     dependencies:
       '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.3
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/utils': 5.4.3
       '@multiformats/multiaddr': 12.3.0
       '@types/multicast-dns': 7.2.4
@@ -11122,7 +11125,7 @@ snapshots:
   '@libp2p/peer-collections@5.2.2':
     dependencies:
       '@libp2p/interface': 1.4.0
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.2
       '@libp2p/utils': 5.4.3
     transitivePeerDependencies:
       - supports-color
@@ -11135,11 +11138,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@libp2p/peer-id-factory@4.1.3':
+  '@libp2p/peer-id-factory@4.1.4':
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.4.1
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/interface': 1.5.0
+      '@libp2p/peer-id': 4.1.4
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -11162,6 +11165,12 @@ snapshots:
       multiformats: 13.1.1
       uint8arrays: 5.1.0
 
+  '@libp2p/peer-id@4.1.4':
+    dependencies:
+      '@libp2p/interface': 1.5.0
+      multiformats: 13.1.1
+      uint8arrays: 5.1.0
+
   '@libp2p/peer-record@7.0.19':
     dependencies:
       '@libp2p/crypto': 4.1.4
@@ -11180,7 +11189,7 @@ snapshots:
     dependencies:
       '@libp2p/interface': 1.4.0
       '@libp2p/peer-collections': 5.2.2
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.2
       '@libp2p/peer-record': 7.0.19
       '@multiformats/multiaddr': 12.3.0
       interface-datastore: 8.2.11
@@ -11209,7 +11218,7 @@ snapshots:
     dependencies:
       '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.3
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@multiformats/multiaddr': 12.3.0
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
@@ -11320,7 +11329,7 @@ snapshots:
       '@chainsafe/libp2p-noise': 15.0.0
       '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.3
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/utils': 5.4.3
       '@multiformats/mafmt': 12.1.6
       '@multiformats/multiaddr': 12.3.0
@@ -11366,7 +11375,7 @@ snapshots:
     dependencies:
       '@chainsafe/libp2p-noise': 15.0.0
       '@libp2p/interface': 1.5.0
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/utils': 5.4.3
       '@multiformats/multiaddr': 12.3.0
       '@multiformats/multiaddr-matcher': 1.2.4
@@ -15843,7 +15852,7 @@ snapshots:
       '@libp2p/crypto': 4.1.4
       '@libp2p/interface': 1.4.0
       '@libp2p/logger': 4.0.14
-      '@libp2p/peer-id': 4.1.3
+      '@libp2p/peer-id': 4.1.4
       cborg: 4.2.0
       err-code: 3.0.1
       interface-datastore: 8.2.11
@@ -16563,7 +16572,7 @@ snapshots:
       '@libp2p/multistream-select': 5.1.10
       '@libp2p/peer-collections': 5.2.2
       '@libp2p/peer-id': 4.1.2
-      '@libp2p/peer-id-factory': 4.1.3
+      '@libp2p/peer-id-factory': 4.1.4
       '@libp2p/peer-store': 10.0.19
       '@libp2p/utils': 5.4.2
       '@multiformats/dns': 1.0.6
