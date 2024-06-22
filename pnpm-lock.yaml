@@ -79,8 +79,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
       '@constl/ipa':
-        specifier: 1.0.25
-        version: 1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
+        specifier: 1.0.26
+        version: 1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
       '@eslint/js':
         specifier: ^9.5.0
         version: 9.5.0
@@ -1310,8 +1310,8 @@ packages:
   '@constl/bohr-db@1.1.0':
     resolution: {integrity: sha512-7XT+jASK69Y+41dYuDEjaatKfv6CSpthf+d7YT7gGcd6tyd6VNryb06pD9imTyARXFSieAeV72LpRYMnSzP1hg==}
 
-  '@constl/ipa@1.0.25':
-    resolution: {integrity: sha512-xRVx2u1xXzdnA04ffZHux3HJpLTpU1ZFJtVA8jE/r5YlraZ5iho3KvTqlc9IHWkjG5yblGFpyv5CwBNdBRjb3w==}
+  '@constl/ipa@1.0.26':
+    resolution: {integrity: sha512-qhfNXZNEElkfU+Y+1xgyquk7eZvkn8xkZGSXhAuICBkDZBSp6sAGWLg3YXMHTjKhkhIkW/dzSTYn/yLO65+Qjw==}
     engines: {node: '>=20'}
 
   '@constl/mandataire@1.0.2':
@@ -8785,7 +8785,7 @@ snapshots:
   '@achingbrain/nat-port-mapper@1.0.13':
     dependencies:
       '@achingbrain/ssdp': 4.0.6
-      '@libp2p/logger': 4.0.13
+      '@libp2p/logger': 4.0.15
       default-gateway: 7.2.2
       err-code: 3.0.1
       it-first: 3.0.6
@@ -10153,7 +10153,7 @@ snapshots:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 0.4.2
       '@libp2p/crypto': 3.0.4
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/peer-id': 4.1.4
       '@noble/ciphers': 0.4.1
       '@noble/curves': 1.4.0
@@ -10225,7 +10225,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/ipa@1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))':
+  '@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 11.2.1
       '@chainsafe/libp2p-noise': 15.0.0
@@ -10237,7 +10237,7 @@ snapshots:
       '@helia/block-brokers': 1.0.0
       '@helia/unixfs': 3.0.6
       '@ipld/dag-cbor': 9.2.0
-      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))
+      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))
       '@libp2p/autonat': 1.0.21
       '@libp2p/bootstrap': 10.0.24
       '@libp2p/circuit-relay-v2': 1.1.0
@@ -10266,7 +10266,7 @@ snapshots:
       crypto-js: 4.2.0
       deep-equal: 2.2.3
       deepcopy: 2.1.0
-      ennikkai: 2.3.0(@constl/ipa@1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))
+      ennikkai: 2.3.0(@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))
       env-paths: 3.0.0
       events: 3.3.0
       file-saver: 2.0.5
@@ -10616,7 +10616,7 @@ snapshots:
       interface-blockstore: 5.2.10
       interface-datastore: 8.2.11
       interface-store: 5.1.8
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       progress-events: 1.0.0
 
   '@helia/unixfs@3.0.6':
@@ -10624,7 +10624,7 @@ snapshots:
       '@helia/interface': 4.3.0
       '@ipld/dag-pb': 4.1.1
       '@libp2p/interface': 1.5.0
-      '@libp2p/logger': 4.0.14
+      '@libp2p/logger': 4.0.15
       '@multiformats/murmur3': 2.1.8
       hamt-sharding: 3.0.6
       interface-blockstore: 5.2.10
@@ -10636,7 +10636,7 @@ snapshots:
       it-last: 3.0.6
       it-pipe: 3.0.1
       merge-options: 3.0.4
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       progress-events: 1.0.0
       sparse-array: 1.3.2
       uint8arrays: 5.1.0
@@ -10663,7 +10663,7 @@ snapshots:
   '@ipld/dag-cbor@9.2.0':
     dependencies:
       cborg: 4.2.0
-      multiformats: 13.1.0
+      multiformats: 13.1.1
 
   '@ipld/dag-json@10.2.1':
     dependencies:
@@ -10763,9 +10763,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@lassi-js/kili@0.3.14(@constl/ipa@1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))':
+  '@lassi-js/kili@0.3.14(@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))':
     dependencies:
-      '@constl/ipa': 1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
+      '@constl/ipa': 1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
       '@constl/utils-ipa': 1.0.0
       '@orbitdb/core': 2.2.0
       deepcopy: 2.1.0
@@ -10837,7 +10837,7 @@ snapshots:
       '@libp2p/interface': 1.5.0
       '@noble/curves': 1.4.0
       '@noble/hashes': 1.4.0
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       node-forge: 1.3.1
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
@@ -10870,7 +10870,7 @@ snapshots:
 
   '@libp2p/identify@1.0.21':
     dependencies:
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.4
       '@libp2p/peer-id': 4.1.4
       '@libp2p/peer-record': 7.0.20
@@ -11017,7 +11017,7 @@ snapshots:
       it-pipe: 3.0.1
       it-protobuf-stream: 1.1.4
       it-take: 3.0.6
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       p-defer: 4.0.1
       p-event: 6.0.1
       p-queue: 8.0.1
@@ -11033,7 +11033,7 @@ snapshots:
   '@libp2p/keychain@4.0.15':
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/peer-id': 4.1.4
       interface-datastore: 8.2.11
       merge-options: 3.0.4
@@ -11077,7 +11077,7 @@ snapshots:
       '@multiformats/multiaddr': 12.3.0
       debug: 4.3.5
       interface-datastore: 8.2.11
-      multiformats: 13.1.0
+      multiformats: 13.1.1
     transitivePeerDependencies:
       - supports-color
 
@@ -11106,7 +11106,7 @@ snapshots:
 
   '@libp2p/mplex@10.0.24':
     dependencies:
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/utils': 5.4.2
       it-pipe: 3.0.1
       it-pushable: 3.2.3
@@ -11119,7 +11119,7 @@ snapshots:
 
   '@libp2p/multistream-select@5.1.10':
     dependencies:
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       it-length-prefixed: 9.0.4
       it-length-prefixed-stream: 1.1.8
       it-stream-types: 2.0.1
@@ -11131,8 +11131,8 @@ snapshots:
 
   '@libp2p/peer-collections@5.2.2':
     dependencies:
-      '@libp2p/interface': 1.4.0
-      '@libp2p/peer-id': 4.1.2
+      '@libp2p/interface': 1.5.0
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/utils': 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -11188,9 +11188,9 @@ snapshots:
 
   '@libp2p/peer-store@10.0.19':
     dependencies:
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/peer-collections': 5.2.2
-      '@libp2p/peer-id': 4.1.2
+      '@libp2p/peer-id': 4.1.4
       '@libp2p/peer-record': 7.0.20
       '@multiformats/multiaddr': 12.3.0
       interface-datastore: 8.2.11
@@ -11206,7 +11206,7 @@ snapshots:
   '@libp2p/ping@1.0.19':
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.4
       '@multiformats/multiaddr': 12.3.0
       it-first: 3.0.6
@@ -11265,7 +11265,7 @@ snapshots:
   '@libp2p/upnp-nat@1.0.22':
     dependencies:
       '@achingbrain/nat-port-mapper': 1.0.13
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.4
       '@libp2p/utils': 5.4.2
       '@multiformats/multiaddr': 12.3.0
@@ -11340,7 +11340,7 @@ snapshots:
       it-protobuf-stream: 1.1.4
       it-pushable: 3.2.3
       it-stream-types: 2.0.1
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       multihashes: 4.0.3
       node-datachannel: 0.9.1
       p-defer: 4.0.1
@@ -11381,7 +11381,7 @@ snapshots:
       '@multiformats/multiaddr': 12.3.0
       '@multiformats/multiaddr-matcher': 1.2.4
       it-stream-types: 2.0.1
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       race-signal: 1.0.2
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -11495,7 +11495,7 @@ snapshots:
 
   '@multiformats/murmur3@2.1.8':
     dependencies:
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       murmurhash3js-revisited: 3.0.0
 
   '@noble/ciphers@0.4.1': {}
@@ -14195,10 +14195,10 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.2.1
 
-  ennikkai@2.3.0(@constl/ipa@1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))):
+  ennikkai@2.3.0(@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))):
     dependencies:
-      '@constl/ipa': 1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
-      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.25(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))
+      '@constl/ipa': 1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
+      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0)))
       deepmerge: 4.3.1
       events: 3.3.0
     transitivePeerDependencies:
@@ -15795,7 +15795,7 @@ snapshots:
       it-parallel: 3.0.8
       it-pipe: 3.0.1
       it-pushable: 3.2.3
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       p-queue: 8.0.1
       progress-events: 1.0.0
 
@@ -15812,7 +15812,7 @@ snapshots:
       it-batch: 3.0.6
       it-first: 3.0.6
       it-parallel-batch: 3.0.6
-      multiformats: 13.1.0
+      multiformats: 13.1.1
       progress-events: 1.0.0
       rabin-wasm: 0.1.5
       uint8arraylist: 2.4.8
@@ -15847,7 +15847,7 @@ snapshots:
   ipns@8.0.4:
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.4.0
+      '@libp2p/interface': 1.5.0
       '@libp2p/logger': 4.0.14
       '@libp2p/peer-id': 4.1.4
       cborg: 4.2.0
