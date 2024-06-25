@@ -74,7 +74,7 @@ importers:
         version: 11.2.1
       '@chainsafe/libp2p-noise':
         specifier: ^15.0.0
-        version: 15.0.0
+        version: 15.1.0
       '@chainsafe/libp2p-yamux':
         specifier: ^6.0.2
         version: 6.0.2
@@ -1290,8 +1290,8 @@ packages:
     resolution: {integrity: sha512-uHmptoxgMsfDIP7cQMQ4Zp9+y27oON5+gloBLXi+7EJpMhyvo7tjafUxRILwLofzeAtfaF3ZHraoXRFUSbhK2Q==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
-  '@chainsafe/libp2p-noise@15.0.0':
-    resolution: {integrity: sha512-O8Y/WVU4J/qrnG72jwVhbmdXiBzv1dT9B3PMClCRmZ9z/5vVPEGRVXE/SVYeGF3bNuBTLoh+F+GaKG/9UHlMhg==}
+  '@chainsafe/libp2p-noise@15.1.0':
+    resolution: {integrity: sha512-84S/Uk7ZZRYpSlE5d1odMmQTl5g5Da8etgcf4QI7arTAHkvBs3il7yGHIPt4wV4EV0qIMG+XjdGIYihRXfI2/w==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
   '@chainsafe/libp2p-yamux@6.0.2':
@@ -2002,6 +2002,9 @@ packages:
 
   '@noble/ciphers@0.4.1':
     resolution: {integrity: sha512-QCOA9cgf3Rc33owG0AYBB9wszz+Ul2kramWN8tXG44Gyciud/tbkEqvxRF/IpqQaBpRBNi9f4jdNxqB2CQCIXg==}
+
+  '@noble/ciphers@0.5.3':
+    resolution: {integrity: sha512-B0+6IIHiqEs3BPMT0hcRmHvEj2QHOLu+uwt+tqDDeVd0oyVzh7BPrDcPjRnV1PV/5LaknXJJQvOuRGR0zQJz+w==}
 
   '@noble/curves@1.4.0':
     resolution: {integrity: sha512-p+4cb332SFCrReJkCYe8Xzm0OWi4Jji5jVdIZRL/PmacmDkFNw6MrrV+gGpiPxLHbV+zKFRywUWbaseT+tZRXg==}
@@ -7274,8 +7277,8 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-devtools-core@5.2.0:
-    resolution: {integrity: sha512-vZK+/gvxxsieAoAyYaiRIVFxlajb7KXhgBDV7OsoMzaAE+IqGpoxusBjIgq5ibqA2IloKu0p9n7tE68z1xs18A==}
+  react-devtools-core@5.3.0:
+    resolution: {integrity: sha512-IG3T+azv48Oc5VLdHR4XdBNKNZIUOKRtx0sJMRvb++Zom/uqtx73j6u37JCsIBNIaq6vA7RPH5Bbcf/Wj53KXA==}
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -10153,7 +10156,7 @@ snapshots:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 0.4.2
       '@libp2p/crypto': 3.0.4
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/peer-id': 4.1.4
       '@noble/ciphers': 0.4.1
       '@noble/curves': 1.4.0
@@ -10169,14 +10172,14 @@ snapshots:
       uint8arrays: 5.1.0
       wherearewe: 2.0.1
 
-  '@chainsafe/libp2p-noise@15.0.0':
+  '@chainsafe/libp2p-noise@15.1.0':
     dependencies:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 0.4.2
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.4.0
-      '@libp2p/peer-id': 4.1.2
-      '@noble/ciphers': 0.4.1
+      '@libp2p/interface': 1.5.0
+      '@libp2p/peer-id': 4.1.4
+      '@noble/ciphers': 0.5.3
       '@noble/curves': 1.4.0
       '@noble/hashes': 1.4.0
       it-length-prefixed: 9.0.4
@@ -10228,7 +10231,7 @@ snapshots:
   '@constl/ipa@1.0.26(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 11.2.1
-      '@chainsafe/libp2p-noise': 15.0.0
+      '@chainsafe/libp2p-noise': 15.1.0
       '@chainsafe/libp2p-yamux': 6.0.2
       '@chriscdn/promise-semaphore': 2.0.9
       '@constl/bohr-db': 1.1.0(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
@@ -10837,7 +10840,7 @@ snapshots:
       '@libp2p/interface': 1.5.0
       '@noble/curves': 1.4.0
       '@noble/hashes': 1.4.0
-      multiformats: 13.1.1
+      multiformats: 13.1.0
       node-forge: 1.3.1
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
@@ -10870,7 +10873,7 @@ snapshots:
 
   '@libp2p/identify@1.0.21':
     dependencies:
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/interface-internal': 1.2.4
       '@libp2p/peer-id': 4.1.4
       '@libp2p/peer-record': 7.0.20
@@ -11033,7 +11036,7 @@ snapshots:
   '@libp2p/keychain@4.0.15':
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/peer-id': 4.1.4
       interface-datastore: 8.2.11
       merge-options: 3.0.4
@@ -11106,7 +11109,7 @@ snapshots:
 
   '@libp2p/mplex@10.0.24':
     dependencies:
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/utils': 5.4.2
       it-pipe: 3.0.1
       it-pushable: 3.2.3
@@ -11119,7 +11122,7 @@ snapshots:
 
   '@libp2p/multistream-select@5.1.10':
     dependencies:
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       it-length-prefixed: 9.0.4
       it-length-prefixed-stream: 1.1.8
       it-stream-types: 2.0.1
@@ -11131,8 +11134,8 @@ snapshots:
 
   '@libp2p/peer-collections@5.2.2':
     dependencies:
-      '@libp2p/interface': 1.5.0
-      '@libp2p/peer-id': 4.1.4
+      '@libp2p/interface': 1.4.0
+      '@libp2p/peer-id': 4.1.2
       '@libp2p/utils': 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -11188,9 +11191,9 @@ snapshots:
 
   '@libp2p/peer-store@10.0.19':
     dependencies:
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/peer-collections': 5.2.2
-      '@libp2p/peer-id': 4.1.4
+      '@libp2p/peer-id': 4.1.2
       '@libp2p/peer-record': 7.0.20
       '@multiformats/multiaddr': 12.3.0
       interface-datastore: 8.2.11
@@ -11206,7 +11209,7 @@ snapshots:
   '@libp2p/ping@1.0.19':
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/interface-internal': 1.2.4
       '@multiformats/multiaddr': 12.3.0
       it-first: 3.0.6
@@ -11265,7 +11268,7 @@ snapshots:
   '@libp2p/upnp-nat@1.0.22':
     dependencies:
       '@achingbrain/nat-port-mapper': 1.0.13
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/interface-internal': 1.2.4
       '@libp2p/utils': 5.4.2
       '@multiformats/multiaddr': 12.3.0
@@ -11327,7 +11330,7 @@ snapshots:
 
   '@libp2p/webrtc@4.0.33(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))':
     dependencies:
-      '@chainsafe/libp2p-noise': 15.0.0
+      '@chainsafe/libp2p-noise': 15.1.0
       '@libp2p/interface': 1.5.0
       '@libp2p/interface-internal': 1.2.4
       '@libp2p/peer-id': 4.1.4
@@ -11374,7 +11377,7 @@ snapshots:
 
   '@libp2p/webtransport@4.0.32':
     dependencies:
-      '@chainsafe/libp2p-noise': 15.0.0
+      '@chainsafe/libp2p-noise': 15.1.0
       '@libp2p/interface': 1.5.0
       '@libp2p/peer-id': 4.1.4
       '@libp2p/utils': 5.4.4
@@ -11499,6 +11502,8 @@ snapshots:
       murmurhash3js-revisited: 3.0.0
 
   '@noble/ciphers@0.4.1': {}
+
+  '@noble/ciphers@0.5.3': {}
 
   '@noble/curves@1.4.0':
     dependencies:
@@ -15847,7 +15852,7 @@ snapshots:
   ipns@8.0.4:
     dependencies:
       '@libp2p/crypto': 4.1.4
-      '@libp2p/interface': 1.5.0
+      '@libp2p/interface': 1.4.0
       '@libp2p/logger': 4.0.14
       '@libp2p/peer-id': 4.1.4
       cborg: 4.2.0
@@ -18436,7 +18441,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-devtools-core@5.2.0:
+  react-devtools-core@5.3.0:
     dependencies:
       shell-quote: 1.8.1
       ws: 7.5.10
@@ -18516,7 +18521,7 @@ snapshots:
       pretty-format: 26.6.2
       promise: 8.3.0
       react: 18.2.0
-      react-devtools-core: 5.2.0
+      react-devtools-core: 5.3.0
       react-refresh: 0.14.2
       react-shallow-renderer: 16.15.0(react@18.2.0)
       regenerator-runtime: 0.13.11
