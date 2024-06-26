@@ -98,7 +98,7 @@ importers:
         version: 4.1.4
       '@libp2p/websockets':
         specifier: ^8.0.24
-        version: 8.0.24
+        version: 8.1.0
       '@multiformats/multiaddr':
         specifier: ^12.2.3
         version: 12.3.0
@@ -1923,8 +1923,8 @@ packages:
   '@libp2p/webrtc@4.0.33':
     resolution: {integrity: sha512-vg+BYhP1u8HneC7LLRrNw/Cdtg/UsZnrSBA9gBwZYB7x4aTH7b4+Gp1UpTpUmE58q8nuorJX+oN96+LfTVhV7A==}
 
-  '@libp2p/websockets@8.0.24':
-    resolution: {integrity: sha512-oOriMCYOq7s7S5zN7hutxMUkaIB4dyCxg12dqDRIUTSik26mJsEkF3nd7JNuKUSg+4sM7l0tL8UB0A54BtyhHA==}
+  '@libp2p/websockets@8.1.0':
+    resolution: {integrity: sha512-jUeCm7elT3wqMMyz5Zcafh2Wq3BLCrwRmOSE6ib//h0CeD7SNg4zPIjqL6RQR6xPIj3WFHIl/nUOe+HAVw/X8Q==}
 
   '@libp2p/webtransport@4.0.32':
     resolution: {integrity: sha512-eZC2BiUtUL0x+/DreuR4LSsxVJhkt7CIxOxyYhY2t7wtzlrN6avSdr6e0KR1g+/PUMT+fyLwJan+Ro0CI2gUzw==}
@@ -1990,8 +1990,8 @@ packages:
   '@multiformats/multiaddr-matcher@1.2.4':
     resolution: {integrity: sha512-GgpqzQFL4Mj8t7cLNHC5nuYUuSm0kTtSUyYswiyWwTSUY3XwRAMx0UiFWQg+ETk0u+/IvFaHxfnyEoH3tasvwg==}
 
-  '@multiformats/multiaddr-to-uri@10.0.1':
-    resolution: {integrity: sha512-RtOBRJucMCzINPytvt1y7tJ2jr4aSKJmv3DF7/C515RJO9+nu9sZHdsk9vn251OtN8k21rAGlIHESt/BSJWAnQ==}
+  '@multiformats/multiaddr-to-uri@10.1.0':
+    resolution: {integrity: sha512-ZNwSAx3ssBWwd4y0LKrOsq9xG7LBHboQxnUdSduNc2fTh/NS1UjA2slgUy6KHxH5k9S2DSus0iU2CoyJyN0/pg==}
 
   '@multiformats/multiaddr@12.3.0':
     resolution: {integrity: sha512-JQ8Gc/jgucqqvEaDTFN/AvxlYDHEE7lgEWLMYW7hKZkWggER+GvG/tVxUgUxIP8M0vFpvEHKKHE0lKzyMsgi8Q==}
@@ -3313,8 +3313,8 @@ packages:
   caniuse-lite@1.0.30001627:
     resolution: {integrity: sha512-4zgNiB8nTyV/tHhwZrFs88ryjls/lHiqFhrxCW4qSTeuRByBVnPYpDInchOIySWknznucaf31Z4KYqjfbrecVw==}
 
-  caniuse-lite@1.0.30001636:
-    resolution: {integrity: sha512-bMg2vmr8XBsbL6Lr0UHXy/21m84FTxDLWn2FSqMd5PrlbMxwJlQnC2YWYxVgp66PZE+BBNF2jYQUBKCo1FDeZg==}
+  caniuse-lite@1.0.30001637:
+    resolution: {integrity: sha512-1x0qRI1mD1o9e+7mBI7XtzFAP4XszbHaVWsMiGbSPLYekKTJF7K+FNk6AsXH4sUpc+qrsI3pVgf1Jdl/uGkuSQ==}
 
   catering@2.1.1:
     resolution: {integrity: sha512-K7Qy8O9p76sL3/3m7/zLKbRkyOlSZAgzEaLhyj2mXS8PsCud2Eo4hAb8aLtZqHh0QGqLcb9dlJSu6lHRVENm1w==}
@@ -3979,8 +3979,8 @@ packages:
   electron-to-chromium@1.4.789:
     resolution: {integrity: sha512-0VbyiaXoT++Fi2vHGo2ThOeS6X3vgRCWrjPeO2FeIAWL6ItiSJ9BqlH8LfCXe3X1IdcG+S0iLoNaxQWhfZoGzQ==}
 
-  electron-to-chromium@1.4.811:
-    resolution: {integrity: sha512-CDyzcJ5XW78SHzsIOdn27z8J4ist8eaFLhdto2hSMSJQgsiwvbv2fbizcKUICryw1Wii1TI/FEkvzvJsR3awrA==}
+  electron-to-chromium@1.4.812:
+    resolution: {integrity: sha512-7L8fC2Ey/b6SePDFKR2zHAy4mbdp1/38Yk5TsARO66W3hC5KEaeKMMHoxwtuH+jcu2AYLSn9QX04i95t6Fl1Hg==}
 
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
@@ -8654,8 +8654,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.17.0:
-    resolution: {integrity: sha512-uJq6108EgZMAl20KagGkzCKfMEjxmKvZHG7Tlq0Z6nOky7YF7aq4mOx6xK8TJ/i1LeK4Qus7INktacctDgY8Ow==}
+  ws@8.17.1:
+    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -8788,7 +8788,7 @@ snapshots:
   '@achingbrain/nat-port-mapper@1.0.13':
     dependencies:
       '@achingbrain/ssdp': 4.0.6
-      '@libp2p/logger': 4.0.15
+      '@libp2p/logger': 4.0.13
       default-gateway: 7.2.2
       err-code: 3.0.1
       it-first: 3.0.6
@@ -10252,7 +10252,7 @@ snapshots:
       '@libp2p/pubsub-peer-discovery': 10.0.2
       '@libp2p/tcp': 9.0.26
       '@libp2p/webrtc': 4.0.33(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
-      '@libp2p/websockets': 8.0.24
+      '@libp2p/websockets': 8.1.0
       '@libp2p/webtransport': 4.0.32
       '@localfirst/auth': 5.6.0
       '@localfirst/crypto': 5.6.0
@@ -11358,18 +11358,18 @@ snapshots:
       - react-native
       - supports-color
 
-  '@libp2p/websockets@8.0.24':
+  '@libp2p/websockets@8.1.0':
     dependencies:
-      '@libp2p/interface': 1.4.0
-      '@libp2p/utils': 5.4.2
+      '@libp2p/interface': 1.5.0
+      '@libp2p/utils': 5.4.4
       '@multiformats/mafmt': 12.1.6
       '@multiformats/multiaddr': 12.3.0
-      '@multiformats/multiaddr-to-uri': 10.0.1
+      '@multiformats/multiaddr-to-uri': 10.1.0
       '@types/ws': 8.5.10
       it-ws: 6.1.1
       p-defer: 4.0.1
       wherearewe: 2.0.1
-      ws: 8.17.0
+      ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -11482,7 +11482,7 @@ snapshots:
       '@multiformats/multiaddr': 12.3.0
       multiformats: 13.1.1
 
-  '@multiformats/multiaddr-to-uri@10.0.1':
+  '@multiformats/multiaddr-to-uri@10.1.0':
     dependencies:
       '@multiformats/multiaddr': 12.3.0
 
@@ -13265,8 +13265,8 @@ snapshots:
 
   browserslist@4.23.1:
     dependencies:
-      caniuse-lite: 1.0.30001636
-      electron-to-chromium: 1.4.811
+      caniuse-lite: 1.0.30001637
+      electron-to-chromium: 1.4.812
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16(browserslist@4.23.1)
 
@@ -13398,7 +13398,7 @@ snapshots:
 
   caniuse-lite@1.0.30001627: {}
 
-  caniuse-lite@1.0.30001636: {}
+  caniuse-lite@1.0.30001637: {}
 
   catering@2.1.1: {}
 
@@ -14153,7 +14153,7 @@ snapshots:
 
   electron-to-chromium@1.4.789: {}
 
-  electron-to-chromium@1.4.811: {}
+  electron-to-chromium@1.4.812: {}
 
   electron-window@0.8.1:
     dependencies:
@@ -15568,7 +15568,7 @@ snapshots:
       '@libp2p/upnp-nat': 1.0.22
       '@libp2p/utils': 5.4.2
       '@libp2p/webrtc': 4.0.33(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.5(@babel/core@7.24.6))(react@18.2.0))
-      '@libp2p/websockets': 8.0.24
+      '@libp2p/websockets': 8.1.0
       '@libp2p/webtransport': 4.0.32
       blockstore-core: 4.4.1
       cborg: 4.2.0
@@ -16286,7 +16286,7 @@ snapshots:
       event-iterator: 2.0.0
       it-stream-types: 2.0.1
       uint8arrays: 5.1.0
-      ws: 8.17.0
+      ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -19984,7 +19984,7 @@ snapshots:
 
   ws@7.5.10: {}
 
-  ws@8.17.0: {}
+  ws@8.17.1: {}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz: {}
 
