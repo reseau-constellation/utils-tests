@@ -166,8 +166,8 @@ importers:
         specifier: ^6.2.0
         version: 6.2.0(eslint@9.5.0)
       execa:
-        specifier: ^8.0.1
-        version: 8.0.1
+        specifier: ^9.0.0
+        version: 9.1.0
       keys:
         specifier: link:@libp2p/crypto/keys
         version: link:@libp2p/crypto/keys
