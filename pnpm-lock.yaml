@@ -140,7 +140,7 @@ importers:
         version: 3.37.1
       electron:
         specifier: ^31.0.0
-        version: 31.0.2
+        version: 31.1.0
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
@@ -3985,8 +3985,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@31.0.2:
-    resolution: {integrity: sha512-55efQ5yfLN+AQHcFC00AXQqtxC3iAGaxX2GQ3EDbFJ0ca9GHNOdSXkcrdBElLleiDrR2hpXNkQxN1bDn0oxe6w==}
+  electron@31.1.0:
+    resolution: {integrity: sha512-TBOwqLxSxnx6+pH6GMri7R3JPH2AkuGJHfWZS0p1HsmN+Qr1T9b0IRJnnehSd/3NZAmAre4ft9Ljec7zjyKFJA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -14159,7 +14159,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@31.0.2:
+  electron@31.1.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 20.14.9
