@@ -1,13 +1,14 @@
 import type { GossipSub } from "@chainsafe/libp2p-gossipsub";
 import type { Multiaddr } from "@multiformats/multiaddr";
 
-import { createHelia, type Helia } from "helia";
+import { DefaultLibp2pServices, createHelia, type HeliaLibp2p } from "helia";
 import { bitswap } from "@helia/block-brokers";
 import { createLibp2p, Libp2p } from "libp2p";
 import { MemoryBlockstore } from "blockstore-core";
 import { LevelBlockstore } from "blockstore-level";
 import { multiaddr } from "@multiformats/multiaddr";
 import { WebRTC } from "@multiformats/multiaddr-matcher";
+import {} from "@libp2p/interface";
 
 import { isBrowser, isElectronRenderer } from "wherearewe";
 
@@ -20,7 +21,7 @@ export const créerHéliaTest = async ({
   dossier,
 }: {
   dossier?: string;
-} = {}): Promise<Helia<Libp2p<{ pubsub: GossipSub }>>> => {
+} = {}): Promise<HeliaLibp2p<Libp2p<{ pubsub: GossipSub }>>> => {
   const options =
     isBrowser || isElectronRenderer
       ? DefaultLibp2pBrowserOptions
@@ -40,14 +41,16 @@ export const créerHéliaTest = async ({
     blockBrokers: [bitswap()],
   };
 
-  return createHelia<Libp2p<{ pubsub: GossipSub }>>({ ...heliaOptions });
+  return createHelia({ ...heliaOptions });
 };
 
 const filtreParDéfaut = () => true;
 
-export const connecterPairs = async (
-  sfip1: Helia,
-  sfip2: Helia,
+export const connecterPairs = async <
+  T extends Libp2p = Libp2p<DefaultLibp2pServices>,
+>(
+  sfip1: HeliaLibp2p<T>,
+  sfip2: HeliaLibp2p<T>,
   options = {
     filtre: filtreParDéfaut,
   },
@@ -82,8 +85,10 @@ export const connecterPairs = async (
   }
 };
 
-export const toutesConnectées = async (sfips: Helia[]) => {
-  const connectés: Helia[] = [];
+export const toutesConnectées = async (
+  sfips: HeliaLibp2p<Libp2p<{ pubsub: GossipSub }>>[],
+) => {
+  const connectés: HeliaLibp2p<Libp2p<{ pubsub: GossipSub }>>[] = [];
   for (const sfip of sfips) {
     for (const autre of connectés) {
       await connecterPairs(sfip, autre);

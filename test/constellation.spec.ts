@@ -1,4 +1,4 @@
-import type { ClientConstellation } from "@constl/ipa";
+import type { Constellation } from "@constl/ipa";
 import { expect } from "aegir/chai";
 
 import { créerConstellation } from "@constl/ipa";
@@ -6,7 +6,7 @@ import { créerConstellation } from "@constl/ipa";
 import { créerConstellationsTest } from "@/constellation.js";
 
 describe("Créer Constellations", function () {
-  let clients: ClientConstellation[];
+  let clients: Constellation[];
   let fOublier: (() => Promise<void>) | undefined;
 
   after(async () => {

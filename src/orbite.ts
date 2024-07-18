@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import type { Helia } from "helia";
+import type { HeliaLibp2p } from "helia";
 import type {
   FeedStoreTypé,
   KeyValueStoreTypé,
@@ -46,7 +46,7 @@ export const créerOrbiteTest = async ({
 }: {
   n: number;
 }): Promise<{ orbites: OrbitDB[]; fOublier: () => Promise<void> }> => {
-  const sfips: Helia[] = [];
+  const sfips: HeliaLibp2p[] = [];
   const orbites: OrbitDB[] = [];
 
   const {

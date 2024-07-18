@@ -1,11 +1,11 @@
-import type { réseau, client, ClientConstellation } from "@constl/ipa";
+import type { réseau, client, Constellation } from "@constl/ipa";
 import { isBrowser } from "wherearewe";
 
 import { créerOrbiteTest } from "@/orbite.js";
 import { AttendreRésultat } from "@/attente.js";
 
 export const créerConstellationsTest = async <
-  T = ClientConstellation,
+  T = Constellation,
   U = client.optsConstellation,
 >({
   n = 1,
@@ -36,7 +36,7 @@ export const créerConstellationsTest = async <
 
   const fOublier = async () => {
     await Promise.all(
-      clients.map((client) => (client as ClientConstellation).fermer()),
+      clients.map((client) => (client as Constellation).fermer()),
     );
     await Promise.all(fsOublier.map((f) => f()));
   };
@@ -44,8 +44,8 @@ export const créerConstellationsTest = async <
 };
 
 export const constellationConnectéeÀ = async (
-  constellation: client.ClientConstellation,
-  connectéeÀ: client.ClientConstellation,
+  constellation: client.Constellation,
+  connectéeÀ: client.Constellation,
 ): Promise<void> => {
   const dispositifsConnectés = new AttendreRésultat<
     réseau.statutDispositif[]
@@ -63,7 +63,7 @@ export const constellationConnectéeÀ = async (
 };
 
 export const constellationsConnectées = async (
-  ...clients: client.ClientConstellation[]
+  ...clients: client.Constellation[]
 ): Promise<void> => {
   if (clients.length < 2) return;
   const promesses: Promise<void>[] = [];
