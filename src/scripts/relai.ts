@@ -32,7 +32,7 @@ import { webSockets } from "@libp2p/websockets";
 import * as filters from "@libp2p/websockets/filters";
 import { identify } from "@libp2p/identify";
 import { createFromPrivKey } from "@libp2p/peer-id-factory";
-import { unmarshalPrivateKey } from "@libp2p/crypto/keys";
+import { keys } from "@libp2p/crypto";
 import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
 
 // output of: console.log(server.peerId.privateKey.toString('hex'))
@@ -42,7 +42,7 @@ const relayPrivKey =
 // const relayId = '12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE'
 
 const encoded = uint8ArrayFromString(relayPrivKey, "hex");
-const privateKey = await unmarshalPrivateKey(encoded);
+const privateKey = await keys.unmarshalPrivateKey(encoded);
 const peerId = await createFromPrivKey(privateKey);
 
 const relai = await createLibp2p({
