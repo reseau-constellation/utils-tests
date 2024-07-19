@@ -74,5 +74,4 @@ export const constellationsConnectées = async (
     }
   }
   await Promise.all(promesses);
-  return;
 };
