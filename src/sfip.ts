@@ -108,9 +108,16 @@ export const constObtFichierRelai = async (): Promise<string> => {
 
 export const lancerRelai = async () => {
   const { $ } = await import("execa");
+
   const fichierRelai = await constObtFichierRelai();
 
   const relai = $`node ${fichierRelai} &`;
+
+  relai.catch(e => {
+    // Ignorer l'erreur causée par la termination du processus par notre code
+    if (e.signal !== 'SIGTERM') throw new Error(e)
+  });
+
   return () => relai.kill();
 };
 
