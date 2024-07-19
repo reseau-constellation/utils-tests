@@ -31,7 +31,7 @@ jobs:
       - name: Préparation de Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: latest
           cache: pnpm
 
       - name: Installer
@@ -42,6 +42,8 @@ jobs:
 
       - name: Envoyer couverure à Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
   
   test-ipa-navig:
     name: IPA sur le navigateur
@@ -59,7 +61,7 @@ jobs:
       - name: Préparation de Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: latest
           cache: pnpm
 
       - name: Installer
@@ -73,6 +75,8 @@ jobs:
 
       - name: Envoyer couverure à Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   test-ipa-electron-principal:
     name: IPA sur Électron principal
@@ -112,3 +116,5 @@ jobs:
 
       - name: Envoyer couverure à Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
