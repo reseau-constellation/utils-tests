@@ -12,8 +12,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
       '@orbitdb/quickstart':
-        specifier: ^1.0.0
-        version: 1.0.0(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(react@18.2.0))
+        specifier: git://github.com/orbitdb/quickstart.git#1557ffe
+        version: https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(react@18.2.0))
       blockstore-core:
         specifier: ^4.4.1
         version: 4.4.1
@@ -1905,8 +1905,9 @@ packages:
   '@orbitdb/ordered-keyvalue-db@1.0.1':
     resolution: {integrity: sha512-UqXXLxmYn38d7zAXIAxjE4zW8F89FAeYTbEG8J0+VHnJji6gFQaiF3TC9Pzg09scbrIXLyz1WKU80Mx/f+P7oA==}
 
-  '@orbitdb/quickstart@1.0.0':
-    resolution: {integrity: sha512-o3qxh9I6OoYgGHmUXoebGz9vZL2ZYol9/hRY/A1gIKlgMFWmPUJarLoCtb7a4DTZ3XUBhvi35+nNeekAV6CwGQ==}
+  '@orbitdb/quickstart@https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe':
+    resolution: {tarball: https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe}
+    version: 1.0.0
 
   '@orbitdb/set-db@1.0.2':
     resolution: {integrity: sha512-hYjVGiw1pohuRYyLn4TFLfvl0sQJUTDW5hbuKrWy0yAdU0xvnXNbhioeaHtDEQ++wtAmfjtRFv0Hy6arBg05OA==}
@@ -11067,11 +11068,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@orbitdb/quickstart@1.0.0(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(react@18.2.0))':
+  '@orbitdb/quickstart@https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(react@18.2.0))':
     dependencies:
+      '@chainsafe/libp2p-gossipsub': 13.1.0
       '@orbitdb/core': 2.2.0
       blockstore-level: 1.1.8
-      helia: 3.0.1(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(react@18.2.0))
+      helia: 4.2.4(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(react@18.2.0))
     transitivePeerDependencies:
       - bufferutil
       - react-native

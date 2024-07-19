@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@helia/block-brokers": "^3.0.2",
-    "@orbitdb/quickstart": "^1.0.0",
+    "@orbitdb/quickstart": "git+https://github.com/orbitdb/quickstart.git#1557ffe",
     "blockstore-core": "^4.4.1",
     "blockstore-level": "^1.1.8",
     "browserify-fs": "^1.0.0",
