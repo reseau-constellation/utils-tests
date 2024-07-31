@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@helia/block-brokers':
         specifier: ^3.0.2
-        version: 3.0.2
+        version: 3.0.3
       '@orbitdb/quickstart':
         specifier: git+https://github.com/orbitdb/quickstart.git#1557ffe
         version: https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe(react-native@0.74.3(@babel/core@7.25.2)(@babel/preset-env@7.24.8(@babel/core@7.25.2))(react@18.2.0))
@@ -341,8 +341,13 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.0':
-    resolution: {integrity: sha512-dG0aApncVQwAUJa8tP1VHTnmU67BeIQvKafd3raEx315H54FfkZSz3B/TT+33ZQAjatGJA79gZqTtqL5QZUKXw==}
+  '@babel/parser@7.25.3':
+    resolution: {integrity: sha512-iLTJKDbJ4hMvFPgQwwsVoxtHyWpKKPBrxkANrSYewDPaPpT5py5yeVkgPIJ7XYXhndxJpaA3PyALSXQ7u8e/Dw==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+
+  '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.3':
+    resolution: {integrity: sha512-wUrcsxZg6rqBXG05HG1FPYgsP6EvwF4WpBbxIpWIIYnH8wG0gzx3yZY3dtEHas4sTAOGkbTsc9EGPxwff8lRoA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -933,6 +938,10 @@ packages:
     resolution: {integrity: sha512-s4/r+a7xTnny2O6FcZzqgT6nE4/GHEdcqj4qAeglbUOh0TeglEfmNJFAd/OLoVtGd6ZhAO8GCVvCNUO5t/VJVQ==}
     engines: {node: '>=6.9.0'}
 
+  '@babel/traverse@7.25.3':
+    resolution: {integrity: sha512-HefgyP1x754oGCsKmV5reSmtV7IXj/kpaE1XYY+D9G5PvKKoFfSbiS4M77MdjuwlZKDIKFCffq9rPU+H/s3ZdQ==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/types@7.25.2':
     resolution: {integrity: sha512-YTnYtra7W9e6/oAZEHj0bJehPRUlLH9/fbpT5LfB0NhQXyALCRkRs3zH9v07IYhkgpqX6Z78FnuccZr/l4Fs4Q==}
     engines: {node: '>=6.9.0'}
@@ -1330,14 +1339,14 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@helia/bitswap@1.1.2':
-    resolution: {integrity: sha512-Nf2Ql0ph/3++12mYohn/6NX1DvKHVxCdIVYDJzWYDHlVtI31FvHYAaFlBeX0d27iFjVO9SiPirf4qyuzULhQ0Q==}
+  '@helia/bitswap@1.1.3':
+    resolution: {integrity: sha512-nCszNky/kOxaj1CZrZbzzFz6Fn7uNWigudn4KaLV+ZuFx6xyB8+t6aCmjKQ59me0WA3mwkmHkPtUOi9Y75zLSw==}
 
   '@helia/block-brokers@1.0.0':
     resolution: {integrity: sha512-VP9KDj6fNT1FKk/vWjDzk8eYyVclxHFQaOLI0+rvifg+w8X+atCa/v2JKzZzbW6BX3/dxcn/mZz+ZHgdmuQ1qg==}
 
-  '@helia/block-brokers@3.0.2':
-    resolution: {integrity: sha512-u6B/5YePYKmTQCRW4hhsfhq3oopXNsdN+rNwYDxJcPt6nCaep9PnFk/MxMP25UvID9Wol4EQ8RxYxFhjuD8pGQ==}
+  '@helia/block-brokers@3.0.3':
+    resolution: {integrity: sha512-xSnmWv1jgeBJURcdF/KFOHEa1CQygk3jm1qxYPYqnMWxRXhsFG5Qi13EA+QfslCXyywfxbr4yJWleUUV2Mw4oQ==}
 
   '@helia/delegated-routing-v1-http-api-client@1.1.2':
     resolution: {integrity: sha512-u+sVdOxFieusZh/AxC8c0lU1micWfAosju7A80n62rdJ1fr1lclkhhrlfaKWIgVOq+pwonEzoOE7QgnTL22tYw==}
@@ -1351,6 +1360,9 @@ packages:
   '@helia/interface@4.3.0':
     resolution: {integrity: sha512-gaWQSVGIcOkK0Wx12qUiUMFLPI8AjQCYaf4dpZdciSYPNfKOtPpW54QGzgrQYBcvBgPzg16hnnvDGwLeL2WlAQ==}
 
+  '@helia/interface@4.3.1':
+    resolution: {integrity: sha512-jvuUUAQbLMhvMt+Lon7mJfJt5xJWiwn8aXtI9fHBpMNMsrKJOtefxAzwSr18xe+C9bMdOyRtocj2eFhs74bQ8w==}
+
   '@helia/routers@1.1.0':
     resolution: {integrity: sha512-WwHcvN8No6+3alTrxNXtTJdqfyX0Ymm41u5yL+1YFdsvRKKy5RLxNlgla34kFJaHuQGPFdROYP/9X4UaHpvcIQ==}
 
@@ -1359,6 +1371,9 @@ packages:
 
   '@helia/utils@0.3.2':
     resolution: {integrity: sha512-ge5b5KrzuukYmkgjfpa4duaYRU1AdVg/pXute+pOVaD3V5UTzXeXceCGfrI1m0GAXQ/Arz1F0pNNz4pclTBWVg==}
+
+  '@helia/utils@0.3.3':
+    resolution: {integrity: sha512-iCS8dJRULgltfx7aLLoqfjWUpqBWrTyouCToB9RgHpNs4lHcIsZn/VSbHyjC4NUF9nIWsxhH/3UAdvWl23HEgw==}
 
   '@herbcaudill/eventemitter42@0.3.1':
     resolution: {integrity: sha512-GTe0EupM4v+0Iet2UmFz5ZsPz8MZm/FbYx1yTJ9OyeVbCe5etkEKA2pntuFAjamp08c8Sh2p+QcM5AGMWi3sdA==}
@@ -8562,11 +8577,15 @@ snapshots:
     dependencies:
       '@babel/types': 7.25.2
 
-  '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.0(@babel/core@7.25.2)':
+  '@babel/parser@7.25.3':
+    dependencies:
+      '@babel/types': 7.25.2
+
+  '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
     transitivePeerDependencies:
       - supports-color
 
@@ -8588,7 +8607,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
     transitivePeerDependencies:
       - supports-color
 
@@ -8784,7 +8803,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-remap-async-to-generator': 7.25.0(@babel/core@7.25.2)
       '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.25.2)
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
     transitivePeerDependencies:
       - supports-color
 
@@ -8946,7 +8965,7 @@ snapshots:
       '@babel/helper-module-transforms': 7.25.2(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
     transitivePeerDependencies:
       - supports-color
 
@@ -9163,7 +9182,7 @@ snapshots:
       '@babel/helper-compilation-targets': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-validator-option': 7.24.8
-      '@babel/plugin-bugfix-firefox-class-in-computed-class-key': 7.25.0(@babel/core@7.25.2)
+      '@babel/plugin-bugfix-firefox-class-in-computed-class-key': 7.25.3(@babel/core@7.25.2)
       '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression': 7.25.0(@babel/core@7.25.2)
       '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly': 7.25.0(@babel/core@7.25.2)
@@ -9294,6 +9313,18 @@ snapshots:
       '@babel/code-frame': 7.24.7
       '@babel/generator': 7.25.0
       '@babel/parser': 7.25.0
+      '@babel/template': 7.25.0
+      '@babel/types': 7.25.2
+      debug: 4.3.6
+      globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/traverse@7.25.3':
+    dependencies:
+      '@babel/code-frame': 7.24.7
+      '@babel/generator': 7.25.0
+      '@babel/parser': 7.25.3
       '@babel/template': 7.25.0
       '@babel/types': 7.25.2
       debug: 4.3.6
@@ -9759,14 +9790,14 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@helia/bitswap@1.1.2':
+  '@helia/bitswap@1.1.3':
     dependencies:
-      '@helia/interface': 4.3.0
-      '@helia/utils': 0.3.2
+      '@helia/interface': 4.3.1
+      '@helia/utils': 0.3.3
       '@libp2p/interface': 1.6.2
       '@libp2p/logger': 4.0.18
       '@libp2p/peer-collections': 5.2.7
-      '@libp2p/utils': 5.4.6
+      '@libp2p/utils': 5.4.7
       '@multiformats/multiaddr': 12.3.0
       any-signal: 4.1.1
       interface-blockstore: 5.2.10
@@ -9777,7 +9808,7 @@ snapshots:
       it-map: 3.1.1
       it-pipe: 3.0.1
       it-take: 3.0.6
-      multiformats: 13.1.3
+      multiformats: 13.2.2
       p-defer: 4.0.1
       progress-events: 1.0.1
       protons-runtime: 5.4.0
@@ -9804,19 +9835,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@helia/block-brokers@3.0.2':
+  '@helia/block-brokers@3.0.3':
     dependencies:
-      '@helia/bitswap': 1.1.2
-      '@helia/interface': 4.3.0
-      '@helia/utils': 0.3.2
+      '@helia/bitswap': 1.1.3
+      '@helia/interface': 4.3.1
+      '@helia/utils': 0.3.3
       '@libp2p/interface': 1.6.2
-      '@libp2p/utils': 5.4.6
+      '@libp2p/utils': 5.4.7
       '@multiformats/multiaddr': 12.3.0
       '@multiformats/multiaddr-matcher': 1.2.4
       '@multiformats/multiaddr-to-uri': 10.1.0
       interface-blockstore: 5.2.10
       interface-store: 5.1.8
-      multiformats: 13.1.3
+      multiformats: 13.2.2
       progress-events: 1.0.1
     transitivePeerDependencies:
       - supports-color
@@ -9881,6 +9912,16 @@ snapshots:
       multiformats: 13.1.3
       progress-events: 1.0.1
 
+  '@helia/interface@4.3.1':
+    dependencies:
+      '@libp2p/interface': 1.6.2
+      '@multiformats/dns': 1.0.6
+      interface-blockstore: 5.2.10
+      interface-datastore: 8.2.11
+      interface-store: 5.1.8
+      multiformats: 13.2.2
+      progress-events: 1.0.1
+
   '@helia/routers@1.1.0':
     dependencies:
       '@helia/delegated-routing-v1-http-api-client': 3.0.1
@@ -9897,7 +9938,7 @@ snapshots:
 
   '@helia/unixfs@3.0.6':
     dependencies:
-      '@helia/interface': 4.3.0
+      '@helia/interface': 4.3.1
       '@ipld/dag-pb': 4.1.2
       '@libp2p/interface': 1.6.2
       '@libp2p/logger': 4.0.18
@@ -9928,8 +9969,8 @@ snapshots:
       '@ipld/dag-pb': 4.1.2
       '@libp2p/crypto': 4.1.7
       '@libp2p/interface': 1.6.2
-      '@libp2p/logger': 4.0.18
-      '@libp2p/utils': 5.4.6
+      '@libp2p/logger': 4.0.17
+      '@libp2p/utils': 5.4.7
       '@multiformats/dns': 1.0.6
       '@types/murmurhash3js-revisited': 3.0.3
       any-signal: 4.1.1
@@ -9944,6 +9985,38 @@ snapshots:
       it-merge: 3.0.5
       mortice: 3.0.4
       multiformats: 13.1.3
+      murmurhash3js-revisited: 3.0.0
+      p-defer: 4.0.1
+      progress-events: 1.0.1
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@helia/utils@0.3.3':
+    dependencies:
+      '@helia/interface': 4.3.1
+      '@ipld/dag-cbor': 9.2.1
+      '@ipld/dag-json': 10.2.2
+      '@ipld/dag-pb': 4.1.2
+      '@libp2p/crypto': 4.1.7
+      '@libp2p/interface': 1.6.2
+      '@libp2p/logger': 4.0.18
+      '@libp2p/utils': 5.4.7
+      '@multiformats/dns': 1.0.6
+      '@types/murmurhash3js-revisited': 3.0.3
+      any-signal: 4.1.1
+      blockstore-core: 4.4.1
+      cborg: 4.2.3
+      interface-blockstore: 5.2.10
+      interface-datastore: 8.2.11
+      interface-store: 5.1.8
+      it-drain: 3.0.7
+      it-filter: 3.1.1
+      it-foreach: 2.1.1
+      it-merge: 3.0.5
+      mortice: 3.0.4
+      multiformats: 13.2.2
       murmurhash3js-revisited: 3.0.0
       p-defer: 4.0.1
       progress-events: 1.0.1
@@ -9976,11 +10049,11 @@ snapshots:
   '@ipld/dag-json@10.2.2':
     dependencies:
       cborg: 4.2.3
-      multiformats: 13.1.0
+      multiformats: 13.2.2
 
   '@ipld/dag-pb@4.1.2':
     dependencies:
-      multiformats: 13.1.0
+      multiformats: 13.2.2
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -10441,7 +10514,7 @@ snapshots:
   '@libp2p/peer-id@4.2.2':
     dependencies:
       '@libp2p/interface': 1.6.2
-      multiformats: 13.2.2
+      multiformats: 13.2.1
       uint8arrays: 5.1.0
 
   '@libp2p/peer-record@7.0.23':
@@ -11177,7 +11250,7 @@ snapshots:
 
   '@react-native/codegen@0.74.85(@babel/preset-env@7.24.8(@babel/core@7.25.2))':
     dependencies:
-      '@babel/parser': 7.25.0
+      '@babel/parser': 7.25.3
       '@babel/preset-env': 7.24.8(@babel/core@7.25.2)
       glob: 7.2.3
       hermes-parser: 0.19.1
@@ -12972,7 +13045,7 @@ snapshots:
 
   datastore-core@9.2.9:
     dependencies:
-      '@libp2p/logger': 4.0.18
+      '@libp2p/logger': 4.0.17
       err-code: 3.0.1
       interface-datastore: 8.2.11
       interface-store: 5.1.8
@@ -14686,7 +14759,7 @@ snapshots:
     dependencies:
       '@chainsafe/libp2p-noise': 15.1.0
       '@chainsafe/libp2p-yamux': 6.0.2
-      '@helia/block-brokers': 3.0.2
+      '@helia/block-brokers': 3.0.3
       '@helia/delegated-routing-v1-http-api-client': 3.0.1
       '@helia/interface': 4.3.0
       '@helia/routers': 1.1.0
@@ -14864,7 +14937,7 @@ snapshots:
   interface-blockstore@5.2.10:
     dependencies:
       interface-store: 5.1.8
-      multiformats: 13.1.3
+      multiformats: 13.2.2
 
   interface-datastore@8.2.11:
     dependencies:
@@ -15536,7 +15609,7 @@ snapshots:
   jscodeshift@0.14.0(@babel/preset-env@7.24.8(@babel/core@7.25.2)):
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/parser': 7.25.0
+      '@babel/parser': 7.25.3
       '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.25.2)
       '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6(@babel/core@7.25.2)
       '@babel/plugin-proposal-optional-chaining': 7.21.0(@babel/core@7.25.2)
@@ -16226,7 +16299,7 @@ snapshots:
 
   metro-source-map@0.80.9:
     dependencies:
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
       '@babel/types': 7.25.2
       invariant: 2.2.4
       metro-symbolicate: 0.80.9
@@ -16253,7 +16326,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
       '@babel/template': 7.25.0
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - supports-color
@@ -16262,7 +16335,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
-      '@babel/parser': 7.25.0
+      '@babel/parser': 7.25.3
       '@babel/types': 7.25.2
       metro: 0.80.9
       metro-babel-transformer: 0.80.9
@@ -16283,9 +16356,9 @@ snapshots:
       '@babel/code-frame': 7.24.7
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
-      '@babel/parser': 7.25.0
+      '@babel/parser': 7.25.3
       '@babel/template': 7.25.0
-      '@babel/traverse': 7.25.2
+      '@babel/traverse': 7.25.3
       '@babel/types': 7.25.2
       accepts: 1.3.8
       chalk: 4.1.2
