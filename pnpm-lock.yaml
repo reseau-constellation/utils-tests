@@ -98,7 +98,7 @@ importers:
         version: 1.6.3
       '@libp2p/peer-id-factory':
         specifier: ^4.2.1
-        version: 4.2.3
+        version: 4.2.4
       '@libp2p/websockets':
         specifier: ^8.1.2
         version: 8.1.4
@@ -1581,8 +1581,8 @@ packages:
   '@libp2p/peer-collections@5.2.9':
     resolution: {integrity: sha512-8gBmzQlCWjjb+FSQBKK33T25Y5Df/8FWCXFtJDsprVxVUzDOQoibQJ5Tb4Y+mb96HUhNzoaRWVEamB78MMB3DA==}
 
-  '@libp2p/peer-id-factory@4.2.3':
-    resolution: {integrity: sha512-4ryh3M4UH+nwlM1o3y3iCpW2jTxjj+Hgb6UNI1nFxZGLA6MI+En8kKiroa970xiVvsA+Xmas8B9gWeMFrZKBKg==}
+  '@libp2p/peer-id-factory@4.2.4':
+    resolution: {integrity: sha512-NDQ/qIWpcAG/6xQjyut6xCkrYYAoCaI/33Z+7yzo5qFODwLfNonLzSTasnA6jhuvHn33aHnD1qhdpFkmstxtNQ==}
 
   '@libp2p/peer-id@3.0.6':
     resolution: {integrity: sha512-iN1Ia5gH2U1V/GOVRmLHmVY6fblxzrOPUoZrMYjHl/K4s+AiI7ym/527WDeQvhQpD7j3TfDwcAYforD2dLGpLw==}
@@ -10513,12 +10513,12 @@ snapshots:
       '@libp2p/peer-id': 4.2.4
       '@libp2p/utils': 5.4.9
 
-  '@libp2p/peer-id-factory@4.2.3':
+  '@libp2p/peer-id-factory@4.2.4':
     dependencies:
       '@libp2p/crypto': 4.1.9
-      '@libp2p/interface': 1.6.3
-      '@libp2p/peer-id': 4.2.3
-      protons-runtime: 5.4.0
+      '@libp2p/interface': 1.7.0
+      '@libp2p/peer-id': 4.2.4
+      protons-runtime: 5.5.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
@@ -15874,7 +15874,7 @@ snapshots:
       '@libp2p/multistream-select': 5.1.16
       '@libp2p/peer-collections': 5.2.8
       '@libp2p/peer-id': 4.2.3
-      '@libp2p/peer-id-factory': 4.2.3
+      '@libp2p/peer-id-factory': 4.2.4
       '@libp2p/peer-store': 10.1.4
       '@libp2p/utils': 5.4.8
       '@multiformats/dns': 1.0.6
