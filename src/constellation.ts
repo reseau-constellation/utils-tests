@@ -1,4 +1,5 @@
 import type { réseau, client, Constellation } from "@constl/ipa";
+import type { OrbitDB } from "@orbitdb/core";
 import { isBrowser } from "wherearewe";
 
 import { créerOrbiteTest } from "@/orbite.js";
@@ -15,6 +16,7 @@ export const créerConstellationsTest = async <
   créerConstellation: (opts: U) => T;
 }): Promise<{
   clients: ReturnType<typeof créerConstellation>[];
+  orbites: OrbitDB[];
   fOublier: () => Promise<void>;
 }> => {
   const clients: ReturnType<typeof créerConstellation>[] = [];
@@ -40,7 +42,7 @@ export const créerConstellationsTest = async <
     );
     await Promise.all(fsOublier.map((f) => f()));
   };
-  return { fOublier, clients };
+  return { fOublier, clients, orbites };
 };
 
 export const constellationConnectéeÀ = async (
@@ -52,7 +54,7 @@ export const constellationConnectéeÀ = async (
   >();
   const idCompte2 = await connectéeÀ.obtIdCompte();
 
-  const fOublier = await constellation.réseau!.suivreConnexionsDispositifs({
+  const fOublier = await constellation.réseau.suivreConnexionsDispositifs({
     f: (dispositifs) => dispositifsConnectés.mettreÀJour(dispositifs),
   });
   await dispositifsConnectés.attendreQue((dispositifs) => {
