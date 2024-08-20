@@ -80,7 +80,6 @@ jobs:
 
   test-ipa-electron-principal:
     name: IPA sur Électron principal
-    if: false
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
