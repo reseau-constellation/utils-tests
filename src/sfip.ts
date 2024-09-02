@@ -1,5 +1,6 @@
 import type { GossipSub } from "@chainsafe/libp2p-gossipsub";
 import type { Multiaddr } from "@multiformats/multiaddr";
+import type { sfip } from "@constl/ipa";
 
 import { DefaultLibp2pServices, createHelia, type HeliaLibp2p } from "helia";
 import { bitswap } from "@helia/block-brokers";
@@ -21,15 +22,15 @@ export const créerHéliaTest = async ({
   dossier,
 }: {
   dossier?: string;
-} = {}): Promise<HeliaLibp2p<Libp2p<{ pubsub: GossipSub }>>> => {
+} = {}): Promise<HeliaLibp2p<Libp2p<sfip.ServicesLibp2p>>> => {
   const options =
     isBrowser || isElectronRenderer
       ? DefaultLibp2pBrowserOptions
       : DefaultLibp2pOptions;
 
-  const libp2p = (await createLibp2p({ ...options })) as unknown as Libp2p<{
-    pubsub: GossipSub;
-  }>;
+  const libp2p = (await createLibp2p({
+    ...options,
+  })) as unknown as Libp2p<sfip.ServicesLibp2p>;
 
   const blockstore = dossier
     ? new LevelBlockstore(`${dossier}/blocks`)
