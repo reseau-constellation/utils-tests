@@ -11,7 +11,7 @@ export const dossierTempo = async (): Promise<{
     const os = await import("os");
     const sync = (await import("rimraf")).sync;
 
-    const dossier = fs.mkdtempSync(path.join(os.tmpdir(), "constl-ipa"));
+    const dossier = fs.mkdtempSync(path.join(os.tmpdir(), "constl-ipa-"));
     const fEffacer = () => sync(dossier);
     return { dossier, fEffacer };
   } else {
