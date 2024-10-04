@@ -36,7 +36,7 @@
     "@chainsafe/libp2p-gossipsub": "^13.1.0",
     "@chainsafe/libp2p-noise": "^15.1.0",
     "@chainsafe/libp2p-yamux": "^6.0.2",
-    "@constl/ipa": "1.2.1",
+    "@constl/ipa": "1.2.3",
     "@eslint/js": "^9.7.0",
     "@libp2p/circuit-relay-v2": "^1.1.2",
     "@libp2p/crypto": "^4.1.6",
