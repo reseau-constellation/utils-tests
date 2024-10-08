@@ -59,7 +59,7 @@ export const connecterPairs = async <
     const idRelai = "12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";
 
     await sfip1.libp2p.dial(
-      multiaddr(`/ip4/127.0.0.1/tcp/12345/ws/p2p/${idRelai}`),
+      multiaddr(`/ip4/127.0.0.1/tcp/54321/ws/p2p/${idRelai}`),
     );
 
     const adresse1 = await new Promise<Multiaddr>((resolve) => {
@@ -106,7 +106,7 @@ export const constObtFichierRelai = async (): Promise<string> => {
   return fichierRelai;
 };
 
-export const lancerRelai = async (): Promise<{adresse: string, fermerRelai:()=>void}> => {
+export const lancerRelai = async () => {
   const { $ } = await import("execa");
 
   const fichierRelai = await constObtFichierRelai();
@@ -123,8 +123,8 @@ export const lancerRelai = async (): Promise<{adresse: string, fermerRelai:()=>v
     console.log(texte);
   });
 
-  return {adresse: "", fermerRelai: () => relai.kill()};
+  return () => relai.kill();
 };
 
 export const adresseRelai =
-  "/ip4/127.0.0.1/tcp/12345/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";
+  "/ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE";

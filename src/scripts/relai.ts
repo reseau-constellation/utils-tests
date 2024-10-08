@@ -83,4 +83,4 @@ console.log(
   "p2p addr: ",
   relai.getMultiaddrs().map((ma) => ma.toString()),
 );
-// generates a deterministic address: /ip4/127.0.0.1/tcp/12345/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE
+// generates a deterministic address: /ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE
