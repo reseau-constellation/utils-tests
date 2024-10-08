@@ -1,4 +1,3 @@
-import type { GossipSub } from "@chainsafe/libp2p-gossipsub";
 import type { Multiaddr } from "@multiformats/multiaddr";
 import type { sfip } from "@constl/ipa";
 
@@ -87,9 +86,9 @@ export const connecterPairs = async <
 };
 
 export const toutesConnectées = async (
-  sfips: HeliaLibp2p<Libp2p<{ pubsub: GossipSub }>>[],
+  sfips: HeliaLibp2p<Libp2p<sfip.ServicesLibp2p>>[],
 ) => {
-  const connectés: HeliaLibp2p<Libp2p<{ pubsub: GossipSub }>>[] = [];
+  const connectés: HeliaLibp2p<Libp2p<sfip.ServicesLibp2p>>[] = [];
   for (const sfip of sfips) {
     for (const autre of connectés) {
       await connecterPairs(sfip, autre);
@@ -107,7 +106,7 @@ export const constObtFichierRelai = async (): Promise<string> => {
   return fichierRelai;
 };
 
-export const lancerRelai = async () => {
+export const lancerRelai = async (): Promise<{adresse: string, fermerRelai:()=>void}> => {
   const { $ } = await import("execa");
 
   const fichierRelai = await constObtFichierRelai();
@@ -119,7 +118,12 @@ export const lancerRelai = async () => {
     if (e.signal !== "SIGTERM") throw new Error(e);
   });
 
-  return () => relai.kill();
+  relai.stdout.on("data", (x) => {
+    const texte = new TextDecoder().decode(x);
+    console.log(texte);
+  });
+
+  return {adresse: "", fermerRelai: () => relai.kill()};
 };
 
 export const adresseRelai =

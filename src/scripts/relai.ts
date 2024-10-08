@@ -48,7 +48,7 @@ const peerId = await createFromPrivKey(privateKey);
 const relai = await createLibp2p({
   peerId,
   addresses: {
-    listen: ["/ip4/0.0.0.0/tcp/12345/ws"],
+    listen: ["/ip4/0.0.0.0/tcp/54321/ws"],
   },
   transports: [
     webSockets({
