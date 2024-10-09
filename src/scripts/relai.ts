@@ -34,6 +34,7 @@ import { identify } from "@libp2p/identify";
 import { createFromPrivKey } from "@libp2p/peer-id-factory";
 import { keys } from "@libp2p/crypto";
 import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
+import { FaultTolerance } from "@libp2p/interface";
 
 // output of: console.log(server.peerId.privateKey.toString('hex'))
 const relayPrivKey =
@@ -55,6 +56,9 @@ const relai = await createLibp2p({
       filter: filters.all,
     }),
   ],
+  transportManager: {
+    faultTolerance: FaultTolerance.NO_FATAL,
+  },
   connectionEncryption: [noise()],
   streamMuxers: [yamux()],
   services: {
