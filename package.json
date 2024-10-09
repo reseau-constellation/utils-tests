@@ -38,7 +38,7 @@
     "@chainsafe/libp2p-yamux": "^7.0.0",
     "@constl/ipa": "1.2.7",
     "@eslint/js": "^9.7.0",
-    "@libp2p/circuit-relay-v2": "^1.1.2",
+    "@libp2p/circuit-relay-v2": "^2.0.0",
     "@libp2p/crypto": "^4.1.6",
     "@libp2p/identify": "^2.1.2",
     "@libp2p/interface": "^2.0.0",
