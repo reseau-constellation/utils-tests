@@ -82,7 +82,7 @@
     "@helia/block-brokers": "^3.0.4",
     "@orbitdb/quickstart": "github:orbitdb/quickstart#1557ffe",
     "blockstore-core": "^5.0.2",
-    "blockstore-level": "^1.1.8",
+    "blockstore-level": "^2.0.0",
     "browserify-fs": "^1.0.0",
     "chokidar": "^3.6.0",
     "crypto-browserify": "^3.12.0",
