@@ -39,7 +39,7 @@
     "@constl/ipa": "1.2.3",
     "@eslint/js": "^9.12.0",
     "@libp2p/circuit-relay-v2": "^1.1.5",
-    "@libp2p/crypto": "^4.1.9",
+    "@libp2p/crypto": "^5.0.0",
     "@libp2p/identify": "^2.1.5",
     "@libp2p/interface": "^1.7.0",
     "@libp2p/peer-id-factory": "^4.2.4",
