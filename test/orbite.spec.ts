@@ -1,12 +1,8 @@
 import { expect } from "aegir/chai";
 
-import {
-  FeedStoreTypé,
-  KeyValueStore,
-  KeyValueStoreTypé,
-  OrbitDB,
-} from "@orbitdb/core";
-import { registerFeed } from "@orbitdb/feed-db";
+import { type KeyValue, OrbitDB } from "@orbitdb/core";
+import { registerFeed, type FeedDatabaseType } from "@orbitdb/feed-db";
+import { type TypedKeyValue, typedKeyValue, typedFeed } from "@constl/bohr-db";
 import {
   ContrôleurConstellation,
   attendreSync,
@@ -14,6 +10,18 @@ import {
   peutÉcrire,
 } from "@/orbite.js";
 import { accès } from "@constl/ipa";
+import type { JSONSchemaType } from "ajv";
+
+const schémaDictNumérique: JSONSchemaType<Partial<{ [clef: string]: number }>> =
+  {
+    type: "object",
+    additionalProperties: {
+      type: "number",
+    },
+    required: [],
+  };
+
+const schémaListeTexte: JSONSchemaType<string> = { type: "string" };
 
 describe("Créer Orbites", function () {
   let orbites: OrbitDB[];
@@ -57,12 +65,20 @@ describe("Fonctions utilitaires", function () {
   it("Attendre syncronisation", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
-    })) as unknown as KeyValueStore;
-    const bdSurOrbite2 = (await orbites[1].open(
-      bd.address,
-    )) as unknown as KeyValueStore;
-    const attente = attendreSync(bdSurOrbite2);
-    await bd.set("a", 1);
+    })) as KeyValue;
+    const bdTypée = typedKeyValue({
+      db: bd,
+      schema: schémaDictNumérique,
+    });
+
+    const bdSurOrbite2 = (await orbites[1].open(bd.address)) as KeyValue;
+    const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
+      db: bdSurOrbite2,
+      schema: schémaDictNumérique,
+    });
+
+    const attente = attendreSync(bdSurOrbite2Typée);
+    await bdTypée.set("a", 1);
     await attente;
     expect(await bdSurOrbite2.get("a")).to.equal(1);
   });
@@ -70,30 +86,43 @@ describe("Fonctions utilitaires", function () {
   it("Accès écriture KeyValue", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
-    })) as unknown as KeyValueStoreTypé<{ [clef: string]: number }>;
-    const bdSurOrbite2 = (await orbites[1].open(
-      bd.address,
-    )) as unknown as KeyValueStoreTypé<{ [clef: string]: number }>;
+    })) as KeyValue;
+    const bdTypée = typedKeyValue({
+      db: bd,
+      schema: schémaDictNumérique,
+    });
 
-    const accèsCréateur = await peutÉcrire(bd);
+    const bdSurOrbite2 = (await orbites[1].open(bd.address)) as KeyValue;
+    const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
+      db: bdSurOrbite2,
+      schema: schémaDictNumérique,
+    });
+
+    const accèsCréateur = await peutÉcrire(bdTypée);
     expect(accèsCréateur).to.be.true();
 
-    const accèsAvant = await peutÉcrire(bdSurOrbite2);
+    const accèsAvant = await peutÉcrire(bdSurOrbite2Typée);
     expect(accèsAvant).to.be.false();
   });
 
   it("Accès écriture Feed", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "feed",
-    })) as unknown as FeedStoreTypé<string>;
+    })) as FeedDatabaseType;
     const bdSurOrbite2 = (await orbites[1].open(
       bd.address,
-    )) as unknown as FeedStoreTypé<string>;
+    )) as FeedDatabaseType;
 
-    const accèsCréateur = await peutÉcrire(bd);
+    const bdTypée = typedFeed({ db: bd, schema: schémaListeTexte });
+    const bdTypéeSurOrbite2 = typedFeed<string>({
+      db: bdSurOrbite2,
+      schema: schémaListeTexte,
+    });
+
+    const accèsCréateur = await peutÉcrire(bdTypée);
     expect(accèsCréateur).to.be.true();
 
-    const accèsAvant = await peutÉcrire(bdSurOrbite2);
+    const accèsAvant = await peutÉcrire(bdTypéeSurOrbite2);
     expect(accèsAvant).to.be.false();
   });
 
@@ -103,16 +132,21 @@ describe("Fonctions utilitaires", function () {
       AccessController: accès.cntrlConstellation.ContrôleurConstellation({
         write: orbites[0].identity.id,
       }),
-    })) as unknown as KeyValueStoreTypé<{ [clef: string]: number }>;
+    })) as KeyValue;
+    const bdTypée = typedKeyValue<{ [clef: string]: number }>({
+      db: bd,
+      schema: schémaDictNumérique,
+    });
+    const bdSurOrbite2 = (await orbites[1].open(bd.address)) as KeyValue;
+    const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
+      db: bdSurOrbite2,
+      schema: schémaDictNumérique,
+    });
 
-    const bdSurOrbite2 = (await orbites[1].open(
-      bd.address,
-    )) as unknown as KeyValueStoreTypé<{ [clef: string]: number }>;
-
-    const accèsCréateur = await peutÉcrire(bd, orbites[0]);
+    const accèsCréateur = await peutÉcrire(bdTypée, orbites[0]);
     expect(accèsCréateur).to.be.true();
 
-    const accèsAutreOrbite = peutÉcrire(bdSurOrbite2, orbites[1]);
+    const accèsAutreOrbite = peutÉcrire(bdSurOrbite2Typée, orbites[1]);
     await (bd.access as unknown as ContrôleurConstellation).grant(
       "MEMBRE",
       orbites[1].identity.id,

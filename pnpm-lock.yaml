@@ -20,9 +20,9 @@ importers:
       '@libp2p/webrtc':
         specifier: ^5.0.14
         version: 5.0.14(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))
-      '@orbitdb/quickstart':
-        specifier: github:orbitdb/quickstart#1557ffe
-        version: https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))
+      '@orbitdb/core':
+        specifier: ^2.3.0
+        version: 2.3.0
       blockstore-core:
         specifier: ^5.0.2
         version: 5.0.2
@@ -87,12 +87,15 @@ importers:
       '@chainsafe/libp2p-yamux':
         specifier: ^7.0.1
         version: 7.0.1
+      '@constl/bohr-db':
+        specifier: ^1.2.0
+        version: 1.2.0(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))
       '@constl/ipa':
         specifier: 1.2.7
         version: 1.2.7(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))
       '@constl/orbit-db-types':
-        specifier: ^2.0.3
-        version: 2.0.3
+        specifier: ^2.0.5
+        version: 2.0.5
       '@eslint/js':
         specifier: ^9.13.0
         version: 9.13.0
@@ -108,9 +111,6 @@ importers:
       '@libp2p/interface':
         specifier: ^2.1.3
         version: 2.1.3
-      '@libp2p/peer-id-factory':
-        specifier: ^4.2.4
-        version: 4.2.4
       '@libp2p/websockets':
         specifier: ^9.0.9
         version: 9.0.9
@@ -147,6 +147,9 @@ importers:
       aegir:
         specifier: ^44.1.4
         version: 44.1.4(@babel/core@7.26.0)(@typescript-eslint/parser@8.11.0(eslint@9.13.0)(typescript@5.5.4))(eslint-plugin-n@17.11.1(eslint@9.13.0))
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -989,8 +992,8 @@ packages:
   '@constl/mandataire@3.0.2':
     resolution: {integrity: sha512-Ijr9NHTMIIHi9jPuizPlKmPXfFZur5BDPAjykZe1IfnJNv5hPrh3juKutw0LgMfUqt0PQP53g4h7e3jex33pAg==}
 
-  '@constl/orbit-db-types@2.0.3':
-    resolution: {integrity: sha512-6mzoTdjixJvDL7VeX0A3XwjTGqRKabDwncTrOwleIO3IpVL3xH5heEFnsg/fqFgUxfH3uRT88HokRfROY6SV/w==}
+  '@constl/orbit-db-types@2.0.5':
+    resolution: {integrity: sha512-yWLiaPyPMkfena8s8NS7OTk8kkoMm0uMy7JE5LlomAmaLNNemMI6BeM8s3lAOaURlSzYQfZgVRez9U+G+F4CzA==}
 
   '@constl/utils-ipa@1.0.3':
     resolution: {integrity: sha512-gWv7BhTXYactNBXPDlUol4EudIr1tsZC1/Gvqcp0Rb2SDqGLHiSURqyiXqj6xVtzPMlcyPHDkBmqsEf8cecWJg==}
@@ -1848,10 +1851,6 @@ packages:
 
   '@orbitdb/ordered-keyvalue-db@1.1.0':
     resolution: {integrity: sha512-TocqPys5LeXXmsn5dTI/Btc3yvfxwLe/PsmHKhZmru37zjSuLRFNISX9ISXSFnR+BRdZQR539cXUOXm7fQ+e+w==}
-
-  '@orbitdb/quickstart@https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe':
-    resolution: {tarball: https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe}
-    version: 1.0.0
 
   '@orbitdb/set-db@1.1.0':
     resolution: {integrity: sha512-+aDbfQEWUyHGcXVQi4jqLSJYvmaW316cr1Jo4boI65BdLMeIWcl412TJDGIQhTXwUuO0S5JDr7vGC6fizNaNCA==}
@@ -2834,9 +2833,6 @@ packages:
 
   blockstore-core@5.0.2:
     resolution: {integrity: sha512-y7/BHdYLO3YCpJMg6Ue7b4Oz4FT1HWSZoHHdlsaJTsvoE8XieXb6kUCB9UkkUBDw2x4neRDwlgYBpyK77+Ro2Q==}
-
-  blockstore-level@1.1.8:
-    resolution: {integrity: sha512-8+NLeoyAQZzWIf9TWl0kC3x0JpJf6bts02K1fg8MCxgx/z/Leh4gVCzSGvYDuorHicOCVsyWv4+3ldlrnzRXoA==}
 
   blockstore-level@2.0.1:
     resolution: {integrity: sha512-qnnJFVfXioaCPFcc7lQZAPKAHytIqk2yIZJg9Mt58WhaQumvw3j8WZa4QYYbauUxA0FPysWU0cTXa9Njo4JdHg==}
@@ -9578,7 +9574,7 @@ snapshots:
       events: 3.3.0
       uuid: 10.0.0
 
-  '@constl/orbit-db-types@2.0.3': {}
+  '@constl/orbit-db-types@2.0.5': {}
 
   '@constl/utils-ipa@1.0.3':
     dependencies:
@@ -11246,18 +11242,6 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@orbitdb/quickstart@https://codeload.github.com/orbitdb/quickstart/tar.gz/1557ffe(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))':
-    dependencies:
-      '@chainsafe/libp2p-gossipsub': 14.1.0
-      '@orbitdb/core': 2.3.0
-      blockstore-level: 1.1.8
-      helia: 4.2.6(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))
-    transitivePeerDependencies:
-      - bufferutil
-      - react-native
-      - supports-color
-      - utf-8-validate
-
   '@orbitdb/set-db@1.1.0(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))':
     dependencies:
       '@orbitdb/core': 2.3.0
@@ -12749,14 +12733,6 @@ snapshots:
       it-filter: 3.1.1
       it-merge: 3.0.5
       it-pushable: 3.2.3
-      multiformats: 13.3.0
-
-  blockstore-level@1.1.8:
-    dependencies:
-      blockstore-core: 4.4.1
-      interface-blockstore: 5.3.1
-      interface-store: 5.1.8
-      level: 8.0.1
       multiformats: 13.3.0
 
   blockstore-level@2.0.1:

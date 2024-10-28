@@ -26,15 +26,8 @@ SOFTWARE.
 */
 
 import type { HeliaLibp2p } from "helia";
-import type {
-  FeedStoreTypé,
-  Identities,
-  Identity,
-  KeyValueStoreTypé,
-  OrbitDB,
-  Store,
-} from "@orbitdb/core";
-
+import type { Identities, Identity, OrbitDB, Database } from "@orbitdb/core";
+import type { TypedKeyValue, TypedFeed, TypedSet } from "@constl/bohr-db";
 import { once } from "events";
 
 import { dossierTempo } from "@/dossiers.js";
@@ -59,7 +52,7 @@ const startOrbitDB = async ({
 }: {
   id?: PeerId;
   identity?: Identity;
-  identities?: Identities;
+  identities?: typeof Identities;
   directory?: string;
 } = {}) => {
   const options = isBrowser()
@@ -135,7 +128,9 @@ export const créerOrbiteTest = async ({
   return { orbites, fOublier };
 };
 
-export const attendreSync = async (bd: Store): Promise<void> => {
+export const attendreSync = async (
+  bd: Awaited<ReturnType<typeof Database>>,
+): Promise<void> => {
   await once(bd.events, "update");
 };
 
@@ -147,7 +142,7 @@ export type ContrôleurConstellation = {
   estAutorisé: (id: string) => Promise<boolean>;
   grant: (rôle: "MODÉRATEUR" | "MEMBRE", id: string) => Promise<void>;
   revoke: (_rôle: "MODÉRATEUR" | "MEMBRE", _id: string) => Promise<void>;
-  bd: Store;
+  bd: Awaited<ReturnType<typeof Database>>;
 };
 
 const attendreInvité = (
@@ -167,7 +162,10 @@ const attendreInvité = (
   });
 
 export const peutÉcrire = async (
-  bd: KeyValueStoreTypé<{ [clef: string]: number }> | FeedStoreTypé<string>,
+  bd:
+    | TypedKeyValue<{ [clef: string]: number }>
+    | TypedFeed<string>
+    | TypedSet<string>,
   attendre?: OrbitDB,
 ): Promise<boolean> => {
   if (attendre) {
@@ -179,7 +177,7 @@ export const peutÉcrire = async (
 
   try {
     if (bd.type === "keyvalue") {
-      const bdKV = bd as KeyValueStoreTypé<{ [clef: string]: number }>;
+      const bdKV = bd as TypedKeyValue<{ [clef: string]: number }>;
 
       // Important d'avoir une clef unique pour éviter l'interférence entre les tests
       const CLEF = "test" + Math.random().toString();
@@ -193,26 +191,27 @@ export const peutÉcrire = async (
     } else if (bd.type === "feed") {
       const VAL = "test";
 
-      await (bd as FeedStoreTypé<string>).add(VAL);
-      const éléments = await (bd as FeedStoreTypé<string>).all();
+      await (bd as TypedFeed<string>).add(VAL);
+      const éléments = await (bd as TypedFeed<string>).all();
 
       const autorisé = éléments.length === 1 && éléments[0].value === VAL;
       if (éléments.length === 1) {
-        await (bd as FeedStoreTypé<string>).remove(éléments[0].hash);
+        await (bd as TypedFeed<string>).remove(éléments[0].hash);
       }
       return autorisé;
     } else if (bd.type === "set") {
       const VAL = "test";
 
-      await (bd as FeedStoreTypé<string>).add(VAL);
-      const éléments = await (bd as FeedStoreTypé<string>).all();
+      await bd.add(VAL);
+      const éléments = await bd.all();
 
       const autorisé = éléments.length === 1 && éléments[0].value === VAL;
       if (éléments.length === 1) {
-        await (bd as FeedStoreTypé<string>).remove(éléments[0].hash);
+        await bd.del(éléments[0].hash);
       }
       return autorisé;
     } else {
+      // @ts-expect-error bd.type n'a plus d'options
       throw new Error(`Type de BD ${bd.type} non supporté par ce test.`);
     }
   } catch (e) {
