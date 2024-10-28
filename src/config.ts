@@ -86,7 +86,6 @@ export const générerConfigÆgir = async (): Promise<PartialOptions> => {
       },
     },
     build: {
-      // @ts-expect-error Erreur différentes versions esbuild et Ægir
       config: esbuild,
     },
   };
