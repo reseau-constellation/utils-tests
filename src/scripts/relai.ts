@@ -36,13 +36,16 @@ import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
 import { FaultTolerance } from "@libp2p/interface";
 
 // output of: console.log(server.peerId.privateKey.toString('hex'))
-const privateKey =
+const privateKeyString =
   "08011240821cb6bc3d4547fcccb513e82e4d718089f8a166b23ffcd4a436754b6b0774cf07447d1693cd10ce11ef950d7517bad6e9472b41a927cd17fc3fb23f8c70cd99";
-// the peer id of the above key
+// L'identité de pair qui correspond à la clef privée ci-dessus
 // const relayId = '12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE'
 
+const encoded = uint8ArrayFromString(privateKeyString, "hex");
+const privateKey = keys.privateKeyFromProtobuf(encoded);
+
 const relai = await createLibp2p({
-  privateKey: keys.privateKeyFromRaw(uint8ArrayFromString(privateKey)),
+  privateKey,
   addresses: {
     listen: ["/ip4/0.0.0.0/tcp/54321/ws", "/p2p-circuit"],
   },

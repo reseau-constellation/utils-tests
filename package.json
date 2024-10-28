@@ -106,7 +106,8 @@
   },
   "pnpm": {
     "overrides": {
-      "@chainsafe/libp2p-gossipsub": "14.1.0"
+      "@chainsafe/libp2p-gossipsub": "14.1.0",
+      "helia": "5.1.0"
     }
   }
 }
