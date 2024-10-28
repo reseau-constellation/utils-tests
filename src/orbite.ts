@@ -40,7 +40,6 @@ import { createOrbitDB } from "@orbitdb/core";
 import { LevelBlockstore } from "blockstore-level";
 import { bitswap } from "@helia/block-brokers";
 import { DefaultLibp2pOptions, DefaultLibp2pBrowserOptions } from "./libp2p.js";
-import { PeerId } from "@libp2p/interface";
 
 const isBrowser = () => typeof window !== "undefined";
 
@@ -50,7 +49,7 @@ const startOrbitDB = async ({
   identities,
   directory,
 }: {
-  id?: PeerId;
+  id?: string;
   identity?: Identity;
   identities?: typeof Identities;
   directory?: string;

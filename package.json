@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.6.1",
   "license": "AGPL-3.0-or-later",
   "name": "@constl/utils-tests",
   "author": "Julien Jean Malard-Adam",
@@ -38,13 +38,13 @@
     "@chainsafe/libp2p-yamux": "^7.0.1",
     "@constl/bohr-db": "^1.2.0",
     "@constl/ipa": "1.2.7",
-    "@constl/orbit-db-types": "^2.0.5",
+    "@constl/orbit-db-types": "^2.0.6",
     "@eslint/js": "^9.13.0",
-    "@libp2p/circuit-relay-v2": "^3.0.0",
-    "@libp2p/crypto": "^5.0.5",
-    "@libp2p/identify": "^3.0.9",
-    "@libp2p/interface": "^2.1.3",
-    "@libp2p/websockets": "^9.0.9",
+    "@libp2p/circuit-relay-v2": "^3.1.0",
+    "@libp2p/crypto": "^5.0.6",
+    "@libp2p/identify": "^3.0.10",
+    "@libp2p/interface": "^2.2.0",
+    "@libp2p/websockets": "^9.0.10",
     "@multiformats/multiaddr": "^12.3.1",
     "@multiformats/multiaddr-matcher": "^1.3.0",
     "@orbitdb/feed-db": "^1.1.0",
@@ -82,8 +82,8 @@
   },
   "dependencies": {
     "@helia/block-brokers": "^4.0.1",
-    "@libp2p/peer-id": "^5.0.6",
-    "@libp2p/webrtc": "^5.0.14",
+    "@libp2p/peer-id": "^5.0.7",
+    "@libp2p/webrtc": "^5.0.15",
     "@orbitdb/core": "^2.3.0",
     "blockstore-core": "^5.0.2",
     "blockstore-level": "^2.0.1",
@@ -93,7 +93,7 @@
     "events": "^3.3.0",
     "genversion": "^3.2.0",
     "helia": "5.1.0",
-    "libp2p": "^2.1.10",
+    "libp2p": "^2.2.0",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "read-package-up": "^11.0.0",
@@ -103,11 +103,5 @@
     "url-polyfill": "^1.1.12",
     "uuid": "^11.0.1",
     "wherearewe": "^2.0.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "@chainsafe/libp2p-gossipsub": "14.1.0",
-      "helia": "5.1.0"
-    }
   }
 }
