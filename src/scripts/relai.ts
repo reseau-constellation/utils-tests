@@ -47,7 +47,7 @@ const privateKey = keys.privateKeyFromProtobuf(encoded);
 const relai = await createLibp2p({
   privateKey,
   addresses: {
-    listen: ["/ip4/0.0.0.0/tcp/54321/ws", "/p2p-circuit"],
+    listen: ["/ip4/0.0.0.0/tcp/54321/ws"],
   },
   transports: [
     webSockets({
