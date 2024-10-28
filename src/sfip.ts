@@ -12,10 +12,7 @@ import {} from "@libp2p/interface";
 
 import { isBrowser, isElectronRenderer } from "wherearewe";
 
-import {
-  DefaultLibp2pBrowserOptions,
-  DefaultLibp2pOptions,
-} from "@orbitdb/quickstart";
+import { DefaultLibp2pBrowserOptions, DefaultLibp2pOptions } from "./libp2p.js";
 
 export const créerHéliaTest = async ({
   dossier,

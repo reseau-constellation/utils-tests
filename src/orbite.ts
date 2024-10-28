@@ -1,9 +1,10 @@
 /*
-Certaines parties de ce fichier proviennent d'OrbitDB
+Certaines parties de ce fichier proviennent d'OrbitDB et de @orbitdb/quickstart
 
 MIT License
 
 Copyright (c) 2019 Haja Networks Oy
+Copyright (c) 2024 OrbitDB Community
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +28,8 @@ SOFTWARE.
 import type { HeliaLibp2p } from "helia";
 import type {
   FeedStoreTypé,
+  Identities,
+  Identity,
   KeyValueStoreTypé,
   OrbitDB,
   Store,
@@ -38,8 +41,53 @@ import { dossierTempo } from "@/dossiers.js";
 import { connecterPairs } from "@/sfip.js";
 import { isNode, isElectronMain } from "wherearewe";
 
-const OrbitDBQuickstart = await import("@orbitdb/quickstart");
-const { startOrbitDB, stopOrbitDB } = OrbitDBQuickstart;
+import { createHelia } from "helia";
+import { createLibp2p } from "libp2p";
+import { createOrbitDB } from "@orbitdb/core";
+import { LevelBlockstore } from "blockstore-level";
+import { bitswap } from "@helia/block-brokers";
+import { DefaultLibp2pOptions, DefaultLibp2pBrowserOptions } from "./libp2p.js";
+import { PeerId } from "@libp2p/interface";
+
+const isBrowser = () => typeof window !== "undefined";
+
+const startOrbitDB = async ({
+  id,
+  identity,
+  identities,
+  directory,
+}: {
+  id?: PeerId;
+  identity?: Identity;
+  identities?: Identities;
+  directory?: string;
+} = {}) => {
+  const options = isBrowser()
+    ? DefaultLibp2pBrowserOptions
+    : DefaultLibp2pOptions;
+  const libp2p = await createLibp2p({ ...options });
+  directory = directory || ".";
+  const blockstore = new LevelBlockstore(`${directory}/ipfs/blocks`);
+  const ipfs = await createHelia({
+    libp2p,
+    blockstore,
+    blockBrokers: [bitswap()],
+  });
+  const orbitdb = await createOrbitDB({
+    ipfs,
+    id,
+    identity,
+    identities,
+    directory,
+  });
+  return orbitdb;
+};
+
+const stopOrbitDB = async (orbitdb: OrbitDB) => {
+  await orbitdb.stop();
+  await orbitdb.ipfs.stop();
+  await orbitdb.ipfs.blockstore.unwrap().unwrap().child.db.close();
+};
 
 export const créerOrbiteTest = async ({
   n = 1,

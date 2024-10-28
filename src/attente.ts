@@ -88,7 +88,7 @@ export class AttendreFichierExiste extends EventEmitter {
   }
 
   annuler() {
-    this.fOublier && this.fOublier();
+    this.fOublier?.();
   }
 }
 
