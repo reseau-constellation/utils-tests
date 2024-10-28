@@ -77,6 +77,10 @@ relai.addEventListener("peer:connect", async (event) => {
   console.log("peer:connect", event.detail);
 });
 
+relai.addEventListener("peer:discovery", async (event) => {
+  console.log("peer:discovery", event.detail);
+});
+
 relai.addEventListener("peer:disconnect", async (event) => {
   console.log("peer:disconnect", event.detail);
   relai.peerStore.delete(event.detail);
