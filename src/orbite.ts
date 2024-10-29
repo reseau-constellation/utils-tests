@@ -110,7 +110,7 @@ export const créerOrbiteTest = async ({
   await Promise.all([...Array(n).keys()].map((i) => _générer(i)));
 
   const fOublier = async () => {
-    await Promise.all(orbites.map(stopOrbitDB));
+    for (const o of orbites) await stopOrbitDB(o);
 
     try {
       fEffacerRacineDossierOrbite();
