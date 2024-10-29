@@ -143,7 +143,7 @@ importers:
         version: 8.11.0(eslint@9.13.0)(typescript@5.5.4)
       aegir:
         specifier: ^45.0.0
-        version: 45.0.0(@babel/core@7.26.0)(@typescript-eslint/parser@8.11.0(eslint@9.13.0)(typescript@5.5.4))(eslint-plugin-n@17.11.1(eslint@9.13.0))
+        version: 45.0.1(@babel/core@7.26.0)(@typescript-eslint/parser@8.11.0(eslint@9.13.0)(typescript@5.5.4))(eslint-plugin-n@17.11.1(eslint@9.13.0))
       ajv:
         specifier: ^8.17.1
         version: 8.17.1
@@ -2135,6 +2135,9 @@ packages:
   '@types/node@20.17.1':
     resolution: {integrity: sha512-j2VlPv1NnwPJbaCNv69FO/1z4lId0QmGvpT41YxitRtWlg96g/j8qcv2RKsLKe2F6OJgyXhupN1Xo17b2m139Q==}
 
+  '@types/node@20.17.2':
+    resolution: {integrity: sha512-OOHK4sjXqkL7yQ7VEEHcf6+0jSvKjWqwnaCtY7AKD/VLEvRHMsxxu7eI8ErnjxHS8VwmekD4PeVCpu4qZEZSxg==}
+
   '@types/node@22.8.1':
     resolution: {integrity: sha512-k6Gi8Yyo8EtrNtkHXutUu2corfDf9su95VYVP10aGYMMROM6SAItZi0w1XszA6RtWTHSVp5OeFof37w0IEqCQg==}
 
@@ -2400,8 +2403,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aegir@45.0.0:
-    resolution: {integrity: sha512-u36UmoxUQtPBWnAbkX3jFQLV+/kBzxXbBqxVdmKyJtvQG3Ytg2BwWLVsjF3YSx6ND69cGfrlicXZWpqA6g8wZA==}
+  aegir@45.0.1:
+    resolution: {integrity: sha512-qgGkVageT6rytHk2LlR6JTVSjHZ0jaANvoegCW7/qtACSYDTo4lGQxh8tYgGjk0UhzLQ13NO6D6orfci+3/Nbg==}
     hasBin: true
 
   agent-base@7.1.1:
@@ -2897,8 +2900,8 @@ packages:
     resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
     engines: {node: '>=16'}
 
-  caniuse-lite@1.0.30001673:
-    resolution: {integrity: sha512-WTrjUCSMp3LYX0nE12ECkV0a+e6LC85E0Auz75555/qr78Oc8YWhEPNfDd6SHdtlCMSzqtuXY0uyEMNRcsKpKw==}
+  caniuse-lite@1.0.30001674:
+    resolution: {integrity: sha512-jOsKlZVRnzfhLojb+Ykb+gyUSp9Xb57So+fAiFlLzzTKpqg8xxSav0e40c8/4F/v9N8QSvrRRaLeVzQbLqomYw==}
 
   catering@2.1.1:
     resolution: {integrity: sha512-K7Qy8O9p76sL3/3m7/zLKbRkyOlSZAgzEaLhyj2mXS8PsCud2Eo4hAb8aLtZqHh0QGqLcb9dlJSu6lHRVENm1w==}
@@ -3540,8 +3543,8 @@ packages:
     engines: {node: '>= 16.0.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.47:
-    resolution: {integrity: sha512-zS5Yer0MOYw4rtK2iq43cJagHZ8sXN0jDHDKzB+86gSBSAI4v07S97mcq+Gs2vclAxSh1j7vOAHxSVgduiiuVQ==}
+  electron-to-chromium@1.5.49:
+    resolution: {integrity: sha512-ZXfs1Of8fDb6z7WEYZjXpgIRF6MEu8JdeGA0A40aZq6OQbS+eJpnnV49epZRna2DU/YsEjSQuGtQPPtvt6J65A==}
 
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
@@ -11311,6 +11314,10 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
+  '@types/node@20.17.2':
+    dependencies:
+      undici-types: 6.19.8
+
   '@types/node@22.8.1':
     dependencies:
       undici-types: 6.19.8
@@ -11365,7 +11372,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.8.2
+      '@types/node': 22.8.1
     optional: true
 
   '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)':
@@ -11675,7 +11682,7 @@ snapshots:
 
   acorn@8.14.0: {}
 
-  aegir@45.0.0(@babel/core@7.26.0)(@typescript-eslint/parser@8.11.0(eslint@9.13.0)(typescript@5.5.4))(eslint-plugin-n@17.11.1(eslint@9.13.0)):
+  aegir@45.0.1(@babel/core@7.26.0)(@typescript-eslint/parser@8.11.0(eslint@9.13.0)(typescript@5.5.4))(eslint-plugin-n@17.11.1(eslint@9.13.0)):
     dependencies:
       '@electron/get': 3.1.0
       '@polka/send-type': 0.5.2
@@ -11690,7 +11697,7 @@ snapshots:
       '@types/chai-string': 1.4.5
       '@types/chai-subset': 1.3.5
       '@types/mocha': 10.0.9
-      '@types/node': 20.17.1
+      '@types/node': 20.17.2
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@8.11.0(eslint@9.13.0)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)
       buffer: 6.0.3
       bytes: 3.1.2
@@ -11765,7 +11772,7 @@ snapshots:
       typedoc-plugin-mdn-links: 3.3.5(typedoc@0.25.13(typescript@5.5.4))
       typedoc-plugin-missing-exports: 2.3.0(typedoc@0.25.13(typescript@5.5.4))
       typescript: 5.5.4
-      typescript-docs-verifier: 2.5.0(@types/node@20.17.1)(typescript@5.5.4)
+      typescript-docs-verifier: 2.5.0(@types/node@20.17.2)(typescript@5.5.4)
       wherearewe: 2.0.1
       yargs: 17.7.2
       yargs-parser: 21.1.1
@@ -12221,8 +12228,8 @@ snapshots:
 
   browserslist@4.24.2:
     dependencies:
-      caniuse-lite: 1.0.30001673
-      electron-to-chromium: 1.5.47
+      caniuse-lite: 1.0.30001674
+      electron-to-chromium: 1.5.49
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
 
@@ -12335,7 +12342,7 @@ snapshots:
 
   camelcase@8.0.0: {}
 
-  caniuse-lite@1.0.30001673: {}
+  caniuse-lite@1.0.30001674: {}
 
   catering@2.1.1: {}
 
@@ -13067,7 +13074,7 @@ snapshots:
       which: 4.0.0
       yargs: 17.7.2
 
-  electron-to-chromium@1.5.47: {}
+  electron-to-chromium@1.5.49: {}
 
   electron-window@0.8.1:
     dependencies:
@@ -18319,14 +18326,14 @@ snapshots:
     dependencies:
       typescript: 5.5.4
 
-  ts-node@10.9.2(@types/node@20.17.1)(typescript@5.5.4):
+  ts-node@10.9.2(@types/node@20.17.2)(typescript@5.5.4):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.17.1
+      '@types/node': 20.17.2
       acorn: 8.14.0
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -18482,13 +18489,13 @@ snapshots:
       shiki: 0.14.7
       typescript: 5.5.4
 
-  typescript-docs-verifier@2.5.0(@types/node@20.17.1)(typescript@5.5.4):
+  typescript-docs-verifier@2.5.0(@types/node@20.17.2)(typescript@5.5.4):
     dependencies:
       chalk: 4.1.2
       fs-extra: 10.1.0
       ora: 5.4.1
       strip-ansi: 7.1.0
-      ts-node: 10.9.2(@types/node@20.17.1)(typescript@5.5.4)
+      ts-node: 10.9.2(@types/node@20.17.2)(typescript@5.5.4)
       tsconfig: 7.0.0
       typescript: 5.5.4
       yargs: 17.7.2
