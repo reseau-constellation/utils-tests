@@ -46,7 +46,7 @@ importers:
         version: 5.1.0(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.5.4))
       libp2p:
         specifier: ^2.2.0
-        version: 2.2.0
+        version: 2.2.1
       os-browserify:
         specifier: ^0.3.0
         version: 0.3.0
@@ -5371,8 +5371,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  libp2p@2.2.0:
-    resolution: {integrity: sha512-NLdJSzYs2FMz8Yo8FSJ52f7fOvn2tDqicbmqrGBUqaYN2HUf4AysUoOFzFbODFLaGOKEYOIhEwo502rcjQ/ykg==}
+  libp2p@2.2.1:
+    resolution: {integrity: sha512-xxmaCAfpOKCgYuxLzA87RZBf2lzA2DwuLUB7kFB3MHw6FbGGeb10YEUaM4V/XCgIDDZs4DOCgXnKOMqN+BhjRw==}
 
   libsodium-sumo@0.7.15:
     resolution: {integrity: sha512-5tPmqPmq8T8Nikpm1Nqj0hBHvsLFCXvdhBFV7SGOitQPZAA6jso8XoL0r4L7vmfKXr486fiQInvErHtEvizFMw==}
@@ -5978,6 +5978,9 @@ packages:
 
   multiformats@13.3.0:
     resolution: {integrity: sha512-CBiqvsufgmpo01VT5ze94O+uc+Pbf6f/sThlvWss0sBZmAOu6GQn5usrYV2sf2mr17FWYc0rO8c/CNe2T90QAA==}
+
+  multiformats@13.3.1:
+    resolution: {integrity: sha512-QxowxTNwJ3r5RMctoGA5p13w5RbRT2QDkoM+yFlqfLiioBp78nhDjnRLvmSBI9+KAqN4VdgOVWM9c0CHd86m3g==}
 
   multimatch@5.0.0:
     resolution: {integrity: sha512-ypMKuglUrZUD99Tk2bUQ+xNQj43lPEfAeX2o9cTteAmShXy2VHDJpuwu1o0xqoKCt9jLVAvwyFKdLTPXKAfJyA==}
@@ -10146,7 +10149,7 @@ snapshots:
       '@libp2p/interface': 2.2.0
       '@multiformats/multiaddr': 12.3.1
       interface-datastore: 8.3.1
-      multiformats: 13.3.0
+      multiformats: 13.3.1
       weald: 1.0.4
 
   '@libp2p/mdns@11.0.10':
@@ -10188,7 +10191,7 @@ snapshots:
       '@libp2p/interface': 2.2.0
       '@libp2p/peer-id': 5.0.7
       '@libp2p/utils': 6.1.3
-      multiformats: 13.3.0
+      multiformats: 13.3.1
 
   '@libp2p/peer-id@5.0.7':
     dependencies:
@@ -10220,7 +10223,7 @@ snapshots:
       interface-datastore: 8.3.1
       it-all: 3.0.6
       mortice: 3.0.6
-      multiformats: 13.3.0
+      multiformats: 13.3.1
       protons-runtime: 5.5.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -14467,7 +14470,7 @@ snapshots:
       interface-blockstore: 5.3.1
       interface-datastore: 8.3.1
       ipns: 10.0.0
-      libp2p: 2.2.0
+      libp2p: 2.2.1
       multiformats: 13.3.0
     transitivePeerDependencies:
       - bufferutil
@@ -15394,7 +15397,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  libp2p@2.2.0:
+  libp2p@2.2.1:
     dependencies:
       '@libp2p/crypto': 5.0.6
       '@libp2p/interface': 2.2.0
@@ -15415,7 +15418,7 @@ snapshots:
       it-merge: 3.0.5
       it-parallel: 3.0.8
       merge-options: 3.0.4
-      multiformats: 13.3.0
+      multiformats: 13.3.1
       p-defer: 4.0.1
       p-retry: 6.2.0
       progress-events: 1.0.1
@@ -16382,6 +16385,8 @@ snapshots:
   multiformats@13.1.3: {}
 
   multiformats@13.3.0: {}
+
+  multiformats@13.3.1: {}
 
   multimatch@5.0.0:
     dependencies:
