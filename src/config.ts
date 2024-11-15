@@ -53,6 +53,8 @@ export const obtConfigEsbuild = async (): Promise<BuildOptions> => {
       "env-paths",
       "@libp2p/tcp",
       "@libp2p/mdns",
+      "datastore-fs",
+      "blockstore-fs",
     ],
   };
   return configEsbuild;
