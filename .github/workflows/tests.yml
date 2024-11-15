@@ -41,7 +41,7 @@ jobs:
         run: pnpm test:node
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
   
@@ -74,7 +74,7 @@ jobs:
         run: pnpm test:navig
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -114,6 +114,6 @@ jobs:
         run: pnpm run test:électron-principal
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
