@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@helia/block-brokers':
         specifier: ^4.0.1
-        version: 4.0.1
+        version: 4.0.2
       '@libp2p/peer-id':
         specifier: ^5.0.7
         version: 5.0.8
@@ -1345,23 +1345,14 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@helia/bitswap@2.0.1':
-    resolution: {integrity: sha512-9bwjwdgW3LfraDfIlfJ4g1WrO96IKW3hjrc63jXxlKHU8JPwMdd5a//XoNIQfQ5vx6DV0w+w2AM1aHHt+nHBGA==}
-
   '@helia/bitswap@2.0.2':
     resolution: {integrity: sha512-aJfcQeyJFX+f7TWYZhf8zuZJFig6AhzFjiB+mgzL8YnCG01c+ouZ2iYLSImLGndcRr47uOey6rjHvWuwu1Id8Q==}
-
-  '@helia/block-brokers@4.0.1':
-    resolution: {integrity: sha512-djYp4bmC15SBP1/ra9SrOAATr432hDcA2hnHWewkz1l84hCi+gSol7AcdAfW233pZ2ivZcI2Jc1Nyf7Vg6uFeg==}
 
   '@helia/block-brokers@4.0.2':
     resolution: {integrity: sha512-TGn/VFvZTnAZ12J2/l+XShqde+Dz10dVvgllIQlKnSxIcO+U7iGxDusrCvYL5KTn6yy/ghSUsQ2cBMEBCbjgvA==}
 
   '@helia/delegated-routing-v1-http-api-client@4.1.1':
     resolution: {integrity: sha512-Pf5pZkZGEBhARFXoLRzVVSZ8E8yU0Q0F3DOadhxPQjaSNyahetwiTsV8TvJltfrs2Afy2+gbA2+Rycl7apSXdQ==}
-
-  '@helia/interface@5.0.0':
-    resolution: {integrity: sha512-B95cP8RBl7cqSu1VELeRWPUsTNxu2bJ2Y/ihsdYfUCcxHKUUQdDDLTHQzhZe9iC9TYADkfkjIM7gqgmhqYtY6A==}
 
   '@helia/interface@5.1.0':
     resolution: {integrity: sha512-5rah5zHBfj6JRsdAtbgS6BaGXu/8pBMOCAAoAYCJntJ7TNSIAF1/Zv5dyK+NoYkgiFZW+8l4Z7cKDCpdC+78pw==}
@@ -1374,9 +1365,6 @@ packages:
 
   '@helia/unixfs@4.0.0':
     resolution: {integrity: sha512-e6tiXB7d3VL5suYm4e2cNEt+R8HLRmIkZkfOhB+WMcsCA7c3wtFNuN1ASKBQvCopp6+TdTfYafvCz40QnWgP+Q==}
-
-  '@helia/utils@1.0.1':
-    resolution: {integrity: sha512-S1qLDiHNdBxQxtgonqPQHl8Rn7gs4HEQSrVF+ok//T/ZQPItNGnhKudV8qWhoOdpzCDaObx2ryqip+K9FK8VCQ==}
 
   '@helia/utils@1.1.0':
     resolution: {integrity: sha512-7DtCVu24qXqqNYwax3rnz9vAOw/SDXSvlcsK60/1irz/2HvxIcOG19bnllL+OGaMKJgfnoDGRbduQNgP04jJXA==}
@@ -1417,16 +1405,8 @@ packages:
     resolution: {integrity: sha512-uIEOuruCqKTP50OBWwgz4Js2+LhiBQaxc57cnP71f45b1mHEAo1OCR1Zn/TbvSW/mV1x+JqhacIktkKyaYqhCw==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
-  '@ipld/dag-json@10.2.2':
-    resolution: {integrity: sha512-NnU8HdHKwAoGyrW3S09NMa8aZw0tImLRyR64hoafpLpDpAbA9g1+fb24JsdlugbL4sXUQVwDVA+qK4Ud8V83lA==}
-    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
-
   '@ipld/dag-json@10.2.3':
     resolution: {integrity: sha512-itacv1j1hvYgLox2B42Msn70QLzcr0MEo5yGIENuw2SM/lQzq9bmBiMky+kDsIrsqqblKTXcHBZnnmK7D4a6ZQ==}
-    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
-
-  '@ipld/dag-pb@4.1.2':
-    resolution: {integrity: sha512-BSztO4l3C+ya9HjCaQot26Y4AVsqIKtnn6+23ubc1usucnf6yoTBme18oCCdM6gKBMxuPqju5ye3lh9WEJsdeQ==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
   '@ipld/dag-pb@4.1.3':
@@ -1688,9 +1668,6 @@ packages:
 
   '@multiformats/multiaddr-matcher@1.6.0':
     resolution: {integrity: sha512-E77lLvQR+50kTAfvjV3g4wr9qCu77Z+6yT0s1hgfh8B4sAXZ8u/YdQJGhjgstgW1kmGy7BXPppROKYijqQsesQ==}
-
-  '@multiformats/multiaddr-to-uri@10.1.1':
-    resolution: {integrity: sha512-8GlXnFmLq3KXXMaGCqOBf8Zd5suTY7p8SlwPrgpdL0LzxG+PjiH2k8QcPEk9JFVjfOgY1XfPYSn3mAiliC4tZw==}
 
   '@multiformats/multiaddr-to-uri@10.1.2':
     resolution: {integrity: sha512-6sicfYRjJlHJn4bwsQancs8kXncWU4dDN/+V9sMVTYp9hi8ovWgVkK75AbAv4SfhztmmI+oufVUncQ1n+SukKQ==}
@@ -2186,6 +2163,9 @@ packages:
 
   '@types/node@22.9.0':
     resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
+
+  '@types/node@22.9.1':
+    resolution: {integrity: sha512-p8Yy/8sw1caA8CdRIQBG5tiLHmxtQKObCijiAa9Ez+d4+PRffM4054xbju0msf+cvhJpnFEeNjxmVT/0ipktrg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -9436,7 +9416,7 @@ snapshots:
       '@constl/bohr-db': 1.2.0(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.6.3))
       '@constl/mandataire': 3.0.3
       '@constl/utils-ipa': 1.0.3
-      '@helia/block-brokers': 4.0.1
+      '@helia/block-brokers': 4.0.2
       '@helia/unixfs': 4.0.0
       '@ipld/dag-cbor': 9.2.2
       '@lassi-js/kili': 0.3.16(@constl/ipa@1.4.2(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.6.3)))
@@ -9771,33 +9751,6 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@helia/bitswap@2.0.1':
-    dependencies:
-      '@helia/interface': 5.0.0
-      '@helia/utils': 1.0.1
-      '@libp2p/interface': 2.2.1
-      '@libp2p/logger': 5.1.4
-      '@libp2p/peer-collections': 6.0.12
-      '@libp2p/utils': 6.1.3
-      '@multiformats/multiaddr': 12.3.1
-      any-signal: 4.1.1
-      interface-blockstore: 5.3.1
-      interface-store: 6.0.2
-      it-drain: 3.0.7
-      it-length-prefixed: 9.1.0
-      it-length-prefixed-stream: 1.2.0
-      it-map: 3.1.1
-      it-pipe: 3.0.1
-      it-take: 3.0.6
-      multiformats: 13.3.0
-      p-defer: 4.0.1
-      progress-events: 1.0.1
-      protons-runtime: 5.5.0
-      race-event: 1.3.0
-      uint8-varint: 2.0.4
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-
   '@helia/bitswap@2.0.2':
     dependencies:
       '@helia/interface': 5.1.0
@@ -9824,21 +9777,6 @@ snapshots:
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
-
-  '@helia/block-brokers@4.0.1':
-    dependencies:
-      '@helia/bitswap': 2.0.1
-      '@helia/interface': 5.0.0
-      '@helia/utils': 1.0.1
-      '@libp2p/interface': 2.2.1
-      '@libp2p/utils': 6.1.3
-      '@multiformats/multiaddr': 12.3.1
-      '@multiformats/multiaddr-matcher': 1.6.0
-      '@multiformats/multiaddr-to-uri': 10.1.1
-      interface-blockstore: 5.3.1
-      interface-store: 6.0.2
-      multiformats: 13.3.0
-      progress-events: 1.0.1
 
   '@helia/block-brokers@4.0.2':
     dependencies:
@@ -9872,16 +9810,6 @@ snapshots:
       p-queue: 8.0.1
       uint8arrays: 5.1.0
 
-  '@helia/interface@5.0.0':
-    dependencies:
-      '@libp2p/interface': 2.2.1
-      '@multiformats/dns': 1.0.6
-      interface-blockstore: 5.3.1
-      interface-datastore: 8.3.1
-      interface-store: 6.0.2
-      multiformats: 13.3.0
-      progress-events: 1.0.1
-
   '@helia/interface@5.1.0':
     dependencies:
       '@libp2p/interface': 2.2.1
@@ -9895,7 +9823,7 @@ snapshots:
   '@helia/routers@2.1.0':
     dependencies:
       '@helia/delegated-routing-v1-http-api-client': 4.1.1
-      '@helia/interface': 5.0.0
+      '@helia/interface': 5.1.0
       '@libp2p/interface': 2.2.1
       '@libp2p/peer-id': 5.0.8
       '@multiformats/uri-to-multiaddr': 8.0.0
@@ -9920,7 +9848,7 @@ snapshots:
 
   '@helia/unixfs@4.0.0':
     dependencies:
-      '@helia/interface': 5.0.0
+      '@helia/interface': 5.1.0
       '@ipld/dag-pb': 4.1.3
       '@libp2p/interface': 2.2.1
       '@libp2p/logger': 5.1.4
@@ -9942,32 +9870,6 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
-
-  '@helia/utils@1.0.1':
-    dependencies:
-      '@helia/interface': 5.0.0
-      '@ipld/dag-cbor': 9.2.2
-      '@ipld/dag-json': 10.2.2
-      '@ipld/dag-pb': 4.1.2
-      '@libp2p/interface': 2.2.1
-      '@libp2p/logger': 5.1.4
-      '@libp2p/utils': 6.1.3
-      '@multiformats/dns': 1.0.6
-      any-signal: 4.1.1
-      blockstore-core: 5.0.2
-      cborg: 4.2.6
-      interface-blockstore: 5.3.1
-      interface-datastore: 8.3.1
-      interface-store: 6.0.2
-      it-drain: 3.0.7
-      it-filter: 3.1.1
-      it-foreach: 2.1.1
-      it-merge: 3.0.5
-      mortice: 3.0.6
-      multiformats: 13.3.0
-      p-defer: 4.0.1
-      progress-events: 1.0.1
-      uint8arrays: 5.1.0
 
   '@helia/utils@1.1.0':
     dependencies:
@@ -10025,19 +9927,10 @@ snapshots:
       cborg: 4.2.6
       multiformats: 13.3.1
 
-  '@ipld/dag-json@10.2.2':
-    dependencies:
-      cborg: 4.2.6
-      multiformats: 13.3.0
-
   '@ipld/dag-json@10.2.3':
     dependencies:
       cborg: 4.2.6
       multiformats: 13.3.1
-
-  '@ipld/dag-pb@4.1.2':
-    dependencies:
-      multiformats: 13.3.0
 
   '@ipld/dag-pb@4.1.3':
     dependencies:
@@ -10072,14 +9965,14 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       jest-mock: 29.7.0
 
   '@jest/fake-timers@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -10092,7 +9985,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       '@types/yargs': 15.0.19
       chalk: 4.1.2
 
@@ -10101,7 +9994,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -10750,10 +10643,6 @@ snapshots:
       '@chainsafe/is-ip': 2.0.2
       '@multiformats/multiaddr': 12.3.1
       multiformats: 13.3.1
-
-  '@multiformats/multiaddr-to-uri@10.1.1':
-    dependencies:
-      '@multiformats/multiaddr': 12.3.1
 
   '@multiformats/multiaddr-to-uri@10.1.2':
     dependencies:
@@ -11574,13 +11463,17 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
 
   '@types/node@20.17.6':
     dependencies:
       undici-types: 6.19.8
 
   '@types/node@22.9.0':
+    dependencies:
+      undici-types: 6.19.8
+
+  '@types/node@22.9.1':
     dependencies:
       undici-types: 6.19.8
 
@@ -12703,7 +12596,7 @@ snapshots:
 
   chrome-launcher@0.15.2:
     dependencies:
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -12712,7 +12605,7 @@ snapshots:
 
   chromium-edge-launcher@0.2.0:
     dependencies:
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -14750,11 +14643,11 @@ snapshots:
     dependencies:
       '@chainsafe/libp2p-noise': 16.0.0
       '@chainsafe/libp2p-yamux': 7.0.1
-      '@helia/block-brokers': 4.0.1
+      '@helia/block-brokers': 4.0.2
       '@helia/delegated-routing-v1-http-api-client': 4.1.1
-      '@helia/interface': 5.0.0
+      '@helia/interface': 5.1.0
       '@helia/routers': 2.1.0
-      '@helia/utils': 1.0.1
+      '@helia/utils': 1.1.0
       '@libp2p/autonat': 2.0.10
       '@libp2p/bootstrap': 11.0.10
       '@libp2p/circuit-relay-v2': 3.1.3
@@ -14973,7 +14866,7 @@ snapshots:
   interface-blockstore@5.3.1:
     dependencies:
       interface-store: 6.0.2
-      multiformats: 13.3.0
+      multiformats: 13.3.1
 
   interface-datastore@8.3.1:
     dependencies:
@@ -15501,7 +15394,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -15522,13 +15415,13 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       jest-util: 29.7.0
 
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -15545,7 +15438,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 22.9.0
+      '@types/node': 22.9.1
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
