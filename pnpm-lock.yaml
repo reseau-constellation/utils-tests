@@ -110,7 +110,7 @@ importers:
         version: 2.2.1
       '@libp2p/websockets':
         specifier: ^9.0.10
-        version: 9.0.12
+        version: 9.0.13
       '@multiformats/multiaddr':
         specifier: ^12.3.1
         version: 12.3.1
@@ -1565,6 +1565,9 @@ packages:
   '@libp2p/logger@5.1.3':
     resolution: {integrity: sha512-NUVWEWGbXlBDgDE5ntdm51+ZICmaKYI8mor6KrlPeB1WXDyIFxRWIBw6uzt+HgprQJWzLTojeUEGv6OPsj95Dg==}
 
+  '@libp2p/logger@5.1.4':
+    resolution: {integrity: sha512-pVQ2odi6rcOR412wM0dg7eZ1+wPHPo5D7W8vIn3YyB2FLodQD7CZXXfg7Z9Yaqlc4BVbkNXDWL/jlUss9wL2Ow==}
+
   '@libp2p/mdns@11.0.10':
     resolution: {integrity: sha512-9U/byQsGmTC6Vqc+DaIsFPpIWBlh7CHT24PSg4CvUHC8CrypHADlTEGUxQjP5KTW1i50ZR1hkGlQZUC592RQxw==}
 
@@ -1610,8 +1613,8 @@ packages:
   '@libp2p/utils@6.1.3':
     resolution: {integrity: sha512-n1D6phOXGkqE3tuvmZwm5gaHKcGanlKwCWEBlrZqx9SSCyd5U5C58BcyQ8YH5/nb4kYMI7HyjomfQAVs2S2R9Q==}
 
-  '@libp2p/utils@6.2.0':
-    resolution: {integrity: sha512-KREDP1BHpPiyT7Z/a5+CIVjZJNDLWwukw//Ful9jCVReFiRcIUDAWG5Ukiue8dUp64uV2yUiRpDMDcGkzBOAEA==}
+  '@libp2p/utils@6.2.1':
+    resolution: {integrity: sha512-uORuQLB75MgbrDA6i0rCw/fqNFgCs1dO3c21Z5WNdRCA4Lcvhgi6wnUf45DwgNCqtljDAnBR0FYI+UbEp5yAuA==}
 
   '@libp2p/webrtc@5.0.16':
     resolution: {integrity: sha512-+o82zclk0d8HVGfI1pNiypCvhC0boubRVIJ/5+JSyUbZFpTNDelBb6DziI7s6NPVn0OnNvlfS6xWO3cetw9qag==}
@@ -1619,8 +1622,8 @@ packages:
   '@libp2p/websockets@9.0.11':
     resolution: {integrity: sha512-GoX323NMnbOwPu4Cq49XD9AwKLJfOr/R4H5b21ZCpgPIryVGmKUUzS8tWVdBu8RlWcRwCqz7rTUGZ95TKJeVwQ==}
 
-  '@libp2p/websockets@9.0.12':
-    resolution: {integrity: sha512-2yOY//qZQRaU1j3uNB/OwbRbAQ/oPG4p4sHwPBs4zlV4LIVOCBvCf4VkjVNGI4VelUft01s4VsYiYKvu5WLUMA==}
+  '@libp2p/websockets@9.0.13':
+    resolution: {integrity: sha512-e1Lukn8kzJC7YbfufT8rOy/BXUyl213srb+zizFu4JkTRloChEjq7VzARPo9lrMQye71JrTi2eBg+O/XadERsg==}
 
   '@libp2p/webtransport@5.0.15':
     resolution: {integrity: sha512-f4O7oqR/XPm8iPT6da4PZWMtOcQmmbeo6fIPDUd3QwEAsTqiHldYAOTQpazjYd3c0mf11Ubi+sc6hUJ9YfvoTw==}
@@ -10271,6 +10274,14 @@ snapshots:
       multiformats: 13.3.0
       weald: 1.0.4
 
+  '@libp2p/logger@5.1.4':
+    dependencies:
+      '@libp2p/interface': 2.2.1
+      '@multiformats/multiaddr': 12.3.1
+      interface-datastore: 8.3.1
+      multiformats: 13.3.1
+      weald: 1.0.4
+
   '@libp2p/mdns@11.0.10':
     dependencies:
       '@libp2p/interface': 2.2.1
@@ -10285,7 +10296,7 @@ snapshots:
   '@libp2p/mplex@11.0.10':
     dependencies:
       '@libp2p/interface': 2.2.1
-      '@libp2p/utils': 6.2.0
+      '@libp2p/utils': 6.2.1
       it-pipe: 3.0.1
       it-pushable: 3.2.3
       it-stream-types: 2.0.2
@@ -10423,7 +10434,7 @@ snapshots:
       '@achingbrain/nat-port-mapper': 1.0.15
       '@libp2p/interface': 2.2.1
       '@libp2p/interface-internal': 2.0.10
-      '@libp2p/utils': 6.2.0
+      '@libp2p/utils': 6.2.1
       '@multiformats/multiaddr': 12.3.1
       wherearewe: 2.0.1
 
@@ -10452,12 +10463,12 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/utils@6.2.0':
+  '@libp2p/utils@6.2.1':
     dependencies:
       '@chainsafe/is-ip': 2.0.2
       '@libp2p/crypto': 5.0.7
       '@libp2p/interface': 2.2.1
-      '@libp2p/logger': 5.1.3
+      '@libp2p/logger': 5.1.4
       '@multiformats/multiaddr': 12.3.1
       '@sindresorhus/fnv1a': 3.1.0
       '@types/murmurhash3js-revisited': 3.0.3
@@ -10526,10 +10537,10 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@libp2p/websockets@9.0.12':
+  '@libp2p/websockets@9.0.13':
     dependencies:
       '@libp2p/interface': 2.2.1
-      '@libp2p/utils': 6.2.0
+      '@libp2p/utils': 6.2.1
       '@multiformats/multiaddr': 12.3.1
       '@multiformats/multiaddr-matcher': 1.6.0
       '@multiformats/multiaddr-to-uri': 10.1.2
@@ -10549,7 +10560,7 @@ snapshots:
       '@chainsafe/libp2p-noise': 16.0.0
       '@libp2p/interface': 2.2.1
       '@libp2p/peer-id': 5.0.8
-      '@libp2p/utils': 6.2.0
+      '@libp2p/utils': 6.2.1
       '@multiformats/multiaddr': 12.3.1
       '@multiformats/multiaddr-matcher': 1.6.0
       it-stream-types: 2.0.2
@@ -14698,7 +14709,7 @@ snapshots:
       '@libp2p/tls': 2.0.10
       '@libp2p/upnp-nat': 2.0.10
       '@libp2p/webrtc': 5.0.16(react-native@0.75.1(@babel/core@7.26.0)(@babel/preset-env@7.25.3(@babel/core@7.26.0))(react@18.3.1)(typescript@5.6.3))
-      '@libp2p/websockets': 9.0.12
+      '@libp2p/websockets': 9.0.13
       '@libp2p/webtransport': 5.0.15
       '@multiformats/dns': 1.0.6
       blockstore-core: 5.0.2
