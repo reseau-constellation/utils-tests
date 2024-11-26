@@ -37,9 +37,7 @@ export const créerConstellationsTest = async <
   }
 
   const fOublier = async () => {
-    await Promise.all(
-      clients.map((client) => (client as Constellation).fermer()),
-    );
+    for (const client of clients) await (client as Constellation).fermer();
     await Promise.all(fsOublier.map((f) => f()));
   };
   return { fOublier, clients, orbites };
