@@ -83,7 +83,8 @@ const startOrbitDB = async ({
 const stopOrbitDB = async (orbitdb: OrbitDB) => {
   await orbitdb.stop();
   await orbitdb.ipfs.stop();
-  // await orbitdb.ipfs.blockstore.unwrap().unwrap().child.db.close();
+  // @ts-expect-error Je ne sais pas pourquoi
+  await orbitdb.ipfs.blockstore.unwrap().unwrap().child.db.close();
 };
 
 export const créerOrbiteTest = async ({
