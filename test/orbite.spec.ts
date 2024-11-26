@@ -1,6 +1,6 @@
 import { expect } from "aegir/chai";
 
-import { type KeyValue, OrbitDB } from "@orbitdb/core";
+import { OrbitDB, type KeyValueDatabase } from "@orbitdb/core";
 import { registerFeed, type FeedDatabaseType } from "@orbitdb/feed-db";
 import { type TypedKeyValue, typedKeyValue, typedFeed } from "@constl/bohr-db";
 import {
@@ -65,13 +65,15 @@ describe("Fonctions utilitaires", function () {
   it("Attendre syncronisation", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
-    })) as KeyValue;
+    })) as KeyValueDatabase;
     const bdTypée = typedKeyValue({
       db: bd,
       schema: schémaDictNumérique,
     });
 
-    const bdSurOrbite2 = (await orbites[1].open(bd.address)) as KeyValue;
+    const bdSurOrbite2 = (await orbites[1].open(
+      bd.address,
+    )) as KeyValueDatabase;
     const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
       db: bdSurOrbite2,
       schema: schémaDictNumérique,
@@ -86,13 +88,15 @@ describe("Fonctions utilitaires", function () {
   it("Accès écriture KeyValue", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
-    })) as KeyValue;
+    })) as KeyValueDatabase;
     const bdTypée = typedKeyValue({
       db: bd,
       schema: schémaDictNumérique,
     });
 
-    const bdSurOrbite2 = (await orbites[1].open(bd.address)) as KeyValue;
+    const bdSurOrbite2 = (await orbites[1].open(
+      bd.address,
+    )) as KeyValueDatabase;
     const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
       db: bdSurOrbite2,
       schema: schémaDictNumérique,
@@ -132,12 +136,14 @@ describe("Fonctions utilitaires", function () {
       AccessController: accès.cntrlConstellation.ContrôleurConstellation({
         write: orbites[0].identity.id,
       }),
-    })) as KeyValue;
+    })) as KeyValueDatabase;
     const bdTypée = typedKeyValue<{ [clef: string]: number }>({
       db: bd,
       schema: schémaDictNumérique,
     });
-    const bdSurOrbite2 = (await orbites[1].open(bd.address)) as KeyValue;
+    const bdSurOrbite2 = (await orbites[1].open(
+      bd.address,
+    )) as KeyValueDatabase;
     const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
       db: bdSurOrbite2,
       schema: schémaDictNumérique,

@@ -26,7 +26,12 @@ SOFTWARE.
 */
 
 import type { HeliaLibp2p } from "helia";
-import type { Identities, Identity, OrbitDB, Database } from "@orbitdb/core";
+import type {
+  Identity,
+  OrbitDB,
+  Database,
+  IdentitiesType,
+} from "@orbitdb/core";
 import type { TypedKeyValue, TypedFeed, TypedSet } from "@constl/bohr-db";
 import { once } from "events";
 
@@ -51,7 +56,7 @@ const startOrbitDB = async ({
 }: {
   id?: string;
   identity?: Identity;
-  identities?: typeof Identities;
+  identities?: IdentitiesType;
   directory?: string;
 } = {}) => {
   const options = isBrowser()
@@ -78,7 +83,7 @@ const startOrbitDB = async ({
 const stopOrbitDB = async (orbitdb: OrbitDB) => {
   await orbitdb.stop();
   await orbitdb.ipfs.stop();
-  await orbitdb.ipfs.blockstore.unwrap().unwrap().child.db.close();
+  // await orbitdb.ipfs.blockstore.unwrap().unwrap().child.db.close();
 };
 
 export const créerOrbiteTest = async ({
