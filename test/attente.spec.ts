@@ -25,6 +25,12 @@ describe("AttendreRésultat", function () {
     attente.mettreÀJour(2);
     expect(await résultat).to.equal(2);
   });
+  it("attendre n'existe pas", async () => {
+    const attente = new AttendreRésultat<number>();
+    const résultat = attente.attendreNexistePas();
+    attente.mettreÀJour(undefined);
+    await résultat;
+  });
 });
 
 describe("AttendreFichier", function () {

@@ -40,6 +40,23 @@ export class AttendreRésultat<T> {
     return val;
   }
 
+  async attendreNexistePas(): Promise<void> {
+    if (this.val === undefined) return;
+
+    const id = uuidv4();
+
+    return new Promise((résoudre) => {
+      const fLorsqueChangé = async () => {
+        if (this.val === undefined) {
+          this.oublier(id);
+          résoudre();
+        }
+      };
+      this.événements.on("changé", fLorsqueChangé);
+      this.fsOublier[id] = () => this.événements.off("changé", fLorsqueChangé);
+    });
+  }
+
   oublier(id: string) {
     this.fsOublier[id]();
     delete this.fsOublier[id];
