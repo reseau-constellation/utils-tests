@@ -31,7 +31,7 @@ importers:
         version: 1.0.0
       chokidar:
         specifier: ^4.0.1
-        version: 4.0.1
+        version: 4.0.2
       crypto-browserify:
         specifier: ^3.12.1
         version: 3.12.1
@@ -2984,8 +2984,8 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
-  chokidar@4.0.1:
-    resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
+  chokidar@4.0.2:
+    resolution: {integrity: sha512-/b57FK+bblSU+dfewfFe0rT1YjVDfOmeLQwCAuC+vwvgLkXboATqqmy+Ipux6JrF6L5joe5CBnFOw+gLWH6yKg==}
     engines: {node: '>= 14.16.0'}
 
   chownr@1.1.4:
@@ -4062,8 +4062,8 @@ packages:
   fast-uri@3.0.3:
     resolution: {integrity: sha512-aLrHthzCjH5He4Z2H9YZ+v6Ujb9ocRuW6ZzkJQOrTxleEijANq4v1TsaPaVG1PZcuurEzrLcWRyYBYXD5cEiaw==}
 
-  fast-xml-parser@4.5.0:
-    resolution: {integrity: sha512-/PlTQCI96+fZMAOLMZK4CWG1ItCbfZ/0jx7UIJFChPNrx7tcEgerUgWbeieCM9MfHInUDyK8DWYZ+YrywDJuTg==}
+  fast-xml-parser@4.5.1:
+    resolution: {integrity: sha512-y655CeyUQ+jj7KBbYMc4FG01V8ZQqjN+gDYGJ50RtfsUB8iG9AmwmwoAgeKLJdmueKKMrH1RJ7yXHTSoczdv5w==}
     hasBin: true
 
   fastq@1.17.1:
@@ -7622,6 +7622,7 @@ packages:
 
   sudo-prompt@9.2.1:
     resolution: {integrity: sha512-Mu7R0g4ig9TUuGSxJavny5Rv0egCEtpZRNMrZaYS1vxkiIxGiGUwoezU3LazIQ+KE04hTrTfNPgxU5gzi7F5Pw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   sumchecker@3.0.1:
     resolution: {integrity: sha512-MvjXzkz/BOfyVDkG0oFOtBxHX2u3gKbMHIF/dXblZsgD3BWOFLmHovIpZY7BykJdAjcqRCBi1WYBNdEC9yI7vg==}
@@ -9455,7 +9456,7 @@ snapshots:
       blockstore-fs: 2.0.2
       blockstore-idb: 2.0.1
       browser-fs-access: 0.35.0
-      chokidar: 4.0.1
+      chokidar: 4.0.2
       crypto-js: 4.2.0
       datastore-fs: 10.0.2
       datastore-idb: 3.0.1
@@ -10983,7 +10984,7 @@ snapshots:
       chalk: 4.1.2
       execa: 5.1.1
       fast-glob: 3.3.2
-      fast-xml-parser: 4.5.0
+      fast-xml-parser: 4.5.1
       logkitty: 0.7.1
 
   '@react-native-community/cli-platform-apple@14.0.0':
@@ -10992,7 +10993,7 @@ snapshots:
       chalk: 4.1.2
       execa: 5.1.1
       fast-glob: 3.3.2
-      fast-xml-parser: 4.5.0
+      fast-xml-parser: 4.5.1
       ora: 5.4.1
 
   '@react-native-community/cli-platform-ios@14.0.0':
@@ -12577,7 +12578,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  chokidar@4.0.1:
+  chokidar@4.0.2:
     dependencies:
       readdirp: 4.0.2
 
@@ -14081,7 +14082,7 @@ snapshots:
 
   fast-uri@3.0.3: {}
 
-  fast-xml-parser@4.5.0:
+  fast-xml-parser@4.5.1:
     dependencies:
       strnum: 1.0.5
 
