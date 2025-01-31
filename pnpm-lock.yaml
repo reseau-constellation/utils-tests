@@ -188,7 +188,7 @@ importers:
         version: 11.1.0
       playwright:
         specifier: ^1.49.0
-        version: 1.50.0
+        version: 1.50.1
       prettier:
         specifier: ^3.4.0
         version: 3.4.2
@@ -6799,13 +6799,18 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  playwright-core@1.50.1:
+    resolution: {integrity: sha512-ra9fsNWayuYumt+NiM069M6OkcRb1FZSK8bgi66AtpFoWkg2+y0bJSNmkFrWhMbEBbVKC/EruAHH3g0zmtwGmQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   playwright-test@14.1.7:
     resolution: {integrity: sha512-pskq/DFHdtoj+SPFAuUpAVFxFx3LybgW2bxlTgBOoWTMUgS0PXC4O+tdELxC0D1z4r48uloWo283LB6uvXnHCw==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
-  playwright@1.50.0:
-    resolution: {integrity: sha512-+GinGfGTrd2IfX1TA4N2gNmeIksSb+IAe589ZH+FlmpV3MYTx6+buChGIuDLQwrGNCw2lWibqV50fU510N7S+w==}
+  playwright@1.50.1:
+    resolution: {integrity: sha512-G8rwsOQJ63XG6BbKj2w5rHeavFjy5zynBA9zsJMMtBoe/Uf757oG12NXz6e6OirF7RCrTVAKFXbLmn1RbL7Qaw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -7354,6 +7359,11 @@ packages:
 
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.7.0:
+    resolution: {integrity: sha512-DrfFnPzblFmNrIZzg5RzHegbiRWg7KMR7btwi2yjHwx06zsUbO5g613sVwEV7FTwmzJu+Io0lJe2GJ3LxqpvBQ==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -11162,7 +11172,7 @@ snapshots:
       execa: 5.1.1
       node-stream-zip: 1.15.0
       ora: 5.4.1
-      semver: 7.6.3
+      semver: 7.7.0
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
       yaml: 2.7.0
@@ -11232,7 +11242,7 @@ snapshots:
       mime: 2.6.0
       open: 6.4.0
       ora: 5.4.1
-      semver: 7.6.3
+      semver: 7.7.0
       shell-quote: 1.8.2
       sudo-prompt: 9.2.1
 
@@ -11245,7 +11255,7 @@ snapshots:
       mime: 2.6.0
       open: 6.4.0
       ora: 5.4.1
-      semver: 7.6.3
+      semver: 7.7.0
       shell-quote: 1.8.2
       sudo-prompt: 9.2.1
 
@@ -11270,7 +11280,7 @@ snapshots:
       fs-extra: 8.1.0
       graceful-fs: 4.2.11
       prompts: 2.4.2
-      semver: 7.6.3
+      semver: 7.7.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -17549,6 +17559,8 @@ snapshots:
 
   playwright-core@1.50.0: {}
 
+  playwright-core@1.50.1: {}
+
   playwright-test@14.1.7:
     dependencies:
       acorn-loose: 8.4.0
@@ -17588,9 +17600,9 @@ snapshots:
     transitivePeerDependencies:
       - monocart-coverage-reports
 
-  playwright@1.50.0:
+  playwright@1.50.1:
     dependencies:
-      playwright-core: 1.50.0
+      playwright-core: 1.50.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -17864,7 +17876,7 @@ snapshots:
       react-refresh: 0.14.2
       regenerator-runtime: 0.13.11
       scheduler: 0.24.0-canary-efb381bbf-20230505
-      semver: 7.6.3
+      semver: 7.7.0
       stacktrace-parser: 0.1.10
       whatwg-fetch: 3.6.20
       ws: 6.2.3
@@ -18283,6 +18295,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.6.3: {}
+
+  semver@7.7.0: {}
 
   send@0.19.0:
     dependencies:
