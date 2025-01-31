@@ -155,7 +155,7 @@ importers:
         version: 3.40.0
       electron:
         specifier: ^34.0.0
-        version: 34.0.1
+        version: 34.0.2
       esbuild:
         specifier: ^0.24.0
         version: 0.24.2
@@ -2178,6 +2178,9 @@ packages:
   '@types/node@22.12.0':
     resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
 
+  '@types/node@22.13.0':
+    resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
+
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
@@ -3611,8 +3614,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@34.0.1:
-    resolution: {integrity: sha512-aArw5tAM80i3CKwEREnyZSM1SkARf5Jd1yBMTIdOL4pB1M+p/oDeyWSFI9Dl+vujyfJKiK4SS5+j19wna1onMw==}
+  electron@34.0.2:
+    resolution: {integrity: sha512-u3F+DSUlg9NaGS+9qnYmSRN8VjAnc3LJDDk1ye1uISJnh4gjG76y3681qLowsPMx4obvCP2eBINnmbLo0yT5WA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -10102,14 +10105,14 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       jest-mock: 29.7.0
 
   '@jest/fake-timers@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -10122,7 +10125,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       '@types/yargs': 15.0.19
       chalk: 4.1.2
 
@@ -10131,7 +10134,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -11661,13 +11664,17 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
 
   '@types/node@20.17.16':
     dependencies:
       undici-types: 6.19.8
 
   '@types/node@22.12.0':
+    dependencies:
+      undici-types: 6.20.0
+
+  '@types/node@22.13.0':
     dependencies:
       undici-types: 6.20.0
 
@@ -12812,7 +12819,7 @@ snapshots:
 
   chrome-launcher@0.15.2:
     dependencies:
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -12821,7 +12828,7 @@ snapshots:
 
   chromium-edge-launcher@0.2.0:
     dependencies:
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -13489,7 +13496,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@34.0.1:
+  electron@34.0.2:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 20.17.16
@@ -15676,7 +15683,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -15697,13 +15704,13 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       jest-util: 29.7.0
 
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -15720,7 +15727,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -16982,7 +16989,7 @@ snapshots:
 
   node-abi@3.73.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.0
 
   node-abort-controller@3.1.1: {}
 
