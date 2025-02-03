@@ -32,6 +32,7 @@ import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
 import { gossipsub } from "@chainsafe/libp2p-gossipsub";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
+import type { PrivateKey } from "@libp2p/interface";
 
 /**
  * A basic Libp2p configuration for Node.js nodes.
@@ -80,5 +81,23 @@ export const DefaultLibp2pBrowserOptions = {
   services: {
     identify: identify(),
     pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }),
+    obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
+      new ServiceClefPrivée(components),
   },
 };
+
+interface ComposantesServiceClefPrivée {
+  privateKey: PrivateKey;
+}
+
+class ServiceClefPrivée {
+  private privateKey: PrivateKey;
+
+  constructor(components: ComposantesServiceClefPrivée) {
+    this.privateKey = components.privateKey;
+  }
+
+  obtenirClef(): PrivateKey {
+    return this.privateKey;
+  }
+}
