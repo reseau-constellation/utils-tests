@@ -33,6 +33,8 @@ import { yamux } from "@chainsafe/libp2p-yamux";
 import { gossipsub } from "@chainsafe/libp2p-gossipsub";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
 import type { PrivateKey } from "@libp2p/interface";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type {ProgressEvent} from "progress-events";
 
 /**
  * A basic Libp2p configuration for Node.js nodes.
@@ -56,6 +58,8 @@ export const DefaultLibp2pOptions = {
   services: {
     identify: identify(),
     pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }),
+    obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
+      new ServiceClefPrivée(components),
   },
 };
 
