@@ -1,5 +1,5 @@
 {
-  "version": "1.6.8",
+  "version": "1.6.9",
   "license": "AGPL-3.0-or-later",
   "name": "@constl/utils-tests",
   "author": "Julien Jean Malard-Adam",
@@ -72,6 +72,7 @@
     "mocha": "^11.0.0",
     "playwright": "^1.49.0",
     "prettier": "^3.4.0",
+    "progress-events": "^1.0.1",
     "source-map-support": "^0.5.21",
     "ts-patch": "^3.2.1",
     "tsconfig-paths": "^4.2.0",

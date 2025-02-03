@@ -192,6 +192,9 @@ importers:
       prettier:
         specifier: ^3.4.0
         version: 3.4.2
+      progress-events:
+        specifier: ^1.0.1
+        version: 1.0.1
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
