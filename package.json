@@ -46,7 +46,7 @@
     "@libp2p/websockets": "^9.1.5",
     "@multiformats/multiaddr": "^12.3.5",
     "@multiformats/multiaddr-matcher": "^1.6.0",
-    "@orbitdb/core-types": "^1.0.11",
+    "@orbitdb/core-types": "^1.0.13",
     "@orbitdb/feed-db": "^1.1.1",
     "@types/crypto-js": "^4.2.2",
     "@types/file-saver": "^2.0.7",

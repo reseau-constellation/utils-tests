@@ -26,7 +26,7 @@ const schémaDictNumérique: JSONSchemaType<Partial<{ [clef: string]: number }>>
 const schémaListeTexte: JSONSchemaType<string> = { type: "string" };
 
 describe("Créer Orbites", function () {
-  let orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
+  let orbites: OrbitDB<ServicesLibp2pConstlTest>[];
   let fOublier: () => Promise<void>;
 
   after(async () => {
@@ -51,7 +51,7 @@ describe("Créer Orbites", function () {
 });
 
 describe("Fonctions utilitaires", function () {
-  let orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
+  let orbites: OrbitDB<ServicesLibp2pConstlTest>[];
   let fOublier: () => Promise<void>;
 
   before(async () => {

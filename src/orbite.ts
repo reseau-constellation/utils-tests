@@ -85,9 +85,7 @@ const startOrbitDB = async ({
   return orbitdb;
 };
 
-const stopOrbitDB = async (
-  orbitdb: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>,
-) => {
+const stopOrbitDB = async (orbitdb: OrbitDB<ServicesLibp2pConstlTest>) => {
   await orbitdb.stop();
   await orbitdb.ipfs.stop();
   // @ts-expect-error Je ne sais pas pourquoi
@@ -99,11 +97,11 @@ export const créerOrbiteTest = async ({
 }: {
   n: number;
 }): Promise<{
-  orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
+  orbites: OrbitDB<ServicesLibp2pConstlTest>[];
   fOublier: () => Promise<void>;
 }> => {
   const sfips: HeliaLibp2p<Libp2p<ServicesLibp2pConstlTest>>[] = [];
-  const orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[] = [];
+  const orbites: OrbitDB<ServicesLibp2pConstlTest>[] = [];
 
   const {
     dossier: racineDossierOrbite,
@@ -181,7 +179,7 @@ export const peutÉcrire = async <T extends ServiceMap = ServiceMap>(
     | TypedKeyValue<{ [clef: string]: number }>
     | TypedFeed<string>
     | TypedSet<string>,
-  attendre?: OrbitDB<Libp2p<T>>,
+  attendre?: OrbitDB<T>,
 ): Promise<boolean> => {
   if (attendre) {
     await attendreInvité(
