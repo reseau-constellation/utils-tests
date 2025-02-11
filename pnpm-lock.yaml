@@ -116,7 +116,7 @@ importers:
         version: 1.6.0
       '@orbitdb/core-types':
         specifier: ^1.0.10
-        version: 1.0.10
+        version: 1.0.13
       '@orbitdb/feed-db':
         specifier: ^1.1.1
         version: 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
@@ -1853,8 +1853,8 @@ packages:
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
 
-  '@orbitdb/core-types@1.0.10':
-    resolution: {integrity: sha512-wmNvh3jxz5ayE14sCHlcTUvJEBKo6rUVYXAq9J0bAAP9olf18dV/hCG6LETVMZ8X8Qj/wiwKKLYdLxk6c+hWOw==}
+  '@orbitdb/core-types@1.0.13':
+    resolution: {integrity: sha512-OVDau/V/4N2uY4/IJQYi/7pyNd4cbEqDmWEH92SqwtlkevdGlu2rHvNeF7pG4Eh56AgUp7ZYFvgDWZHA21WU+Q==}
 
   '@orbitdb/core@2.4.3':
     resolution: {integrity: sha512-pRHDJlODTy35nySEAPhTjzZIKQ7eedwCIoplmEXs1rW3KYqMHNQaNxrIc1uBMw9cRsPTeIGwxTUkvXfhhaf35Q==}
@@ -3279,8 +3279,8 @@ packages:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
     engines: {node: '>= 0.6'}
 
-  compression@1.7.5:
-    resolution: {integrity: sha512-bQJ0YRck5ak3LgtnpKkiabX5pNF7tMUh1BSy2ZBOTh0Dim0BUu6aPPwByIns6/A5Prh8PufSPerMDUklpzes2Q==}
+  compression@1.8.0:
+    resolution: {integrity: sha512-k6WLKfunuqCYD3t6AsuPGvQWaKwuLLh2/xHNcX4qE+vIfDNXpSqnrhwA7O53R7WVQUnt8dVAIW+YHr7xTgOgGA==}
     engines: {node: '>= 0.8.0'}
 
   concat-map@0.0.1:
@@ -4312,8 +4312,8 @@ packages:
   flow-enums-runtime@0.0.6:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
 
-  flow-parser@0.259.1:
-    resolution: {integrity: sha512-xiXLmMH2Z7OmdE9Q+MjljUMr/rbemFqZIRxaeZieVScG4HzQrKKhNcCYZbWTGpoN7ZPi7z8ClQbeVPq6t5AszQ==}
+  flow-parser@0.260.0:
+    resolution: {integrity: sha512-GvVx+yGdVK4U6Q5AcLCCqVjCyJTeYClOrMYlxhSG7fPNcsiYqtIOIXA+/SaTsvj1kB/xyiwZ5+iOGQXbwaE6Ew==}
     engines: {node: '>=0.4.0'}
 
   follow-redirects@1.15.9:
@@ -7924,8 +7924,8 @@ packages:
     resolution: {integrity: sha512-7jDLIdD2Zp0bDe5r3D2qtkd1QOCacylBuL7oa4udvN6v2pqr4+LcCr67C8DR1zkpaZ8XosF5m1yQSabKAW6f2g==}
     engines: {node: '>=14.16'}
 
-  terser@5.38.1:
-    resolution: {integrity: sha512-GWANVlPM/ZfYzuPHjq0nxT+EbOEDDN3Jwhwdg1D8TU8oSkktp8w64Uq4auuGLxFSoNTRDncTq2hQHX1Ld9KHkA==}
+  terser@5.38.2:
+    resolution: {integrity: sha512-w8CXxxbFA5zfNsR/i8HZq5bvn18AK0O9jj7hyo1YqkovLxEFa0uP0LCVGZRqiRaKRFxXhELBp8SteeAjEnfeJg==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -9689,7 +9689,7 @@ snapshots:
   '@constl/bohr-db@1.2.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))':
     dependencies:
       '@orbitdb/core': 2.4.3
-      '@orbitdb/core-types': 1.0.10
+      '@orbitdb/core-types': 1.0.13
       '@orbitdb/feed-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
       '@orbitdb/ordered-keyvalue-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
       '@orbitdb/set-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
@@ -9706,7 +9706,7 @@ snapshots:
   '@constl/bohr-db@1.2.2(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))':
     dependencies:
       '@orbitdb/core': 2.4.3
-      '@orbitdb/core-types': 1.0.10
+      '@orbitdb/core-types': 1.0.13
       '@orbitdb/feed-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
       '@orbitdb/ordered-keyvalue-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
       '@orbitdb/set-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.7)(@babel/preset-env@7.25.3(@babel/core@7.26.7))(react@18.3.1)(typescript@5.7.3))
@@ -11280,7 +11280,7 @@ snapshots:
 
   '@opentelemetry/api@1.9.0': {}
 
-  '@orbitdb/core-types@1.0.10': {}
+  '@orbitdb/core-types@1.0.13': {}
 
   '@orbitdb/core@2.4.3':
     dependencies:
@@ -11538,7 +11538,7 @@ snapshots:
     dependencies:
       '@react-native-community/cli-debugger-ui': 14.0.0
       '@react-native-community/cli-tools': 14.0.0
-      compression: 1.7.5
+      compression: 1.8.0
       connect: 3.7.0
       errorhandler: 1.5.1
       nocache: 3.0.4
@@ -11554,7 +11554,7 @@ snapshots:
     dependencies:
       '@react-native-community/cli-debugger-ui': 14.0.0-alpha.11
       '@react-native-community/cli-tools': 14.0.0-alpha.11
-      compression: 1.7.5
+      compression: 1.8.0
       connect: 3.7.0
       errorhandler: 1.5.1
       nocache: 3.0.4
@@ -13324,7 +13324,7 @@ snapshots:
     dependencies:
       mime-db: 1.53.0
 
-  compression@1.7.5:
+  compression@1.8.0:
     dependencies:
       bytes: 3.1.2
       compressible: 2.0.18
@@ -14788,7 +14788,7 @@ snapshots:
 
   flow-enums-runtime@0.0.6: {}
 
-  flow-parser@0.259.1: {}
+  flow-parser@0.260.0: {}
 
   follow-redirects@1.15.9(debug@4.4.0):
     optionalDependencies:
@@ -16069,7 +16069,7 @@ snapshots:
       '@babel/register': 7.25.9(@babel/core@7.26.7)
       babel-core: 7.0.0-bridge.0(@babel/core@7.26.7)
       chalk: 4.1.2
-      flow-parser: 0.259.1
+      flow-parser: 0.260.0
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
@@ -16702,7 +16702,7 @@ snapshots:
   metro-minify-terser@0.80.12:
     dependencies:
       flow-enums-runtime: 0.0.6
-      terser: 5.38.1
+      terser: 5.38.2
 
   metro-react-native-babel-preset@0.64.0(@babel/core@7.26.7):
     dependencies:
@@ -19129,7 +19129,7 @@ snapshots:
       type-fest: 2.19.0
       unique-string: 3.0.0
 
-  terser@5.38.1:
+  terser@5.38.2:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.14.0
