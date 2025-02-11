@@ -11,6 +11,8 @@ import {
 } from "@/orbite.js";
 import { accès } from "@constl/ipa";
 import type { JSONSchemaType } from "ajv";
+import { Libp2p } from "@libp2p/interface";
+import { ServicesLibp2pConstlTest } from "@/libp2p";
 
 const schémaDictNumérique: JSONSchemaType<Partial<{ [clef: string]: number }>> =
   {
@@ -24,7 +26,7 @@ const schémaDictNumérique: JSONSchemaType<Partial<{ [clef: string]: number }>>
 const schémaListeTexte: JSONSchemaType<string> = { type: "string" };
 
 describe("Créer Orbites", function () {
-  let orbites: OrbitDB[];
+  let orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
   let fOublier: () => Promise<void>;
 
   after(async () => {
@@ -49,7 +51,7 @@ describe("Créer Orbites", function () {
 });
 
 describe("Fonctions utilitaires", function () {
-  let orbites: OrbitDB[];
+  let orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
   let fOublier: () => Promise<void>;
 
   before(async () => {

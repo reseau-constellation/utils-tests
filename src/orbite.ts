@@ -40,11 +40,16 @@ import { connecterPairs } from "@/sfip.js";
 import { isNode, isElectronMain } from "wherearewe";
 
 import { createHelia } from "helia";
-import { createLibp2p } from "libp2p";
+import { Libp2p, createLibp2p } from "libp2p";
 import { createOrbitDB } from "@orbitdb/core";
 import { LevelBlockstore } from "blockstore-level";
 import { bitswap } from "@helia/block-brokers";
-import { DefaultLibp2pOptions, DefaultLibp2pBrowserOptions } from "./libp2p.js";
+import {
+  DefaultLibp2pOptions,
+  DefaultLibp2pBrowserOptions,
+  type ServicesLibp2pConstlTest,
+} from "./libp2p.js";
+import type { ServiceMap } from "@libp2p/interface";
 
 const isBrowser = () => typeof window !== "undefined";
 
@@ -80,7 +85,9 @@ const startOrbitDB = async ({
   return orbitdb;
 };
 
-const stopOrbitDB = async (orbitdb: OrbitDB) => {
+const stopOrbitDB = async (
+  orbitdb: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>,
+) => {
   await orbitdb.stop();
   await orbitdb.ipfs.stop();
   // @ts-expect-error Je ne sais pas pourquoi
@@ -91,9 +98,12 @@ export const créerOrbiteTest = async ({
   n = 1,
 }: {
   n: number;
-}): Promise<{ orbites: OrbitDB[]; fOublier: () => Promise<void> }> => {
-  const sfips: HeliaLibp2p[] = [];
-  const orbites: OrbitDB[] = [];
+}): Promise<{
+  orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
+  fOublier: () => Promise<void>;
+}> => {
+  const sfips: HeliaLibp2p<Libp2p<ServicesLibp2pConstlTest>>[] = [];
+  const orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[] = [];
 
   const {
     dossier: racineDossierOrbite,
@@ -166,12 +176,12 @@ const attendreInvité = (
     testAutorisé();
   });
 
-export const peutÉcrire = async (
+export const peutÉcrire = async <T extends ServiceMap = ServiceMap>(
   bd:
     | TypedKeyValue<{ [clef: string]: number }>
     | TypedFeed<string>
     | TypedSet<string>,
-  attendre?: OrbitDB,
+  attendre?: OrbitDB<Libp2p<T>>,
 ): Promise<boolean> => {
   if (attendre) {
     await attendreInvité(

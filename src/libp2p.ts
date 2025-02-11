@@ -24,22 +24,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { identify } from "@libp2p/identify";
+import { Identify, identify } from "@libp2p/identify";
 import { webSockets } from "@libp2p/websockets";
 import { webRTC } from "@libp2p/webrtc";
 import { all } from "@libp2p/websockets/filters";
 import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
-import { gossipsub } from "@chainsafe/libp2p-gossipsub";
+import { type GossipsubEvents, gossipsub } from "@chainsafe/libp2p-gossipsub";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
-import type { PrivateKey } from "@libp2p/interface";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { ProgressEvent } from "progress-events";
+import type { PrivateKey, PubSub } from "@libp2p/interface";
+import type { Libp2pOptions } from "libp2p";
 
 /**
  * A basic Libp2p configuration for Node.js nodes.
  */
-export const DefaultLibp2pOptions = {
+export const DefaultLibp2pOptions: Libp2pOptions<ServicesLibp2pConstlTest> = {
   addresses: {
     listen: ["/ip4/0.0.0.0/tcp/0/ws", "/p2p-circuit"],
   },
@@ -66,35 +65,41 @@ export const DefaultLibp2pOptions = {
 /**
  * A basic Libp2p configuration for browser nodes.
  */
-export const DefaultLibp2pBrowserOptions = {
-  addresses: {
-    listen: ["/webrtc", "/p2p-circuit"],
-  },
-  transports: [
-    webSockets({
-      filter: all,
-    }),
-    webRTC(),
-    circuitRelayTransport(),
-  ],
-  connectionEncrypters: [noise()],
-  streamMuxers: [yamux()],
-  connectionGater: {
-    denyDialMultiaddr: () => false,
-  },
-  services: {
-    identify: identify(),
-    pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }),
-    obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
-      new ServiceClefPrivée(components),
-  },
-};
+export const DefaultLibp2pBrowserOptions: Libp2pOptions<ServicesLibp2pConstlTest> =
+  {
+    addresses: {
+      listen: ["/webrtc", "/p2p-circuit"],
+    },
+    transports: [
+      webSockets({
+        filter: all,
+      }),
+      webRTC(),
+      circuitRelayTransport(),
+    ],
+    connectionEncrypters: [noise()],
+    streamMuxers: [yamux()],
+    connectionGater: {
+      denyDialMultiaddr: () => false,
+    },
+    services: {
+      identify: identify(),
+      pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }),
+      obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
+        new ServiceClefPrivée(components),
+    },
+  };
 
 interface ComposantesServiceClefPrivée {
   privateKey: PrivateKey;
 }
 
-class ServiceClefPrivée {
+export type ServicesLibp2pConstlTest = {
+  identify: Identify;
+  pubsub: PubSub<GossipsubEvents>;
+  obtClefPrivée: ServiceClefPrivée;
+};
+export class ServiceClefPrivée {
   private privateKey: PrivateKey;
 
   constructor(components: ComposantesServiceClefPrivée) {

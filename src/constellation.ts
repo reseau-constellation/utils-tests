@@ -4,6 +4,8 @@ import { isBrowser } from "wherearewe";
 
 import { créerOrbiteTest } from "@/orbite.js";
 import { AttendreRésultat } from "@/attente.js";
+import { Libp2p } from "@libp2p/interface";
+import { ServicesLibp2pConstlTest } from "./libp2p";
 
 export const créerConstellationsTest = async <
   T = Constellation,
@@ -16,7 +18,7 @@ export const créerConstellationsTest = async <
   créerConstellation: (opts: U) => T;
 }): Promise<{
   clients: ReturnType<typeof créerConstellation>[];
-  orbites: OrbitDB[];
+  orbites: OrbitDB<Libp2p<ServicesLibp2pConstlTest>>[];
   fOublier: () => Promise<void>;
 }> => {
   const clients: ReturnType<typeof créerConstellation>[] = [];
