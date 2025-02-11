@@ -5,7 +5,7 @@ import { isBrowser } from "wherearewe";
 import { créerOrbiteTest } from "@/orbite.js";
 import { AttendreRésultat } from "@/attente.js";
 import { Libp2p } from "@libp2p/interface";
-import { ServicesLibp2pConstlTest } from "./libp2p";
+import type { ServicesLibp2pConstlTest } from "./libp2p";
 
 export const créerConstellationsTest = async <
   T = Constellation,
