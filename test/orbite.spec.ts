@@ -2,7 +2,7 @@ import { expect } from "aegir/chai";
 
 import { OrbitDB, type KeyValueDatabase } from "@orbitdb/core";
 import { registerFeed, type FeedDatabaseType } from "@orbitdb/feed-db";
-import { type TypedKeyValue, typedKeyValue, typedFeed } from "@constl/bohr-db";
+import { typedKeyValue, typedFeed } from "@constl/bohr-db";
 import {
   ContrôleurConstellation,
   attendreSync,
@@ -11,7 +11,6 @@ import {
 } from "@/orbite.js";
 import { accès } from "@constl/ipa";
 import type { JSONSchemaType } from "ajv";
-import { Libp2p } from "@libp2p/interface";
 import { ServicesLibp2pConstlTest } from "@/libp2p";
 
 const schémaDictNumérique: JSONSchemaType<Partial<{ [clef: string]: number }>> =
