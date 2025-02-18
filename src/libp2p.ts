@@ -100,7 +100,7 @@ export type ServicesLibp2pConstlTest = {
   obtClefPrivée: ServiceClefPrivée;
 };
 export class ServiceClefPrivée {
-  private privateKey: PrivateKey;
+  privateKey: PrivateKey;
 
   constructor(components: ComposantesServiceClefPrivée) {
     this.privateKey = components.privateKey;
