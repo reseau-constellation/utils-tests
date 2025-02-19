@@ -69,7 +69,7 @@ const startOrbitDB = async ({
     : DefaultLibp2pOptions;
   const libp2p = await createLibp2p({ ...options });
   directory = directory || ".";
-  const blockstore = new LevelBlockstore(`${directory}/ipfs/blocks`);
+  const blockstore = new LevelBlockstore(`${directory}/ipfs/blocs`);
   const ipfs = await createHelia({
     libp2p,
     blockstore,
