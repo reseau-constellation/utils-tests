@@ -116,7 +116,7 @@ importers:
         version: 1.6.0
       '@orbitdb/core-types':
         specifier: ^1.0.13
-        version: 1.0.13
+        version: 1.0.14
       '@orbitdb/feed-db':
         specifier: ^1.1.1
         version: 1.1.1(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
@@ -1763,8 +1763,8 @@ packages:
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
 
-  '@orbitdb/core-types@1.0.13':
-    resolution: {integrity: sha512-OVDau/V/4N2uY4/IJQYi/7pyNd4cbEqDmWEH92SqwtlkevdGlu2rHvNeF7pG4Eh56AgUp7ZYFvgDWZHA21WU+Q==}
+  '@orbitdb/core-types@1.0.14':
+    resolution: {integrity: sha512-Mq+o9zMw8n1kD3eMOQZZ/XG9TnQ8HqUInmduBfMidPXFSQVrvVtTAxyFpHk+2+FMf6BTj1xhrAUCEZlcvYebeQ==}
 
   '@orbitdb/core@2.4.3':
     resolution: {integrity: sha512-pRHDJlODTy35nySEAPhTjzZIKQ7eedwCIoplmEXs1rW3KYqMHNQaNxrIc1uBMw9cRsPTeIGwxTUkvXfhhaf35Q==}
@@ -4078,8 +4078,8 @@ packages:
   fast-uri@3.0.6:
     resolution: {integrity: sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw==}
 
-  fast-xml-parser@4.5.2:
-    resolution: {integrity: sha512-xmnYV9o0StIz/0ArdzmWTxn9oDy0lH8Z80/8X/TD2EUQKXY4DHxoT9mYBqgGIG17DgddCJtH1M6DriMbalNsAA==}
+  fast-xml-parser@4.5.3:
+    resolution: {integrity: sha512-RKihhV+SHsIUGXObeVy9AXiBbFwkVk7Syp8XgwN5U3JV416+Gwp/GO9i0JYKmikykgz/UHRrrV4ROuZEo/T0ig==}
     hasBin: true
 
   fastq@1.19.0:
@@ -4201,8 +4201,8 @@ packages:
   flow-enums-runtime@0.0.6:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
 
-  flow-parser@0.261.1:
-    resolution: {integrity: sha512-2l5bBKeVtT+d+1CYSsTLJ+iP2FuoR7zjbDQI/v6dDRiBpx3Lb20Z/tLS37ReX/lcodyGSHC2eA/Nk63hB+mkYg==}
+  flow-parser@0.261.2:
+    resolution: {integrity: sha512-RtunoakA3YjtpAxPSOBVW6lmP5NYmETwkpAfNkdr8Ovf86ENkbD3mtPWnswFTIUtRvjwv0i8ZSkHK+AzsUg1JA==}
     engines: {node: '>=0.4.0'}
 
   follow-redirects@1.15.9:
@@ -7653,8 +7653,8 @@ packages:
     resolution: {integrity: sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==}
     engines: {node: '>=0.10.0'}
 
-  strnum@1.0.5:
-    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
+  strnum@1.1.1:
+    resolution: {integrity: sha512-O7aCHfYCamLCctjAiaucmE+fHf2DYHkus2OKCn4Wv03sykfFtgeECn505X6K4mPl8CRNd/qurC9guq+ynoN4pw==}
 
   strong-log-transformer@2.1.0:
     resolution: {integrity: sha512-B3Hgul+z0L9a236FAUC9iZsL+nVHgoCJnqCbN588DjYxvGXaXaaFbfmQ/JhvKjZwsOukuR72XbHv71Qkug0HxA==}
@@ -9438,7 +9438,7 @@ snapshots:
   '@constl/bohr-db@1.2.2(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))':
     dependencies:
       '@orbitdb/core': 2.4.3
-      '@orbitdb/core-types': 1.0.13
+      '@orbitdb/core-types': 1.0.14
       '@orbitdb/feed-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
       '@orbitdb/ordered-keyvalue-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
       '@orbitdb/set-db': 1.1.1(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
@@ -10822,7 +10822,7 @@ snapshots:
 
   '@opentelemetry/api@1.9.0': {}
 
-  '@orbitdb/core-types@1.0.13': {}
+  '@orbitdb/core-types@1.0.14': {}
 
   '@orbitdb/core@2.4.3':
     dependencies:
@@ -11059,7 +11059,7 @@ snapshots:
       chalk: 4.1.2
       execa: 5.1.1
       fast-glob: 3.3.3
-      fast-xml-parser: 4.5.2
+      fast-xml-parser: 4.5.3
       logkitty: 0.7.1
 
   '@react-native-community/cli-platform-apple@14.0.0':
@@ -11068,7 +11068,7 @@ snapshots:
       chalk: 4.1.2
       execa: 5.1.1
       fast-glob: 3.3.3
-      fast-xml-parser: 4.5.2
+      fast-xml-parser: 4.5.3
       ora: 5.4.1
 
   '@react-native-community/cli-platform-ios@14.0.0':
@@ -14161,9 +14161,9 @@ snapshots:
 
   fast-uri@3.0.6: {}
 
-  fast-xml-parser@4.5.2:
+  fast-xml-parser@4.5.3:
     dependencies:
-      strnum: 1.0.5
+      strnum: 1.1.1
 
   fastq@1.19.0:
     dependencies:
@@ -14306,7 +14306,7 @@ snapshots:
 
   flow-enums-runtime@0.0.6: {}
 
-  flow-parser@0.261.1: {}
+  flow-parser@0.261.2: {}
 
   follow-redirects@1.15.9(debug@4.4.0):
     optionalDependencies:
@@ -15591,7 +15591,7 @@ snapshots:
       '@babel/register': 7.25.9(@babel/core@7.26.9)
       babel-core: 7.0.0-bridge.0(@babel/core@7.26.9)
       chalk: 4.1.2
-      flow-parser: 0.261.1
+      flow-parser: 0.261.2
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
@@ -18534,7 +18534,7 @@ snapshots:
     dependencies:
       escape-string-regexp: 1.0.5
 
-  strnum@1.0.5: {}
+  strnum@1.1.1: {}
 
   strong-log-transformer@2.1.0:
     dependencies:
