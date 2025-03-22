@@ -88,8 +88,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.3(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
       '@constl/ipa':
-        specifier: 1.6.2
-        version: 1.6.2(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
+        specifier: 1.6.3
+        version: 1.6.3(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
       '@eslint/js':
         specifier: ^9.20.0
         version: 9.20.0
@@ -1003,15 +1003,15 @@ packages:
   '@constl/bohr-db@1.2.3':
     resolution: {integrity: sha512-IJXOqeMnJEOqD7DRNMowwPOY7bVKlTdQNu3DNn9zoSKj+fBzTXLzkxl4uRbKLu9vwWzjoXyxgvp2iw7vkt/amQ==}
 
-  '@constl/ipa@1.6.2':
-    resolution: {integrity: sha512-XRNELsQG8+H6jOS3ZFFH8lBTGXnzcSafELn0ZHeJtGI7GqRBZx8tKbZwYgnAZBlIqzSRYnOAWJX+1rLjdeltyg==}
+  '@constl/ipa@1.6.3':
+    resolution: {integrity: sha512-KiJGvD2e8yY6JANa/qk2C/fa/z/3NKE9HwXk3xc/l5txKehbwDSCSAQqfbclkWbU89ZRkfT0P5OFZU5pNkia9A==}
     engines: {node: '>=20'}
 
   '@constl/mandataire@3.0.3':
     resolution: {integrity: sha512-J7zWtq2EOA46EIzAGjiOP/FVYvQrjvxXT7aLyKEA6chm6i/3kJnmv5pgYSF0rofGgzIyRUwsTLuzSB23DoZNyg==}
 
-  '@constl/utils-ipa@1.0.5':
-    resolution: {integrity: sha512-br5uNxDQsFeVVe6WO2uE3cAF/WczOiJxXgE4yj7PlBEQ3NZp2qZqLyT3L3RofnSy4erm69GrUUjdOdUV1w4SUA==}
+  '@constl/utils-ipa@2.0.1':
+    resolution: {integrity: sha512-KFIw7bZ8Bxs/vkmLa64u7MZIJFPVk1iNJ/WdwvbvvFrWcAggfuajeZrJrdVGmAPJipdbJ1CKl7AuKd3tXD1wsg==}
     engines: {node: '>=20'}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -1511,8 +1511,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@lassi-js/kili@0.4.1':
-    resolution: {integrity: sha512-wF2vgmLDjZinDqgNdLHZT1HqRvQdtgGc7tSZOZbhEX7WtjzS9KtsI5qLA8CE1BQMmIz9QFReNdNn3gV8eYi6qw==}
+  '@lassi-js/kili@0.4.3':
+    resolution: {integrity: sha512-ijHY8myQZGTAqQrjk+TVJH/dH4npErDIsuylf28prYQYJq1pYnF9FZYDIrs+Hy++hlw4hRLTRer8yX+9bQeQ0g==}
 
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
@@ -2357,9 +2357,6 @@ packages:
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
     engines: {node: '>=6.5'}
-
-  abort-error@1.0.0:
-    resolution: {integrity: sha512-PMKqKW8CHeXFYW9GdeavZbOt2qE3/UTv5FKk8PGK583pRmvdGq/d8M9UpLBzAL95Ss3Fe3LvGjLhWeWo9d0QAg==}
 
   abort-error@1.0.1:
     resolution: {integrity: sha512-fxqCblJiIPdSXIUrxI0PL+eJG49QdP9SQ70qtB65MVAoMr2rASlOyAbJFOylfB467F/f+5BCLJJq58RYi7mGfg==}
@@ -5132,9 +5129,6 @@ packages:
     resolution: {integrity: sha512-BewmUXImeuRk2YY0PVbxgKAysvhRPUQE0h5QRM++nVWyubKGV0l8qQ5op8+B2DOmwSe63Jivj0BjkPQVf8fP5g==}
     engines: {node: '>=8'}
 
-  it-all@3.0.6:
-    resolution: {integrity: sha512-HXZWbxCgQZJfrv5rXvaVeaayXED8nTKx9tj9fpBhmcUJcedVZshMMMqTj0RG2+scGypb9Ut1zd1ifbf3lA8L+Q==}
-
   it-all@3.0.7:
     resolution: {integrity: sha512-PkuYtu6XhJzuPTKXImd6y0qE6H91MUPV/b9xotXMAI6GjmD2v3NoHj2g5L0lS2qZ0EzyGWZU1kp0UxW8POvNBQ==}
 
@@ -5185,9 +5179,6 @@ packages:
   it-length@3.0.6:
     resolution: {integrity: sha512-R7bxHAzpRzYz7vghc2DDH7x4KXvEkeLfN/h316++jzbkEHIRXbEPLbE20p5yrqqBdOeK6/FRUDuHlTJ0H1hysw==}
 
-  it-map@3.1.1:
-    resolution: {integrity: sha512-9bCSwKD1yN1wCOgJ9UOl+46NQtdatosPWzxxUk2NdTLwRPXLh+L7iwCC9QKsbgM60RQxT/nH8bKMqm3H/o8IHQ==}
-
   it-map@3.1.2:
     resolution: {integrity: sha512-G3dzFUjTYHKumJJ8wa9dSDS3yKm8L7qDUnAgzemOD0UMztwm54Qc2v97SuUCiAgbOz/aibkSLImfoFK09RlSFQ==}
 
@@ -5236,23 +5227,17 @@ packages:
     resolution: {integrity: sha512-XCWifEcNFFjjBHtor4Sfaj8rcpt+FkY0L6WdhD578SCDhV4VUm7fCkF3dv5a+fTcfQqvN9BsxBTvWbYO6iCjTg==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
-  it-sort@3.0.6:
-    resolution: {integrity: sha512-aNrlZAXB8vWBd42tCpaXGL6CJVJNDW3OLczmdt6g0k/s9Z6evkTdgU2LjwW5SNNeX41sF+C8MjV+OcVf93PsPw==}
-
   it-sort@3.0.7:
     resolution: {integrity: sha512-PsaKSd2Z0uhq8Mq5htdfsE/UagmdLCLWdBXPwi3FZGR4BTG180pFamhK+O+luFtBCNGRoqKAdtbZGTyGwA9uzw==}
 
   it-stream-types@2.0.2:
     resolution: {integrity: sha512-Rz/DEZ6Byn/r9+/SBCuJhpPATDF9D+dz5pbgSUyBsCDtza6wtNATrz/jz1gDyNanC3XdLboriHnOC925bZRBww==}
 
-  it-take@3.0.6:
-    resolution: {integrity: sha512-uqw3MRzf9to1SOLxaureGa73lK8k8ZB/asOApTAkvrzUqCznGtKNgPFH7uYIWlt4UuWq/hU6I+U4Fm5xpjN8Vg==}
-
   it-take@3.0.7:
     resolution: {integrity: sha512-0+EbsTvH1XCpwhhFkjWdqJTjzS5XP3KL69woBqwANNhMLKn0j39jk/WHIlvbg9XW2vEm7cZz4p8w5DkBZR8LoA==}
 
-  it-to-buffer@4.0.7:
-    resolution: {integrity: sha512-c7JXrFg8xntJTPzhg7Dg6WJYm+XW0wBUebvEBrc6zrL/QukGRXclw1OBz6M9Qmqkiorgb3qpsRwKlI/4Q3tmkQ==}
+  it-to-buffer@4.0.8:
+    resolution: {integrity: sha512-niZbR/+GbyQ2F2Nj79EJprT0gji5Si4nM1eJpgtlvfbvhsi5ZgA/y+mzSrOoNajiTC3svqvoNy8HGlTW2Faz/A==}
 
   it-ws@6.1.5:
     resolution: {integrity: sha512-uWjMtpy5HqhSd/LlrlP3fhYrr7rUfJFFMABv0F5d6n13Q+0glhZthwUKpEAVhDrXY95Tb1RB5lLqqef+QbVNaw==}
@@ -8463,7 +8448,7 @@ snapshots:
       '@achingbrain/ssdp': 4.2.1
       '@chainsafe/is-ip': 2.1.0
       '@libp2p/logger': 5.1.13
-      abort-error: 1.0.0
+      abort-error: 1.0.1
       err-code: 3.0.1
       netmask: 2.0.2
       p-defer: 4.0.1
@@ -8472,7 +8457,7 @@ snapshots:
 
   '@achingbrain/ssdp@4.2.1':
     dependencies:
-      abort-error: 1.0.0
+      abort-error: 1.0.1
       freeport-promise: 2.0.0
       merge-options: 3.0.4
       xml2js: 0.6.2
@@ -9508,7 +9493,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/ipa@1.6.2(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))':
+  '@constl/ipa@1.6.3(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 14.1.0
       '@chainsafe/libp2p-noise': 16.1.0
@@ -9516,11 +9501,11 @@ snapshots:
       '@chriscdn/promise-semaphore': 2.0.10
       '@constl/bohr-db': 1.2.3(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
       '@constl/mandataire': 3.0.3
-      '@constl/utils-ipa': 1.0.5
+      '@constl/utils-ipa': 2.0.1
       '@helia/block-brokers': 4.1.0
       '@helia/unixfs': 4.0.2
       '@ipld/dag-cbor': 9.2.2
-      '@lassi-js/kili': 0.4.1
+      '@lassi-js/kili': 0.4.3
       '@libp2p/autonat': 2.0.27
       '@libp2p/bootstrap': 11.0.31
       '@libp2p/circuit-relay-v2': 3.2.8
@@ -9567,15 +9552,16 @@ snapshots:
       helia: 5.3.0(react-native@0.75.1(@babel/core@7.26.9)(@babel/preset-env@7.25.3(@babel/core@7.26.9))(react@18.3.1)(typescript@5.7.3))
       indexed-db-stream: 1.0.0
       iso-constants: https://codeload.github.com/inverted-capital/iso-constants/tar.gz/2af6fdfb2cacaa03ebd58543703918783e62649f
-      it-drain: 3.0.7
+      it-drain: 3.0.8
       it-pipe: 3.0.1
       it-pushable: 3.2.3
-      it-to-buffer: 4.0.7
+      it-to-buffer: 4.0.8
       jszip: 3.10.1
       libp2p: 2.8.2
       lodash-es: 4.17.21
       merge-options: 3.0.4
       multiformats: 13.3.2
+      p-queue: 8.1.0
       p-retry: 6.2.1
       platform: 1.3.6
       prom-client: 15.1.3
@@ -9600,7 +9586,7 @@ snapshots:
       events: 3.3.0
       uuid: 11.1.0
 
-  '@constl/utils-ipa@1.0.5':
+  '@constl/utils-ipa@2.0.1':
     dependencies:
       '@chriscdn/promise-semaphore': 2.0.10
       browser-fs-access: 0.35.0
@@ -9967,7 +9953,7 @@ snapshots:
       ipfs-unixfs: 11.2.0
       ipfs-unixfs-exporter: 13.6.1
       ipfs-unixfs-importer: 15.3.1
-      it-all: 3.0.6
+      it-all: 3.0.7
       it-glob: 3.0.1
       it-last: 3.0.6
       it-pipe: 3.0.1
@@ -10157,9 +10143,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@lassi-js/kili@0.4.1':
+  '@lassi-js/kili@0.4.3':
     dependencies:
-      '@constl/utils-ipa': 1.0.5
+      '@constl/utils-ipa': 2.0.1
       '@orbitdb/core': 2.5.0
       deepcopy: 2.1.0
 
@@ -10342,16 +10328,16 @@ snapshots:
       '@multiformats/multiaddr': 12.4.0
       any-signal: 4.1.1
       interface-datastore: 8.3.1
-      it-all: 3.0.6
-      it-drain: 3.0.7
+      it-all: 3.0.7
+      it-drain: 3.0.8
       it-length: 3.0.6
       it-length-prefixed: 10.0.1
-      it-map: 3.1.1
+      it-map: 3.1.2
       it-merge: 3.0.9
       it-parallel: 3.0.9
       it-pipe: 3.0.1
       it-protobuf-stream: 1.1.6
-      it-take: 3.0.6
+      it-take: 3.0.7
       mortice: 3.0.6
       multiformats: 13.3.2
       p-defer: 4.0.1
@@ -11829,8 +11815,6 @@ snapshots:
     dependencies:
       event-target-shim: 5.0.1
 
-  abort-error@1.0.0: {}
-
   abort-error@1.0.1: {}
 
   abortable-iterator@5.1.0:
@@ -12346,7 +12330,7 @@ snapshots:
       interface-blockstore: 5.3.1
       interface-store: 6.0.2
       it-glob: 3.0.1
-      it-map: 3.1.1
+      it-map: 3.1.2
       it-parallel-batch: 3.0.6
       multiformats: 13.3.2
       steno: 4.0.2
@@ -13078,7 +13062,7 @@ snapshots:
       interface-datastore: 8.3.1
       interface-store: 6.0.2
       it-glob: 3.0.1
-      it-map: 3.1.1
+      it-map: 3.1.2
       it-parallel-batch: 3.0.6
       steno: 4.0.2
 
@@ -13088,8 +13072,8 @@ snapshots:
       idb: 8.0.2
       interface-datastore: 8.3.1
       interface-store: 6.0.2
-      it-filter: 3.1.1
-      it-sort: 3.0.6
+      it-filter: 3.1.2
+      it-sort: 3.0.7
 
   date-fns@1.30.1: {}
 
@@ -13394,7 +13378,7 @@ snapshots:
 
   ennikkai@2.3.4:
     dependencies:
-      '@lassi-js/kili': 0.4.1
+      '@lassi-js/kili': 0.4.3
       deepmerge: 4.3.1
       events: 3.3.0
 
@@ -14959,7 +14943,7 @@ snapshots:
       interface-blockstore: 5.3.1
       interface-store: 6.0.2
       ipfs-unixfs: 11.2.0
-      it-all: 3.0.6
+      it-all: 3.0.7
       it-batch: 3.0.6
       it-first: 3.0.6
       it-parallel-batch: 3.0.6
@@ -15312,8 +15296,6 @@ snapshots:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.1
 
-  it-all@3.0.6: {}
-
   it-all@3.0.7: {}
 
   it-batch@3.0.6: {}
@@ -15376,10 +15358,6 @@ snapshots:
       uint8arrays: 5.1.0
 
   it-length@3.0.6: {}
-
-  it-map@3.1.1:
-    dependencies:
-      it-peekable: 3.0.5
 
   it-map@3.1.2:
     dependencies:
@@ -15446,21 +15424,15 @@ snapshots:
       it-stream-types: 2.0.2
       uint8arraylist: 2.4.8
 
-  it-sort@3.0.6:
-    dependencies:
-      it-all: 3.0.7
-
   it-sort@3.0.7:
     dependencies:
       it-all: 3.0.7
 
   it-stream-types@2.0.2: {}
 
-  it-take@3.0.6: {}
-
   it-take@3.0.7: {}
 
-  it-to-buffer@4.0.7:
+  it-to-buffer@4.0.8:
     dependencies:
       uint8arrays: 5.1.0
 
