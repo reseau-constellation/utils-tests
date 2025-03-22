@@ -45,6 +45,7 @@
       "matchPackageNames": [
         "@libp2p/**",
         "@chainsafe/**",
+        "@helia/**",
         "libp2p",
         "helia"
       ]
