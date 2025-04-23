@@ -80,7 +80,7 @@ importers:
     devDependencies:
       '@chainsafe/libp2p-noise':
         specifier: ^16.0.1
-        version: 16.1.2
+        version: 16.1.3
       '@chainsafe/libp2p-yamux':
         specifier: ^7.0.1
         version: 7.0.1
@@ -143,7 +143,7 @@ importers:
         version: 8.31.0(eslint@9.25.1)(typescript@5.8.3)
       aegir:
         specifier: ^45.0.9
-        version: 45.2.0(@babel/core@7.26.10)(@typescript-eslint/parser@8.31.0(eslint@9.25.1)(typescript@5.8.3))(eslint-plugin-n@17.17.0(eslint@9.25.1))
+        version: 45.2.1(@babel/core@7.26.10)(@typescript-eslint/parser@8.31.0(eslint@9.25.1)(typescript@5.8.3))(eslint-plugin-n@17.17.0(eslint@9.25.1))
       ajv:
         specifier: ^8.17.1
         version: 8.17.1
@@ -155,7 +155,7 @@ importers:
         version: 3.41.0
       electron:
         specifier: ^35.0.0
-        version: 35.2.0
+        version: 35.2.1
       esbuild:
         specifier: ^0.25.0
         version: 0.25.3
@@ -952,8 +952,8 @@ packages:
     resolution: {integrity: sha512-EUs2C+xHXXbw0pQQF2AN/ih4qB6BBWOGkDhvHz1VN52o2m/827IBEMT8RHdXMNZciQc90to1L57BKmhXkvztDw==}
     engines: {npm: '>=8.7.0'}
 
-  '@chainsafe/libp2p-noise@16.1.2':
-    resolution: {integrity: sha512-vVmUxcdTXHiSiNY7qCZ4GER33y2TOYeXYLXM559ttDsXgUP19y4zNyC8y7pMNXZu7I5IqnQRrzUrmxDUpfV/hg==}
+  '@chainsafe/libp2p-noise@16.1.3':
+    resolution: {integrity: sha512-YLonKdIUFk/0keKRfzlmdrsObi8r0EaZC14Vjh3qdLy4+W7NaQAs1sSMt8aDP07oE78pa51NyejmQLKOnt7tOw==}
 
   '@chainsafe/libp2p-yamux@7.0.1':
     resolution: {integrity: sha512-949MI0Ll0AsYq1gUETZmL/MijwX0jilOQ1i4s8wDEXGiMhuPWWiMsPgEnX6n+VzFmTrfNYyGaaJj5/MqxV9y/g==}
@@ -1057,8 +1057,8 @@ packages:
   '@cspell/dict-en-gb@1.1.33':
     resolution: {integrity: sha512-tKSSUf9BJEV+GJQAYGw5e+ouhEe2ZXE620S7BLKe3ZmpnjlNG9JqlnaBhkIMxKnNFkLY2BP/EARzw31AZnOv4g==}
 
-  '@cspell/dict-en_us@4.4.2':
-    resolution: {integrity: sha512-mvpv2kWayuOExCnDgvhlYDoW7gbGvGVTyuof9aFGy0+8ALYAJ2AtlvYCqzdTTKvvsYBrxAEEWFkUh75kHnHibg==}
+  '@cspell/dict-en_us@4.4.3':
+    resolution: {integrity: sha512-KnsS19kL5lYEk2P9xGNwvZF5ZbDYv1Tkv4BKIx4n4jKlgUj9iHv7L0Q+2cCvllKDGjuP715G/3Rg0McKdHR1Xg==}
 
   '@cspell/dict-filetypes@3.0.11':
     resolution: {integrity: sha512-bBtCHZLo7MiSRUqx5KEiPdGOmXIlDGY+L7SJEtRWZENpAKE+96rT7hj+TUUYWBbCzheqHr0OXZJFEKDgsG/uZg==}
@@ -1134,8 +1134,8 @@ packages:
   '@cspell/dict-node@5.0.7':
     resolution: {integrity: sha512-ZaPpBsHGQCqUyFPKLyCNUH2qzolDRm1/901IO8e7btk7bEDF56DN82VD43gPvD4HWz3yLs/WkcLa01KYAJpnOw==}
 
-  '@cspell/dict-npm@5.2.0':
-    resolution: {integrity: sha512-kTUdbSE8SuIMKMlASMbI8/SEwv3EmI8eBcwdrtu4PHA+XVx+8JvQCB5fcWK9mn/94Y7LQ1kDIm+yfAZfwopY0A==}
+  '@cspell/dict-npm@5.2.1':
+    resolution: {integrity: sha512-aqcit8e/Hsnsmd2QoDDAaai+l80bQItwLggmlio/e5NTAfUu7qIVmx+/VFtUlXQH6sMKp+aAvxPC3K8tH86+qg==}
 
   '@cspell/dict-php@4.0.14':
     resolution: {integrity: sha512-7zur8pyncYZglxNmqsRycOZ6inpDoVd4yFfz1pQRe5xaRWMiK3Km4n0/X/1YMWhh3e3Sl/fQg5Axb2hlN68t1g==}
@@ -2613,8 +2613,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aegir@45.2.0:
-    resolution: {integrity: sha512-2p68aHU7gzBarafAb0D3Ftmmn911agXFZlf4jlN7QuqDMDAxBDTu6m5xKuVrh9/Hy2iLbh3wpN+iPLKrpgM+Cw==}
+  aegir@45.2.1:
+    resolution: {integrity: sha512-3w9s0tOvo2iNW3efMmaFC6hG3uNDt1a/ZN5nTmYUqcpHKH1aw55sLgbmK29+ij/QigGCo8f5xr3nMVOdiI0hmA==}
     hasBin: true
 
   agent-base@7.1.3:
@@ -3841,8 +3841,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@35.2.0:
-    resolution: {integrity: sha512-GHda7oCkN0pA23qzah735DEbRa06IPwlzP3uvjAmf9af8gxdj5i93JEHeQVGVmSVpd7sSb1pfecs9nz7B1q5ag==}
+  electron@35.2.1:
+    resolution: {integrity: sha512-LO4xXLpzkPPUVLvAbdHMlW7N9Z+Qqz+7QsmSWXluTIQMeJk+v7o36nUTZghyA2I1s//tlMvuaCtle6Qo2W0Ktg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -3943,8 +3943,8 @@ packages:
   es-get-iterator@1.1.3:
     resolution: {integrity: sha512-sPZmqHBe6JIiTfN5q2pEi//TwxmAFHwj/XEuYjTuse78i8KxaqMTTzxPoFKuzRpDpTJ+0NAbpfenkmH2rePtuw==}
 
-  es-module-lexer@1.6.0:
-    resolution: {integrity: sha512-qqnD1yMU6tk/jnaMosogGySTZP8YtUgAffA9nMN+E/rjxcfRQ6IEk7IiozUjgxKoFHBGjTLnrHB/YC45r/59EQ==}
+  es-module-lexer@1.7.0:
+    resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
 
   es-object-atoms@1.1.1:
     resolution: {integrity: sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==}
@@ -9725,7 +9725,7 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@chainsafe/libp2p-noise@16.1.2':
+  '@chainsafe/libp2p-noise@16.1.3':
     dependencies:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 1.0.1
@@ -9783,7 +9783,7 @@ snapshots:
   '@constl/ipa@1.6.9(react-native@0.75.1(@babel/core@7.26.10)(@babel/preset-env@7.25.3(@babel/core@7.26.10))(react@18.3.1)(typescript@5.8.3))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 14.1.1
-      '@chainsafe/libp2p-noise': 16.1.2
+      '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
       '@chriscdn/promise-semaphore': 2.0.10
       '@constl/bohr-db': 1.2.3(react-native@0.75.1(@babel/core@7.26.10)(@babel/preset-env@7.25.3(@babel/core@7.26.10))(react@18.3.1)(typescript@5.8.3))
@@ -9907,7 +9907,7 @@ snapshots:
       '@cspell/dict-elixir': 4.0.7
       '@cspell/dict-en-common-misspellings': 2.0.10
       '@cspell/dict-en-gb': 1.1.33
-      '@cspell/dict-en_us': 4.4.2
+      '@cspell/dict-en_us': 4.4.3
       '@cspell/dict-filetypes': 3.0.11
       '@cspell/dict-flutter': 1.1.0
       '@cspell/dict-fonts': 4.0.4
@@ -9931,7 +9931,7 @@ snapshots:
       '@cspell/dict-markdown': 2.0.10(@cspell/dict-css@4.0.17)(@cspell/dict-html-symbol-entities@4.0.3)(@cspell/dict-html@4.0.11)(@cspell/dict-typescript@3.2.1)
       '@cspell/dict-monkeyc': 1.0.10
       '@cspell/dict-node': 5.0.7
-      '@cspell/dict-npm': 5.2.0
+      '@cspell/dict-npm': 5.2.1
       '@cspell/dict-php': 4.0.14
       '@cspell/dict-powershell': 5.0.14
       '@cspell/dict-public-licenses': 2.0.13
@@ -9999,7 +9999,7 @@ snapshots:
 
   '@cspell/dict-en-gb@1.1.33': {}
 
-  '@cspell/dict-en_us@4.4.2': {}
+  '@cspell/dict-en_us@4.4.3': {}
 
   '@cspell/dict-filetypes@3.0.11': {}
 
@@ -10052,7 +10052,7 @@ snapshots:
 
   '@cspell/dict-node@5.0.7': {}
 
-  '@cspell/dict-npm@5.2.0': {}
+  '@cspell/dict-npm@5.2.1': {}
 
   '@cspell/dict-php@4.0.14': {}
 
@@ -11139,7 +11139,7 @@ snapshots:
   '@libp2p/webrtc@5.2.12(react-native@0.75.1(@babel/core@7.26.10)(@babel/preset-env@7.25.3(@babel/core@7.26.10))(react@18.3.1)(typescript@5.8.3))':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
-      '@chainsafe/libp2p-noise': 16.1.2
+      '@chainsafe/libp2p-noise': 16.1.3
       '@ipshipyard/node-datachannel': 0.26.5
       '@libp2p/crypto': 5.1.1
       '@libp2p/interface': 2.9.0
@@ -11195,7 +11195,7 @@ snapshots:
 
   '@libp2p/webtransport@5.0.36':
     dependencies:
-      '@chainsafe/libp2p-noise': 16.1.2
+      '@chainsafe/libp2p-noise': 16.1.3
       '@libp2p/interface': 2.9.0
       '@libp2p/peer-id': 5.1.2
       '@libp2p/utils': 6.6.2
@@ -12418,7 +12418,7 @@ snapshots:
 
   acorn@8.14.1: {}
 
-  aegir@45.2.0(@babel/core@7.26.10)(@typescript-eslint/parser@8.31.0(eslint@9.25.1)(typescript@5.8.3))(eslint-plugin-n@17.17.0(eslint@9.25.1)):
+  aegir@45.2.1(@babel/core@7.26.10)(@typescript-eslint/parser@8.31.0(eslint@9.25.1)(typescript@5.8.3))(eslint-plugin-n@17.17.0(eslint@9.25.1)):
     dependencies:
       '@electron/get': 3.1.0
       '@polka/send-type': 0.5.2
@@ -13977,7 +13977,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@35.2.0:
+  electron@35.2.1:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.14.1
@@ -14130,7 +14130,7 @@ snapshots:
       isarray: 2.0.5
       stop-iteration-iterator: 1.1.0
 
-  es-module-lexer@1.6.0: {}
+  es-module-lexer@1.7.0: {}
 
   es-object-atoms@1.1.1:
     dependencies:
@@ -15395,7 +15395,7 @@ snapshots:
 
   helia@5.3.0(react-native@0.75.1(@babel/core@7.26.10)(@babel/preset-env@7.25.3(@babel/core@7.26.10))(react@18.3.1)(typescript@5.8.3)):
     dependencies:
-      '@chainsafe/libp2p-noise': 16.1.2
+      '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
       '@helia/block-brokers': 4.1.0
       '@helia/delegated-routing-v1-http-api-client': 4.2.2
@@ -17890,7 +17890,7 @@ snapshots:
 
   parse-imports@2.2.1:
     dependencies:
-      es-module-lexer: 1.6.0
+      es-module-lexer: 1.7.0
       slashes: 3.0.12
 
   parse-json@4.0.0:
