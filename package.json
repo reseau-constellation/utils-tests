@@ -36,7 +36,7 @@
     "@chainsafe/libp2p-noise": "^16.0.1",
     "@chainsafe/libp2p-yamux": "^7.0.1",
     "@constl/bohr-db": "^1.2.2",
-    "@constl/ipa": "1.6.16",
+    "@constl/ipa": "1.6.17",
     "@eslint/js": "^9.20.0",
     "@libp2p/circuit-relay-v2": "^3.1.13",
     "@libp2p/crypto": "^5.0.11",
