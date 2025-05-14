@@ -13,7 +13,7 @@ importers:
         version: 14.1.1
       '@helia/block-brokers':
         specifier: ^4.0.4
-        version: 4.2.0
+        version: 4.2.1
       '@libp2p/peer-id':
         specifier: ^5.0.12
         version: 5.1.2
@@ -131,7 +131,7 @@ importers:
         version: 10.0.10
       '@types/node':
         specifier: ^22.13.4
-        version: 22.15.17
+        version: 22.15.18
       '@types/uuid':
         specifier: ^10.0.0
         version: 10.0.0
@@ -1583,11 +1583,11 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@helia/bitswap@2.1.0':
-    resolution: {integrity: sha512-tKGwQiPsh3GaiugCIM/L+lVZyAP0vLD6xM2PvVS0ti1wEej5RMvtQsoA+xJKHyfkkiIZoUnX/utvBjG3uieo2w==}
+  '@helia/bitswap@2.1.1':
+    resolution: {integrity: sha512-hqWEV+fQ6ko1QT7Q+yZGY8vsQ9kleB2X9HP5Ho+HKnP3ZX97OhOtSXzRBpkbqvY1GSk2kgqOnh7QIDTcRqkTug==}
 
-  '@helia/block-brokers@4.2.0':
-    resolution: {integrity: sha512-4dGMVALtV0UWORZh6H1Dv2tIgJ1s0X+M6xZFJoYwgQeAMThpqYXUyIHEOHgeX6/2PrFaGqAnzNwcKy3ULgDkwQ==}
+  '@helia/block-brokers@4.2.1':
+    resolution: {integrity: sha512-Ndu728nzNoZJEYiIFbfDKhCviFnnBII20HueCn3R6cmUlPsSkpZ1NBkno6HRzewWGqBAvLV1rVd7ccx3b/zHIw==}
 
   '@helia/delegated-routing-v1-http-api-client@4.2.2':
     resolution: {integrity: sha512-SQuyIZAbfvXUkGiralGI7sWq44Ztd1Cf+3pz/paCzq1J3Jvl7JnofWB0spsZjwSu0jYPdwAL60Nmg1TSTm6ZVg==}
@@ -1598,6 +1598,9 @@ packages:
   '@helia/interface@5.3.0':
     resolution: {integrity: sha512-8uGrZWdIE8ydl2pV4rLrOeozud15np075mPK+75QOA+RDHsHR+Sypx/Q/2jbeI8NpdT0hMZ5DIa6a5uG9rlmbw==}
 
+  '@helia/interface@5.3.1':
+    resolution: {integrity: sha512-MDUIVUHwH2eMDy5msA/cnU+nonpWDgSdWK76lN6st8YFmRjxoDNW7E4L0hOajVzYavZDZWPeUbbgpTKjlK+2CQ==}
+
   '@helia/routers@3.1.0':
     resolution: {integrity: sha512-rikZ+XpmQdlj9wSHiMGxg6NyjSR0TyBMLgx5+WMwhBhtk/e8QN0dKPtduzF9LjTSg2zm/wA8IbYezu38nCIbmg==}
 
@@ -1606,6 +1609,9 @@ packages:
 
   '@helia/utils@1.3.0':
     resolution: {integrity: sha512-ickQCRfVQ4hTnIJtuzwCT1gEUgMZLTUFyxDLtFUaxmXMMXKcc2aPPmt67lCN51zSsPPvm1CSb9QSMHl6Lwr7sA==}
+
+  '@helia/utils@1.3.1':
+    resolution: {integrity: sha512-EXkxXqUCsGD4ASZf8IAcxd5JBm5GDBGfarxmZhp1K6PYx1aU3vItuMpXLV7hDmFCBzLJsji8UBOZg1bjJC1ZkA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2372,8 +2378,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-  '@types/node@22.15.17':
-    resolution: {integrity: sha512-wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==}
+  '@types/node@22.15.18':
+    resolution: {integrity: sha512-v1DKRfUdyW+jJhZNEI1PYy29S2YRxMV5AOO/x/SjKmW0acCIOqmbj6Haf9eHAhsPmrhlHSxEhv/1WszcLWV4cg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -9968,7 +9974,7 @@ snapshots:
       '@constl/bohr-db': 1.2.3(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       '@constl/mandataire': 3.0.3
       '@constl/utils-ipa': 2.0.2
-      '@helia/block-brokers': 4.2.0
+      '@helia/block-brokers': 4.2.1
       '@helia/unixfs': 4.0.2
       '@ipld/dag-cbor': 9.2.2
       '@lassi-js/kili': 0.4.4
@@ -10545,10 +10551,10 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@helia/bitswap@2.1.0':
+  '@helia/bitswap@2.1.1':
     dependencies:
-      '@helia/interface': 5.3.0
-      '@helia/utils': 1.3.0
+      '@helia/interface': 5.3.1
+      '@helia/utils': 1.3.1
       '@libp2p/interface': 2.9.0
       '@libp2p/logger': 5.1.15
       '@libp2p/peer-collections': 6.0.27
@@ -10559,7 +10565,6 @@ snapshots:
       interface-store: 6.0.2
       it-drain: 3.0.9
       it-length-prefixed: 10.0.1
-      it-length-prefixed-stream: 1.2.1
       it-map: 3.1.3
       it-pipe: 3.0.1
       it-take: 3.0.8
@@ -10572,11 +10577,11 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@helia/block-brokers@4.2.0':
+  '@helia/block-brokers@4.2.1':
     dependencies:
-      '@helia/bitswap': 2.1.0
-      '@helia/interface': 5.3.0
-      '@helia/utils': 1.3.0
+      '@helia/bitswap': 2.1.1
+      '@helia/interface': 5.3.1
+      '@helia/utils': 1.3.1
       '@libp2p/interface': 2.9.0
       '@libp2p/utils': 6.6.2
       '@multiformats/multiaddr': 12.4.0
@@ -10615,6 +10620,17 @@ snapshots:
       progress-events: 1.0.1
 
   '@helia/interface@5.3.0':
+    dependencies:
+      '@libp2p/interface': 2.9.0
+      '@multiformats/dns': 1.0.6
+      '@multiformats/multiaddr': 12.4.0
+      interface-blockstore: 5.3.1
+      interface-datastore: 8.3.1
+      interface-store: 6.0.2
+      multiformats: 13.3.3
+      progress-events: 1.0.1
+
+  '@helia/interface@5.3.1':
     dependencies:
       '@libp2p/interface': 2.9.0
       '@multiformats/dns': 1.0.6
@@ -10666,6 +10682,33 @@ snapshots:
   '@helia/utils@1.3.0':
     dependencies:
       '@helia/interface': 5.3.0
+      '@ipld/dag-cbor': 9.2.3
+      '@ipld/dag-json': 10.2.4
+      '@ipld/dag-pb': 4.1.4
+      '@libp2p/interface': 2.9.0
+      '@libp2p/logger': 5.1.15
+      '@libp2p/utils': 6.6.2
+      '@multiformats/dns': 1.0.6
+      '@multiformats/multiaddr': 12.4.0
+      any-signal: 4.1.1
+      blockstore-core: 5.0.2
+      cborg: 4.2.10
+      interface-blockstore: 5.3.1
+      interface-datastore: 8.3.1
+      interface-store: 6.0.2
+      it-drain: 3.0.9
+      it-filter: 3.1.3
+      it-foreach: 2.1.3
+      it-merge: 3.0.11
+      mortice: 3.0.6
+      multiformats: 13.3.3
+      p-defer: 4.0.1
+      progress-events: 1.0.1
+      uint8arrays: 5.1.0
+
+  '@helia/utils@1.3.1':
+    dependencies:
+      '@helia/interface': 5.3.1
       '@ipld/dag-cbor': 9.2.3
       '@ipld/dag-json': 10.2.4
       '@ipld/dag-pb': 4.1.4
@@ -10795,14 +10838,14 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       jest-mock: 29.7.0
 
   '@jest/fake-timers@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -10815,7 +10858,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       '@types/yargs': 15.0.19
       chalk: 4.1.2
 
@@ -10824,7 +10867,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -12154,7 +12197,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       '@types/responselike': 1.0.3
 
   '@types/chai-as-promised@7.1.8':
@@ -12179,7 +12222,7 @@ snapshots:
 
   '@types/dns-packet@5.6.5':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/estree@1.0.7': {}
 
@@ -12188,7 +12231,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/http-cache-semantics@4.0.4': {}
 
@@ -12208,7 +12251,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/mdast@4.0.4':
     dependencies:
@@ -12227,13 +12270,13 @@ snapshots:
   '@types/multicast-dns@7.2.4':
     dependencies:
       '@types/dns-packet': 5.6.5
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
-  '@types/node@22.15.17':
+  '@types/node@22.15.18':
     dependencies:
       undici-types: 6.21.0
 
@@ -12243,7 +12286,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/retry@0.12.0': {}
 
@@ -12269,7 +12312,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -12283,7 +12326,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
     optional: true
 
   '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)':
@@ -12621,7 +12664,7 @@ snapshots:
       '@types/chai-string': 1.4.5
       '@types/chai-subset': 1.3.6(@types/chai@4.3.20)
       '@types/mocha': 10.0.10
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@8.32.1(eslint@9.26.0)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
       buffer: 6.0.3
       bytes: 3.1.2
@@ -12697,7 +12740,7 @@ snapshots:
       typedoc-plugin-mdn-links: 3.3.8(typedoc@0.25.13(typescript@5.8.3))
       typedoc-plugin-missing-exports: 2.3.0(typedoc@0.25.13(typescript@5.8.3))
       typescript: 5.8.3
-      typescript-docs-verifier: 2.5.3(@types/node@22.15.17)(typescript@5.8.3)
+      typescript-docs-verifier: 2.5.3(@types/node@22.15.18)(typescript@5.8.3)
       wherearewe: 2.0.1
       yargs: 17.7.2
       yargs-parser: 21.1.1
@@ -13408,7 +13451,7 @@ snapshots:
 
   chrome-launcher@0.15.2:
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -13417,7 +13460,7 @@ snapshots:
 
   chromium-edge-launcher@0.2.0:
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -14193,7 +14236,7 @@ snapshots:
   electron@36.2.0:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -15667,7 +15710,7 @@ snapshots:
     dependencies:
       '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
-      '@helia/block-brokers': 4.2.0
+      '@helia/block-brokers': 4.2.1
       '@helia/delegated-routing-v1-http-api-client': 4.2.2
       '@helia/interface': 5.3.0
       '@helia/routers': 3.1.0
@@ -16492,7 +16535,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -16513,13 +16556,13 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       jest-util: 29.7.0
 
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -16536,7 +16579,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -19779,14 +19822,14 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.15.18)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -19951,13 +19994,13 @@ snapshots:
       shiki: 0.14.7
       typescript: 5.8.3
 
-  typescript-docs-verifier@2.5.3(@types/node@22.15.17)(typescript@5.8.3):
+  typescript-docs-verifier@2.5.3(@types/node@22.15.18)(typescript@5.8.3):
     dependencies:
       chalk: 4.1.2
       fs-extra: 10.1.0
       ora: 5.4.1
       strip-ansi: 7.1.0
-      ts-node: 10.9.2(@types/node@22.15.17)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@22.15.18)(typescript@5.8.3)
       tsconfig: 7.0.0
       typescript: 5.8.3
       yargs: 17.7.2
