@@ -54,7 +54,7 @@
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.24.1",
     "@typescript-eslint/parser": "^8.24.1",
-    "aegir": "^46.0.0",
+    "aegir": "^47.0.0",
     "ajv": "^8.17.1",
     "buffer": "^6.0.3",
     "core-js": "^3.40.0",
