@@ -13,7 +13,7 @@ importers:
         version: 14.1.1
       '@helia/block-brokers':
         specifier: ^4.0.4
-        version: 4.2.1
+        version: 4.2.2
       '@libp2p/peer-id':
         specifier: ^5.0.12
         version: 5.1.4
@@ -143,7 +143,7 @@ importers:
         version: 8.32.1(eslint@9.27.0)(typescript@5.8.3)
       aegir:
         specifier: ^47.0.0
-        version: 47.0.7(@babel/core@7.27.1)
+        version: 47.0.11(@babel/core@7.27.1)
       ajv:
         specifier: ^8.17.1
         version: 8.17.1
@@ -1587,11 +1587,11 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@helia/bitswap@2.1.1':
-    resolution: {integrity: sha512-hqWEV+fQ6ko1QT7Q+yZGY8vsQ9kleB2X9HP5Ho+HKnP3ZX97OhOtSXzRBpkbqvY1GSk2kgqOnh7QIDTcRqkTug==}
+  '@helia/bitswap@2.1.2':
+    resolution: {integrity: sha512-gleOYd5jJPA0jVkm/LKkfEh+Z/TQNviv4e8pCdPlD3V/Sg6q0htdO/ttlAlMyYGY6187fwsCP+fZkqWNao/h9Q==}
 
-  '@helia/block-brokers@4.2.1':
-    resolution: {integrity: sha512-Ndu728nzNoZJEYiIFbfDKhCviFnnBII20HueCn3R6cmUlPsSkpZ1NBkno6HRzewWGqBAvLV1rVd7ccx3b/zHIw==}
+  '@helia/block-brokers@4.2.2':
+    resolution: {integrity: sha512-2Iq5basphEn8RcRK+wMiSfy5EJWgjI69wKH8CB66dSyaiduV7etP8E69eP5oGv43ShPycel4Xnmb2mNl6WWp5w==}
 
   '@helia/delegated-routing-v1-http-api-client@4.2.2':
     resolution: {integrity: sha512-SQuyIZAbfvXUkGiralGI7sWq44Ztd1Cf+3pz/paCzq1J3Jvl7JnofWB0spsZjwSu0jYPdwAL60Nmg1TSTm6ZVg==}
@@ -1602,6 +1602,9 @@ packages:
   '@helia/interface@5.3.1':
     resolution: {integrity: sha512-MDUIVUHwH2eMDy5msA/cnU+nonpWDgSdWK76lN6st8YFmRjxoDNW7E4L0hOajVzYavZDZWPeUbbgpTKjlK+2CQ==}
 
+  '@helia/interface@5.3.2':
+    resolution: {integrity: sha512-+NOQrBxsz6i0FOsz16OgTlGAcyQ+cSYGzd9VJE7cMMrrGo9IcDEKp5Kvh980Ajg1LJFgeqYyqmxefnPExUUsBg==}
+
   '@helia/routers@3.1.1':
     resolution: {integrity: sha512-7yLsaKBoTbfdwNVBM5Ys1w71ikADEYRbqXoGCaVDgIzVRrolT5eGq0H/mPT9SE6aJxM+MFHUrP2qWx2a0rAV/Q==}
 
@@ -1610,6 +1613,9 @@ packages:
 
   '@helia/utils@1.3.1':
     resolution: {integrity: sha512-EXkxXqUCsGD4ASZf8IAcxd5JBm5GDBGfarxmZhp1K6PYx1aU3vItuMpXLV7hDmFCBzLJsji8UBOZg1bjJC1ZkA==}
+
+  '@helia/utils@1.3.2':
+    resolution: {integrity: sha512-epMlRqLyJ95NDem4jc6kNRUlWkW5+HOwxvgJzOn70mMdXFkyYIOx24BpZurCFi+Cg6/k9vSfKsU5V1teWxYfRQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1656,6 +1662,10 @@ packages:
 
   '@ipld/dag-pb@4.1.4':
     resolution: {integrity: sha512-v8GLZoFYekDCFpgRgS158S1fkXKWVhF0T6wQJqS+aPyBDewygOjHEUJW7C2cDMw/BNwbMlzzieBwZrt7HWFsyw==}
+    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
+
+  '@ipld/dag-pb@4.1.5':
+    resolution: {integrity: sha512-w4PZ2yPqvNmlAir7/2hsCRMqny1EY5jj26iZcSgxREJexmbAc2FI21jp26MqiNdfgAxvkCnf2N/TJI18GaDNwA==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
   '@ipshipyard/libp2p-auto-tls@1.0.0':
@@ -2658,8 +2668,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aegir@47.0.7:
-    resolution: {integrity: sha512-m/VE4By+cBqn5xbXQO6cazsktaC5COpHSPvr6fBnG6WhQdQCmFlO0pf3hqLyX0rAHlugSIPtXOMa7H+5Ax4U9A==}
+  aegir@47.0.11:
+    resolution: {integrity: sha512-2vNs3JdtxHBSkvTexch4lSZY01ZdZoSkTNA6HVXAUGwXpYzDHYshi8aU7jfK4cRUXISb2HHpLqtzHXFvsERYpQ==}
     hasBin: true
 
   agent-base@7.1.3:
@@ -3203,6 +3213,10 @@ packages:
 
   cborg@4.2.10:
     resolution: {integrity: sha512-ZVA0xrVn8uBfDJYgfKKZzB/93z/Uiz7YtRdBPsZi/gyHNyqFdHMLHURVEk9dejOHepaX0zhcMyNva2/vF972SA==}
+    hasBin: true
+
+  cborg@4.2.11:
+    resolution: {integrity: sha512-7gs3iaqtsD9OHowgqzc6ixQGwSBONqosVR2co0Bg0pARgrLap+LCcEIXJuuIz2jHy0WWQeDMFPEsU2r17I2XPQ==}
     hasBin: true
 
   cborg@4.2.9:
@@ -3961,8 +3975,8 @@ packages:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
 
-  env-ci@11.1.0:
-    resolution: {integrity: sha512-Z8dnwSDbV1XYM9SBF2J0GcNVvmfmfh3a49qddGIROhBoVro6MZVTji15z/sJbQ2ko2ei8n988EU1wzoLU/tF+g==}
+  env-ci@11.1.1:
+    resolution: {integrity: sha512-mT3ks8F0kwpo7SYNds6nWj0PaRh+qJxIeBVBXAKTN9hphAzZv7s0QAZQbqnB1fAv/r4pJUGE15BV9UrS31FP2w==}
     engines: {node: ^18.17 || >=20.6.1}
 
   env-paths@2.2.1:
@@ -4679,6 +4693,9 @@ packages:
   get-tsconfig@4.10.0:
     resolution: {integrity: sha512-kGzZ3LWWQcGIAmg6iWvXn0ei6WDtV26wzHRMwDSzmAbcXrTEXxHy6IehI6/4eT6VRKyMP1eF1VqwrVUmE/LR7A==}
 
+  get-tsconfig@4.10.1:
+    resolution: {integrity: sha512-auHyJ4AgMz7vgS8Hp3N6HXSmlMdUyhSUrfBF16w153rxtLIEOE+HGqaBppczZvnHLqQJfiHotCYpNhl0lUROFQ==}
+
   get-value@2.0.6:
     resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
     engines: {node: '>=0.10.0'}
@@ -4921,6 +4938,9 @@ packages:
 
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
+
+  html-escaper@3.0.3:
+    resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
 
   http-cache-semantics@4.2.0:
     resolution: {integrity: sha512-dTxcvPXqPvXBQpq5dUr6mEMJX4oIEFv6bwom3FDwKRDsuIjjJGANqhBuoAn9c1RQJIdAKav33ED65E2ys+87QQ==}
@@ -8412,6 +8432,12 @@ packages:
     peerDependencies:
       typedoc: 0.27.x || 0.28.x
 
+  typedoc-plugin-mermaid@1.12.0:
+    resolution: {integrity: sha512-CRjw29j0YbQEh4ygG7xeGjq8zKUikgd1BBBrW3ttzTeCPLrNKZopWFPd1/leSb9dUEJ3p9exOO84aP4CgjYp3g==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      typedoc: '>=0.23.0 || 0.24.x || 0.25.x || 0.26.x'
+
   typedoc-plugin-missing-exports@4.0.0:
     resolution: {integrity: sha512-Z4ei+853xppDEhcqzyeyRs4+R0kUuKQWnMK1EtSTEd5LFkgkdW5Bdn8vfo/rsCGbYVJxOWU99fxgM1mROw5Fug==}
     peerDependencies:
@@ -9882,7 +9908,7 @@ snapshots:
       '@constl/bohr-db': 1.2.3(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       '@constl/mandataire': 3.0.3
       '@constl/utils-ipa': 2.0.2
-      '@helia/block-brokers': 4.2.1
+      '@helia/block-brokers': 4.2.2
       '@helia/unixfs': 4.0.2
       '@ipld/dag-cbor': 9.2.2
       '@lassi-js/kili': 0.4.4
@@ -10464,12 +10490,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@helia/bitswap@2.1.1':
+  '@helia/bitswap@2.1.2':
     dependencies:
-      '@helia/interface': 5.3.1
-      '@helia/utils': 1.3.1
+      '@helia/interface': 5.3.2
+      '@helia/utils': 1.3.2
       '@libp2p/interface': 2.10.1
-      '@libp2p/logger': 5.1.15
+      '@libp2p/logger': 5.1.17
       '@libp2p/peer-collections': 6.0.29
       '@libp2p/utils': 6.6.2
       '@multiformats/multiaddr': 12.4.0
@@ -10490,11 +10516,11 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@helia/block-brokers@4.2.1':
+  '@helia/block-brokers@4.2.2':
     dependencies:
-      '@helia/bitswap': 2.1.1
-      '@helia/interface': 5.3.1
-      '@helia/utils': 1.3.1
+      '@helia/bitswap': 2.1.2
+      '@helia/interface': 5.3.2
+      '@helia/utils': 1.3.2
       '@libp2p/interface': 2.10.1
       '@libp2p/utils': 6.6.2
       '@multiformats/multiaddr': 12.4.0
@@ -10533,6 +10559,17 @@ snapshots:
       progress-events: 1.0.1
 
   '@helia/interface@5.3.1':
+    dependencies:
+      '@libp2p/interface': 2.10.1
+      '@multiformats/dns': 1.0.6
+      '@multiformats/multiaddr': 12.4.0
+      interface-blockstore: 5.3.1
+      interface-datastore: 8.3.1
+      interface-store: 6.0.2
+      multiformats: 13.3.3
+      progress-events: 1.0.1
+
+  '@helia/interface@5.3.2':
     dependencies:
       '@libp2p/interface': 2.10.1
       '@multiformats/dns': 1.0.6
@@ -10608,6 +10645,33 @@ snapshots:
       progress-events: 1.0.1
       uint8arrays: 5.1.0
 
+  '@helia/utils@1.3.2':
+    dependencies:
+      '@helia/interface': 5.3.2
+      '@ipld/dag-cbor': 9.2.3
+      '@ipld/dag-json': 10.2.4
+      '@ipld/dag-pb': 4.1.5
+      '@libp2p/interface': 2.10.1
+      '@libp2p/logger': 5.1.17
+      '@libp2p/utils': 6.6.2
+      '@multiformats/dns': 1.0.6
+      '@multiformats/multiaddr': 12.4.0
+      any-signal: 4.1.1
+      blockstore-core: 5.0.2
+      cborg: 4.2.11
+      interface-blockstore: 5.3.1
+      interface-datastore: 8.3.1
+      interface-store: 6.0.2
+      it-drain: 3.0.9
+      it-filter: 3.1.3
+      it-foreach: 2.1.3
+      it-merge: 3.0.11
+      mortice: 3.0.6
+      multiformats: 13.3.3
+      p-defer: 4.0.1
+      progress-events: 1.0.1
+      uint8arrays: 5.1.0
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -10630,17 +10694,17 @@ snapshots:
 
   '@ipld/dag-cbor@9.2.3':
     dependencies:
-      cborg: 4.2.10
+      cborg: 4.2.11
       multiformats: 13.3.3
 
   '@ipld/dag-json@10.2.3':
     dependencies:
-      cborg: 4.2.10
+      cborg: 4.2.11
       multiformats: 13.3.2
 
   '@ipld/dag-json@10.2.4':
     dependencies:
-      cborg: 4.2.10
+      cborg: 4.2.11
       multiformats: 13.3.3
 
   '@ipld/dag-pb@4.1.3':
@@ -10648,6 +10712,10 @@ snapshots:
       multiformats: 13.3.2
 
   '@ipld/dag-pb@4.1.4':
+    dependencies:
+      multiformats: 13.3.3
+
+  '@ipld/dag-pb@4.1.5':
     dependencies:
       multiformats: 13.3.3
 
@@ -12532,7 +12600,7 @@ snapshots:
 
   acorn@8.14.1: {}
 
-  aegir@47.0.7(@babel/core@7.27.1):
+  aegir@47.0.11(@babel/core@7.27.1):
     dependencies:
       '@electron/get': 4.0.0
       '@polka/send-type': 0.5.2
@@ -12620,6 +12688,7 @@ snapshots:
       tempy: 3.1.0
       typedoc: 0.28.4(typescript@5.8.3)
       typedoc-plugin-mdn-links: 5.0.2(typedoc@0.28.4(typescript@5.8.3))
+      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.4(typescript@5.8.3))
       typedoc-plugin-missing-exports: 4.0.0(typedoc@0.28.4(typescript@5.8.3))
       typescript: 5.8.3
       typescript-docs-verifier: 2.5.3(@types/node@22.15.21)(typescript@5.8.3)
@@ -13260,6 +13329,8 @@ snapshots:
   catering@2.1.1: {}
 
   cborg@4.2.10: {}
+
+  cborg@4.2.11: {}
 
   cborg@4.2.9: {}
 
@@ -14170,7 +14241,7 @@ snapshots:
 
   entities@4.5.0: {}
 
-  env-ci@11.1.0:
+  env-ci@11.1.1:
     dependencies:
       execa: 8.0.1
       java-properties: 1.0.2
@@ -14423,7 +14494,7 @@ snapshots:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.1(supports-color@8.1.1)
       eslint: 9.27.0
-      get-tsconfig: 4.10.0
+      get-tsconfig: 4.10.1
       is-bun-module: 2.0.0
       stable-hash: 0.0.5
       tinyglobby: 0.2.13
@@ -14458,7 +14529,7 @@ snapshots:
       debug: 4.4.1(supports-color@8.1.1)
       eslint: 9.27.0
       eslint-import-resolver-node: 0.3.9
-      get-tsconfig: 4.10.0
+      get-tsconfig: 4.10.1
       is-glob: 4.0.3
       minimatch: 10.0.1
       semver: 7.7.2
@@ -15120,6 +15191,10 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
+  get-tsconfig@4.10.1:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+
   get-value@2.0.6: {}
 
   gh-pages@6.3.0:
@@ -15385,7 +15460,7 @@ snapshots:
     dependencies:
       '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
-      '@helia/block-brokers': 4.2.1
+      '@helia/block-brokers': 4.2.2
       '@helia/delegated-routing-v1-http-api-client': 4.2.2
       '@helia/interface': 5.3.1
       '@helia/routers': 3.1.1
@@ -15463,6 +15538,8 @@ snapshots:
       lru-cache: 10.4.3
 
   html-escaper@2.0.2: {}
+
+  html-escaper@3.0.3: {}
 
   http-cache-semantics@4.2.0: {}
 
@@ -18847,7 +18924,7 @@ snapshots:
       aggregate-error: 5.0.0
       cosmiconfig: 9.0.0(typescript@5.8.3)
       debug: 4.4.1(supports-color@8.1.1)
-      env-ci: 11.1.0
+      env-ci: 11.1.1
       execa: 9.5.3
       figures: 6.1.0
       find-versions: 6.0.0
@@ -19671,6 +19748,11 @@ snapshots:
 
   typedoc-plugin-mdn-links@5.0.2(typedoc@0.28.4(typescript@5.8.3)):
     dependencies:
+      typedoc: 0.28.4(typescript@5.8.3)
+
+  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.4(typescript@5.8.3)):
+    dependencies:
+      html-escaper: 3.0.3
       typedoc: 0.28.4(typescript@5.8.3)
 
   typedoc-plugin-missing-exports@4.0.0(typedoc@0.28.4(typescript@5.8.3)):
