@@ -86,7 +86,7 @@ importers:
         version: 7.0.1
       '@constl/bohr-db':
         specifier: ^1.2.2
-        version: 1.2.3(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
+        version: 1.2.4(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       '@constl/ipa':
         specifier: 1.6.24
         version: 1.6.24(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
@@ -1117,8 +1117,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@constl/bohr-db@1.2.3':
-    resolution: {integrity: sha512-IJXOqeMnJEOqD7DRNMowwPOY7bVKlTdQNu3DNn9zoSKj+fBzTXLzkxl4uRbKLu9vwWzjoXyxgvp2iw7vkt/amQ==}
+  '@constl/bohr-db@1.2.4':
+    resolution: {integrity: sha512-nqGmlducO+isoL5s0dtx0wfK8TgH43PUTYvy8ZFzVuLHc3ho04CItWzdVcwMSnBGatcPaMIiC8Rig07wJQtOtw==}
 
   '@constl/ipa@1.6.24':
     resolution: {integrity: sha512-N/hm/6d0cFNetmgZt5jtK34CBcUlP/oeRT9HOf75jc4ZiPs8pLoopTI+HIDUorJXvlRF5bH+s9gd82eVAgbmNA==}
@@ -2218,6 +2218,9 @@ packages:
 
   '@orbitdb/feed-db@1.1.2':
     resolution: {integrity: sha512-o+9SBiVWdbvBWQyGRXUajTq75uDQqRzLafbn2dGMshsU8ibWAllxpOhHXojaDyJRUGXxjt25LkbLFQGQQGiBEQ==}
+
+  '@orbitdb/nested-db@1.0.1':
+    resolution: {integrity: sha512-nXEv683Vp5N5PUliZ4TWMYUa3pG5mH0q6gscT/txoTXzxahmoWV5PHP+U10XZTRmGGOFuz4uM9Y5AkOkxFncyA==}
 
   '@orbitdb/ordered-keyvalue-db@1.1.2':
     resolution: {integrity: sha512-itNbThLgZlc3H0qOku7i8VgD9zOWDmCR4Frk2HcQ1MPni4bnUcna0TKurkBSAQvwhwrtQHtq9Me0d0drEKMN5Q==}
@@ -10538,11 +10541,12 @@ snapshots:
 
   '@colors/colors@1.5.0': {}
 
-  '@constl/bohr-db@1.2.3(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))':
+  '@constl/bohr-db@1.2.4(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))':
     dependencies:
       '@orbitdb/core': 2.5.0
       '@orbitdb/core-types': 1.0.14
       '@orbitdb/feed-db': 1.1.2(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
+      '@orbitdb/nested-db': 1.0.1(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       '@orbitdb/ordered-keyvalue-db': 1.1.2(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       '@orbitdb/set-db': 1.1.2(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       ajv: 8.17.1
@@ -10562,7 +10566,7 @@ snapshots:
       '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
       '@chriscdn/promise-semaphore': 3.0.1
-      '@constl/bohr-db': 1.2.3(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
+      '@constl/bohr-db': 1.2.4(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
       '@constl/mandataire': 3.1.2
       '@constl/utils-ipa': 2.0.10
       '@helia/block-brokers': 4.2.2
@@ -12373,6 +12377,16 @@ snapshots:
       uint8arrays: 5.1.0
 
   '@orbitdb/feed-db@1.1.2(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))':
+    dependencies:
+      '@orbitdb/core': 2.5.0
+      helia: 5.4.2(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
+    transitivePeerDependencies:
+      - bufferutil
+      - react-native
+      - supports-color
+      - utf-8-validate
+
+  '@orbitdb/nested-db@1.0.1(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))':
     dependencies:
       '@orbitdb/core': 2.5.0
       helia: 5.4.2(react-native@0.75.1(@babel/core@7.27.1)(@babel/preset-env@7.25.3(@babel/core@7.27.1))(react@18.3.1)(typescript@5.8.3))
