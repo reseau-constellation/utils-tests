@@ -21,8 +21,8 @@ importers:
         specifier: ^5.1.1
         version: 5.2.17(react-native@0.75.1(@babel/core@7.27.4)(@babel/preset-env@7.25.3(@babel/core@7.27.4))(react@18.3.1)(typescript@5.8.3))
       '@orbitdb/core':
-        specifier: ^2.4.3
-        version: 2.5.0
+        specifier: ^3.0.0
+        version: 3.0.2
       blockstore-core:
         specifier: ^5.0.2
         version: 5.0.4
@@ -11226,7 +11226,7 @@ snapshots:
   '@ipld/dag-cbor@9.2.3':
     dependencies:
       cborg: 4.2.11
-      multiformats: 13.3.3
+      multiformats: 13.3.7
 
   '@ipld/dag-cbor@9.2.4':
     dependencies:
@@ -11236,11 +11236,11 @@ snapshots:
   '@ipld/dag-json@10.2.4':
     dependencies:
       cborg: 4.2.11
-      multiformats: 13.3.3
+      multiformats: 13.3.7
 
   '@ipld/dag-pb@4.1.5':
     dependencies:
-      multiformats: 13.3.6
+      multiformats: 13.3.7
 
   '@ipshipyard/libp2p-auto-tls@1.0.0':
     dependencies:
@@ -12106,7 +12106,7 @@ snapshots:
 
   '@multiformats/murmur3@2.1.8':
     dependencies:
-      multiformats: 13.3.6
+      multiformats: 13.3.7
       murmurhash3js-revisited: 3.0.0
 
   '@multiformats/uri-to-multiaddr@9.0.1':
@@ -16661,7 +16661,7 @@ snapshots:
       it-parallel: 3.0.13
       it-pipe: 3.0.1
       it-pushable: 3.2.3
-      multiformats: 13.3.6
+      multiformats: 13.3.7
       p-queue: 8.1.0
       progress-events: 1.0.1
 
@@ -16677,7 +16677,7 @@ snapshots:
       it-batch: 3.0.6
       it-first: 3.0.6
       it-parallel-batch: 3.0.6
-      multiformats: 13.3.6
+      multiformats: 13.3.7
       progress-events: 1.0.1
       rabin-wasm: 0.1.5
       uint8arraylist: 2.4.8
