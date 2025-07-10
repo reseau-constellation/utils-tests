@@ -113,7 +113,7 @@ importers:
         version: 12.5.1
       '@multiformats/multiaddr-matcher':
         specifier: ^2.0.0
-        version: 2.0.1
+        version: 2.0.2
       '@orbitdb/core-types':
         specifier: ^1.0.13
         version: 1.1.7
@@ -2001,8 +2001,8 @@ packages:
   '@multiformats/multiaddr-matcher@1.8.0':
     resolution: {integrity: sha512-tR/HFhDucXjvwCef5lfXT7kikqR2ffUjliuYlg/RKYGPySVKVlvrDufz86cIuHNc+i/fNR16FWWgD/pMJ6RW4w==}
 
-  '@multiformats/multiaddr-matcher@2.0.1':
-    resolution: {integrity: sha512-rhEYax74GlL0YPAZo61tK/hu0hwU7Hf9maXpoKNlpekmOPv+eckD+UlSeoTDCpGP8hQqMwLkX8e64MuDpy2Vlg==}
+  '@multiformats/multiaddr-matcher@2.0.2':
+    resolution: {integrity: sha512-si7EZCI93mfBJKKRkh+u2bB9W6W5APVN3XfdwuseEJ0OS7ysg0Jno9SuAi0bRzsl5OEFESoF71SjsRqgp8PXAA==}
 
   '@multiformats/multiaddr-to-uri@11.0.0':
     resolution: {integrity: sha512-9RNmlIGwZbBLsHekT50dbt4o4u8Iciw9kGjv+WHiGxQdsJ6xKKjU1+C0Vbas6RilMbaVOAOnEyfNcXbUmTkLxQ==}
@@ -11390,7 +11390,7 @@ snapshots:
       '@libp2p/peer-record': 8.0.34
       '@libp2p/utils': 6.7.1
       '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.1
+      '@multiformats/multiaddr-matcher': 2.0.2
       any-signal: 4.1.1
       it-protobuf-stream: 2.0.3
       it-stream-types: 2.0.2
@@ -11468,7 +11468,7 @@ snapshots:
       '@libp2p/peer-record': 8.0.34
       '@libp2p/utils': 6.7.1
       '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.1
+      '@multiformats/multiaddr-matcher': 2.0.2
       it-drain: 3.0.10
       it-parallel: 3.0.13
       it-protobuf-stream: 2.0.3
@@ -11944,7 +11944,7 @@ snapshots:
       '@libp2p/peer-id': 5.1.8
       '@libp2p/utils': 6.7.1
       '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.1
+      '@multiformats/multiaddr-matcher': 2.0.2
       '@peculiar/webcrypto': 1.5.0
       '@peculiar/x509': 1.12.4
       any-signal: 4.1.1
@@ -11977,7 +11977,7 @@ snapshots:
       '@libp2p/interface': 2.10.5
       '@libp2p/utils': 6.7.1
       '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.1
+      '@multiformats/multiaddr-matcher': 2.0.2
       '@multiformats/multiaddr-to-uri': 11.0.2
       '@types/ws': 8.18.1
       it-ws: 6.1.5
@@ -12031,7 +12031,7 @@ snapshots:
       '@multiformats/multiaddr': 12.5.1
       multiformats: 13.3.7
 
-  '@multiformats/multiaddr-matcher@2.0.1':
+  '@multiformats/multiaddr-matcher@2.0.2':
     dependencies:
       '@multiformats/multiaddr': 12.5.1
 
@@ -17368,7 +17368,7 @@ snapshots:
       '@libp2p/utils': 6.7.1
       '@multiformats/dns': 1.0.6
       '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.1
+      '@multiformats/multiaddr-matcher': 2.0.2
       any-signal: 4.1.1
       datastore-core: 10.0.4
       interface-datastore: 8.3.2
