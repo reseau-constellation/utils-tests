@@ -30,9 +30,13 @@ import { webRTC } from "@libp2p/webrtc";
 import { all } from "@libp2p/websockets/filters";
 import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
-import { type GossipsubEvents, gossipsub } from "@chainsafe/libp2p-gossipsub";
+import {
+  gossipsub,
+  GossipSub,
+  GossipSubComponents,
+} from "@chainsafe/libp2p-gossipsub";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
-import type { PrivateKey, PubSub } from "@libp2p/interface";
+import type { PrivateKey } from "@libp2p/interface";
 import type { Libp2pOptions } from "libp2p";
 
 /**
@@ -56,7 +60,9 @@ export const DefaultLibp2pOptions: Libp2pOptions<ServicesLibp2pConstlTest> = {
   },
   services: {
     identify: identify(),
-    pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }),
+    pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
+      components: GossipSubComponents,
+    ) => GossipSub, // Erreur de type dans @chainsafe/pubsub,
     obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
       new ServiceClefPrivée(components),
   },
@@ -84,7 +90,9 @@ export const DefaultLibp2pBrowserOptions: Libp2pOptions<ServicesLibp2pConstlTest
     },
     services: {
       identify: identify(),
-      pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }),
+      pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
+        components: GossipSubComponents,
+      ) => GossipSub, // Erreur de type dans @chainsafe/pubsub,
       obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
         new ServiceClefPrivée(components),
     },
@@ -96,7 +104,7 @@ interface ComposantesServiceClefPrivée {
 
 export type ServicesLibp2pConstlTest = {
   identify: Identify;
-  pubsub: PubSub<GossipsubEvents>;
+  pubsub: GossipSub;
   obtClefPrivée: ServiceClefPrivée;
 };
 export class ServiceClefPrivée {
