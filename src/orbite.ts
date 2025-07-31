@@ -25,14 +25,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import type { HeliaLibp2p } from "helia";
+import type { Helia } from "helia";
 import type {
   Identity,
   OrbitDB,
   Database,
   IdentitiesType,
 } from "@orbitdb/core";
-import type { TypedKeyValue, TypedFeed, TypedSet } from "@constl/bohr-db";
+import {
+  type TypedKeyValue,
+  type TypedFeed,
+  type TypedSet,
+  type TypedOrderedKeyValue,
+} from "@constl/bohr-db";
 import { once } from "events";
 
 import { dossierTempo } from "@/dossiers.js";
@@ -100,7 +105,7 @@ export const créerOrbiteTest = async ({
   orbites: OrbitDB<ServicesLibp2pConstlTest>[];
   fOublier: () => Promise<void>;
 }> => {
-  const sfips: HeliaLibp2p<Libp2p<ServicesLibp2pConstlTest>>[] = [];
+  const sfips: Helia<Libp2p<ServicesLibp2pConstlTest>>[] = [];
   const orbites: OrbitDB<ServicesLibp2pConstlTest>[] = [];
 
   const {
@@ -177,8 +182,9 @@ const attendreInvité = (
 export const peutÉcrire = async <T extends ServiceMap = ServiceMap>(
   bd:
     | TypedKeyValue<{ [clef: string]: number }>
-    | TypedFeed<string>
-    | TypedSet<string>,
+    | TypedOrderedKeyValue<{ [clef: string]: number }>
+    | TypedSet<string>
+    | TypedFeed<string>,
   attendre?: OrbitDB<T>,
 ): Promise<boolean> => {
   if (attendre) {
@@ -189,7 +195,7 @@ export const peutÉcrire = async <T extends ServiceMap = ServiceMap>(
   }
 
   try {
-    if (bd.type === "keyvalue") {
+    if (bd.type === "keyvalue" || bd.type === "ordered-keyvalue") {
       const bdKV = bd as TypedKeyValue<{ [clef: string]: number }>;
 
       // Important d'avoir une clef unique pour éviter l'interférence entre les tests
@@ -218,10 +224,9 @@ export const peutÉcrire = async <T extends ServiceMap = ServiceMap>(
       await bd.add(VAL);
       const éléments = await bd.all();
 
-      const autorisé = éléments.length === 1 && éléments[0].value === VAL;
-      if (éléments.length === 1) {
-        await bd.del(éléments[0].hash);
-      }
+      const autorisé = éléments.size === 1 && éléments.has(VAL);
+      await bd.del(VAL);
+
       return autorisé;
     } else {
       // @ts-expect-error bd.type n'a plus d'options

@@ -62,7 +62,7 @@ export const DefaultLibp2pOptions: Libp2pOptions<ServicesLibp2pConstlTest> = {
     identify: identify(),
     pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
       components: GossipSubComponents,
-    ) => GossipSub, // Erreur de type dans @chainsafe/pubsub,
+    ) => GossipSub, // Erreur de type dans @chainsafe/pubsub
     obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
       new ServiceClefPrivée(components),
   },

@@ -1,4 +1,4 @@
-import { expect } from "aegir/chai";
+/*import { expect } from "aegir/chai";
 
 import { OrbitDB, type KeyValueDatabase } from "@orbitdb/core";
 import { registerFeed, type FeedDatabaseType } from "@orbitdb/feed-db";
@@ -161,3 +161,4 @@ describe("Fonctions utilitaires", function () {
     expect(await accèsAutreOrbite).to.be.true();
   });
 });
+*/

@@ -1,6 +1,7 @@
 import type { réseau, client, Constellation } from "@constl/ipa";
 import type { OrbitDB } from "@orbitdb/core";
 import { isBrowser } from "wherearewe";
+import { créerConstellation as _créerConstellation } from "@constl/ipa";
 
 import { créerOrbiteTest } from "@/orbite.js";
 import { AttendreRésultat } from "@/attente.js";
@@ -11,7 +12,7 @@ export const créerConstellationsTest = async <
   U = client.optsConstellation,
 >({
   n = 1,
-  créerConstellation,
+  créerConstellation = _créerConstellation as unknown as (opts: U) => T,
 }: {
   n: number;
   créerConstellation: (opts: U) => T;

@@ -1,7 +1,7 @@
 import type { Multiaddr } from "@multiformats/multiaddr";
 import type { sfip } from "@constl/ipa";
 
-import { DefaultLibp2pServices, createHelia, type HeliaLibp2p } from "helia";
+import { DefaultLibp2pServices, createHelia, type Helia } from "helia";
 import { bitswap } from "@helia/block-brokers";
 import { createLibp2p, Libp2p } from "libp2p";
 import { MemoryBlockstore } from "blockstore-core";
@@ -18,7 +18,7 @@ export const créerHéliaTest = async ({
   dossier,
 }: {
   dossier?: string;
-} = {}): Promise<HeliaLibp2p<Libp2p<sfip.ServicesLibp2p>>> => {
+} = {}): Promise<Helia<Libp2p<sfip.ServicesLibp2p>>> => {
   const options =
     isBrowser || isElectronRenderer
       ? DefaultLibp2pBrowserOptions
@@ -46,8 +46,8 @@ const filtreParDéfaut = () => true;
 export const connecterPairs = async <
   T extends Libp2p = Libp2p<DefaultLibp2pServices>,
 >(
-  sfip1: HeliaLibp2p<T>,
-  sfip2: HeliaLibp2p<T>,
+  sfip1: Helia<T>,
+  sfip2: Helia<T>,
   options = {
     filtre: filtreParDéfaut,
   },
@@ -83,9 +83,9 @@ export const connecterPairs = async <
 };
 
 export const toutesConnectées = async (
-  sfips: HeliaLibp2p<Libp2p<sfip.ServicesLibp2p>>[],
+  sfips: Helia<Libp2p<sfip.ServicesLibp2p>>[],
 ) => {
-  const connectés: HeliaLibp2p<Libp2p<sfip.ServicesLibp2p>>[] = [];
+  const connectés: Helia<Libp2p<sfip.ServicesLibp2p>>[] = [];
   for (const sfip of sfips) {
     for (const autre of connectés) {
       await connecterPairs(sfip, autre);
