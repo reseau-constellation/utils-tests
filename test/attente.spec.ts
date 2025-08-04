@@ -128,10 +128,13 @@ describe("Attendre fichier modifié", function () {
     const { writeFileSync } = await import("fs");
     writeFileSync(fichier, "Salut !");
 
+    await attendreFichierExiste({ fichier });
+
     const sync = (await import("rimraf")).sync;
     sync(fichier);
 
     const val = await attente;
+
     expect(val).to.be.false();
   });
 });

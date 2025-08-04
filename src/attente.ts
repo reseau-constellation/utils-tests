@@ -83,7 +83,6 @@ export const attendreFichierModifié = async ({
   }
 
   await attendreFichierExiste({ fichier, signal });
-
   const tempsAvant = Date.now();
 
   const chokidar = await import("chokidar");
