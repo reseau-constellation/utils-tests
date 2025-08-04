@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const dossierTempo = async (): Promise<{
   dossier: string;
-  fEffacer: () => void;
+  effacer: () => void;
 }> => {
   if (isNode || isElectronMain) {
     const fs = await import("fs");
@@ -11,14 +11,26 @@ export const dossierTempo = async (): Promise<{
     const os = await import("os");
     const sync = (await import("rimraf")).sync;
 
-    const dossier = fs.mkdtempSync(path.join(os.tmpdir(), "constl-ipa-"));
-    const fEffacer = () => sync(dossier);
-    return { dossier, fEffacer };
+    const dossier = fs.mkdtempSync(path.join(os.tmpdir(), "constl-"));
+    const effacer = () => {
+      try {
+        sync(dossier);
+      } catch (e) {
+        // Sur Windows, parfois les fichiers de Hélia sont encore en utilisation
+        if (process.platform === "win32") {
+          console.log("On ignore ça sur Windows\n", e);
+          return;
+        } else {
+          throw e;
+        }
+      }
+    };
+    return { dossier, effacer };
   } else {
-    const dossier = uuidv4() + "/constl-ipa";
+    const dossier = uuidv4() + "/constl-";
     return {
       dossier,
-      fEffacer: () => {
+      effacer: () => {
         // Rien à faire, je crois
       },
     };

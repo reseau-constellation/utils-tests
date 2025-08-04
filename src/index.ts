@@ -1,9 +1,25 @@
-export * as attente from "@/attente.js";
-export * as constellation from "@/constellation.js";
-export * as dossiers from "@/dossiers.js";
-export * as orbite from "@/orbite.js";
-export * as sfip from "@/sfip.js";
-export * as config from "@/config.js";
-export * as libp2p from "@/libp2p.js";
+export {
+  ServicesLibp2pTest,
+  ComposantesServiceClefPrivée,
+  ServiceClefPrivée,
+  OptionsDéfautLibp2pNode,
+  OptionsDéfautLibp2pNavigateur,
+  créerLibp2psTest,
+  toutesConnectées,
+  connecterPairs,
+} from "./libp2p/index.js";
 
-export { version } from "@/version.js";
+export {
+  ID_DÉFAUT_RELAI,
+  PORT_DÉFAUT_RELAI,
+  obtenirAdresseRelai,
+  lancerRelai,
+  obtenirFichierRelai,
+} from "./relai/index.js";
+
+export { attendreFichierExiste, attendreFichierModifié } from "./attente.js";
+export { obtConfigEsbuild, générerConfigÆgir } from "./config.js";
+export { créerConstellationsTest } from "./constellation.js";
+export { dossierTempo } from "./dossiers.js";
+export { créerHéliasTest } from "./hélia.js";
+export { créerOrbitesTest } from "./orbite.js";

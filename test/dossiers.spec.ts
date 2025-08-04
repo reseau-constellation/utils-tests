@@ -1,14 +1,14 @@
 import { expect } from "aegir/chai";
 import { isNode, isElectronMain } from "wherearewe";
-import { dossierTempo } from "@/dossiers.js";
+import { dossierTempo } from "@/index.js";
 
 describe("Dossier temporaire", function () {
   let dossier: string;
-  let fEffacer: () => void;
+  let effacer: () => void;
 
   it("Dossier créé", async () => {
     if (isNode || isElectronMain) {
-      ({ dossier, fEffacer } = await dossierTempo());
+      ({ dossier, effacer } = await dossierTempo());
       const { existsSync } = await import("fs");
       expect(existsSync(dossier)).to.be.true();
     }
@@ -16,7 +16,7 @@ describe("Dossier temporaire", function () {
 
   it("Dossier effacé", async () => {
     if (isNode || isElectronMain) {
-      fEffacer();
+      effacer();
       const { existsSync } = await import("fs");
       expect(existsSync(dossier)).to.be.false();
     }

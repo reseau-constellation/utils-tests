@@ -1,79 +1,58 @@
-import type { réseau, client, Constellation } from "@constl/ipa";
-import type { OrbitDB } from "@orbitdb/core";
 import { isBrowser } from "wherearewe";
-import { créerConstellation as _créerConstellation } from "@constl/ipa";
+import { créerOrbitesTest } from "./orbite.js";
+import { dossierTempo } from "./dossiers.js";
+import { OrbitDB } from "@orbitdb/core";
 
-import { créerOrbiteTest } from "@/orbite.js";
-import { AttendreRésultat } from "@/attente.js";
-import type { ServicesLibp2pConstlTest } from "./libp2p";
+interface InterfaceConstellation {
+  fermer: () => Promise<void>;
+}
+
+interface OptionsConstellation {
+  dossier?: string;
+  orbite?: OrbitDB;
+}
 
 export const créerConstellationsTest = async <
-  T = Constellation,
-  U = client.optsConstellation,
+  T extends InterfaceConstellation,
 >({
   n = 1,
-  créerConstellation = _créerConstellation as unknown as (opts: U) => T,
+  créerConstellation,
+  dossier,
 }: {
   n: number;
-  créerConstellation: (opts: U) => T;
+  créerConstellation: (opts: OptionsConstellation) => T;
+  dossier?: string;
 }): Promise<{
-  clients: ReturnType<typeof créerConstellation>[];
-  orbites: OrbitDB<ServicesLibp2pConstlTest>[];
-  fOublier: () => Promise<void>;
+  constls: T[];
+  fermer: () => Promise<void>;
 }> => {
-  const clients: ReturnType<typeof créerConstellation>[] = [];
-  const fsOublier: (() => Promise<void>)[] = [];
+  let effacerDossier: () => void = () => {};
+  if (!dossier) {
+    ({ dossier, effacer: effacerDossier } = await dossierTempo());
+  }
 
-  // Nécessaire pour Playwright
-  if (isBrowser) window.localStorage.clear();
+  const { orbites, fermer: fermerOrbites } = await créerOrbitesTest({
+    n,
+    dossier,
+  });
 
-  const { orbites, fOublier: fOublierOrbites } = await créerOrbiteTest({ n });
-  fsOublier.push(fOublierOrbites);
-
+  const constls: T[] = [];
   for (const i in [...Array(n).keys()]) {
-    const client = créerConstellation({
+    const constl = créerConstellation({
       orbite: orbites[i],
-      dossier: orbites[i].directory.split("/").slice(0, -1).join("/"),
-    } as U);
-    clients.push(client);
+      dossier,
+    });
+    constls.push(constl);
   }
 
-  const fOublier = async () => {
-    for (const client of clients) await (client as Constellation).fermer();
-    await Promise.all(fsOublier.map((f) => f()));
+  const fermer = async () => {
+    for (const constl of constls) await constl.fermer();
+
+    await fermerOrbites();
+    effacerDossier();
+
+    // Nécessaire pour Playwright
+    if (isBrowser) window.localStorage.clear();
   };
-  return { fOublier, clients, orbites };
-};
-
-export const constellationConnectéeÀ = async (
-  constellation: client.Constellation,
-  connectéeÀ: client.Constellation,
-): Promise<void> => {
-  const dispositifsConnectés = new AttendreRésultat<
-    réseau.statutDispositif[]
-  >();
-  const idCompte2 = await connectéeÀ.obtIdCompte();
-
-  const fOublier = await constellation.réseau.suivreConnexionsDispositifs({
-    f: (dispositifs) => dispositifsConnectés.mettreÀJour(dispositifs),
-  });
-  await dispositifsConnectés.attendreQue((dispositifs) => {
-    return !!dispositifs.find((d) => d.infoDispositif.idCompte === idCompte2);
-  });
-  await fOublier();
-  return;
-};
-
-export const constellationsConnectées = async (
-  ...clients: client.Constellation[]
-): Promise<void> => {
-  if (clients.length < 2) return;
-  const promesses: Promise<void>[] = [];
-  for (let i = 1; i < clients.length; i++) {
-    for (let j = 0; j < i; j++) {
-      promesses.push(constellationConnectéeÀ(clients[i], clients[j]));
-      promesses.push(constellationConnectéeÀ(clients[j], clients[i]));
-    }
-  }
-  await Promise.all(promesses);
+  return { constls, fermer };
 };

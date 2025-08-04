@@ -1,7 +1,7 @@
 import type { PartialOptions } from "aegir";
 import type { BuildOptions } from "esbuild";
 
-import { lancerRelai } from "./sfip.js";
+import { lancerRelai } from "./relai/index.js";
 
 export const obtConfigEsbuild = async (): Promise<BuildOptions> => {
   const { createRequire } = (await import("module")).default;
@@ -11,7 +11,7 @@ export const obtConfigEsbuild = async (): Promise<BuildOptions> => {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const require = createRequire(import.meta.url);
   const configEsbuild: BuildOptions = {
-    // this will inject all the named exports from 'node-globals.js' as globals
+    // ceci injecte les exportations nomées de 'node-globals.js' en tant que variables globales
     inject: [path.join(__dirname, "./scripts/node-globals.js")],
     plugins: [
       {
@@ -64,7 +64,13 @@ type RetourAvant = {
   relai?: () => void;
 };
 
-export const générerConfigÆgir = async (): Promise<PartialOptions> => {
+export const générerConfigÆgir = async ({
+  portDéfautRelai,
+  clefPrivéeRelai,
+}: {
+  portDéfautRelai?: string;
+  clefPrivéeRelai?: string;
+} = {}): Promise<PartialOptions> => {
   const esbuild = await obtConfigEsbuild();
   return {
     test: {
@@ -72,7 +78,7 @@ export const générerConfigÆgir = async (): Promise<PartialOptions> => {
       before: async (opts): Promise<RetourAvant> => {
         let relai = undefined;
         if (opts.target.includes("browser")) {
-          relai = await lancerRelai();
+          relai = await lancerRelai({ portDéfautRelai, clefPrivéeRelai });
         }
 
         return { relai };

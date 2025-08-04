@@ -29,31 +29,26 @@ import { createLibp2p } from "libp2p";
 import { noise } from "@chainsafe/libp2p-noise";
 import { circuitRelayServer } from "@libp2p/circuit-relay-v2";
 import { webSockets } from "@libp2p/websockets";
-import * as filters from "@libp2p/websockets/filters";
 import { identify } from "@libp2p/identify";
 import { keys } from "@libp2p/crypto";
 import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
 import { FaultTolerance } from "@libp2p/interface";
+import { CLEF_PRIVÉE_RELAI, PORT_DÉFAUT_RELAI } from "./consts.js";
 
-// output of: console.log(server.peerId.privateKey.toString('hex'))
-const privateKeyString =
-  "08011240821cb6bc3d4547fcccb513e82e4d718089f8a166b23ffcd4a436754b6b0774cf07447d1693cd10ce11ef950d7517bad6e9472b41a927cd17fc3fb23f8c70cd99";
-// L'identité de pair qui correspond à la clef privée ci-dessus
-// const relayId = '12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE'
+// produit par: console.log(server.peerId.privateKey.toString('hex'))
+const privateKeyString = process.env.CLEF_PRIVÉE_RELAI || CLEF_PRIVÉE_RELAI;
 
-const encoded = uint8ArrayFromString(privateKeyString, "hex");
-const privateKey = keys.privateKeyFromProtobuf(encoded);
+const chiffrée = uint8ArrayFromString(privateKeyString, "hex");
+const clefPrivée = keys.privateKeyFromProtobuf(chiffrée);
 
 const relai = await createLibp2p({
-  privateKey,
+  privateKey: clefPrivée,
   addresses: {
-    listen: ["/ip4/0.0.0.0/tcp/54321/ws"],
+    listen: [
+      `/ip4/0.0.0.0/tcp/${process.env.PORT_DÉFAUT_RELAI || PORT_DÉFAUT_RELAI}/ws`,
+    ],
   },
-  transports: [
-    webSockets({
-      filter: filters.all,
-    }),
-  ],
+  transports: [webSockets()],
   transportManager: {
     faultTolerance: FaultTolerance.NO_FATAL,
   },
@@ -88,4 +83,4 @@ console.log(
   "p2p addr: ",
   relai.getMultiaddrs().map((ma) => ma.toString()),
 );
-// generates a deterministic address: /ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE
+// génère une adresse prédéterminée : /ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE

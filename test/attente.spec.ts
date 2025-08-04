@@ -1,87 +1,136 @@
 import {
-  AttendreFichierExiste,
-  AttendreFichierModifié,
-  AttendreRésultat,
-} from "@/attente.js";
-import { dossierTempo } from "@/dossiers.js";
+  attendreFichierExiste,
+  attendreFichierModifié,
+  dossierTempo,
+} from "@/index.js";
 
-import { isBrowser, isWebWorker } from "wherearewe";
+import { isBrowser, isElectronRenderer } from "wherearewe";
 import { join } from "path";
 
 import { expect } from "aegir/chai";
+import { rimraf } from "rimraf";
 
-describe("AttendreRésultat", function () {
-  it("attendre existe", async () => {
-    const attente = new AttendreRésultat<number>();
-    const résultat = attente.attendreExiste();
-    attente.mettreÀJour(1);
-    expect(await résultat).to.equal(1);
-  });
-  it("attendre que", async () => {
-    const attente = new AttendreRésultat<number>();
-    const résultat = attente.attendreQue((x) => x > 1);
-    attente.mettreÀJour(1);
-    expect(attente.val).to.equal(1);
-    attente.mettreÀJour(2);
-    expect(await résultat).to.equal(2);
-  });
-  it("attendre n'existe pas", async () => {
-    const attente = new AttendreRésultat<number>();
-    const résultat = attente.attendreNexistePas();
-    attente.mettreÀJour(undefined);
-    await résultat;
-  });
-});
+describe("Attendre fichier existe", function () {
+  let dossier: string;
+  let effacer: () => void;
 
-describe("AttendreFichier", function () {
+  beforeEach(async () => {
+    ({ dossier, effacer } = await dossierTempo());
+  });
+
+  afterEach(async () => {
+    effacer();
+  });
+
   it("Fichier créé", async function () {
-    if (isBrowser || isWebWorker) {
+    if (isBrowser || isElectronRenderer) {
       this.skip();
     } else {
-      const { dossier, fEffacer } = await dossierTempo();
       const fichier = join(dossier, "téléchargement.txt");
-      const attente = new AttendreFichierExiste(fichier);
-      const résultat = attente.attendre();
+
+      const attente = attendreFichierExiste({ fichier });
       const { writeFileSync } = await import("fs");
       writeFileSync(fichier, "Salut !");
-      await résultat;
-      fEffacer();
+      const val = await attente;
+
+      expect(val).to.be.true();
+    }
+  });
+
+  it("Avorter", async function () {
+    if (isBrowser || isElectronRenderer) {
+      this.skip();
+    } else {
+      const contrôlleur = new AbortController();
+      const { signal } = contrôlleur;
+      const fichier = join(dossier, "téléchargement.txt");
+
+      const résultat = attendreFichierExiste({ fichier, signal });
+      contrôlleur.abort();
+      const val = await résultat;
+
+      expect(val).to.be.false();
     }
   });
 });
 
-describe("AttendreFichierModifié", function () {
+describe("Attendre fichier modifié", function () {
   let dossier: string;
-  let fEffacer: () => void;
+  let effacer: () => void;
 
-  before(async () => {
-    ({ dossier, fEffacer } = await dossierTempo());
-  });
-  after(async () => {
-    fEffacer?.();
+  beforeEach(async () => {
+    ({ dossier, effacer } = await dossierTempo());
   });
 
-  it("Fichier créé", async function () {
-    if (isBrowser || isWebWorker) this.skip();
+  afterEach(async () => {
+    effacer();
+  });
+
+  it("Fichier créé après début écoute", async function () {
+    if (isBrowser || isElectronRenderer) this.skip();
 
     const fichier = join(dossier, "création.txt");
     const { writeFileSync } = await import("fs");
-    const attente = new AttendreFichierModifié(fichier);
-    const résultat = attente.attendre(Date.now());
-    await new Promise<void>((résoudre) => setTimeout(résoudre, 100)); // Parfois nécessaire
+
     writeFileSync(fichier, "Salut !");
-    await résultat;
+
+    const attente = attendreFichierModifié({ fichier });
+    await new Promise<void>((résoudre) => setTimeout(résoudre, 10)); // Parfois nécessaire
+
+    writeFileSync(fichier, "Re-bonjour !");
+
+    const val = await attente;
+
+    expect(val).to.be.true();
   });
 
-  it("Fichier modifié après création", async function () {
-    if (isBrowser || isWebWorker) this.skip();
+  it("Fichier créé avant début écoute", async function () {
+    if (isBrowser || isElectronRenderer) this.skip();
     const fichier = join(dossier, "modification.txt");
     const { writeFileSync } = await import("fs");
     writeFileSync(fichier, "Salut !");
-    const attente = new AttendreFichierModifié(fichier);
-    const résultat = attente.attendre(Date.now());
-    await new Promise<void>((résoudre) => setTimeout(résoudre, 100)); // Parfois nécessaire
+
+    const attente = attendreFichierModifié({ fichier });
+
+    await new Promise<void>((résoudre) => setTimeout(résoudre, 10)); // Parfois nécessaire
     writeFileSync(fichier, "Rebonjour !");
-    await résultat;
+
+    const val = await attente;
+    expect(val).to.be.true();
+  });
+
+  it("Avorter", async function () {
+    if (isBrowser || isElectronRenderer) {
+      this.skip();
+    } else {
+      const contrôlleur = new AbortController();
+      const { signal } = contrôlleur;
+      const fichier = join(dossier, "téléchargement.txt");
+
+      const { writeFileSync } = await import("fs");
+      writeFileSync(fichier, "Salut !");
+
+      const résultat = attendreFichierModifié({ fichier, signal });
+      await new Promise<void>((résoudre) => setTimeout(résoudre, 10)); // Parfois nécessaire
+
+      contrôlleur.abort();
+      const val = await résultat;
+
+      expect(val).to.be.false();
+    }
+  });
+
+  it("Fichier effaçé", async function () {
+    if (isBrowser || isElectronRenderer) this.skip();
+    const fichier = join(dossier, "modification.txt");
+
+    const attente = attendreFichierModifié({ fichier });
+
+    const { writeFileSync } = await import("fs");
+    writeFileSync(fichier, "Salut !");
+    rimraf(fichier);
+
+    const val = await attente;
+    expect(val).to.be.false();
   });
 });

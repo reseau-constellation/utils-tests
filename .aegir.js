@@ -1,3 +1,3 @@
-import { config } from "./dist/src/index.js";
+import { générerConfigÆgir } from "./dist/src/index.js";
 
-export default config.générerConfigÆgir();
+export default générerConfigÆgir();
