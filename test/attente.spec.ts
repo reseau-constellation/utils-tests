@@ -8,7 +8,6 @@ import { isBrowser, isElectronRenderer } from "wherearewe";
 import { join } from "path";
 
 import { expect } from "aegir/chai";
-import { rimraf } from "rimraf";
 
 describe("Attendre fichier existe", function () {
   let dossier: string;
@@ -128,7 +127,9 @@ describe("Attendre fichier modifié", function () {
 
     const { writeFileSync } = await import("fs");
     writeFileSync(fichier, "Salut !");
-    rimraf(fichier);
+
+    const sync = (await import("rimraf")).sync;
+    sync(fichier);
 
     const val = await attente;
     expect(val).to.be.false();

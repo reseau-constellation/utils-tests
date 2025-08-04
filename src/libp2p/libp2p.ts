@@ -26,13 +26,8 @@ export const créerLibp2psTest = async ({
     const libp2p = await createLibp2p(
       isBrowser ? OptionsDéfautLibp2pNavigateur() : OptionsDéfautLibp2pNode(),
     );
-    console.log("ici", _, libp2p.peerId);
 
     for (const l of libp2ps) {
-      console.log(
-        libp2ps.map((x) => x.peerId),
-        l.peerId,
-      );
       await connecterPairs(libp2p, l, { adresseRelai });
     }
     libp2ps.push(libp2p);
