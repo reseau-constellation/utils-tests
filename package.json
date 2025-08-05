@@ -93,7 +93,7 @@
     "crypto-browserify": "^3.12.1",
     "events": "^3.3.0",
     "genversion": "^3.2.0",
-    "helia": "5.5.0",
+    "helia": "5.5.1",
     "libp2p": "^2.9.0",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
