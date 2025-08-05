@@ -2,12 +2,24 @@ import {
   attendreFichierExiste,
   attendreFichierModifié,
   dossierTempo,
+  que,
 } from "@/index.js";
 
 import { isBrowser, isElectronRenderer } from "wherearewe";
 import { join } from "path";
 
 import { expect } from "aegir/chai";
+
+describe("Attendre que", function () {
+  it("attendre valeure vraie", async () => {
+    const val = { a: 0 };
+    
+    const attente = que(()=>val.a > 0);
+    val.a = 1
+
+    expect(await attente).to.be.true();
+  })
+})
 
 describe("Attendre fichier existe", function () {
   let dossier: string;

@@ -17,7 +17,7 @@ export {
   obtenirFichierRelai,
 } from "./relai/index.js";
 
-export { attendreFichierExiste, attendreFichierModifié } from "./attente.js";
+export { attendreFichierExiste, attendreFichierModifié, que } from "./attente.js";
 export { obtConfigEsbuild, générerConfigÆgir } from "./config.js";
 export { créerConstellationsTest } from "./constellation.js";
 export { dossierTempo } from "./dossiers.js";
