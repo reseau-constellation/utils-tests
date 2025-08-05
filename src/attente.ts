@@ -3,12 +3,12 @@ import { isBrowser, isElectronRenderer } from "wherearewe";
 export const que = async <T>(
   f: () => T | Promise<T | undefined>,
   t = 100,
-): Promise<T> => {
-  return new Promise<T>((résoudre) => {
+): Promise<void> => {
+  return new Promise((résoudre) => {
     const testF = async () => {
       const résultat = await f();
-      if (résultat !== undefined) {
-        résoudre(résultat);
+      if (résultat) {
+        résoudre();
       } else {
         setTimeout(testF, t);
       }
@@ -119,7 +119,7 @@ export const attendreFichierModifié = async ({
         if (prêt && (!condition || (await condition()))) {
           fermerEtRésoudre(true);
         }
-      } catch (e) {
+      } catch {
         // Le fichier a été effacé
         await fermerEtRésoudre(false);
       }

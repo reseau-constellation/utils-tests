@@ -13,13 +13,13 @@ import { expect } from "aegir/chai";
 describe("Attendre que", function () {
   it("attendre valeure vraie", async () => {
     const val = { a: 0 };
-    
-    const attente = que(()=>val.a > 0);
-    val.a = 1
 
-    expect(await attente).to.be.true();
-  })
-})
+    const attente = que(() => val.a > 0);
+    val.a = 1;
+
+    await attente;
+  });
+});
 
 describe("Attendre fichier existe", function () {
   let dossier: string;
