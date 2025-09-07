@@ -29,7 +29,7 @@ jobs:
           version: latest
 
       - name: Préparation de Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: latest
           cache: pnpm
@@ -59,7 +59,7 @@ jobs:
           version: latest
 
       - name: Préparation de Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: latest
           cache: pnpm
@@ -96,7 +96,7 @@ jobs:
           version: latest
 
       - name: Préparation de Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: latest
           cache: pnpm
