@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@chainsafe/libp2p-gossipsub':
-        specifier: 14.1.1
-        version: 14.1.1
+        specifier: 14.1.2
+        version: 14.1.2
       '@helia/block-brokers':
         specifier: ^4.2.3
         version: 4.2.4
@@ -1043,6 +1043,10 @@ packages:
 
   '@chainsafe/libp2p-gossipsub@14.1.1':
     resolution: {integrity: sha512-EUs2C+xHXXbw0pQQF2AN/ih4qB6BBWOGkDhvHz1VN52o2m/827IBEMT8RHdXMNZciQc90to1L57BKmhXkvztDw==}
+    engines: {npm: '>=8.7.0'}
+
+  '@chainsafe/libp2p-gossipsub@14.1.2':
+    resolution: {integrity: sha512-HuyB1dO+GwqpbvKhq2TdrsvrtNt19iOWLEfjy2N3ItYY1gA2F67KtCOLmZ1NlEcCbjFDg+qRffQMjgkDwHSFOg==}
     engines: {npm: '>=8.7.0'}
 
   '@chainsafe/libp2p-noise@16.1.4':
@@ -10336,6 +10340,23 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
+  '@chainsafe/libp2p-gossipsub@14.1.2':
+    dependencies:
+      '@libp2p/crypto': 5.1.8
+      '@libp2p/interface': 2.11.0
+      '@libp2p/interface-internal': 2.3.19
+      '@libp2p/peer-id': 5.1.9
+      '@libp2p/pubsub': 10.1.17
+      '@multiformats/multiaddr': 12.5.1
+      denque: 2.1.0
+      it-length-prefixed: 9.1.1
+      it-pipe: 3.0.1
+      it-pushable: 3.2.3
+      multiformats: 13.4.0
+      protons-runtime: 5.6.0
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
+
   '@chainsafe/libp2p-noise@16.1.4':
     dependencies:
       '@chainsafe/as-chacha20poly1305': 0.1.0
@@ -11071,7 +11092,7 @@ snapshots:
       it-first: 3.0.9
       it-map: 3.1.4
       it-ndjson: 1.1.4
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       p-defer: 4.0.1
       p-queue: 8.1.1
       uint8arrays: 5.1.0
@@ -11097,7 +11118,7 @@ snapshots:
       ipns: 10.1.2
       it-first: 3.0.9
       it-map: 3.1.4
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       uint8arrays: 5.1.0
 
   '@helia/unixfs@5.0.4':
@@ -11198,7 +11219,7 @@ snapshots:
       any-signal: 4.1.1
       delay: 6.0.0
       interface-datastore: 8.3.2
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       uint8arrays: 5.1.0
     transitivePeerDependencies:
       - supports-color
@@ -11528,7 +11549,7 @@ snapshots:
       '@noble/hashes': 1.8.0
       asn1js: 3.0.6
       interface-datastore: 8.3.2
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       sanitize-filename: 1.6.3
       uint8arrays: 5.1.0
 
@@ -11559,7 +11580,7 @@ snapshots:
       '@libp2p/interface': 2.11.0
       '@multiformats/multiaddr': 12.5.1
       interface-datastore: 8.3.2
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       weald: 1.0.4
 
   '@libp2p/logger@5.2.0':
@@ -11674,7 +11695,7 @@ snapshots:
     dependencies:
       '@libp2p/crypto': 5.1.8
       '@libp2p/interface': 2.11.0
-      '@libp2p/interface-internal': 2.3.18
+      '@libp2p/interface-internal': 2.3.19
       '@libp2p/peer-collections': 6.0.35
       '@libp2p/peer-id': 5.1.9
       '@libp2p/utils': 6.7.2
@@ -11682,7 +11703,7 @@ snapshots:
       it-pipe: 3.0.1
       it-pushable: 3.2.3
       main-event: 1.0.1
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       p-queue: 8.1.1
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -12618,7 +12639,7 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@semantic-release/changelog@6.0.3(semantic-release@24.2.8(typescript@5.9.2))':
+  '@semantic-release/changelog@6.0.3(semantic-release@24.2.8(typescript@5.8.3))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
@@ -12644,7 +12665,7 @@ snapshots:
 
   '@semantic-release/error@4.0.0': {}
 
-  '@semantic-release/git@10.0.1(semantic-release@24.2.8(typescript@5.9.2))':
+  '@semantic-release/git@10.0.1(semantic-release@24.2.8(typescript@5.8.3))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
@@ -13295,9 +13316,9 @@ snapshots:
     dependencies:
       '@electron/get': 4.0.2
       '@polka/send-type': 0.5.2
-      '@semantic-release/changelog': 6.0.3(semantic-release@24.2.8(typescript@5.9.2))
+      '@semantic-release/changelog': 6.0.3(semantic-release@24.2.8(typescript@5.8.3))
       '@semantic-release/commit-analyzer': 13.0.1(semantic-release@24.2.8(typescript@5.9.2))
-      '@semantic-release/git': 10.0.1(semantic-release@24.2.8(typescript@5.9.2))
+      '@semantic-release/git': 10.0.1(semantic-release@24.2.8(typescript@5.8.3))
       '@semantic-release/github': 11.0.6(semantic-release@24.2.8(typescript@5.9.2))
       '@semantic-release/npm': 12.0.2(semantic-release@24.2.8(typescript@5.9.2))
       '@semantic-release/release-notes-generator': 14.1.0(semantic-release@24.2.8(typescript@5.9.2))
@@ -13370,7 +13391,7 @@ snapshots:
       read-pkg-up: 11.0.0
       rimraf: 6.0.1
       semantic-release: 24.2.8(typescript@5.8.3)
-      semantic-release-monorepo: 8.0.2(semantic-release@24.2.8(typescript@5.9.2))
+      semantic-release-monorepo: 8.0.2(semantic-release@24.2.8(typescript@5.8.3))
       semver: 7.7.2
       source-map-support: 0.5.21
       strip-bom: 5.0.0
@@ -13378,9 +13399,9 @@ snapshots:
       strong-log-transformer: 2.1.0
       tempy: 3.1.0
       typedoc: 0.28.13(typescript@5.8.3)
-      typedoc-plugin-mdn-links: 5.0.9(typedoc@0.28.13(typescript@5.9.2))
-      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.13(typescript@5.9.2))
-      typedoc-plugin-missing-exports: 4.1.0(typedoc@0.28.13(typescript@5.9.2))
+      typedoc-plugin-mdn-links: 5.0.9(typedoc@0.28.13(typescript@5.8.3))
+      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.13(typescript@5.8.3))
+      typedoc-plugin-missing-exports: 4.1.0(typedoc@0.28.13(typescript@5.8.3))
       typescript: 5.8.3
       typescript-docs-verifier: 2.5.3(@types/node@22.18.6)(typescript@5.8.3)
       wherearewe: 2.0.1
@@ -16465,7 +16486,7 @@ snapshots:
       '@libp2p/logger': 5.2.0
       cborg: 4.2.12
       interface-datastore: 8.3.2
-      multiformats: 13.3.7
+      multiformats: 13.4.0
       protons-runtime: 5.6.0
       timestamp-nano: 1.0.1
       uint8arraylist: 2.4.8
@@ -19580,7 +19601,7 @@ snapshots:
       '@types/node-forge': 1.3.14
       node-forge: 1.3.1
 
-  semantic-release-monorepo@8.0.2(semantic-release@24.2.8(typescript@5.9.2)):
+  semantic-release-monorepo@8.0.2(semantic-release@24.2.8(typescript@5.8.3)):
     dependencies:
       debug: 4.4.3
       execa: 5.1.1
@@ -19594,12 +19615,12 @@ snapshots:
       ramda: 0.27.2
       read-pkg: 5.2.0
       semantic-release: 24.2.8(typescript@5.8.3)
-      semantic-release-plugin-decorators: 4.0.0(semantic-release@24.2.8(typescript@5.9.2))
+      semantic-release-plugin-decorators: 4.0.0(semantic-release@24.2.8(typescript@5.8.3))
       tempy: 1.0.1
     transitivePeerDependencies:
       - supports-color
 
-  semantic-release-plugin-decorators@4.0.0(semantic-release@24.2.8(typescript@5.9.2)):
+  semantic-release-plugin-decorators@4.0.0(semantic-release@24.2.8(typescript@5.8.3)):
     dependencies:
       semantic-release: 24.2.8(typescript@5.8.3)
 
@@ -20474,16 +20495,16 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc-plugin-mdn-links@5.0.9(typedoc@0.28.13(typescript@5.9.2)):
+  typedoc-plugin-mdn-links@5.0.9(typedoc@0.28.13(typescript@5.8.3)):
     dependencies:
       typedoc: 0.28.13(typescript@5.8.3)
 
-  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.13(typescript@5.9.2)):
+  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.13(typescript@5.8.3)):
     dependencies:
       html-escaper: 3.0.3
       typedoc: 0.28.13(typescript@5.8.3)
 
-  typedoc-plugin-missing-exports@4.1.0(typedoc@0.28.13(typescript@5.9.2)):
+  typedoc-plugin-missing-exports@4.1.0(typedoc@0.28.13(typescript@5.8.3)):
     dependencies:
       typedoc: 0.28.13(typescript@5.8.3)
 
