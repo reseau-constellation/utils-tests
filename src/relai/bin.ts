@@ -35,6 +35,8 @@ import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
 import { FaultTolerance } from "@libp2p/interface";
 import { CLEF_PRIVÉE_RELAI, PORT_DÉFAUT_RELAI } from "./consts.js";
 
+const bavard = process.env.BAVARD;
+
 // produit par: console.log(server.peerId.privateKey.toString('hex'))
 const privateKeyString = process.env.CLEF_PRIVÉE_RELAI || CLEF_PRIVÉE_RELAI;
 
@@ -66,21 +68,22 @@ const relai = await createLibp2p({
 });
 
 relai.addEventListener("peer:connect", async (event) => {
-  console.log("peer:connect", event.detail);
+  if (bavard) console.log("peer:connect", event.detail);
 });
 
 relai.addEventListener("peer:discovery", async (event) => {
-  console.log("peer:discovery", event.detail);
+  if (bavard) console.log("peer:discovery", event.detail);
 });
 
 relai.addEventListener("peer:disconnect", async (event) => {
-  console.log("peer:disconnect", event.detail);
+  if (bavard) if (bavard) console.log("peer:disconnect", event.detail);
   relai.peerStore.delete(event.detail);
 });
 
 console.log(relai.peerId.toString());
-console.log(
-  "p2p addr: ",
-  relai.getMultiaddrs().map((ma) => ma.toString()),
-);
+if (bavard)
+  console.log(
+    "p2p addr: ",
+    relai.getMultiaddrs().map((ma) => ma.toString()),
+  );
 // génère une adresse prédéterminée : /ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE
