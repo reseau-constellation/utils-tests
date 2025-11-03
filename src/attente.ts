@@ -1,19 +1,26 @@
 import { isBrowser, isElectronRenderer } from "wherearewe";
 
-export const que = async <T>(
-  f: () => T | Promise<T | undefined>,
-  t = 100,
+export const que = async (
+  f: () => boolean | Promise<boolean>,
+  t = 10,
 ): Promise<void> => {
-  return new Promise((résoudre) => {
-    const testF = async () => {
-      const résultat = await f();
-      if (résultat) {
-        résoudre();
-      } else {
-        setTimeout(testF, t);
+  return new Promise((résoudre, rejeter) => {
+    const fFinale = async () => {
+      try {
+        if (await f()) {
+          clearTimeout(chrono);
+          résoudre();
+        } else {
+          t *= 1.5;
+          setTimeout(fFinale, t);
+        }
+      } catch {
+        clearTimeout(chrono);
+        rejeter();
       }
     };
-    testF();
+    const chrono = setTimeout(fFinale, t);
+    fFinale();
   });
 };
 
