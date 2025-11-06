@@ -5,8 +5,9 @@ import { bitswap } from "@helia/block-brokers";
 import { MemoryBlockstore } from "blockstore-core";
 import { join } from "path";
 import { sousDossier } from "./utils.js";
-import { LevelBlockstore } from "blockstore-level";
+import { IDBBlockstore } from "blockstore-idb";
 import { obtenirAdresseRelai } from "./relai/index.js";
+import { isElectronMain, isNode } from "wherearewe";
 
 export const créerHéliasTest = async ({
   n,
@@ -30,15 +31,18 @@ export const créerHéliasTest = async ({
   let i = 0;
   const hélias = await Promise.all(
     libp2ps.map(async (libp2p) => {
-      const blockstore = dossier
-        ? new LevelBlockstore(
-            join(sousDossier({ dossier, i }), "hélia", "blocks"),
-          )
+      const dossierBlocs = dossier
+        ? join(sousDossier({ dossier, i }), "hélia", "blocks")
+        : undefined;
+      const stockageBlocs = dossierBlocs
+        ? isNode || isElectronMain
+          ? new (await import("blockstore-fs")).FsBlockstore(dossierBlocs)
+          : new IDBBlockstore(dossierBlocs)
         : new MemoryBlockstore();
       i++;
 
       const optionsHélia = {
-        blockstore,
+        blockstore: stockageBlocs,
         libp2p,
         blockBrokers: [bitswap()],
       };
