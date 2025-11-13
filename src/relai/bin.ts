@@ -60,8 +60,8 @@ const relai = await createLibp2p({
     identify: identify(),
     relay: circuitRelayServer({
       reservations: {
-        maxReservations: 5000,
-        defaultDataLimit: BigInt(1024 * 1024 * 1024),
+        maxReservations: Infinity,
+        applyDefaultLimit: false,
       },
     }),
   },
