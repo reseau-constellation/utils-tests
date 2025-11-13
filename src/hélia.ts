@@ -39,6 +39,7 @@ export const créerHéliasTest = async ({
           ? new (await import("blockstore-fs")).FsBlockstore(dossierBlocs)
           : new IDBBlockstore(dossierBlocs)
         : new MemoryBlockstore();
+      (stockageBlocs as IDBBlockstore).open?.();
       i++;
 
       const optionsHélia = {
