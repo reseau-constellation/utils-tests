@@ -7,11 +7,10 @@ export const dossierTempo = async (): Promise<{
 }> => {
   if (isNode || isElectronMain) {
     const fs = await import("fs");
-    const path = await import("path");
     const os = await import("os");
     const sync = (await import("rimraf")).sync;
 
-    const dossier = fs.mkdtempSync(path.join(os.tmpdir()));
+    const dossier = fs.mkdtempSync(os.tmpdir());
     const effacer = () => {
       try {
         sync(dossier);
