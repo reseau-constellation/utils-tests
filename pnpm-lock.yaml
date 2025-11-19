@@ -149,7 +149,7 @@ importers:
         version: 6.0.3
       core-js:
         specifier: ^3.46.0
-        version: 3.46.0
+        version: 3.47.0
       electron:
         specifier: ^39.0.0
         version: 39.2.2
@@ -3829,8 +3829,8 @@ packages:
   core-js-compat@3.47.0:
     resolution: {integrity: sha512-IGfuznZ/n7Kp9+nypamBhvwdwLsW6KC8IOaURw2doAK5e98AG3acVLdh0woOnEqCfUtS+Vu882JE4k/DAm3ItQ==}
 
-  core-js@3.46.0:
-    resolution: {integrity: sha512-vDMm9B0xnqqZ8uSBpZ8sNtRtOdmfShrvT6h2TuQGLs0Is+cR0DYbj/KWP6ALVNbWPpqA/qPLoOuppJN07humpA==}
+  core-js@3.47.0:
+    resolution: {integrity: sha512-c3Q2VVkGAUyupsjRnaNX6u8Dq2vAdzm9iuPj5FW0fRxzlxgq9Q39MDq10IvmQSpLgHQNyQzQmOo6bgGHmH3NNg==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -4217,8 +4217,8 @@ packages:
   electron-to-chromium@1.5.244:
     resolution: {integrity: sha512-OszpBN7xZX4vWMPJwB9illkN/znA8M36GQqQxi6MNy9axWxhOfJyZZJtSLQCpEFLHP2xK33BiWx9aIuIEXVCcw==}
 
-  electron-to-chromium@1.5.255:
-    resolution: {integrity: sha512-Z9oIp4HrFF/cZkDPMpz2XSuVpc1THDpT4dlmATFlJUIBVCy9Vap5/rIXsASP1CscBacBqhabwh8vLctqBwEerQ==}
+  electron-to-chromium@1.5.256:
+    resolution: {integrity: sha512-uqYq1IQhpXXLX+HgiXdyOZml7spy4xfy42yPxcCCRjswp0fYM2X+JwCON07lqnpLEGVCj739B7Yr+FngmHBMEQ==}
 
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
@@ -13970,7 +13970,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.8.29
       caniuse-lite: 1.0.30001755
-      electron-to-chromium: 1.5.255
+      electron-to-chromium: 1.5.256
       node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.28.0)
 
@@ -14446,7 +14446,7 @@ snapshots:
     dependencies:
       browserslist: 4.28.0
 
-  core-js@3.46.0: {}
+  core-js@3.47.0: {}
 
   core-util-is@1.0.3: {}
 
@@ -14959,7 +14959,7 @@ snapshots:
 
   electron-to-chromium@1.5.244: {}
 
-  electron-to-chromium@1.5.255: {}
+  electron-to-chromium@1.5.256: {}
 
   electron-window@0.8.1:
     dependencies:
