@@ -86,7 +86,7 @@
     "@libp2p/webrtc": "^5.2.24",
     "@orbitdb/core": "^3.0.2",
     "blockstore-core": "^5.0.4",
-    "blockstore-fs": "^2.0.5",
+    "blockstore-fs": "^3.0.0",
     "blockstore-idb": "^2.0.4",
     "browserify-fs": "^1.0.0",
     "chokidar": "^4.0.3",
