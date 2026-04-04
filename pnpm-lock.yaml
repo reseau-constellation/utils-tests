@@ -151,8 +151,8 @@ importers:
         specifier: ^3.46.0
         version: 3.49.0
       electron:
-        specifier: ^39.0.0
-        version: 39.8.6
+        specifier: ^41.0.0
+        version: 41.1.1
       esbuild:
         specifier: ^0.28.0
         version: 0.28.0
@@ -4278,8 +4278,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@39.8.6:
-    resolution: {integrity: sha512-uWX6Jh5LmwL13VwOSKBjebI+ck+03GOwc8V2Sgbmr9pJVJ/cHfli/PkjXuRDr+hq+SLHQuT9mGHSIfScebApRA==}
+  electron@41.1.1:
+    resolution: {integrity: sha512-8bgvDhBjli+3Z2YCKgzzoBPh6391pr7Xv2h/tTJG4ETgvPvUxZomObbZLs31mUzYb6VrlcDDd9cyWyNKtPm3tA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -9307,7 +9307,7 @@ packages:
     engines: {node: '>=12'}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz:
-    resolution: {integrity: sha512-pPh/ybd1bChlhCrtQ9QmRUx2yjQwMbS4tfvV9MSA2Qmm7vRUHQtPDMlLjAvQ2A4v8G92i2RlrNkSOKb1bwY7ww==, tarball: https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz}
+    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz}
     version: 0.19.1
     engines: {node: '>=0.8'}
     hasBin: true
@@ -12965,7 +12965,7 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@semantic-release/changelog@6.0.3(semantic-release@25.0.3(typescript@5.8.3))':
+  '@semantic-release/changelog@6.0.3(semantic-release@25.0.3(typescript@5.9.3))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
@@ -12991,7 +12991,7 @@ snapshots:
 
   '@semantic-release/error@4.0.0': {}
 
-  '@semantic-release/git@10.0.1(semantic-release@25.0.3(typescript@5.8.3))':
+  '@semantic-release/git@10.0.1(semantic-release@25.0.3(typescript@5.9.3))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
@@ -13610,9 +13610,9 @@ snapshots:
     dependencies:
       '@electron/get': 4.0.3
       '@polka/send-type': 0.5.2
-      '@semantic-release/changelog': 6.0.3(semantic-release@25.0.3(typescript@5.8.3))
+      '@semantic-release/changelog': 6.0.3(semantic-release@25.0.3(typescript@5.9.3))
       '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.3(typescript@5.9.3))
-      '@semantic-release/git': 10.0.1(semantic-release@25.0.3(typescript@5.8.3))
+      '@semantic-release/git': 10.0.1(semantic-release@25.0.3(typescript@5.9.3))
       '@semantic-release/github': 12.0.6(semantic-release@25.0.3(typescript@5.9.3))
       '@semantic-release/npm': 13.1.5(semantic-release@25.0.3(typescript@5.9.3))
       '@semantic-release/release-notes-generator': 14.1.0(semantic-release@25.0.3(typescript@5.9.3))
@@ -13685,7 +13685,7 @@ snapshots:
       read-pkg-up: 11.0.0
       rimraf: 6.1.3
       semantic-release: 25.0.3(typescript@5.8.3)
-      semantic-release-monorepo: 8.0.2(semantic-release@25.0.3(typescript@5.8.3))
+      semantic-release-monorepo: 8.0.2(semantic-release@25.0.3(typescript@5.9.3))
       semver: 7.7.4
       source-map-support: 0.5.21
       strip-bom: 5.0.0
@@ -13693,9 +13693,9 @@ snapshots:
       strong-log-transformer: 2.1.0
       tempy: 3.2.0
       typedoc: 0.28.18(typescript@5.8.3)
-      typedoc-plugin-mdn-links: 5.1.1(typedoc@0.28.18(typescript@5.8.3))
-      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.18(typescript@5.8.3))
-      typedoc-plugin-missing-exports: 4.1.2(typedoc@0.28.18(typescript@5.8.3))
+      typedoc-plugin-mdn-links: 5.1.1(typedoc@0.28.18(typescript@5.9.3))
+      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.18(typescript@5.9.3))
+      typedoc-plugin-missing-exports: 4.1.2(typedoc@0.28.18(typescript@5.9.3))
       typescript: 5.8.3
       typescript-docs-verifier: 3.0.2(typescript@5.8.3)
       wherearewe: 2.0.1
@@ -15218,10 +15218,10 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@39.8.6:
+  electron@41.1.1:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 22.19.17
+      '@types/node': 24.12.2
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -20067,7 +20067,7 @@ snapshots:
       '@types/node-forge': 1.3.14
       node-forge: 1.4.0
 
-  semantic-release-monorepo@8.0.2(semantic-release@25.0.3(typescript@5.8.3)):
+  semantic-release-monorepo@8.0.2(semantic-release@25.0.3(typescript@5.9.3)):
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
       execa: 5.1.1
@@ -20081,12 +20081,12 @@ snapshots:
       ramda: 0.27.2
       read-pkg: 5.2.0
       semantic-release: 25.0.3(typescript@5.8.3)
-      semantic-release-plugin-decorators: 4.0.0(semantic-release@25.0.3(typescript@5.8.3))
+      semantic-release-plugin-decorators: 4.0.0(semantic-release@25.0.3(typescript@5.9.3))
       tempy: 1.0.1
     transitivePeerDependencies:
       - supports-color
 
-  semantic-release-plugin-decorators@4.0.0(semantic-release@25.0.3(typescript@5.8.3)):
+  semantic-release-plugin-decorators@4.0.0(semantic-release@25.0.3(typescript@5.9.3)):
     dependencies:
       semantic-release: 25.0.3(typescript@5.8.3)
 
@@ -20651,7 +20651,7 @@ snapshots:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
-      pump: 3.0.3
+      pump: 3.0.4
       tar-stream: 2.2.0
 
   tar-stream@2.2.0:
@@ -20945,16 +20945,16 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc-plugin-mdn-links@5.1.1(typedoc@0.28.18(typescript@5.8.3)):
+  typedoc-plugin-mdn-links@5.1.1(typedoc@0.28.18(typescript@5.9.3)):
     dependencies:
       typedoc: 0.28.18(typescript@5.8.3)
 
-  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.18(typescript@5.8.3)):
+  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.18(typescript@5.9.3)):
     dependencies:
       html-escaper: 3.0.3
       typedoc: 0.28.18(typescript@5.8.3)
 
-  typedoc-plugin-missing-exports@4.1.2(typedoc@0.28.18(typescript@5.8.3)):
+  typedoc-plugin-missing-exports@4.1.2(typedoc@0.28.18(typescript@5.9.3)):
     dependencies:
       typedoc: 0.28.18(typescript@5.8.3)
 
