@@ -113,7 +113,7 @@ importers:
         version: 12.5.1
       '@multiformats/multiaddr-matcher':
         specifier: ^3.0.1
-        version: 3.0.1
+        version: 3.0.2
       '@orbitdb/core-types':
         specifier: ^1.2.1
         version: 1.2.1
@@ -2173,8 +2173,8 @@ packages:
   '@multiformats/multiaddr-matcher@2.0.2':
     resolution: {integrity: sha512-si7EZCI93mfBJKKRkh+u2bB9W6W5APVN3XfdwuseEJ0OS7ysg0Jno9SuAi0bRzsl5OEFESoF71SjsRqgp8PXAA==}
 
-  '@multiformats/multiaddr-matcher@3.0.1':
-    resolution: {integrity: sha512-jvjwzCPysVTQ53F4KqwmcqZw73BqHMk0UUZrMP9P4OtJ/YHrfs122ikTqhVA2upe0P/Qz9l8HVlhEifVYB2q9A==}
+  '@multiformats/multiaddr-matcher@3.0.2':
+    resolution: {integrity: sha512-iphGQJliZxe2yKu57bdRDgeS+3znc5uXtMybDO1Wau3rIjas4zjrjlyxmFz3wqyUL9f3VDQwas/ZqA7N4QeSfw==}
 
   '@multiformats/multiaddr-to-uri@11.0.2':
     resolution: {integrity: sha512-SiLFD54zeOJ0qMgo9xv1Tl9O5YktDKAVDP4q4hL16mSq4O4sfFNagNADz8eAofxd6TfQUzGQ3TkRRG9IY2uHRg==}
@@ -4939,8 +4939,8 @@ packages:
   flow-enums-runtime@0.0.6:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
 
-  flow-parser@0.308.0:
-    resolution: {integrity: sha512-GYy1GfA6UeXM8gIlQQ4FDuZAcE+uzvA2JViWUT8S3aMRwgOZKoaA3Mt++2pJ1P7BfxG9UYhKzuuQsunh/hCu1A==}
+  flow-parser@0.309.0:
+    resolution: {integrity: sha512-poYRskeIXiHsE19Fb9sRE/CV7PYOq21j3lS5vKr27ujFBvSAhmCbbilAonJ0/u0Uai+Xgyq30/twHQeQc2Ngiw==}
     engines: {node: '>=0.4.0'}
 
   follow-redirects@1.15.11:
@@ -12334,7 +12334,7 @@ snapshots:
     dependencies:
       '@multiformats/multiaddr': 12.5.1
 
-  '@multiformats/multiaddr-matcher@3.0.1':
+  '@multiformats/multiaddr-matcher@3.0.2':
     dependencies:
       '@multiformats/multiaddr': 13.0.1
 
@@ -16354,7 +16354,7 @@ snapshots:
 
   flow-enums-runtime@0.0.6: {}
 
-  flow-parser@0.308.0: {}
+  flow-parser@0.309.0: {}
 
   follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
@@ -17690,7 +17690,7 @@ snapshots:
       '@babel/register': 7.28.6(@babel/core@7.29.0)
       babel-core: 7.0.0-bridge.0(@babel/core@7.29.0)
       chalk: 4.1.2
-      flow-parser: 0.308.0
+      flow-parser: 0.309.0
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
