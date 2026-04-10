@@ -89,7 +89,7 @@
     "blockstore-fs": "^2.0.5",
     "blockstore-idb": "^2.0.4",
     "browserify-fs": "^1.0.0",
-    "chokidar": "^4.0.3",
+    "chokidar": "^5.0.0",
     "crypto-browserify": "^3.12.1",
     "events": "^3.3.0",
     "genversion": "^3.2.0",
