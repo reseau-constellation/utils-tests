@@ -188,7 +188,7 @@ importers:
         version: 1.59.1
       prettier:
         specifier: ^3.6.2
-        version: 3.8.1
+        version: 3.8.2
       progress-events:
         specifier: ^1.0.1
         version: 1.1.0
@@ -7675,8 +7675,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  prettier@3.8.1:
-    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+  prettier@3.8.2:
+    resolution: {integrity: sha512-8c3mgTe0ASwWAJK+78dpviD+A8EqhndQPUBpNUIPt6+xWlIigCwfN01lWr9MAede4uqXGTEKeQWTvzb3vjia0Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -19658,7 +19658,7 @@ snapshots:
 
   premove@4.0.0: {}
 
-  prettier@3.8.1: {}
+  prettier@3.8.2: {}
 
   pretty-format@26.6.2:
     dependencies:
