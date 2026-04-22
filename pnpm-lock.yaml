@@ -119,7 +119,7 @@ importers:
         version: 1.2.4
       '@orbitdb/feed-db':
         specifier: ^1.4.0
-        version: 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
+        version: 1.4.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@types/crypto-js':
         specifier: ^4.2.2
         version: 4.2.2
@@ -2314,8 +2314,8 @@ packages:
     resolution: {integrity: sha512-L7ZbPTibnkCG+wPTZf7c7X/CxxjvbT8XcIBrgxnAA7IoHC9o/FVr1zNC2NT0nVPufvJjCj0Q89L56TFjroD31Q==}
     engines: {node: '>=22.0.0'}
 
-  '@orbitdb/feed-db@1.4.0':
-    resolution: {integrity: sha512-p+cv1GBfXCJf5rgRm7LIFHAT+UzmIMelPxC4nQheRVzp6yTVCHpeOwpTW9TX/bdm16VF9b6gVFPirt+r4qRzhA==}
+  '@orbitdb/feed-db@1.4.1':
+    resolution: {integrity: sha512-97Ac9hBW9ckdru2x5V0RvqiOEYWCva4NCrb3GjTsYkOzZ1UpeGoo+fdRYdv7fuku2SQg+XQqmRzkxiiycy3lsA==}
 
   '@orbitdb/nested-db@1.3.6':
     resolution: {integrity: sha512-bgCtGXNTuioKy7reJ1+CoBoFzmBqBygKiSu8l5uMVBn/CV3UPUPIRyr7i66iTfkTnzlkenQdXfHjys6St7rU2A==}
@@ -10721,7 +10721,7 @@ snapshots:
       '@constl/multi-db': 0.1.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/core': 3.0.2
       '@orbitdb/core-types': 1.2.4
-      '@orbitdb/feed-db': 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
+      '@orbitdb/feed-db': 1.4.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/nested-db': 1.3.6(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/ordered-keyvalue-db': 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/set-db': 2.1.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
@@ -10741,7 +10741,7 @@ snapshots:
     dependencies:
       '@orbitdb/core': 3.0.2
       '@orbitdb/core-types': 1.2.4
-      '@orbitdb/feed-db': 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
+      '@orbitdb/feed-db': 1.4.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/nested-db': 2.1.4(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/ordered-keyvalue-db': 1.4.2(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/set-db': 2.1.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
@@ -10791,7 +10791,7 @@ snapshots:
       '@multiformats/multiaddr-matcher': 1.8.0
       '@noble/hashes': 1.8.0
       '@orbitdb/core': 2.5.0
-      '@orbitdb/feed-db': 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
+      '@orbitdb/feed-db': 1.4.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/ordered-keyvalue-db': 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/set-db': 1.2.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       ajv: 8.18.0
@@ -10856,7 +10856,7 @@ snapshots:
   '@constl/multi-db@0.1.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))':
     dependencies:
       '@orbitdb/core': 3.0.2
-      '@orbitdb/feed-db': 1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
+      '@orbitdb/feed-db': 1.4.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/nested-db': 1.3.6(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       '@orbitdb/set-db': 2.1.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
       helia: 5.5.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
@@ -13030,7 +13030,7 @@ snapshots:
       timeout-abort-controller: 3.0.0
       uint8arrays: 5.1.1
 
-  '@orbitdb/feed-db@1.4.0(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))':
+  '@orbitdb/feed-db@1.4.1(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))':
     dependencies:
       '@orbitdb/core': 4.0.0-3e1d628.0
       helia: 6.1.4(react-native@0.75.1(@babel/core@7.29.0)(@babel/preset-env@7.25.3(@babel/core@7.29.0))(react@18.3.1)(typescript@6.0.3))
