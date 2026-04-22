@@ -24,11 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  gossipsub,
-  GossipSubComponents,
-  GossipSub,
-} from "@chainsafe/libp2p-gossipsub";
+import { gossipsub, GossipSubComponents, GossipSub } from "@libp2p/gossipsub";
 import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
