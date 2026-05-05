@@ -49,7 +49,7 @@ export const attendreFichierExiste = async ({
 
     // Actions écouteur de fichiers
     const dossier = path.dirname(fichier);
-    const écouteur = chokidar.watch(dossier);
+    const écouteur = chokidar.watch(dossier, { awaitWriteFinish: true });
     const fermerÉcouteur = async () => await écouteur.close();
 
     const lorsquFichierAjouté = () => {
