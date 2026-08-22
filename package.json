@@ -81,7 +81,7 @@
   },
   "dependencies": {
     "@helia/block-brokers": "^5.2.4",
-    "@libp2p/gossipsub": "^15.0.19",
+    "@libp2p/gossipsub": "^17.0.0",
     "@libp2p/peer-id": "^6.0.8",
     "@libp2p/webrtc": "^6.0.19",
     "@orbitdb/core": "^3.0.2",
@@ -93,7 +93,7 @@
     "crypto-browserify": "^3.12.1",
     "events": "^3.3.0",
     "genversion": "^3.2.0",
-    "helia": "6.1.4",
+    "helia": "7.1.10",
     "libp2p": "^3.2.2",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
