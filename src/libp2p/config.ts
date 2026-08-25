@@ -35,8 +35,10 @@ import { webSockets } from "@libp2p/websockets";
 import { Libp2pOptions } from "libp2p";
 
 import { PrivateKey } from "@libp2p/interface";
+import { ping, Ping } from "@libp2p/ping";
 
 export type ServicesLibp2pTest = {
+  ping: Ping;
   identify: Identify;
   pubsub: GossipSub;
   obtClefPrivée: ServiceClefPrivée;
@@ -74,6 +76,7 @@ export const OptionsDéfautLibp2pNode: () => Libp2pOptions<ServicesLibp2pTest> =
         denyDialMultiaddr: () => false,
       },
       services: {
+        ping: ping(),
         identify: identify(),
         pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
           components: GossipSubComponents,
@@ -100,6 +103,7 @@ export const OptionsDéfautLibp2pNavigateur: () => Libp2pOptions<ServicesLibp2pT
         denyDialMultiaddr: () => false,
       },
       services: {
+        ping: ping(),
         identify: identify(),
         pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
           components: GossipSubComponents,

@@ -36,7 +36,21 @@ export const connecterPairs = async <
       const interval = setInterval(testConnecté, 100);
       testConnecté();
     });
-    await libp2p2.dial(adresse1);
+    libp2p2.dial(adresse1);
+    await new Promise((resolve) => {
+      const testConnecté = () => {
+        const adresse = libp2p1
+          .getConnections()
+          .filter((c) => c.remotePeer.toString() === libp2p2.peerId.toString())
+          .pop();
+        if (adresse != null) {
+          clearInterval(interval);
+          resolve(adresse);
+        }
+      };
+      const interval = setInterval(testConnecté, 100);
+      testConnecté();
+    });
   } else {
     await libp2p2.peerStore.save(libp2p1.peerId, {
       multiaddrs: libp2p1.getMultiaddrs().filter(filtre),
