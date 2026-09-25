@@ -13,7 +13,7 @@ export const lancerRelai = async ({
 }: {
   portDéfautRelai?: string;
   clefPrivéeRelai?: string;
-} = {}) => {
+} = {}): Promise<()=>void> => {
   const { execa } = await import("execa");
 
   const fichierRelai = await obtenirFichierRelai();

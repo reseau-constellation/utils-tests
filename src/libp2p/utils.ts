@@ -16,7 +16,7 @@ export const connecterPairs = async <
   libp2p1: T,
   libp2p2: T,
   options: OptionsConnectionPairs,
-) => {
+): Promise<void> => {
   const filtre = options.filtre ?? filtreParDéfaut;
 
   if (isBrowser || isElectronRenderer) {
@@ -62,7 +62,7 @@ export const connecterPairs = async <
 export const toutesConnectées = async (
   libp2ps: Libp2p<ServicesLibp2pTest>[],
   options: OptionsConnectionPairs,
-) => {
+): Promise<void> => {
   const connectées: Libp2p<ServicesLibp2pTest>[] = [];
   for (const lib of libp2ps) {
     for (const autre of connectées) {

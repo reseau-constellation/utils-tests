@@ -84,7 +84,7 @@ export const attendreFichierModifié = async ({
   fichier: string;
   condition?: () => Promise<boolean>;
   signal?: AbortSignal;
-}) => {
+}): Promise<boolean> => {
   if (isBrowser || isElectronRenderer) {
     throw new Error("Test non disponible dans le navigateur.");
   }
@@ -95,7 +95,7 @@ export const attendreFichierModifié = async ({
   const chokidar = await import("chokidar");
   const fs = await import("fs");
 
-  return new Promise((résoudre) => {
+  return new Promise<boolean>((résoudre) => {
     // Actions signal
     const lorsqueAvorté = () => {
       fermerEtRésoudre(false);

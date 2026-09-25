@@ -11,4 +11,4 @@ export const obtenirAdresseRelai = (
     portRelai: PORT_DÉFAUT_RELAI,
     idRelai: ID_DÉFAUT_RELAI,
   },
-) => `/ip4/127.0.0.1/tcp/${portRelai}/ws/p2p/${idRelai}`;
+): string => `/ip4/127.0.0.1/tcp/${portRelai}/ws/p2p/${idRelai}`;
