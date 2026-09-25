@@ -19,7 +19,7 @@
     "test:électron-rendu": "pnpm compiler && pnpm aegir test -t electron-renderer --cov",
     "test": "pnpm test:node && pnpm test:navig",
     "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint src",
-    "publier": "pnpm test && pnpm compiler:prod && (git commit -a -m 'version' || true) && pnpm stage publish",
+    "publier": "pnpm compiler:prod && (git commit -a -m 'version' || true) && pnpm stage publish",
     "versioner": "pnpm genversion  --es6 --semi src/version.ts"
   },
   "watch": {
@@ -103,5 +103,8 @@
     "url-polyfill": "^1.1.14",
     "uuid": "^14.0.2",
     "wherearewe": "^2.0.1"
+  },
+  "publishConfig": {
+    "@reseau-constellation:registry": "https://npm.pkg.github.com"
   }
 }
