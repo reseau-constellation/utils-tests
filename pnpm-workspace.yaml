@@ -1,6 +1,7 @@
 allowBuilds:
   '@ipshipyard/node-datachannel': true
   aws-sdk: false
+  bun: true
   classic-level: true
   core-js: true
   deno: true
