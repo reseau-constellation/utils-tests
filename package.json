@@ -12,14 +12,14 @@
   "scripts": {
     "nettoyer": "rimraf dist",
     "compiler": "pnpm versioner && pnpm formatter && pnpm nettoyer && pnpm tspc -p tsconfig.json",
-    "compiler:prod": "pnpm versioner && pnpm formatter && pnpm nettoyer && pnpm tspc -p tsconfig.build.json",
+    "compiler:prod": "pnpm versioner && pnpm nettoyer && pnpm tspc -p tsconfig.build.json",
     "test:node": "pnpm compiler && pnpm aegir test -t node -f \"dist/test/**/*.spec.js\" --cov -- --exit",
     "test:navig": "pnpm compiler && pnpm aegir test -t browser -f \"dist/test/**/*.spec.js\" --cov",
     "test:électron-principal": "pnpm compiler && pnpm aegir test -t electron-main -f \"dist/test/**/*.spec.js\" --cov",
     "test:électron-rendu": "pnpm compiler && pnpm aegir test -t electron-renderer -f \"dist/test/**/*.spec.js\" --cov",
     "test": "pnpm test:node && pnpm test:navig",
     "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint src",
-    "publier": "pnpm compiler:prod && (git commit -a -m 'version' || true) && pnpm stage publish",
+    "publier": "pnpm compiler:prod && (git commit -a -m 'version' || true) && pnpm publish",
     "versioner": "pnpm genversion  --es6 --semi src/version.ts"
   },
   "watch": {
