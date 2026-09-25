@@ -1,7 +1,7 @@
 {
   "version": "2.1.7",
   "license": "AGPL-3.0-or-later",
-  "name": "@constl/utils-tests",
+  "name": "@reseau-constellation/utils-tests",
   "author": "Julien Jean Malard-Adam",
   "type": "module",
   "types": "./dist/index.d.ts",
