@@ -1,7 +1,7 @@
 {
   "version": "2.1.6-beta4",
   "license": "AGPL-3.0-or-later",
-  "name": "@constl/utils-tests",
+  "name": "@reseau-constellation/utils-tests",
   "author": "Julien Jean Malard-Adam",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -105,6 +105,6 @@
     "wherearewe": "^2.0.1"
   },
   "publishConfig": {
-    "@reseau-constellation:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   }
 }
