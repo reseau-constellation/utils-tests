@@ -52,7 +52,7 @@
     "@types/node": "^25.9.5",
     "@typescript-eslint/eslint-plugin": "^8.67.0",
     "@typescript-eslint/parser": "^8.67.0",
-    "aegir": "^47.2.0",
+    "aegir": "^48.0.0",
     "ajv": "^8.20.0",
     "buffer": "^6.0.3",
     "core-js": "^3.50.0",
