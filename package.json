@@ -104,8 +104,5 @@
     "url-polyfill": "^1.1.14",
     "uuid": "^14.0.2",
     "wherearewe": "^2.0.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
