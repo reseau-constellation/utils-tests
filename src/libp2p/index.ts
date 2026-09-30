@@ -1,6 +1,6 @@
 export {
-  ServicesLibp2pTest,
-  ComposantesServiceClefPrivée,
+  type ServicesLibp2pTest,
+  type ComposantesServiceClefPrivée,
   ServiceClefPrivée,
   OptionsDéfautLibp2pNode,
   OptionsDéfautLibp2pNavigateur,

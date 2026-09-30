@@ -1,7 +1,7 @@
 import { isBrowser } from "wherearewe";
 import { créerOrbitesTest } from "./orbite.js";
 import { dossierTempo } from "./dossiers.js";
-import { OrbitDB } from "@orbitdb/core";
+import type { OrbitDB } from "@orbitdb/core";
 
 interface InterfaceConstellation {
   fermer: () => Promise<void>;

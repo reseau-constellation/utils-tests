@@ -2,14 +2,18 @@ import { expect } from "aegir/chai";
 
 import { isElectronMain, isNode } from "wherearewe";
 
-import { créerHéliasTest, dossierTempo } from "@/index.js";
-import { Helia } from "helia";
+import {
+  créerHéliasTest,
+  dossierTempo,
+  type ServicesLibp2pTest,
+} from "@/index.js";
+import type { HeliaWithLibp2p } from "@helia/libp2p";
 
 describe("Créer Hélia", function () {
   let dossier: string;
   let effacer: () => void;
 
-  let hélias: Helia[];
+  let hélias: HeliaWithLibp2p<ServicesLibp2pTest>[];
   let fermer: () => Promise<void>;
 
   beforeEach(async () => {
@@ -17,7 +21,7 @@ describe("Créer Hélia", function () {
   });
 
   afterEach(async () => {
-    await fermer();
+    await fermer?.();
     effacer();
   });
 

@@ -1,8 +1,8 @@
-import { Libp2p } from "@libp2p/interface";
+import type { Libp2p } from "@libp2p/interface";
 import { WebRTC } from "@multiformats/multiaddr-matcher";
-import { multiaddr, Multiaddr } from "@multiformats/multiaddr";
+import { multiaddr, type Multiaddr } from "@multiformats/multiaddr";
 import { isBrowser, isElectronRenderer } from "wherearewe";
-import { ServicesLibp2pTest } from "./config.js";
+import type { ServicesLibp2pTest } from "./config.js";
 
 const filtreParDéfaut = () => true;
 

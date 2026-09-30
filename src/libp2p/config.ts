@@ -24,18 +24,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { gossipsub, GossipSubComponents, GossipSub } from "@libp2p/gossipsub";
+import {
+  gossipsub,
+  type GossipSubComponents,
+  type GossipSub,
+} from "@libp2p/gossipsub";
 import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
-import { Identify, identify } from "@libp2p/identify";
+import { type Identify, identify } from "@libp2p/identify";
 import { webRTC } from "@libp2p/webrtc";
 import { webSockets } from "@libp2p/websockets";
 
-import { Libp2pOptions } from "libp2p";
+import { type Libp2pOptions } from "libp2p";
 
-import { PrivateKey } from "@libp2p/interface";
-import { ping, Ping } from "@libp2p/ping";
+import { type PrivateKey } from "@libp2p/interface";
+import { ping, type Ping } from "@libp2p/ping";
 
 export type ServicesLibp2pTest = {
   ping: Ping;

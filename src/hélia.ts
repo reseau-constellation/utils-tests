@@ -1,55 +1,48 @@
-import { Helia, createHelia } from "helia";
-import { ServicesLibp2pTest, créerLibp2psTest } from "./libp2p/index.js";
-import { Libp2p } from "@libp2p/interface";
-import { bitswap } from "@helia/block-brokers";
+import { createHelia } from "helia";
+import {
+  OptionsDéfautLibp2pNavigateur,
+  OptionsDéfautLibp2pNode,
+  type ServicesLibp2pTest,
+} from "./libp2p/index.js";
 import { MemoryBlockstore } from "blockstore-core";
 import { join } from "path";
 import { sousDossier } from "./utils.js";
 import { IDBBlockstore } from "blockstore-idb";
-import { obtenirAdresseRelai } from "./relai/index.js";
-import { isElectronMain, isNode } from "wherearewe";
+import { isBrowser, isElectronMain, isNode } from "wherearewe";
+import { type HeliaWithLibp2p } from "@helia/libp2p";
 
 export const créerHéliasTest = async ({
   n,
   dossier,
-  adresseRelai,
 }: {
   n: number;
   dossier?: string;
-  adresseRelai?: string;
 }): Promise<{
-  hélias: Helia<Libp2p<ServicesLibp2pTest>>[];
+  hélias: HeliaWithLibp2p<ServicesLibp2pTest>[];
   fermer: () => Promise<void>;
 }> => {
-  adresseRelai = adresseRelai ?? obtenirAdresseRelai();
+  const optionsLibp2p = isBrowser
+    ? OptionsDéfautLibp2pNavigateur()
+    : OptionsDéfautLibp2pNode();
 
-  const { libp2ps, fermer: fermerLibsp2p } = await créerLibp2psTest({
-    n,
-    adresseRelai,
-  });
-
-  let i = 0;
-  const hélias = await Promise.all(
-    libp2ps.map(async (libp2p) => {
-      const dossierBlocs = dossier
-        ? join(sousDossier({ dossier, i }), "hélia", "blocks")
-        : undefined;
-      const stockageBlocs = dossierBlocs
-        ? isNode || isElectronMain
-          ? new (await import("blockstore-fs")).FsBlockstore(dossierBlocs)
-          : new IDBBlockstore(dossierBlocs)
-        : new MemoryBlockstore();
-      (stockageBlocs as IDBBlockstore).open?.();
-      i++;
-
-      const optionsHélia = {
-        blockstore: stockageBlocs,
-        libp2p,
-        blockBrokers: [bitswap()],
-      };
-      return await createHelia(optionsHélia);
-    }),
-  );
+  const hélias: HeliaWithLibp2p<ServicesLibp2pTest>[] = [];
+  for (const i of Array(n).keys()) {
+    const dossierBlocs = dossier
+      ? join(sousDossier({ dossier, i }), "hélia", "blocks")
+      : undefined;
+    const stockageBlocs = dossierBlocs
+      ? isNode || isElectronMain
+        ? new (await import("blockstore-fs")).FsBlockstore(dossierBlocs)
+        : new IDBBlockstore(dossierBlocs)
+      : new MemoryBlockstore();
+    (stockageBlocs as IDBBlockstore).open?.();
+    const optionsHélia = {
+      blockstore: stockageBlocs,
+      libp2p: optionsLibp2p,
+    };
+    const hélia = await createHelia(optionsHélia).start();
+    hélias.push(hélia);
+  }
 
   const fermer = async () => {
     await Promise.all(
@@ -59,7 +52,6 @@ export const créerHéliasTest = async ({
         await h.blockstore.unwrap()?.unwrap()?.child?.db?.close();
       }),
     );
-    await fermerLibsp2p();
   };
 
   return { hélias, fermer };

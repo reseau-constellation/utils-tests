@@ -1,9 +1,9 @@
-import { Libp2p } from "@libp2p/interface";
+import type { Libp2p } from "@libp2p/interface";
 import { createLibp2p } from "libp2p";
 import {
   OptionsDéfautLibp2pNavigateur,
   OptionsDéfautLibp2pNode,
-  ServicesLibp2pTest,
+  type ServicesLibp2pTest,
 } from "./config.js";
 import { isBrowser } from "wherearewe";
 import { connecterPairs } from "./utils.js";

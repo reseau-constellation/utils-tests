@@ -17,3 +17,6 @@ overrides:
 blockExoticSubdeps: false
 
 packages: []
+
+minimumReleaseAgeExclude:
+  - '@orbitdb/core-types@2.0.0'

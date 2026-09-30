@@ -27,6 +27,7 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "importsNotUsedAsValues": "remove",
+    "verbatimModuleSyntax": true,
     "types": ["mocha"],
 
     "plugins": [
