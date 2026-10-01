@@ -13,7 +13,7 @@ importers:
     dependencies:
       '@helia/libp2p':
         specifier: ^2.1.4
-        version: 2.1.4(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
+        version: 2.1.5(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
       '@libp2p/gossipsub':
         specifier: ^17.1.2
         version: 17.1.2
@@ -54,8 +54,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       helia:
-        specifier: 7.1.15
-        version: 7.1.15(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
+        specifier: 7.1.16
+        version: 7.1.16(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
       libp2p:
         specifier: ^3.3.11
         version: 3.3.11
@@ -1330,14 +1330,14 @@ packages:
   '@helia/bitswap@3.2.3':
     resolution: {integrity: sha512-uquUTgYaU5Z08SVFn+Psg1xhkeAqCdLWav0zAaNJE1bQX7UeLItW82+Nh5I40RaH9gMFFqL3IQR0mIzi+bj5Gg==}
 
-  '@helia/bitswap@4.0.19':
-    resolution: {integrity: sha512-isP4SRB2iicZLmWbrvAFFKGxrqJaDScabiaBy5FoDCS9CdCSbZ/GM/LKjqa63vDte1xoVN6z0mXWV6QlzaWEqw==}
+  '@helia/bitswap@4.0.20':
+    resolution: {integrity: sha512-spJhbrfpgeBzkweULgimtdQv3xPMkKiZmShmtQ36lFYh0NbuegBkb1Dv7zFyQOtUdK0LJJKEBeBDLcb5StJZag==}
 
   '@helia/block-brokers@5.2.4':
     resolution: {integrity: sha512-UsxtWVy2W95FVM561BZXEnb41RL6pr+cLF+AIxVIaugEvg4edUKh+3sbZXoINtzbqS664Ss2dhisHR1ZnYI57Q==}
 
-  '@helia/delegated-routing-client@1.0.6':
-    resolution: {integrity: sha512-UoAIy+qsro1Qde4l3hGbRXdxID1nY53m4Oig0VCrlafNFOScxYBy93H4/T2bwk/mBONMxHa40NbpCxlYLMZznw==}
+  '@helia/delegated-routing-client@1.0.7':
+    resolution: {integrity: sha512-AqhPwY8libDs4VLVibLGIz0J3MPmTi8Mx0ljEiWdYLhziU82T3AjW10qBQ3oGSDrMd6tA9lEOoviAbPL88y0OQ==}
 
   '@helia/delegated-routing-v1-http-api-client@6.0.1':
     resolution: {integrity: sha512-Y1nGpUQrdN80XSDDAfe7azJFKKD0MxM0mQqfbefNEcrYMM344rHNQJ7xgiSqsH20vMIaKv+NnQqT/MEg2aWv6g==}
@@ -1345,32 +1345,32 @@ packages:
   '@helia/delegated-routing-v1-http-api-client@9.0.2':
     resolution: {integrity: sha512-NVbX/8Uf+04g5gZkpqk6J6aFMCgMxzyQ2XBxW2gpYysGEuMSEESRyiYuWUrKysy9Oo08ST4tJJ19Vh/+4wjzOA==}
 
-  '@helia/fallback-router@1.1.1':
-    resolution: {integrity: sha512-dfkS7TzvCHOoiKafht7VIrXlESHLiWjbgsg3tEszK06UVG+C6sWhuSN+gD13VMHiyhPSKjAzupyoTFgglZ6FuA==}
+  '@helia/fallback-router@1.1.2':
+    resolution: {integrity: sha512-BBXyfkLI+HPSKAxjQ/zIdWGNtB8o2C47Obm/48WjBsz24DSt+hA+wQYLLqa8BH1vW061gIleBWmHTWSqB2RyBA==}
 
-  '@helia/http@4.0.7':
-    resolution: {integrity: sha512-5xKLBsDMU3ko3q69QrbspkInKKQuUjw6ossQhVKtSwIuj4TRqOIGcVYg44AkMqVgdSahzoxsN0xOclKDlo2sqA==}
+  '@helia/http@4.0.8':
+    resolution: {integrity: sha512-7XVzYzcW+ODokU21KduXmTsTZKuWEdx0hVOmLadmrB3JNm5inyI7GxEXygFFDR/2wpaBfqM42iCfDV2I+dr/Wg==}
 
   '@helia/interface@6.2.1':
     resolution: {integrity: sha512-lL0q4mpJjUdQ3J/KjSQAoYb6KQZl5SUqQvEBIA5KMrOyuD7m31lbx8elGLttDVVzZtVp03tS4tlDIzsaVJ/Evw==}
 
-  '@helia/interface@7.1.1':
-    resolution: {integrity: sha512-L3uLlfEY8MYUV01YdJfv6C35FRhVwRiNx36Yh+8qCpJuCs+GmTmaxVrAb4wXXRg2yIjMR+HAAIAcJIOV/x5n0A==}
+  '@helia/interface@7.1.2':
+    resolution: {integrity: sha512-wzbtRy+HbEP4Rn78Uks42U5PwioO12H2y7qiYfTkYM73qGvmmZe4JB34cQqm60fTbWOOBUB09a4coy8o7/x9Uw==}
 
-  '@helia/libp2p@2.1.4':
-    resolution: {integrity: sha512-7Qcor6bkCxPspqEdZfN1ymnewJfnLZDKKDcCBpt/iUX8lMiWj4aHryC5oK8+BQHygZuqsoXY/NhZK0enEetwsw==}
+  '@helia/libp2p@2.1.5':
+    resolution: {integrity: sha512-DvzNxXes/WoOseUdGKH/lynpWEVr750X0+Dp6ZMr7KW4GyVtcacfnctyFCFLHXcZDSGra8OFcW375t62uXcm5Q==}
 
   '@helia/routers@5.1.1':
     resolution: {integrity: sha512-ZQbF3fX3y9aBnwKx4FsgEETJ0tfop6CPu4uw+jecnW1FAL9fE0vjYwa90Q7KRXoCCjyu9q96cZ/8nzoipuy86A==}
 
-  '@helia/trustless-gateway-client@1.0.6':
-    resolution: {integrity: sha512-iUVT+IslU7CMMyK6oF1UDXnJxpvzc8Kmmls8n4N21i9MQiTwaI+6mTcwsns3+o46vBxH9ISy5GP1MBTY/5cp5g==}
+  '@helia/trustless-gateway-client@1.0.7':
+    resolution: {integrity: sha512-xmPrGUCqxQ3Fhvy3lFcFsuyixbPA9WDvYJfa8MjQ0NZuQRpL5ogMfSUnr9ey9NYYQTjY36cTM4L7bqPBwxngVw==}
 
   '@helia/utils@2.5.2':
     resolution: {integrity: sha512-6/+RInRpJsJoo13ECQsSkBtK2xUGl/KWaJpBuK9tqg+ng3s5cec2qO9RVhZt4bdkPPqJc/PX+G9zwVhKqp5UwQ==}
 
-  '@helia/utils@3.0.5':
-    resolution: {integrity: sha512-vcJ8FltQ5vNHiULhx3WO/0nm4/ljWDpZdwIS9cwibF6hfDYna5w2IZXFMu1czI6wHt26fR+EtyUOCFIoS51xcA==}
+  '@helia/utils@3.0.6':
+    resolution: {integrity: sha512-QEMVKSVc7NnosXmcM1opdw81cLakLJinpr3FTYCylHid+7MmP3/lHs2MSlTAvW6Tff5y/QLMKG+929qDA0zfFA==}
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -4302,8 +4302,8 @@ packages:
   helia@6.1.4:
     resolution: {integrity: sha512-MSfgusZMjUMsVIYJ0pd430Z58YEWWJbtSYVH7IWwBiMwn9t5s/ymLElhQl4qMv9DitQEiWIUTW1sX1phP6FfOw==}
 
-  helia@7.1.15:
-    resolution: {integrity: sha512-vdperGevkeT21hqJrBi/3Yo1zDIVeI3paCRJaL12XBGZTwzfb7yl1NQCwh9o2emUp9JsUyL4yF3dEGd0aoIb+w==}
+  helia@7.1.16:
+    resolution: {integrity: sha512-tWqr7DC0soL0Mvi93bPGgIWeSNZYvs5ZIZjTRkuTepRufoFmvd1OOtjixRgR3dSk1x4Z1SvYtfc2fUyO3S0FCA==}
 
   hermes-compiler@250829098.0.17:
     resolution: {integrity: sha512-qG1PXzTEtriF6oQLZF3vyHhSMxOdW5h2TqqLri0rdpstPustd2fSvRZQMVAPdlhgFwBfYnj3OUZtiO6LjYsEFw==}
@@ -9106,11 +9106,11 @@ snapshots:
       uint8arraylist: 2.4.9
       uint8arrays: 5.1.1
 
-  '@helia/bitswap@4.0.19(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)':
+  '@helia/bitswap@4.0.20(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@helia/interface': 7.1.1
-      '@helia/libp2p': 2.1.4(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
-      '@helia/utils': 3.0.5
+      '@helia/interface': 7.1.2
+      '@helia/libp2p': 2.1.5(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
+      '@helia/utils': 3.0.6
       '@libp2p/interface': 3.3.0
       '@libp2p/logger': 6.2.13
       '@libp2p/peer-collections': 7.0.28
@@ -9158,10 +9158,10 @@ snapshots:
       uint8arraylist: 2.4.9
       uint8arrays: 5.1.1
 
-  '@helia/delegated-routing-client@1.0.6':
+  '@helia/delegated-routing-client@1.0.7':
     dependencies:
       '@helia/delegated-routing-v1-http-api-client': 9.0.2
-      '@helia/interface': 7.1.1
+      '@helia/interface': 7.1.2
       '@libp2p/interface': 3.3.0
       it-first: 3.0.11
       it-map: 3.1.6
@@ -9199,19 +9199,19 @@ snapshots:
       race-signal: 2.0.2
       uint8arrays: 6.1.1
 
-  '@helia/fallback-router@1.1.1':
+  '@helia/fallback-router@1.1.2':
     dependencies:
-      '@helia/interface': 7.1.1
+      '@helia/interface': 7.1.2
       '@multiformats/uri-to-multiaddr': 10.0.0
       multiformats: 14.0.5
       uint8arrays: 6.1.1
 
-  '@helia/http@4.0.7':
+  '@helia/http@4.0.8':
     dependencies:
-      '@helia/delegated-routing-client': 1.0.6
-      '@helia/fallback-router': 1.1.1
-      '@helia/interface': 7.1.1
-      '@helia/trustless-gateway-client': 1.0.6
+      '@helia/delegated-routing-client': 1.0.7
+      '@helia/fallback-router': 1.1.2
+      '@helia/interface': 7.1.2
+      '@helia/trustless-gateway-client': 1.0.7
 
   '@helia/interface@6.2.1':
     dependencies:
@@ -9224,7 +9224,7 @@ snapshots:
       multiformats: 13.4.2
       progress-events: 1.1.0
 
-  '@helia/interface@7.1.1':
+  '@helia/interface@7.1.2':
     dependencies:
       '@ipshipyard/crypto': 1.1.0
       '@ipshipyard/keychain': 1.0.2
@@ -9239,11 +9239,11 @@ snapshots:
       multiformats: 14.0.5
       progress-events: 1.1.0
 
-  '@helia/libp2p@2.1.4(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)':
+  '@helia/libp2p@2.1.5(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@helia/delegated-routing-client': 1.0.6
+      '@helia/delegated-routing-client': 1.0.7
       '@helia/delegated-routing-v1-http-api-client': 9.0.2
-      '@helia/interface': 7.1.1
+      '@helia/interface': 7.1.2
       '@ipshipyard/libp2p-auto-tls': 2.0.2(supports-color@8.1.1)
       '@libp2p/autonat': 3.0.28
       '@libp2p/bootstrap': 12.0.32
@@ -9291,10 +9291,10 @@ snapshots:
       multiformats: 13.4.2
       uint8arrays: 5.1.1
 
-  '@helia/trustless-gateway-client@1.0.6':
+  '@helia/trustless-gateway-client@1.0.7':
     dependencies:
-      '@helia/interface': 7.1.1
-      '@helia/utils': 3.0.5
+      '@helia/interface': 7.1.2
+      '@helia/utils': 3.0.6
       '@libp2p/utils': 7.4.1
       '@multiformats/multiaddr': 13.0.3
       '@multiformats/multiaddr-matcher': 3.0.2
@@ -9337,9 +9337,9 @@ snapshots:
       race-signal: 2.0.2
       uint8arrays: 5.1.1
 
-  '@helia/utils@3.0.5':
+  '@helia/utils@3.0.6':
     dependencies:
-      '@helia/interface': 7.1.1
+      '@helia/interface': 7.1.2
       '@libp2p/interface': 3.3.0
       '@libp2p/utils': 7.4.1
       '@multiformats/multiaddr': 13.0.3
@@ -10129,7 +10129,7 @@ snapshots:
 
   '@orbitdb/core-types@2.0.0(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@helia/libp2p': 2.1.4(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
+      '@helia/libp2p': 2.1.5(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
       '@libp2p/interface': 3.3.0
       multiformats: 14.0.5
       tiny-typed-emitter: 2.1.0
@@ -13692,13 +13692,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  helia@7.1.15(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1):
+  helia@7.1.16(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
-      '@helia/bitswap': 4.0.19(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
-      '@helia/http': 4.0.7
-      '@helia/interface': 7.1.1
-      '@helia/libp2p': 2.1.4(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
-      '@helia/utils': 3.0.5
+      '@helia/bitswap': 4.0.20(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
+      '@helia/http': 4.0.8
+      '@helia/interface': 7.1.2
+      '@helia/libp2p': 2.1.5(react-native@0.87.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1))(supports-color@8.1.1)
+      '@helia/utils': 3.0.6
       '@ipld/dag-cbor': 10.0.2
       '@ipld/dag-json': 11.0.1
       '@ipld/dag-pb': 4.2.0
