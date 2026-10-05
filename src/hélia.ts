@@ -44,13 +44,14 @@ export const créerHéliasTest = async ({
     };
     const hélia = await createHelia(optionsHélia).start();
     hélias.push(hélia);
-    await toutesConnectées(
-      hélias.map((h) => h.libp2p),
-      {
-        adresseRelai: obtenirAdresseRelai(),
-      },
-    );
   }
+  
+  await toutesConnectées(
+    hélias.map((h) => h.libp2p),
+    {
+      adresseRelai: obtenirAdresseRelai(),
+    },
+  );
 
   const fermer = async () => {
     await Promise.all(
