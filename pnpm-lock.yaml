@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  xlsx: '@e965/xlsx'
-
 importers:
 
   .:
