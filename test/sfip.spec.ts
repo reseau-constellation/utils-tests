@@ -45,9 +45,13 @@ describe("Créer Hélia", function () {
     ({ hélias, fermer } = await créerHéliasTest({ n: 2 }));
 
     const connectionsHélia1 = hélias[0].libp2p.getPeers();
-    expect(connectionsHélia1.find((c) => c.equals(hélias[1].libp2p.peerId)));
+    expect(
+      connectionsHélia1.find((c) => c.equals(hélias[1].libp2p.peerId)),
+    ).to.not.be.undefined();
 
     const connectionsHélia2 = hélias[1].libp2p.getPeers();
-    expect(connectionsHélia2.find((c) => c.equals(hélias[0].libp2p.peerId)));
+    expect(
+      connectionsHélia2.find((c) => c.equals(hélias[0].libp2p.peerId)),
+    ).to.not.be.undefined();
   });
 });
