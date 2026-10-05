@@ -1,8 +1,8 @@
-import { type OrbitDB, createOrbitDB } from "@orbitdb/core";
+import { join } from "path";
+import { type BaseDatabase, type OrbitDB, createOrbitDB } from "@orbitdb/core";
 import { dossierTempo } from "./dossiers.js";
 import { type ServicesLibp2pTest } from "./libp2p/index.js";
 import { créerHéliasTest } from "./hélia.js";
-import { join } from "path";
 import { sousDossier } from "./utils.js";
 
 export const créerOrbitesTest = async ({
@@ -47,4 +47,10 @@ export const créerOrbitesTest = async ({
     orbites,
     fermer,
   };
+};
+
+export const attendreSync = async (bd: BaseDatabase): Promise<void> => {
+  return new Promise<void>((résoudre) => {
+    bd.events.once("update", () => résoudre());
+  });
 };

@@ -1,14 +1,13 @@
+import { join } from "path";
+import { isBrowser, isElectronRenderer } from "wherearewe";
+
+import { expect } from "aegir/chai";
 import {
   attendreFichierExiste,
   attendreFichierModifié,
   dossierTempo,
   que,
-} from "@/index.js";
-
-import { isBrowser, isElectronRenderer } from "wherearewe";
-import { join } from "path";
-
-import { expect } from "aegir/chai";
+} from "../src/index.js";
 
 describe("Attendre que", function () {
   it("attendre valeure vraie", async () => {

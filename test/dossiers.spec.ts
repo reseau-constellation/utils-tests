@@ -1,6 +1,6 @@
 import { expect } from "aegir/chai";
 import { isNode, isElectronMain } from "wherearewe";
-import { dossierTempo } from "@/index.js";
+import { dossierTempo } from "../src/index.js";
 
 describe("Dossier temporaire", function () {
   let dossier: string;

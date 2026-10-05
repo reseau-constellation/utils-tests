@@ -26,4 +26,4 @@ export { obtConfigEsbuild, générerConfigÆgir } from "./config.js";
 export { créerConstellationsTest } from "./constellation.js";
 export { dossierTempo } from "./dossiers.js";
 export { créerHéliasTest } from "./hélia.js";
-export { créerOrbitesTest } from "./orbite.js";
+export { créerOrbitesTest, attendreSync } from "./orbite.js";

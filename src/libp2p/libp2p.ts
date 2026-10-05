@@ -1,13 +1,13 @@
-import type { Libp2p } from "@libp2p/interface";
 import { createLibp2p } from "libp2p";
+import { isBrowser } from "wherearewe";
+import { obtenirAdresseRelai } from "../relai/index.js";
 import {
   OptionsDéfautLibp2pNavigateur,
   OptionsDéfautLibp2pNode,
   type ServicesLibp2pTest,
 } from "./config.js";
-import { isBrowser } from "wherearewe";
 import { connecterPairs } from "./utils.js";
-import { obtenirAdresseRelai } from "../relai/index.js";
+import type { Libp2p } from "@libp2p/interface";
 
 export const créerLibp2psTest = async ({
   n,

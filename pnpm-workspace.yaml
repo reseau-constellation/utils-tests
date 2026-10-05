@@ -6,5 +6,6 @@ allowBuilds:
   electron: true
   esbuild: true
   node-datachannel: true
+  unrs-resolver: true
 
 packages: []

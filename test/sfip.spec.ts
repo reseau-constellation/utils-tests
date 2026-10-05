@@ -6,7 +6,7 @@ import {
   créerHéliasTest,
   dossierTempo,
   type ServicesLibp2pTest,
-} from "@/index.js";
+} from "../src/index.js";
 import type { HeliaWithLibp2p } from "@helia/libp2p";
 
 describe("Créer Hélia", function () {

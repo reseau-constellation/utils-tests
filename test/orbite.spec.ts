@@ -1,40 +1,20 @@
-/*import { expect } from "aegir/chai";
+import { expect } from "aegir/chai";
 
-import { OrbitDB, type KeyValueDatabase } from "@orbitdb/core";
-import { registerFeed, type FeedDatabaseType } from "@orbitdb/feed-db";
-import { typedKeyValue, typedFeed } from "@constl/bohr-db";
-import {
-  ContrôleurConstellation,
-  attendreSync,
-  créerOrbiteTest,
-  peutÉcrire,
-} from "@/orbite.js";
-import { accès } from "@constl/ipa";
-import type { JSONSchemaType } from "ajv";
-import { ServicesLibp2pConstlTest } from "@/libp2p";
+import { attendreSync, créerOrbitesTest } from "../src/index.ts";
+import type { OrbitDB, KeyValueDatabase } from "@orbitdb/core";
+import type { ServicesLibp2pTest } from "../src/index.ts";
 
-const schémaDictNumérique: JSONSchemaType<Partial<{ [clef: string]: number }>> =
-  {
-    type: "object",
-    additionalProperties: {
-      type: "number",
-    },
-    required: [],
-  };
-
-const schémaListeTexte: JSONSchemaType<string> = { type: "string" };
-
-describe("Créer Orbites", function () {
-  let orbites: OrbitDB<ServicesLibp2pConstlTest>[];
-  let fOublier: () => Promise<void>;
+describe("Orbite", function () {
+  let orbites: OrbitDB<ServicesLibp2pTest>[];
+  let fermer: () => Promise<void>;
 
   after(async () => {
     // Au cas où
-    await fOublier?.();
+    await fermer?.();
   });
 
-  it("Orbites créés", async () => {
-    ({ orbites, fOublier } = await créerOrbiteTest({ n: 2 }));
+  it("orbites créés", async () => {
+    ({ orbites, fermer } = await créerOrbitesTest({ n: 2 }));
 
     const idsOrbites = orbites.map((o) => o.id);
     expect(idsOrbites[0]).to.be.a("string");
@@ -42,123 +22,18 @@ describe("Créer Orbites", function () {
     expect(idsOrbites[0]).to.not.equal(idsOrbites[1]);
   });
 
-  it("Orbites effacés", async () => {
-    await fOublier();
-    await expect(orbites[0].open("adresse test")).to.be.rejected();
-    await expect(orbites[1].open("adresse test")).to.be.rejected();
-  });
-});
-
-describe("Fonctions utilitaires", function () {
-  let orbites: OrbitDB<ServicesLibp2pConstlTest>[];
-  let fOublier: () => Promise<void>;
-
-  before(async () => {
-    registerFeed();
-    accès.enregistrerContrôleurs();
-    ({ orbites, fOublier } = await créerOrbiteTest({ n: 2 }));
-  });
-
-  after(async () => {
-    await fOublier?.();
-  });
-
-  it("Attendre syncronisation", async () => {
+  it("syncronisation", async () => {
     const bd = (await orbites[0].open("test sync", {
       type: "keyvalue",
     })) as KeyValueDatabase;
-    const bdTypée = typedKeyValue({
-      db: bd,
-      schema: schémaDictNumérique,
-    });
 
     const bdSurOrbite2 = (await orbites[1].open(
       bd.address,
     )) as KeyValueDatabase;
-    const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
-      db: bdSurOrbite2,
-      schema: schémaDictNumérique,
-    });
 
-    const attente = attendreSync(bdSurOrbite2Typée);
-    await bdTypée.set("a", 1);
+    const attente = attendreSync(bdSurOrbite2);
+    await bd.set("a", 1);
     await attente;
     expect(await bdSurOrbite2.get("a")).to.equal(1);
   });
-
-  it("Accès écriture KeyValue", async () => {
-    const bd = (await orbites[0].open("test sync", {
-      type: "keyvalue",
-    })) as KeyValueDatabase;
-    const bdTypée = typedKeyValue({
-      db: bd,
-      schema: schémaDictNumérique,
-    });
-
-    const bdSurOrbite2 = (await orbites[1].open(
-      bd.address,
-    )) as KeyValueDatabase;
-    const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
-      db: bdSurOrbite2,
-      schema: schémaDictNumérique,
-    });
-
-    const accèsCréateur = await peutÉcrire(bdTypée);
-    expect(accèsCréateur).to.be.true();
-
-    const accèsAvant = await peutÉcrire(bdSurOrbite2Typée);
-    expect(accèsAvant).to.be.false();
-  });
-
-  it("Accès écriture Feed", async () => {
-    const bd = (await orbites[0].open("test sync", {
-      type: "feed",
-    })) as FeedDatabaseType;
-    const bdSurOrbite2 = (await orbites[1].open(
-      bd.address,
-    )) as FeedDatabaseType;
-
-    const bdTypée = typedFeed({ db: bd, schema: schémaListeTexte });
-    const bdTypéeSurOrbite2 = typedFeed<string>({
-      db: bdSurOrbite2,
-      schema: schémaListeTexte,
-    });
-
-    const accèsCréateur = await peutÉcrire(bdTypée);
-    expect(accèsCréateur).to.be.true();
-
-    const accèsAvant = await peutÉcrire(bdTypéeSurOrbite2);
-    expect(accèsAvant).to.be.false();
-  });
-
-  it("Accès écriture attente invité", async () => {
-    const bd = (await orbites[0].open("test sync", {
-      type: "keyvalue",
-      AccessController: accès.cntrlConstellation.ContrôleurConstellation({
-        write: orbites[0].identity.id,
-      }),
-    })) as KeyValueDatabase;
-    const bdTypée = typedKeyValue<{ [clef: string]: number }>({
-      db: bd,
-      schema: schémaDictNumérique,
-    });
-    const bdSurOrbite2 = (await orbites[1].open(
-      bd.address,
-    )) as KeyValueDatabase;
-    const bdSurOrbite2Typée = typedKeyValue<{ [clef: string]: number }>({
-      db: bdSurOrbite2,
-      schema: schémaDictNumérique,
-    });
-
-    const accèsCréateur = await peutÉcrire(bdTypée, orbites[0]);
-    expect(accèsCréateur).to.be.true();
-
-    const accèsAutreOrbite = peutÉcrire(bdSurOrbite2Typée, orbites[1]);
-    await (bd.access as unknown as ContrôleurConstellation).grant(
-      "MEMBRE",
-      orbites[1].identity.id,
-    );
-    expect(await accèsAutreOrbite).to.be.true();
-  });
 });
-*/

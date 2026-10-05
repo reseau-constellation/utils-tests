@@ -1,7 +1,8 @@
-import type { Libp2p } from "@libp2p/interface";
 import { WebRTC } from "@multiformats/multiaddr-matcher";
 import { multiaddr, type Multiaddr } from "@multiformats/multiaddr";
 import { isBrowser, isElectronRenderer } from "wherearewe";
+import { que } from "../attente.ts";
+import type { Libp2p } from "@libp2p/interface";
 import type { ServicesLibp2pTest } from "./config.js";
 
 const filtreParDéfaut = () => true;
@@ -22,7 +23,7 @@ export const connecterPairs = async <
   if (isBrowser || isElectronRenderer) {
     await libp2p1.dial(multiaddr(options.adresseRelai));
 
-    const adresse1 = await new Promise<Multiaddr>((resolve) => {
+    const adresse1 = await new Promise<Multiaddr>((résoudre) => {
       const testConnecté = () => {
         const adresse = libp2p1
           .getMultiaddrs()
@@ -30,14 +31,15 @@ export const connecterPairs = async <
           .pop();
         if (adresse != null) {
           clearInterval(interval);
-          resolve(adresse);
+          résoudre(adresse);
         }
       };
       const interval = setInterval(testConnecté, 100);
       testConnecté();
     });
     libp2p2.dial(adresse1);
-    await new Promise((resolve) => {
+
+    await new Promise((résoudre) => {
       const testConnecté = () => {
         const adresse = libp2p1
           .getConnections()
@@ -45,7 +47,7 @@ export const connecterPairs = async <
           .pop();
         if (adresse != null) {
           clearInterval(interval);
-          resolve(adresse);
+          résoudre(adresse);
         }
       };
       const interval = setInterval(testConnecté, 100);
@@ -56,6 +58,7 @@ export const connecterPairs = async <
       multiaddrs: libp2p1.getMultiaddrs().filter(filtre),
     });
     await libp2p2.dial(libp2p1.peerId);
+    await que(() => !!libp2p1.getPeers().find((p) => p.equals(libp2p2.peerId)));
   }
 };
 

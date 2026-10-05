@@ -1,7 +1,6 @@
+import { lancerRelai } from "./relai/index.js";
 import type { PartialOptions } from "aegir";
 import type { BuildOptions } from "esbuild";
-
-import { lancerRelai } from "./relai/index.js";
 
 export const obtConfigEsbuild = async (): Promise<BuildOptions> => {
   const { createRequire } = (await import("module")).default;
