@@ -1,15 +1,17 @@
-import { createHelia } from "helia";
-import {
-  OptionsDéfautLibp2pNavigateur,
-  OptionsDéfautLibp2pNode,
-  type ServicesLibp2pTest,
-} from "./libp2p/index.js";
-import { MemoryBlockstore } from "blockstore-core";
 import { join } from "path";
-import { sousDossier } from "./utils.js";
+import { MemoryBlockstore } from "blockstore-core";
+import { createHelia } from "helia";
 import { IDBBlockstore } from "blockstore-idb";
 import { isBrowser, isElectronMain, isNode } from "wherearewe";
 import { type HeliaWithLibp2p } from "@helia/libp2p";
+import { sousDossier } from "./utils.js";
+import {
+  OptionsDéfautLibp2pNavigateur,
+  OptionsDéfautLibp2pNode,
+  toutesConnectées,
+  type ServicesLibp2pTest,
+} from "./libp2p/index.js";
+import { obtenirAdresseRelai } from "./relai/index.ts";
 
 export const créerHéliasTest = async ({
   n,
@@ -42,6 +44,12 @@ export const créerHéliasTest = async ({
     };
     const hélia = await createHelia(optionsHélia).start();
     hélias.push(hélia);
+    await toutesConnectées(
+      hélias.map((h) => h.libp2p),
+      {
+        adresseRelai: obtenirAdresseRelai(),
+      },
+    );
   }
 
   const fermer = async () => {
