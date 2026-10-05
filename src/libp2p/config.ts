@@ -32,7 +32,7 @@ import {
 import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
-import { type Identify, identify } from "@libp2p/identify";
+import { type Identify, identify, identifyPush, type IdentifyPush } from "@libp2p/identify";
 import { webRTC } from "@libp2p/webrtc";
 import { webSockets } from "@libp2p/websockets";
 
@@ -44,6 +44,7 @@ import { ping, type Ping } from "@libp2p/ping";
 export type ServicesLibp2pTest = {
   ping: Ping;
   identify: Identify;
+  identifyPush: IdentifyPush;
   pubsub: GossipSub;
   obtClefPrivée: ServiceClefPrivée;
 };
@@ -82,6 +83,7 @@ export const OptionsDéfautLibp2pNode: () => Libp2pOptions<ServicesLibp2pTest> =
       services: {
         ping: ping(),
         identify: identify(),
+        identifyPush: identifyPush(),
         pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
           components: GossipSubComponents,
         ) => GossipSub, // Erreur de type dans @chainsafe/pubsub
@@ -109,6 +111,7 @@ export const OptionsDéfautLibp2pNavigateur: () => Libp2pOptions<ServicesLibp2pT
       services: {
         ping: ping(),
         identify: identify(),
+        identifyPush: identifyPush(),
         pubsub: gossipsub({ allowPublishToZeroTopicPeers: true }) as (
           components: GossipSubComponents,
         ) => GossipSub, // Erreur de type dans @chainsafe/pubsub,
