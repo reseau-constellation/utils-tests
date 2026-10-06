@@ -8,9 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@helia/bitswap':
+        specifier: ^4.0.20
+        version: 4.0.20(react-native@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(react@19.3.0)(supports-color@10.2.2))(supports-color@10.2.2)
       '@helia/libp2p':
         specifier: ^2.1.5
         version: 2.1.5(react-native@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(react@19.3.0)(supports-color@10.2.2))(supports-color@10.2.2)
+      '@ipld/dag-cbor':
+        specifier: ^10.0.2
+        version: 10.0.2
+      '@ipld/dag-json':
+        specifier: ^11.0.1
+        version: 11.0.1
       '@libp2p/gossipsub':
         specifier: ^17.1.2
         version: 17.1.2
@@ -56,6 +65,9 @@ importers:
       libp2p:
         specifier: ^3.3.11
         version: 3.3.11
+      multiformats:
+        specifier: ^14.0.5
+        version: 14.0.5
       os-browserify:
         specifier: ^0.3.0
         version: 0.3.0

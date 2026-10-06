@@ -1,9 +1,13 @@
 import { join } from "path";
 import { MemoryBlockstore } from "blockstore-core";
-import { createHelia } from "helia";
+import { createHeliaLight } from "helia";
+import * as dagCbor from '@ipld/dag-cbor'
+import * as dagJson from '@ipld/dag-json'
+import * as json from 'multiformats/codecs/json'
+import { sha512 } from 'multiformats/hashes/sha2'
 import { IDBBlockstore } from "blockstore-idb";
 import { isBrowser, isElectronMain, isNode } from "wherearewe";
-import { type HeliaWithLibp2p } from "@helia/libp2p";
+import { withLibp2p, type HeliaWithLibp2p } from "@helia/libp2p";
 import { sousDossier } from "./utils.js";
 import {
   OptionsDéfautLibp2pNavigateur,
@@ -12,6 +16,7 @@ import {
   type ServicesLibp2pTest,
 } from "./libp2p/index.js";
 import { obtenirAdresseRelai } from "./relai/index.ts";
+import { withBitswap } from "@helia/bitswap";
 
 export const créerHéliasTest = async ({
   n,
@@ -40,9 +45,16 @@ export const créerHéliasTest = async ({
     (stockageBlocs as IDBBlockstore).open?.();
     const optionsHélia = {
       blockstore: stockageBlocs,
-      libp2p: optionsLibp2p,
+      codecs: [
+        dagCbor,
+        dagJson,
+        json,
+      ],
+      hashers: [
+        sha512,
+      ]
     };
-    const hélia = await createHelia(optionsHélia).start();
+    const hélia = await withBitswap(withLibp2p(createHeliaLight(optionsHélia), optionsLibp2p)).start();
     hélias.push(hélia);
   }
 

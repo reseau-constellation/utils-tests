@@ -1,5 +1,5 @@
 {
-  "version": "2.2.3",
+  "version": "2.2.4",
   "license": "AGPL-3.0-or-later",
   "name": "@constl/utils-tests",
   "author": "Julien Jean Malard-Adam",
@@ -76,7 +76,10 @@
     "typescript-eslint": "^8.71.0"
   },
   "dependencies": {
+    "@helia/bitswap": "^4.0.20",
     "@helia/libp2p": "^2.1.5",
+    "@ipld/dag-cbor": "^10.0.2",
+    "@ipld/dag-json": "^11.0.1",
     "@libp2p/gossipsub": "^17.1.2",
     "@libp2p/peer-id": "^6.0.15",
     "@libp2p/ping": "^3.1.13",
@@ -92,6 +95,7 @@
     "genversion": "^3.2.0",
     "helia": "7.1.16",
     "libp2p": "^3.3.11",
+    "multiformats": "^14.0.5",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "rimraf": "^6.1.3",
