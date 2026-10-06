@@ -45,7 +45,7 @@ export const créerHéliasTest = async ({
     const hélia = await createHelia(optionsHélia).start();
     hélias.push(hélia);
   }
-  
+
   await toutesConnectées(
     hélias.map((h) => h.libp2p),
     {

@@ -19,7 +19,8 @@ export const connecterPairs = async <
   options: OptionsConnectionPairs,
 ): Promise<void> => {
   const filtre = options.filtre ?? filtreParDéfaut;
-  if (libp2p1.getPeers().some(idPair=>idPair.equals(libp2p2.peerId))) return
+  if (libp2p1.getPeers().some((idPair) => idPair.equals(libp2p2.peerId)))
+    return;
 
   if (isBrowser || isElectronRenderer) {
     await libp2p1.dial(multiaddr(options.adresseRelai));
