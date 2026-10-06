@@ -8,6 +8,7 @@ import { sha512 } from "multiformats/hashes/sha2";
 import { IDBBlockstore } from "blockstore-idb";
 import { isBrowser, isElectronMain, isNode } from "wherearewe";
 import { withLibp2pLight, type HeliaWithLibp2p } from "@helia/libp2p";
+import { withBitswap } from "@helia/bitswap";
 import { sousDossier } from "./utils.js";
 import {
   OptionsDéfautLibp2pNavigateur,
@@ -16,7 +17,6 @@ import {
   type ServicesLibp2pTest,
 } from "./libp2p/index.js";
 import { obtenirAdresseRelai } from "./relai/index.ts";
-import { withBitswap } from "@helia/bitswap";
 
 export const créerHéliasTest = async ({
   n,
@@ -35,8 +35,8 @@ export const créerHéliasTest = async ({
     const optionsLibp2p = isBrowser
       ? OptionsDéfautLibp2pNavigateur()
       : OptionsDéfautLibp2pNode();
-  
-      const dossierBlocs = dossier
+
+    const dossierBlocs = dossier
       ? join(sousDossier({ dossier, i }), "hélia", "blocks")
       : undefined;
     const stockageBlocs = dossierBlocs
