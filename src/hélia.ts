@@ -6,13 +6,12 @@ import * as dagJson from "@ipld/dag-json";
 import * as json from "multiformats/codecs/json";
 import { sha512 } from "multiformats/hashes/sha2";
 import { IDBBlockstore } from "blockstore-idb";
-import { isBrowser, isElectronMain, isNode } from "wherearewe";
+import { isElectronMain, isNode } from "wherearewe";
 import { withLibp2pLight, type HeliaWithLibp2p } from "@helia/libp2p";
 import { withBitswap } from "@helia/bitswap";
 import { sousDossier } from "./utils.js";
 import {
-  OptionsDéfautLibp2pNavigateur,
-  OptionsDéfautLibp2pNode,
+  optionsDéfautLibp2p,
   toutesConnectées,
   type ServicesLibp2pTest,
 } from "./libp2p/index.js";
@@ -32,9 +31,7 @@ export const créerHéliasTest = async ({
 
   for (const i of Array(n).keys()) {
     // Ceci ça doit aller dans la boucle parce que `withLibp2pLight` modifie l'objet d'options
-    const optionsLibp2p = isBrowser
-      ? OptionsDéfautLibp2pNavigateur()
-      : OptionsDéfautLibp2pNode();
+    const optionsLibp2p = optionsDéfautLibp2p();
 
     const dossierBlocs = dossier
       ? join(sousDossier({ dossier, i }), "hélia", "blocks")

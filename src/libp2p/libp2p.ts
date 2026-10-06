@@ -1,13 +1,12 @@
 import { createLibp2p } from "libp2p";
-import { isBrowser } from "wherearewe";
 import { obtenirAdresseRelai } from "../relai/index.js";
-import {
-  optionsDéfautLibp2pNavigateur,
-  optionsDéfautLibp2pNode,
-  type ServicesLibp2pTest,
-} from "./config.js";
+import { optionsDéfautLibp2p, type ServicesLibp2pTest } from "./config.js";
 import { connecterPairs } from "./utils.js";
 import type { Libp2p } from "@libp2p/interface";
+export {
+  optionsDéfautLibp2pNavigateur,
+  optionsDéfautLibp2pNode,
+} from "./config.ts";
 
 export const créerLibp2psTest = async ({
   n,
@@ -23,9 +22,7 @@ export const créerLibp2psTest = async ({
 
   const libp2ps: Libp2p<ServicesLibp2pTest>[] = [];
   for (const _ of Array(n).keys()) {
-    const libp2p = await createLibp2p(
-      isBrowser ? optionsDéfautLibp2pNavigateur() : optionsDéfautLibp2pNode(),
-    );
+    const libp2p = await createLibp2p(optionsDéfautLibp2p());
 
     for (const l of libp2ps) {
       await connecterPairs(libp2p, l, { adresseRelai });

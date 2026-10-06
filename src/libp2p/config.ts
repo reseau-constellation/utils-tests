@@ -45,6 +45,7 @@ import { type Libp2pOptions } from "libp2p";
 
 import { type PrivateKey } from "@libp2p/interface";
 import { ping, type Ping } from "@libp2p/ping";
+import { isBrowser, isElectronRenderer, isWebWorker } from "wherearewe";
 
 const optionsIdentify = {
   maxMessageSize: 1e6,
@@ -79,7 +80,7 @@ export class ServiceClefPrivée {
 /**
  * Configuration Libp2p pour Node.js.
  */
-export const OptionsDéfautLibp2pNode: () => Libp2pOptions<ServicesLibp2pTest> =
+export const optionsDéfautLibp2pNode: () => Libp2pOptions<ServicesLibp2pTest> =
   () => {
     return {
       addresses: {
@@ -108,7 +109,7 @@ export const OptionsDéfautLibp2pNode: () => Libp2pOptions<ServicesLibp2pTest> =
 /**
  * Configuration Libp2p pour les navigateurs.
  */
-export const OptionsDéfautLibp2pNavigateur: () => Libp2pOptions<ServicesLibp2pTest> =
+export const optionsDéfautLibp2pNavigateur: () => Libp2pOptions<ServicesLibp2pTest> =
   () => {
     return {
       addresses: {
@@ -132,4 +133,11 @@ export const OptionsDéfautLibp2pNavigateur: () => Libp2pOptions<ServicesLibp2pT
           new ServiceClefPrivée(components),
       },
     };
+  };
+
+export const optionsDéfautLibp2p: () => Libp2pOptions<ServicesLibp2pTest> =
+  () => {
+    return isBrowser || isElectronRenderer || isWebWorker
+      ? optionsDéfautLibp2pNavigateur()
+      : optionsDéfautLibp2pNode();
   };
