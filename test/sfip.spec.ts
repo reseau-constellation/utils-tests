@@ -41,6 +41,13 @@ describe("Créer Hélia", function () {
     }
   });
 
+  it("multiples", async () => {
+    ({ hélias, fermer } = await créerHéliasTest({ n: 2 }));
+
+    const idsLibp2p = hélias.map((h) => h.libp2p.peerId.toString());
+    expect(idsLibp2p[0]).to.not.equal(idsLibp2p[1]);
+  });
+
   it("Connection pairs", async () => {
     ({ hélias, fermer } = await créerHéliasTest({ n: 2 }));
 

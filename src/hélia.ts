@@ -1,13 +1,13 @@
 import { join } from "path";
 import { MemoryBlockstore } from "blockstore-core";
 import { createHeliaLight } from "helia";
-import * as dagCbor from '@ipld/dag-cbor'
-import * as dagJson from '@ipld/dag-json'
-import * as json from 'multiformats/codecs/json'
-import { sha512 } from 'multiformats/hashes/sha2'
+import * as dagCbor from "@ipld/dag-cbor";
+import * as dagJson from "@ipld/dag-json";
+import * as json from "multiformats/codecs/json";
+import { sha512 } from "multiformats/hashes/sha2";
 import { IDBBlockstore } from "blockstore-idb";
 import { isBrowser, isElectronMain, isNode } from "wherearewe";
-import { withLibp2p, type HeliaWithLibp2p } from "@helia/libp2p";
+import { withLibp2pLight, type HeliaWithLibp2p } from "@helia/libp2p";
 import { sousDossier } from "./utils.js";
 import {
   OptionsDéfautLibp2pNavigateur,
@@ -28,13 +28,15 @@ export const créerHéliasTest = async ({
   hélias: HeliaWithLibp2p<ServicesLibp2pTest>[];
   fermer: () => Promise<void>;
 }> => {
-  const optionsLibp2p = isBrowser
-    ? OptionsDéfautLibp2pNavigateur()
-    : OptionsDéfautLibp2pNode();
-
   const hélias: HeliaWithLibp2p<ServicesLibp2pTest>[] = [];
+
   for (const i of Array(n).keys()) {
-    const dossierBlocs = dossier
+    // Ceci ça doit aller dans la boucle parce que `withLibp2pLight` modifie l'objet d'options
+    const optionsLibp2p = isBrowser
+      ? OptionsDéfautLibp2pNavigateur()
+      : OptionsDéfautLibp2pNode();
+  
+      const dossierBlocs = dossier
       ? join(sousDossier({ dossier, i }), "hélia", "blocks")
       : undefined;
     const stockageBlocs = dossierBlocs
@@ -45,16 +47,12 @@ export const créerHéliasTest = async ({
     (stockageBlocs as IDBBlockstore).open?.();
     const optionsHélia = {
       blockstore: stockageBlocs,
-      codecs: [
-        dagCbor,
-        dagJson,
-        json,
-      ],
-      hashers: [
-        sha512,
-      ]
+      codecs: [dagCbor, dagJson, json],
+      hashers: [sha512],
     };
-    const hélia = await withBitswap(withLibp2p(createHeliaLight(optionsHélia), optionsLibp2p)).start();
+    const hélia = await withBitswap(
+      withLibp2pLight(createHeliaLight(optionsHélia), optionsLibp2p),
+    ).start();
     hélias.push(hélia);
   }
 
