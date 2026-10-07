@@ -7,4 +7,9 @@ node_modules
 .vscode
 .github
 test
-docu
+.aegir.js
+.gitignore
+.npmignore
+eslint.config.json
+renovate.json
+*.tsbuildinfo
