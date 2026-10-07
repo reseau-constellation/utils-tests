@@ -47,7 +47,7 @@ const relai = await createLibp2p({
   privateKey: clefPrivée,
   addresses: {
     listen: [
-      `/ip4/0.0.0.0/tcp/${process.env.PORT_DÉFAUT_RELAI || PORT_DÉFAUT_RELAI}/ws`,
+      `/ip4/0.0.0.0/tcp/${process.env.PORT_RELAI || PORT_DÉFAUT_RELAI}/ws`,
     ],
   },
   transports: [webSockets()],
