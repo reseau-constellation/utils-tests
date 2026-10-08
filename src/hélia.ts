@@ -1,6 +1,6 @@
 import { join } from "path";
 import { MemoryBlockstore } from "blockstore-core";
-import { createHeliaLight } from "helia";
+import { createHeliaLight, type HeliaInit } from "helia";
 import * as dagCbor from "@ipld/dag-cbor";
 import * as dagJson from "@ipld/dag-json";
 import * as json from "multiformats/codecs/json";
@@ -9,14 +9,36 @@ import { IDBBlockstore } from "blockstore-idb";
 import { isElectronMain, isNode } from "wherearewe";
 import { withLibp2pLight, type HeliaWithLibp2p } from "@helia/libp2p";
 import { withBitswap } from "@helia/bitswap";
+import { IDBDatastore } from "datastore-idb";
+import { MemoryDatastore } from "datastore-core";
 import { sousDossier } from "./utils.js";
+
 import {
   optionsDéfautLibp2p,
   toutesConnectées,
   type ServicesLibp2pTest,
 } from "./libp2p/index.js";
 import { obtenirAdresseRelai } from "./relai/index.ts";
+import type { Datastore } from "interface-datastore";
 
+export const obtStockageDonnées = async (
+  dossier?: string,
+): Promise<Datastore> => {
+  if (!dossier) return new MemoryDatastore();
+  if (isNode || isElectronMain) {
+    // Cette librairie ne peut pas être compilée pour l'environnement
+    // navigateur. Nous devons donc le'importer dynamiquement ici afin d'éviter
+    // des problèmes de compilation sur navigateur.
+    const { FsDatastore } = await import("datastore-fs");
+    const stockage = new FsDatastore(dossier);
+    await stockage.open();
+    return stockage;
+  } else {
+    const stockage = new IDBDatastore(dossier);
+    await stockage.open();
+    return stockage;
+  }
+};
 export const créerHéliasTest = async ({
   n,
   dossier,
@@ -32,21 +54,30 @@ export const créerHéliasTest = async ({
   for (const i of Array(n).keys()) {
     // Ceci ça doit aller dans la boucle parce que `withLibp2pLight` modifie l'objet d'options
     const optionsLibp2p = optionsDéfautLibp2p();
-
-    const dossierBlocs = dossier
-      ? join(sousDossier({ dossier, i }), "hélia", "blocks")
+    const dossierHélia = dossier
+      ? join(sousDossier({ dossier, i }), "hélia")
       : undefined;
+
+    const dossierBlocs = dossierHélia ? join(dossierHélia, "blocs") : undefined;
     const stockageBlocs = dossierBlocs
       ? isNode || isElectronMain
         ? new (await import("blockstore-fs")).FsBlockstore(dossierBlocs)
         : new IDBBlockstore(dossierBlocs)
       : new MemoryBlockstore();
     (stockageBlocs as IDBBlockstore).open?.();
-    const optionsHélia = {
+
+    const dossierDonnées = dossierHélia
+      ? join(dossierHélia, "données")
+      : undefined;
+    const stockageDonnées = await obtStockageDonnées(dossierDonnées);
+
+    const optionsHélia: HeliaInit = {
       blockstore: stockageBlocs,
+      datastore: stockageDonnées,
       codecs: [dagCbor, dagJson, json],
       hashers: [sha512],
     };
+
     const hélia = await withBitswap(
       withLibp2pLight(createHeliaLight(optionsHélia), optionsLibp2p),
     ).start();
