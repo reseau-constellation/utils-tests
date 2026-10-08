@@ -19,6 +19,7 @@ import {
   type ServicesLibp2pTest,
 } from "./libp2p/index.js";
 import { obtenirAdresseRelai } from "./relai/index.ts";
+import type { Blockstore } from "interface-blockstore";
 import type { Datastore } from "interface-datastore";
 
 export const obtStockageDonnées = async (
@@ -39,6 +40,26 @@ export const obtStockageDonnées = async (
     return stockage;
   }
 };
+
+export const obtStockageBlocs = async (
+  dossier?: string,
+): Promise<Blockstore> => {
+  if (!dossier) return new MemoryBlockstore();
+  if (isNode || isElectronMain) {
+    // Cette librairie ne peut pas être compilée pour l'environnement
+    // navigateur. Nous devons donc le'importer dynamiquement ici afin d'éviter
+    // des problèmes de compilation sur navigateur.
+    const { FsBlockstore } = await import("blockstore-fs");
+    const stockage = new FsBlockstore(dossier);
+    await stockage.open();
+    return stockage;
+  } else {
+    const stockage = new IDBBlockstore(dossier);
+    await stockage.open();
+    return stockage;
+  }
+};
+
 export const créerHéliasTest = async ({
   n,
   dossier,
@@ -59,12 +80,7 @@ export const créerHéliasTest = async ({
       : undefined;
 
     const dossierBlocs = dossierHélia ? join(dossierHélia, "blocs") : undefined;
-    const stockageBlocs = dossierBlocs
-      ? isNode || isElectronMain
-        ? new (await import("blockstore-fs")).FsBlockstore(dossierBlocs)
-        : new IDBBlockstore(dossierBlocs)
-      : new MemoryBlockstore();
-    (stockageBlocs as IDBBlockstore).open?.();
+    const stockageBlocs = await obtStockageBlocs(dossierBlocs);
 
     const dossierDonnées = dossierHélia
       ? join(dossierHélia, "données")

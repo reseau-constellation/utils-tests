@@ -97,6 +97,7 @@
     "events": "^3.3.0",
     "genversion": "^3.2.0",
     "helia": "7.1.16",
+    "interface-blockstore": "^7.0.1",
     "interface-datastore": "^10.0.1",
     "libp2p": "^3.3.11",
     "multiformats": "^14.0.5",
