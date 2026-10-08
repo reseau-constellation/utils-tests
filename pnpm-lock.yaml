@@ -170,7 +170,7 @@ importers:
         version: 3.50.0
       electron:
         specifier: ^44.5.1
-        version: 44.5.1(supports-color@10.2.2)
+        version: 44.7.0(supports-color@10.2.2)
       esbuild:
         specifier: ^0.28.2
         version: 0.28.2
@@ -3461,8 +3461,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@44.5.1:
-    resolution: {integrity: sha512-lx7AYoFIiyvEvgvpyWO9kOC60xtNPpiPZAth6Fmg9NutzpCAMLwpUlaBY2EXfZyIgUdzEmLMj9KvK0Vrokl1yQ==}
+  electron@44.7.0:
+    resolution: {integrity: sha512-aUq9/zLAAFYc+a9gy6cd0C3Y/N/RmovLCD8TV8LhIzNhuND6HEgsu96jJz9cbAxvckSPv+Trf2PKEjktoZgFkw==}
     engines: {node: '>= 22.12.0'}
     hasBin: true
 
@@ -12148,7 +12148,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@44.5.1(supports-color@10.2.2):
+  electron@44.7.0(supports-color@10.2.2):
     dependencies:
       '@electron-internal/extract-zip': 1.0.5
       '@electron/get': 5.1.0(supports-color@10.2.2)
