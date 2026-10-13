@@ -21,9 +21,16 @@ export const connecterPairs = async <
   const filtre = options.filtre ?? filtreParDéfaut;
   if (libp2p1.getPeers().some((idPair) => idPair.equals(libp2p2.peerId)))
     return;
+  const adresseRelai = multiaddr(options.adresseRelai);
+  const idPairRelai = adresseRelai
+    .getComponents()
+    .find((c) => c.name === "p2p")?.value;
 
   if (isBrowser || isElectronRenderer) {
-    await libp2p1.dial(multiaddr(options.adresseRelai));
+    const connectéAuRelai = libp2p1
+      .getPeers()
+      .some((idPair) => idPair.equals(idPairRelai));
+    if (!connectéAuRelai) await libp2p1.dial(adresseRelai);
 
     const adresse1 = await new Promise<Multiaddr>((résoudre) => {
       const testConnecté = () => {
