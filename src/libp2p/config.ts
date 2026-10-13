@@ -58,24 +58,7 @@ export type ServicesLibp2pTest = {
   identify: Identify;
   identifyPush: IdentifyPush;
   pubsub: GossipSub;
-  obtClefPrivée: ServiceClefPrivée;
 };
-
-export interface ComposantesServiceClefPrivée {
-  privateKey: PrivateKey;
-}
-
-export class ServiceClefPrivée {
-  privateKey: PrivateKey;
-
-  constructor(components: ComposantesServiceClefPrivée) {
-    this.privateKey = components.privateKey;
-  }
-
-  obtenirClef(): PrivateKey {
-    return this.privateKey;
-  }
-}
 
 /**
  * Configuration Libp2p pour Node.js.
@@ -99,9 +82,7 @@ export const optionsDéfautLibp2pNode: () => Libp2pOptions<ServicesLibp2pTest> =
         pubsub: gossipsub({
           allowPublishToZeroTopicPeers: true,
           runOnLimitedConnection: true,
-        }) as (components: GossipSubComponents) => GossipSub, // Erreur de type dans @chainsafe/pubsub
-        obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
-          new ServiceClefPrivée(components),
+        }),
       },
     };
   };
@@ -128,9 +109,7 @@ export const optionsDéfautLibp2pNavigateur: () => Libp2pOptions<ServicesLibp2pT
         pubsub: gossipsub({
           allowPublishToZeroTopicPeers: true,
           runOnLimitedConnection: true,
-        }) as (components: GossipSubComponents) => GossipSub, // Erreur de type dans @chainsafe/pubsub,
-        obtClefPrivée: (components: ComposantesServiceClefPrivée) =>
-          new ServiceClefPrivée(components),
+        }),
       },
     };
   };
