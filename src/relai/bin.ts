@@ -87,10 +87,11 @@ relai.addEventListener("peer:disconnect", async (event) => {
   relai.peerStore.delete(event.detail);
 });
 
-if (bavard)
+if (bavard) {
   console.log("id relai : ", relai.peerId.toString());
   console.log(
     "p2p addr : ",
     relai.getMultiaddrs().map((ma) => ma.toString()),
   );
+}
 // génère une adresse prédéterminée : /ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE
