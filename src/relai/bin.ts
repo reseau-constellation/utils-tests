@@ -70,7 +70,7 @@ const relai = await createLibp2p({
   })
   },
 });
-for (const sujet of JSON.parse(process.env.sujets_pubsub || "[]")) {
+for (const sujet of JSON.parse(process.env.SUJETS_RELAI || "[]")) {
   relai.services.pubsub.subscribe(sujet)
 }
 
