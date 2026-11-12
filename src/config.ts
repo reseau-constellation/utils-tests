@@ -66,19 +66,19 @@ type RetourAvant = {
 export const générerConfigÆgir = async ({
   portDéfautRelai,
   clefPrivéeRelai,
+  sujetsRelai,
 }: {
   portDéfautRelai?: string;
   clefPrivéeRelai?: string;
+  sujetsRelai?: string[];
 } = {}): Promise<PartialOptions> => {
   const esbuild = await obtConfigEsbuild();
   return {
     test: {
       // @ts-expect-error Erreur types Ægir
-      before: async (opts): Promise<RetourAvant> => {
+      before: async (): Promise<RetourAvant> => {
         let relai = undefined;
-        if (opts.target.includes("browser")) {
-          relai = await lancerRelai({ portDéfautRelai, clefPrivéeRelai });
-        }
+        relai = await lancerRelai({ portDéfautRelai, clefPrivéeRelai, sujetsRelai });
 
         return { relai };
       },
