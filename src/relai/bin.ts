@@ -34,6 +34,7 @@ import { keys } from "@libp2p/crypto";
 import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
 import { FaultTolerance } from "@libp2p/interface";
 import { CLEF_PRIVÉE_RELAI, PORT_DÉFAUT_RELAI } from "./consts.js";
+import { gossipsub } from "@libp2p/gossipsub";
 
 const bavard = process.env.BAVARD;
 
@@ -64,8 +65,14 @@ const relai = await createLibp2p({
         applyDefaultLimit: false,
       },
     }),
+    pubsub: gossipsub({
+      runOnLimitedConnection: true
+  })
   },
 });
+for (const sujet of JSON.parse(process.env.sujets_pubsub || "[]")) {
+  relai.services.pubsub.subscribe(sujet)
+}
 
 relai.addEventListener("peer:connect", async (event) => {
   if (bavard) console.log("peer:connect", event.detail);
@@ -80,10 +87,10 @@ relai.addEventListener("peer:disconnect", async (event) => {
   relai.peerStore.delete(event.detail);
 });
 
-console.log(relai.peerId.toString());
 if (bavard)
+  console.log("id relai : ", relai.peerId.toString());
   console.log(
-    "p2p addr: ",
+    "p2p addr : ",
     relai.getMultiaddrs().map((ma) => ma.toString()),
   );
 // génère une adresse prédéterminée : /ip4/127.0.0.1/tcp/54321/ws/p2p/12D3KooWAJjbRkp8FPF5MKgMU53aUTxWkqvDrs4zc1VMbwRwfsbE

@@ -10,9 +10,11 @@ export const obtenirFichierRelai = async (): Promise<string> => {
 export const lancerRelai = async ({
   portDéfautRelai,
   clefPrivéeRelai,
+  sujetsRelai,
 }: {
   portDéfautRelai?: string;
   clefPrivéeRelai?: string;
+  sujetsRelai?: string[];
 } = {}): Promise<() => void> => {
   const { execa } = await import("execa");
 
@@ -23,6 +25,7 @@ export const lancerRelai = async ({
       ...process.env,
       PORT_DÉFAUT_RELAI: portDéfautRelai,
       CLEF_PRIVÉE_RELAI: clefPrivéeRelai,
+      SUJETS_RELAI: JSON.stringify(sujetsRelai || []),
     },
   })`node ${fichierRelai} &`;
 
