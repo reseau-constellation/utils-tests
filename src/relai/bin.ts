@@ -66,7 +66,14 @@ const relai = await createLibp2p({
       },
     }),
     pubsub: gossipsub({
-      runOnLimitedConnection: true
+      runOnLimitedConnection: true,
+      canRelayMessage: true,
+      doPX: true,
+      scoreParams: {
+        // Nécessaire pour les tests - on risque d'avoir beaucoup d'instances
+        // sur la même adresse IP
+        IPColocationFactorThreshold: Infinity
+      }
   })
   },
 });
