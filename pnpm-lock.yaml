@@ -21,8 +21,8 @@ importers:
         specifier: ^10.0.2
         version: 10.0.2
       '@ipld/dag-json':
-        specifier: ^11.0.1
-        version: 11.0.1
+        specifier: ^12.0.0
+        version: 12.0.0
       '@libp2p/gossipsub':
         specifier: ^17.1.2
         version: 17.1.3
@@ -1380,6 +1380,9 @@ packages:
 
   '@ipld/dag-json@11.0.1':
     resolution: {integrity: sha512-cMDD0yWkUruqhbLDwAWaV5q92hYKQDP2xP0n+yZp0oxsC68Pw+xFZNc9rj0v2n5m5m/Aa1A+Qlb2tY3NjQMsWg==}
+
+  '@ipld/dag-json@12.0.0':
+    resolution: {integrity: sha512-uBUXglydSZ82ntBS/Xsx7xE7DZdDYmVMFzT+fFa5/oaKU52/yWgp3MjmkyHxVsnHOuuQuHAuKpDLDNeB5yomFQ==}
 
   '@ipld/dag-pb@4.2.0':
     resolution: {integrity: sha512-T2hsy18NNAUkIiQgvtrhKJXIkTjKcGHPJzp6mYp/tx4x0X9wedUTrCNADEP4hAS7Vy4/bJtc37eX4GSDFiKLhw==}
@@ -2857,6 +2860,10 @@ packages:
 
   cborg@6.1.3:
     resolution: {integrity: sha512-Kb/wD/AFuVcqvVjR+HYNOjNiuhVJ2C+RWxQE2Yqq2WVlVkRjdvVLkkM6QsL3NMsBRh+rgNc+aXmcraA+X0HObQ==}
+    hasBin: true
+
+  cborg@7.0.0:
+    resolution: {integrity: sha512-YYXJ+ozY26INm46oz2P+iOww/LhrfgPz2CuHaskDcitt0rKyh6LlWhNCfMlxxcdD+k7m0TspkRvcPPXAGYzZ8w==}
     hasBin: true
 
   ccount@2.0.1:
@@ -9251,6 +9258,11 @@ snapshots:
       cborg: 6.1.3
       multiformats: 14.0.6
 
+  '@ipld/dag-json@12.0.0':
+    dependencies:
+      cborg: 7.0.0
+      multiformats: 14.0.6
+
   '@ipld/dag-pb@4.2.0':
     dependencies:
       multiformats: 14.0.6
@@ -11502,6 +11514,8 @@ snapshots:
   cborg@5.1.11: {}
 
   cborg@6.1.3: {}
+
+  cborg@7.0.0: {}
 
   ccount@2.0.1: {}
 
