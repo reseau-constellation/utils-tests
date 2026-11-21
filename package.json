@@ -78,7 +78,7 @@
   "dependencies": {
     "@helia/bitswap": "^4.0.20",
     "@helia/libp2p": "^2.1.5",
-    "@ipld/dag-cbor": "^10.0.2",
+    "@ipld/dag-cbor": "^11.0.0",
     "@ipld/dag-json": "^11.0.1",
     "@libp2p/gossipsub": "^17.1.2",
     "@libp2p/peer-id": "^6.0.15",
