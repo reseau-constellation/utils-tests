@@ -164,7 +164,7 @@ importers:
         version: 8.73.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       aegir:
         specifier: ^48.1.6
-        version: 48.1.7(@babel/core@7.29.7(supports-color@10.2.2))(eslint-import-resolver-typescript@4.4.5)(supports-color@10.2.2)
+        version: 48.2.0(@babel/core@7.29.7(supports-color@10.2.2))(eslint-import-resolver-typescript@4.4.5)(supports-color@10.2.2)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -2381,8 +2381,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aegir@48.1.7:
-    resolution: {integrity: sha512-76saIaqHAEGUylcc+TJEHBto8oVsyTnaMQu/87eEvaKl80WumkABuw7qEG0KmGIFsFZnrHqzyfO4Xjly/q2Bhg==}
+  aegir@48.2.0:
+    resolution: {integrity: sha512-ENj9q4S+M3TpXdDK7fDfFiDLEk28PAnkDPgFps/+K9wqxCiiL60YHcbTo6odgTl0K8tAmuMpeD20/ZNGP6WbnA==}
     hasBin: true
 
   agent-base@6.0.2:
@@ -10845,7 +10845,7 @@ snapshots:
 
   acorn@8.19.0: {}
 
-  aegir@48.1.7(@babel/core@7.29.7(supports-color@10.2.2))(eslint-import-resolver-typescript@4.4.5)(supports-color@10.2.2):
+  aegir@48.2.0(@babel/core@7.29.7(supports-color@10.2.2))(eslint-import-resolver-typescript@4.4.5)(supports-color@10.2.2):
     dependencies:
       '@electron/get': 5.1.0(supports-color@10.2.2)
       '@polka/send-type': 0.5.2
