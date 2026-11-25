@@ -77,8 +77,11 @@ export const générerConfigÆgir = async ({
     test: {
       // @ts-expect-error Erreur types Ægir
       before: async (): Promise<RetourAvant> => {
-        let relai = undefined;
-        relai = await lancerRelai({ portDéfautRelai, clefPrivéeRelai, sujetsRelai });
+        const relai = await lancerRelai({
+          portDéfautRelai,
+          clefPrivéeRelai,
+          sujetsRelai,
+        });
 
         return { relai };
       },

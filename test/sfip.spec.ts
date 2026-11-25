@@ -25,14 +25,14 @@ describe("Créer Hélia", function () {
     effacer();
   });
 
-  it("Hélia créée", async () => {
+  it("hélia créée", async () => {
     ({ hélias, fermer } = await créerHéliasTest({ n: 1 }));
 
     const idSFIP = hélias[0].libp2p.peerId.toCID().toString();
     expect(idSFIP).to.be.a("string");
   });
 
-  it("Hélia créée avec dossier", async () => {
+  it("hélia créée avec dossier", async () => {
     ({ hélias, fermer } = await créerHéliasTest({ n: 1, dossier }));
 
     if (isNode || isElectronMain) {
@@ -48,7 +48,7 @@ describe("Créer Hélia", function () {
     expect(idsLibp2p[0]).to.not.equal(idsLibp2p[1]);
   });
 
-  it("Connection pairs", async () => {
+  it("connection pairs", async () => {
     ({ hélias, fermer } = await créerHéliasTest({ n: 2 }));
 
     const connectionsHélia1 = hélias[0].libp2p.getPeers();

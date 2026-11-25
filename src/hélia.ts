@@ -16,6 +16,7 @@ import { sousDossier } from "./utils.js";
 import {
   optionsDéfautLibp2p,
   toutesConnectées,
+  type OptionsConnectionPairs,
   type ServicesLibp2pTest,
 } from "./libp2p/index.js";
 import { obtenirAdresseRelai } from "./relai/index.ts";
@@ -63,9 +64,11 @@ export const obtStockageBlocs = async (
 export const créerHéliasTest = async ({
   n,
   dossier,
+  optionsConnexionPair,
 }: {
   n: number;
   dossier?: string;
+  optionsConnexionPair?: OptionsConnectionPairs;
 }): Promise<{
   hélias: HeliaWithLibp2p<ServicesLibp2pTest>[];
   fermer: () => Promise<void>;
@@ -102,9 +105,12 @@ export const créerHéliasTest = async ({
 
   await toutesConnectées(
     hélias.map((h) => h.libp2p),
-    {
-      adresseRelai: obtenirAdresseRelai(),
-    },
+    Object.assign(
+      {
+        adresseRelai: obtenirAdresseRelai(),
+      },
+      optionsConnexionPair || {},
+    ),
   );
 
   const fermer = async () => {

@@ -1,5 +1,6 @@
 export {
   type ServicesLibp2pTest,
+  type OptionsConnectionPairs,
   optionsDéfautLibp2pNode,
   optionsDéfautLibp2pNavigateur,
   optionsDéfautLibp2p,

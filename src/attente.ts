@@ -2,8 +2,9 @@ import { isBrowser, isElectronRenderer } from "wherearewe";
 
 export const que = async (
   f: () => boolean | Promise<boolean>,
-  t = 10,
+  t = 50,
 ): Promise<void> => {
+  let chrono: ReturnType<typeof setTimeout> | undefined = undefined;
   return new Promise((résoudre, rejeter) => {
     const fFinale = async () => {
       try {
@@ -12,14 +13,13 @@ export const que = async (
           résoudre();
         } else {
           t *= 1.5;
-          setTimeout(fFinale, t);
+          chrono = setTimeout(fFinale, t);
         }
       } catch (e) {
         clearTimeout(chrono);
         rejeter(e);
       }
     };
-    const chrono = setTimeout(fFinale, t);
     fFinale();
   });
 };

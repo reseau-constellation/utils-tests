@@ -33,8 +33,8 @@ import { identify } from "@libp2p/identify";
 import { keys } from "@libp2p/crypto";
 import { fromString as uint8ArrayFromString } from "uint8arrays/from-string";
 import { FaultTolerance } from "@libp2p/interface";
-import { CLEF_PRIVÉE_RELAI, PORT_DÉFAUT_RELAI } from "./consts.js";
 import { gossipsub } from "@libp2p/gossipsub";
+import { CLEF_PRIVÉE_RELAI, PORT_DÉFAUT_RELAI } from "./consts.js";
 
 const bavard = process.env.BAVARD;
 
@@ -72,13 +72,14 @@ const relai = await createLibp2p({
       scoreParams: {
         // Nécessaire pour les tests - on risque d'avoir beaucoup d'instances
         // sur la même adresse IP
-        IPColocationFactorThreshold: Infinity
-      }
-  })
+        IPColocationFactorThreshold: Infinity,
+        IPColocationFactorWeight: 0,
+      },
+    }),
   },
 });
 for (const sujet of JSON.parse(process.env.SUJETS_RELAI || "[]")) {
-  relai.services.pubsub.subscribe(sujet)
+  relai.services.pubsub.subscribe(sujet);
 }
 
 relai.addEventListener("peer:connect", async (event) => {
