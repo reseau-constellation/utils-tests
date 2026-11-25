@@ -4,8 +4,9 @@ import { isBrowser, isElectronRenderer } from "wherearewe";
 import { que } from "../attente.ts";
 import type { Libp2p } from "@libp2p/interface";
 import type { ServicesLibp2pTest } from "./config.js";
+import { peerIdFromString } from "@libp2p/peer-id";
 
-const filtreParDéfaut = () => true;
+const filtreParDéfaut = (ma: Multiaddr) => ma.toString().startsWith("/ip4/127.0.0.1/");
 
 type OptionsConnectionPairs = {
   adresseRelai: string;
@@ -25,50 +26,44 @@ export const connecterPairs = async <
   const idPairRelai = adresseRelai
     .getComponents()
     .find((c) => c.name === "p2p")?.value;
+  if (!idPairRelai) throw new Error(`Adresse relai invalide : ${options.adresseRelai}`)
+
+    const connecterAuRelai = async (pair: Libp2p) => {
+      const connectéAuRelai = pair
+          .getPeers()
+          .some((idPair) => idPair.equals(idPairRelai));
+      if (!connectéAuRelai)
+          await pair.dial(adresseRelai);
+      await que(() => pair.getConnections(peerIdFromString(idPairRelai)).length > 0);
+          }
+  let adressesLibp2p1: Multiaddr[];
 
   if (isBrowser || isElectronRenderer) {
-    const connectéAuRelai = libp2p1
-      .getPeers()
-      .some((idPair) => idPair.equals(idPairRelai));
-    if (!connectéAuRelai) await libp2p1.dial(adresseRelai);
+    await connecterAuRelai(libp2p1)
 
-    const adresse1 = await new Promise<Multiaddr>((résoudre) => {
+    adressesLibp2p1 = await new Promise((résoudre) => {
       const testConnecté = () => {
-        const adresse = libp2p1
+        const adresses = libp2p1
           .getMultiaddrs()
-          .filter((ma) => WebRTC.matches(ma) && filtre(ma))
-          .pop();
-        if (adresse != null) {
+          .filter(ma=>filtre(ma) && !WebRTC.matches(ma));
+        if (adresses.length) {
           clearInterval(interval);
-          résoudre(adresse);
+          résoudre(adresses);
         }
       };
-      const interval = setInterval(testConnecté, 100);
-      testConnecté();
-    });
-    libp2p2.dial(adresse1);
 
-    await new Promise((résoudre) => {
-      const testConnecté = () => {
-        const adresse = libp2p1
-          .getConnections()
-          .filter((c) => c.remotePeer.toString() === libp2p2.peerId.toString())
-          .pop();
-        if (adresse != null) {
-          clearInterval(interval);
-          résoudre(adresse);
-        }
-      };
       const interval = setInterval(testConnecté, 100);
       testConnecté();
     });
   } else {
-    await libp2p2.peerStore.save(libp2p1.peerId, {
-      multiaddrs: libp2p1.getMultiaddrs().filter(filtre),
-    });
-    await libp2p2.dial(libp2p1.peerId);
-    await que(() => !!libp2p1.getPeers().find((p) => p.equals(libp2p2.peerId)));
+    adressesLibp2p1 = libp2p1.getMultiaddrs().filter(filtre);
   }
+
+  await libp2p2.peerStore.save(libp2p1.peerId, {
+    multiaddrs: adressesLibp2p1,
+  });
+  libp2p2.dial(libp2p1.peerId);
+  await que(() => libp2p1.getConnections(libp2p2.peerId).length > 0);
 };
 
 export const toutesConnectées = async (

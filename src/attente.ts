@@ -14,9 +14,9 @@ export const que = async (
           t *= 1.5;
           setTimeout(fFinale, t);
         }
-      } catch {
+      } catch (e) {
         clearTimeout(chrono);
-        rejeter();
+        rejeter(e);
       }
     };
     const chrono = setTimeout(fFinale, t);
