@@ -50,6 +50,9 @@ importers:
       '@libp2p/ping':
         specifier: ^3.1.18
         version: 3.1.18
+      '@libp2p/utils':
+        specifier: ^7.4.6
+        version: 7.4.6
       '@libp2p/webrtc':
         specifier: ^7.0.3
         version: 7.0.3
