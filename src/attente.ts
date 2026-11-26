@@ -1,4 +1,7 @@
 import { isBrowser, isElectronRenderer } from "wherearewe";
+import { isNull } from "lodash-es";
+import { TypedEmitter } from "tiny-typed-emitter";
+import type { Oublier } from "./types.ts";
 
 export const que = async (
   f: () => boolean | Promise<boolean>,
@@ -141,5 +144,107 @@ export const attendreFichierModifié = async ({
 
     // Parfois, on dirait que chokidar ne détecte pas l'événement...
     const intervale = setInterval(vérifierModifié, 1000);
+  });
+};
+
+export const obtenir = async <T>(
+  f: (args: {
+    si: (
+      f: (x: T | undefined) => boolean | Promise<boolean>,
+    ) => (x: T | undefined) => void;
+    siDéfini: () => (x: T | undefined) => void;
+    siNonDéfini: () => (x: T | undefined) => void;
+    siVide: () => (x: T) => void;
+    siNul: () => (x: T) => void;
+    siPasVide: () => (x: T | undefined) => void;
+    siPasNul: () => (x: T) => void;
+    siLongueurAuMoins: (n: number) => (x: T | undefined) => void;
+    tous: () => (x: T) => void;
+  }) => Promise<Oublier>,
+): Promise<T> => {
+  const événements = new TypedEmitter<{ résolu: (x: T) => void }>();
+  let résultat: { val: T } | undefined = undefined;
+
+  const si = (
+    fTest: (x: T | undefined) => boolean | Promise<boolean>,
+  ): ((x: T | undefined) => void) => {
+    return async (x: T | undefined) => {
+      const passe = await fTest(x);
+      if (passe) {
+        événements.emit("résolu", x as T);
+        résultat = { val: x as T };
+      }
+    };
+  };
+
+  const siDéfini = (): ((x: T | undefined) => void) => {
+    return si((x: T | undefined): x is T => x !== undefined);
+  };
+
+  const siNonDéfini = (): ((x: T | undefined) => void) => {
+    return si((x: T | undefined) => x === undefined);
+  };
+
+  const siVide = (): ((x: T) => void) => {
+    return si((x) => {
+      if (Array.isArray(x)) return x.length === 0;
+      else if (x instanceof Set) return x.size === 0;
+      else if (typeof x === "object" && !isNull(x))
+        return Object.keys(x).length === 0;
+      else return false;
+    });
+  };
+  const siNul = (): ((x: T) => void) => {
+    return si((x: T | undefined) => isNull(x));
+  };
+  const siPasVide = (): ((x: T | undefined) => void) => {
+    return si((x) => {
+      if (Array.isArray(x)) return x.length > 0;
+      else if (x instanceof Set) return x.size > 0;
+      else if (typeof x === "object" && !isNull(x))
+        return Object.keys(x).length > 0;
+      else return false;
+    });
+  };
+  const siPasNul = (): ((x: T) => void) => {
+    return si((x: T | undefined) => !isNull(x));
+  };
+
+  const siLongueurAuMoins = (n: number): ((x: T | undefined) => void) => {
+    return si(
+      (x) =>
+        !!x &&
+        ((Array.isArray(x) && x.length >= n) ||
+          (Object.keys(x) && Object.keys(x).length >= n)),
+    );
+  };
+
+  const tous = (): ((x: T) => void) => {
+    return si(() => true);
+  };
+
+  const fOublier = await f({
+    si,
+    siDéfini,
+    siNonDéfini,
+    siVide,
+    siNul,
+    siPasVide,
+    siPasNul,
+    siLongueurAuMoins,
+    tous,
+  });
+
+  return new Promise<T>((compléter) => {
+    if (résultat) {
+      const résultatExistant = résultat;
+      // On rend la valeur retrouvée même si on a eu une erreur dans la fonction d'oubli.
+      fOublier().finally(() => compléter(résultatExistant.val));
+    } else {
+      événements.once("résolu", async (x) => {
+        // On rend la valeur retrouvée même si on a eu une erreur dans la fonction d'oubli.
+        await fOublier().finally(() => compléter(x));
+      });
+    }
   });
 };
