@@ -2,8 +2,8 @@ import { Circuit } from "@multiformats/multiaddr-matcher";
 import { multiaddr, type Multiaddr } from "@multiformats/multiaddr";
 import { isBrowser, isElectronRenderer } from "wherearewe";
 import { peerIdFromString } from "@libp2p/peer-id";
-import { que } from "../attente.ts";
 import { isLoopback } from "@libp2p/utils";
+import { que } from "../attente.ts";
 import type { Libp2p } from "@libp2p/interface";
 import type { ServicesLibp2pTest } from "./config.js";
 
